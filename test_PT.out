@@ -1,0 +1,1033 @@
+INFO 12-04 12:56:46 [utils.py:253] non-default args: {'max_model_len': 5000, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'model': '../Qwen3-32B-INT8'}
+INFO 12-04 12:56:46 [model.py:631] Resolved architecture: Qwen3ForCausalLM
+INFO 12-04 12:56:46 [model.py:1745] Using max model len 5000
+INFO 12-04 12:56:52 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-04 12:56:52 [vllm.py:500] Cudagraph is disabled under eager mode
+WARNING 12-04 12:56:52 [system_utils.py:103] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:05 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='../Qwen3-32B-INT8', speculative_config=None, tokenizer='../Qwen3-32B-INT8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=5000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=../Qwen3-32B-INT8, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:12 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://0.0.0.0:55757 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:12 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:12 [gpu_model_runner.py:3259] Starting to load model ../Qwen3-32B-INT8...
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:13 [compressed_tensors_w8a8_int8.py:62] Using CutlassScaledMMLinearKernel for CompressedTensorsW8A8Int8
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:27 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:27 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:53 [default_loader.py:314] Loading weights took 26.27 seconds
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:53 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:54 [gpu_model_runner.py:3338] Model loading took 32.3027 GiB memory and 40.847394 seconds
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:57 [gpu_worker.py:359] Available KV cache memory: 29.09 GiB
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:57 [kv_cache_utils.py:1229] GPU KV cache size: 119,152 tokens
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:57 [kv_cache_utils.py:1234] Maximum concurrency for 5,000 tokens per request: 23.79x
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:57 [core.py:250] init engine (profile, create kv cache, warmup model) took 3.12 seconds
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m INFO 12-04 12:58:58 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-04 12:58:58 [llm.py:352] Supported tasks: ['generate']
+WARNING 12-04 12:58:59 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1;36m(EngineCore_DP0 pid=3431060)[0;0m WARNING 12-04 12:59:00 [utils.py:250] Using default LoRA kernel configs
+####PRED#### Não somos tão hábeis quanto imaginamos em detectar o que é ou não é conversa fiada .	conversa fiada; 15,16
+
+list##### ['Não somos tão hábeis quanto imaginamos em detectar o que é ou não é conversa fiada .', 'conversa fiada; 15,16\n']
+####PRED#### Sem aéreo , inclui café da de a manhã .	café da manhã; 5,6,9
+
+list##### ['Sem aéreo , inclui café da de a manhã .', 'café da manhã; 5,6,9\n']
+####PRED#### Tentativa bem cara de pau de criar uma espécie de Vingadores russos , o filme é ruim .	bem cara de pau; 2,3,4,5 | espécie de; 9,10
+
+list##### ['Tentativa bem cara de pau de criar uma espécie de Vingadores russos , o filme é ruim .', 'bem cara de pau; 2,3,4,5 | espécie de; 9,10\n']
+####PRED#### Não fosse assim , qual seria a razão de ser do de o habeas corpus e das de as cortes encarregadas de julgá-lo julgar lo ?	razão de ser; 8,9,10 | habeas corpus; 14,15
+
+list##### ['Não fosse assim , qual seria a razão de ser do de o habeas corpus e das de as cortes encarregadas de julgá-lo julgar lo ?', 'razão de ser; 8,9,10 | habeas corpus; 14,15\n']
+####PRED#### O total de alunos da de a rede pública passou de 1,95 milhão para 1,99 milhão .	rede pública; 8,9
+
+list##### ['O total de alunos da de a rede pública passou de 1,95 milhão para 1,99 milhão .', 'rede pública; 8,9\n']
+####PRED#### O centrinho de Granada guarda os ares de uma cidade de interior - o lugar tem 120 mil habitantes .	cidade de interior; 10,11,12
+
+list##### ['O centrinho de Granada guarda os ares de uma cidade de interior - o lugar tem 120 mil habitantes .', 'cidade de interior; 10,11,12\n']
+####PRED#### Mesmo assim , apontam Oswald e Blanchflower , parece , sim , ocorrer uma redução nítida na em a felicidade das de as pessoas quando alcançam a meia-idade .	meia-idade; 28
+
+list##### ['Mesmo assim , apontam Oswald e Blanchflower , parece , sim , ocorrer uma redução nítida na em a felicidade das de as pessoas quando alcançam a meia-idade .', 'meia-idade; 28\n']
+####PRED#### Mas há um sistema que ainda passa ao a o largo das de as discussões em Brasília ( por que será ? ) .	passa ao largo; 7,8,9,10,11 | por que; 19,20
+
+list##### ['Mas há um sistema que ainda passa ao a o largo das de as discussões em Brasília ( por que será ? ) .', 'passa ao largo; 7,8,9,10,11 | por que; 19,20\n']
+####PRED#### O presidente ficou sabendo da de a decisão de Fachin em parada técnica no em o Cazaquistão , ainda na em a noite de quarta-feira ( 30 ) no em o Brasil , quando o sinal de internet da de a aeronave foi restabelecido .	ficou sabendo; 3,4
+
+list##### ['O presidente ficou sabendo da de a decisão de Fachin em parada técnica no em o Cazaquistão , ainda na em a noite de quarta-feira ( 30 ) no em o Brasil , quando o sinal de internet da de a aeronave foi restabelecido .', 'ficou sabendo; 3,4\n']
+####PRED#### Sem aéreo , inclui café da de a manhã e traslados .	café da manhã; 5,6,7,8,9
+
+list##### ['Sem aéreo , inclui café da de a manhã e traslados .', 'café da manhã; 5,6,7,8,9\n']
+####PRED#### O Planalto quer editar medidas provisórias com essas propostas , mas Maia apresentou resistência ao a o uso desses de esses instrumento .	medidas provisórias; 5,6
+
+list##### ['O Planalto quer editar medidas provisórias com essas propostas , mas Maia apresentou resistência ao a o uso desses de esses instrumento .', 'medidas provisórias; 5,6\n']
+####PRED#### A Unicamp apresentou nesta em esta quinta-feira ( 31 ) uma proposta de mudança no em o vestibular que abre mais quatro formas de acesso à a a universidade .	quinta-feira; 7 | abre acesso; 20,25
+
+list##### ['A Unicamp apresentou nesta em esta quinta-feira ( 31 ) uma proposta de mudança no em o vestibular que abre mais quatro formas de acesso à a a universidade .', 'quinta-feira; 7 | abre acesso; 20,25\n']
+####PRED#### Além disso de isso , os dois itens estavam correlacionados com os mesmos fatores psicológicos .	Alem disso; 1,2
+
+list##### ['Além disso de isso , os dois itens estavam correlacionados com os mesmos fatores psicológicos .', 'Alem disso; 1,2\n']
+####PRED#### Juliana seguiu outro caminho .	seguiu outro caminho; 2,3,4
+
+list##### ['Juliana seguiu outro caminho .', 'seguiu outro caminho; 2,3,4\n']
+####PRED#### Para isso , a butique de M&A fez a lição de casa : passou a ser auditada pela por a Grant Thornton no em o ano passado e organizou a sociedade .	lição de casa; 10,11,12
+
+list##### ['Para isso , a butique de M&A fez a lição de casa : passou a ser auditada pela por a Grant Thornton no em o ano passado e organizou a sociedade .', 'lição de casa; 10,11,12\n']
+####PRED#### Nesta Em esta quarta-feira ( 30 ) , o governo editou uma medida provisória que prorroga o prazo de adesão ao a o Refis de 31 de agosto para 29 de setembro .	quarta-feira; 4
+
+list##### ['Nesta Em esta quarta-feira ( 30 ) , o governo editou uma medida provisória que prorroga o prazo de adesão ao a o Refis de 31 de agosto para 29 de setembro .', 'quarta-feira; 4\n']
+####PRED#### Nesta Em esta quinta-feira ( 31 ) , o presidente se reunirá com o presidente da de a China , Xi Jinping , para discutir a relação bilateral entre os dois países .	quinta-feira; 4 | se reunirá; 11,12 | relação bilateral; 27,28
+
+list##### ['Nesta Em esta quinta-feira ( 31 ) , o presidente se reunirá com o presidente da de a China , Xi Jinping , para discutir a relação bilateral entre os dois países .', 'quinta-feira; 4 | se reunirá; 11,12 | relação bilateral; 27,28\n']
+####PRED#### O único sobrevivente foi o segurança Trevor Rees-Jones , que ficou vários meses em coma .	ficou em coma; 11,14,15
+
+list##### ['O único sobrevivente foi o segurança Trevor Rees-Jones , que ficou vários meses em coma .', 'ficou em coma; 11,14,15\n']
+####PRED#### Livre do de o nervosismo da de a estreia , o presidente interino da de a Câmara passou a quarta-feira saboreando elogios dos de os colegas .	presidente interino; 12,13 | passou a; 18,19 | quarta-feira; 20 | de os; 24,25
+
+list##### ['Livre do de o nervosismo da de a estreia , o presidente interino da de a Câmara passou a quarta-feira saboreando elogios dos de os colegas .', 'presidente interino; 12,13 | passou a; 18,19 | quarta-feira; 20 | de os; 24,25\n']
+####PRED#### Cabeças de gado caminhavam penosamente pelas por as ruas .	Cabeças de gado; 1,2,3
+
+list##### ['Cabeças de gado caminhavam penosamente pelas por as ruas .', 'Cabeças de gado; 1,2,3\n']
+####PRED#### O atacante Luis Suárez treinou entre os titulares do de o Uruguai nesta em esta quarta-feira ( 30 ) e deve participar da de a partida .	quarta-feira; 16
+
+list##### ['O atacante Luis Suárez treinou entre os titulares do de o Uruguai nesta em esta quarta-feira ( 30 ) e deve participar da de a partida .', 'quarta-feira; 16\n']
+####PRED#### Empregos no em o setor público cresceram no em o período e ajudaram na em a queda da de a taxa de desemprego .	setor público; 5,6 | taxa de desemprego; 21,22,23
+
+list##### ['Empregos no em o setor público cresceram no em o período e ajudaram na em a queda da de a taxa de desemprego .', 'setor público; 5,6 | taxa de desemprego; 21,22,23\n']
+####PRED#### Segundo um dos de os presentes , ele achou graça de comentário feito pelo por o ministro do de o STF Gilmar Mendes de que o chefe do de o Ministério Público Federal é " um sindicalista " alçado ao a o atual cargo .	achou graça; 9,10 | Ministério Público; 31,32 | alçado ao cargo; 39,40,44
+
+list##### ['Segundo um dos de os presentes , ele achou graça de comentário feito pelo por o ministro do de o STF Gilmar Mendes de que o chefe do de o Ministério Público Federal é " um sindicalista " alçado ao a o atual cargo .', 'achou graça; 9,10 | Ministério Público; 31,32 | alçado ao cargo; 39,40,44\n']
+####PRED#### André Fufuca viveu seu dia de glória .	dia de glória; 5,6,7
+
+list##### ['André Fufuca viveu seu dia de glória .', 'dia de glória; 5,6,7\n']
+####PRED#### Eu não dou conta de tudo , desabafa Rosa , a jornalista vivida por Maria Ribeiro .	dou conta; 3,4
+
+list##### ['Eu não dou conta de tudo , desabafa Rosa , a jornalista vivida por Maria Ribeiro .', 'dou conta; 3,4\n']
+####PRED#### O presidente do de o Congresso , Eunício Oliveira ( PMDB-CE ) , esperou mais de 50 minutos pela por a chegada dos de os deputados , mas decidiu encerrar os trabalhos .	mais de; 15,16 | encerrar os trabalhos; 30,31,32
+
+list##### ['O presidente do de o Congresso , Eunício Oliveira ( PMDB-CE ) , esperou mais de 50 minutos pela por a chegada dos de os deputados , mas decidiu encerrar os trabalhos .', 'mais de; 15,16 | encerrar os trabalhos; 30,31,32\n']
+####PRED#### O incidente aconteceu na em a manhã desta de esta quinta-feira ( 31 ) , antes do de o horário de chegada das de as crianças .	quinta-feira; 11 | antes do; 16,17 | de chegada; 21,22
+
+list##### ['O incidente aconteceu na em a manhã desta de esta quinta-feira ( 31 ) , antes do de o horário de chegada das de as crianças .', 'quinta-feira; 11 | antes do; 16,17 | de chegada; 21,22\n']
+####PRED#### Mas o canteiro de obras , a 13 km da de a Faixa de Gaza , é , na em a verdade , uma área militar .	canteiro de obras; 3,4,5 | na verdade; 19,20,22
+
+list##### ['Mas o canteiro de obras , a 13 km da de a Faixa de Gaza , é , na em a verdade , uma área militar .', 'canteiro de obras; 3,4,5 | na verdade; 19,20,22\n']
+####PRED#### Não deveríamos ser chamados para o debate somente quando o assunto é eutanásia , aborto ou células-tronco .	células-tronco; 17
+
+list##### ['Não deveríamos ser chamados para o debate somente quando o assunto é eutanásia , aborto ou células-tronco .', 'células-tronco; 17\n']
+####PRED#### Messi e Suárez devem entrar em campo com camisas para promover a candidatura conjunta de Argentina e Uruguai para o Mundial de 2030 .	None
+
+list##### ['Messi e Suárez devem entrar em campo com camisas para promover a candidatura conjunta de Argentina e Uruguai para o Mundial de 2030 .', 'None\n']
+####PRED#### A votação foi adiada mais uma vez - e semana que vem tem feriadão .	mais uma vez; 5,6,7 | semana que vem; 10,11,12
+
+list##### ['A votação foi adiada mais uma vez - e semana que vem tem feriadão .', 'mais uma vez; 5,6,7 | semana que vem; 10,11,12\n']
+####PRED#### Inclui café da de a manhã , passeios ( Valle Nevado e vinícola Concha y Toro ) .	café da manhã; 2,3,6
+
+list##### ['Inclui café da de a manhã , passeios ( Valle Nevado e vinícola Concha y Toro ) .', 'café da manhã; 2,3,6\n']
+####PRED#### Diego Souza , que não foi chamado para a partida desta de esta quinta , corre por fora .	corre por fora; 16,17,18
+
+list##### ['Diego Souza , que não foi chamado para a partida desta de esta quinta , corre por fora .', 'corre por fora; 16,17,18\n']
+####PRED#### Maior roda gigante da de a Europa , com 135 metros de altura , é um dos de os grandes símbolos de Londres e permite ver quase toda a cidade .	roda gigante; 2,3
+
+list##### ['Maior roda gigante da de a Europa , com 135 metros de altura , é um dos de os grandes símbolos de Londres e permite ver quase toda a cidade .', 'roda gigante; 2,3\n']
+####PRED#### E como tinha a cabeça fraca acabou concordando até em prejudicar um amigo por ela .	cabeça fraca; 5,6 | acabou concordando; 7,8
+
+list##### ['E como tinha a cabeça fraca acabou concordando até em prejudicar um amigo por ela .', 'cabeça fraca; 5,6 | acabou concordando; 7,8\n']
+####PRED#### A crise do de o emprego também é sentida quando se leva em conta somente os postos com carteira assinada .	leva em conta; 12,13,14 | carteira assinada; 19,20
+
+list##### ['A crise do de o emprego também é sentida quando se leva em conta somente os postos com carteira assinada .', 'leva em conta; 12,13,14 | carteira assinada; 19,20\n']
+####PRED#### A oficina durou uma hora e meia , mas depois ficamos lá fazendo som , tocando .	hora e meia; 5,6,7 | fazendo som; 13,14
+
+list##### ['A oficina durou uma hora e meia , mas depois ficamos lá fazendo som , tocando .', 'hora e meia; 5,6,7 | fazendo som; 13,14\n']
+####PRED#### O magistrado classificou o ato como atentado ao a o pudor - cuja pena é o pagamento de multa - e afirmou em seu despacho que " não houve constrangimento , tampouco violência ou grave ameaça " .	atentado ao pudor; 7,8,11 | pagamento de multa; 17,18,19
+
+list##### ['O magistrado classificou o ato como atentado ao a o pudor - cuja pena é o pagamento de multa - e afirmou em seu despacho que " não houve constrangimento , tampouco violência ou grave ameaça " .', 'atentado ao pudor; 7,8,11 | pagamento de multa; 17,18,19\n']
+####PRED#### Não quero ter que olhar o copo cheio .	ter que; 3,4 | olhar o copo cheio; 5,6,7,8
+
+list##### ['Não quero ter que olhar o copo cheio .', 'ter que; 3,4 | olhar o copo cheio; 5,6,7,8\n']
+####PRED#### Três imigrantes brasileiros ilegais foram presos por lavagem de dinheiro nos em os Estados Unidos .	lavagem de dinheiro; 8,9,10
+
+list##### ['Três imigrantes brasileiros ilegais foram presos por lavagem de dinheiro nos em os Estados Unidos .', 'lavagem de dinheiro; 8,9,10\n']
+####PRED#### Sem aéreo , inclui café da de a manhã e traslados de chegada e saída .	café da manhã; 5,6,8,9 | traslados de chegada e saída; 11,12,13,14,15
+
+list##### ['Sem aéreo , inclui café da de a manhã e traslados de chegada e saída .', 'café da manhã; 5,6,8,9 | traslados de chegada e saída; 11,12,13,14,15\n']
+####PRED#### Hoje os venezuelanos estão produzindo de tudo em casa : sabonetes , xampus , desodorante , pasta de dente e até produtos que estavam fora de moda há muito tempo .	de tudo; 6,7 | em casa; 8,9 | pasta de dente; 17,18,19 | fora de moda; 25,26,27 | há muito tempo; 28,29,30
+
+list##### ['Hoje os venezuelanos estão produzindo de tudo em casa : sabonetes , xampus , desodorante , pasta de dente e até produtos que estavam fora de moda há muito tempo .', 'de tudo; 6,7 | em casa; 8,9 | pasta de dente; 17,18,19 | fora de moda; 25,26,27 | há muito tempo; 28,29,30\n']
+####PRED#### A inundação de ruas do de o Texas pela por a tempestade Harvey causou perturbações para as criaturas terrestres , tirando-as tirando as de seu habitat natural e levando-as levando as a um mundo tomado pela por a água .	tirando-as; 21 | levando-as; 29
+
+list##### ['A inundação de ruas do de o Texas pela por a tempestade Harvey causou perturbações para as criaturas terrestres , tirando-as tirando as de seu habitat natural e levando-as levando as a um mundo tomado pela por a água .', 'tirando-as; 21 | levando-as; 29\n']
+####PRED#### Mais do de o que a imagem do de o político suspeito de corrupção , o que está em discussão é a qualidade e imparcialidade das de as decisões judiciais .	está em discussão; 18,19,20
+
+list##### ['Mais do de o que a imagem do de o político suspeito de corrupção , o que está em discussão é a qualidade e imparcialidade das de as decisões judiciais .', 'está em discussão; 18,19,20\n']
+####PRED#### O centro não é o ambiente onde cada um de nós abre mão de suas ideias e convicções .	abre mão; 12,13
+
+list##### ['O centro não é o ambiente onde cada um de nós abre mão de suas ideias e convicções .', 'abre mão; 12,13\n']
+####PRED#### O desemprego no em o país ficou em 12,8 % no em o trimestre encerrado em julho , divulgou nesta em esta quinta-feira ( 30 ) o IBGE .	quinta-feira; 23
+
+list##### ['O desemprego no em o país ficou em 12,8 % no em o trimestre encerrado em julho , divulgou nesta em esta quinta-feira ( 30 ) o IBGE .', 'quinta-feira; 23\n']
+####PRED#### Da De a parte desse de esse ministério , enquanto eu aqui estiver , sempre haverá boa vontade .	Da parte; 1,3,4 | boa vontade; 17,18
+
+list##### ['Da De a parte desse de esse ministério , enquanto eu aqui estiver , sempre haverá boa vontade .', 'Da parte; 1,3,4 | boa vontade; 17,18\n']
+####PRED#### As duas agora têm tentado fazer pastas de dente em casa , seguindo uma receita que encontraram na em a internet , mas o resultado tem deixado a desejar .	em casa; 10,11 | deixado a desejar; 27,28,29
+
+list##### ['As duas agora têm tentado fazer pastas de dente em casa , seguindo uma receita que encontraram na em a internet , mas o resultado tem deixado a desejar .', 'em casa; 10,11 | deixado a desejar; 27,28,29\n']
+####PRED#### Manoel Almeida da de a Silva , 46 , foi localizado na em a região central da de a cidade e não esboçou reação quando foi reconhecido e preso .	esboçou reação; 23,24
+
+list##### ['Manoel Almeida da de a Silva , 46 , foi localizado na em a região central da de a cidade e não esboçou reação quando foi reconhecido e preso .', 'esboçou reação; 23,24\n']
+####PRED#### Mas a maneira como bons atores lidam com essa previsibilidade pode fazer a diferença .	fazer diferença; 12,14
+
+list##### ['Mas a maneira como bons atores lidam com essa previsibilidade pode fazer a diferença .', 'fazer diferença; 12,14\n']
+####PRED#### Antes eu fazia tudo certinho , medindo a quantidade nas em as colheres de chá .	colheres de chá; 13,14,15
+
+list##### ['Antes eu fazia tudo certinho , medindo a quantidade nas em as colheres de chá .', 'colheres de chá; 13,14,15\n']
+####PRED#### Como qualquer comparação com a Argentina que sai da de a boca de um uruguaio na em a busca por afirmação em relação ao a o vizinho .	em relação a; 17,23,24 | busca por; 19,20
+
+list##### ['Como qualquer comparação com a Argentina que sai da de a boca de um uruguaio na em a busca por afirmação em relação ao a o vizinho .', 'em relação a; 17,23,24 | busca por; 19,20\n']
+####PRED#### Na Em a divulgação anterior , referente ao a o trimestre encerrado em junho , houve aumento do de o emprego informal enquanto havia queda na em a geração de vagas de trabalho com carteira assinada .	carteira assinada; 37,38
+
+list##### ['Na Em a divulgação anterior , referente ao a o trimestre encerrado em junho , houve aumento do de o emprego informal enquanto havia queda na em a geração de vagas de trabalho com carteira assinada .', 'carteira assinada; 37,38\n']
+####PRED#### Como de praxe , foi pedida ao a o ministro a sua manifestação .	Como de praxe; 1,2,3 | ao a o; 7,8,9
+
+list##### ['Como de praxe , foi pedida ao a o ministro a sua manifestação .', 'Como de praxe; 1,2,3 | ao a o; 7,8,9\n']
+####PRED#### Para o professor Joaquim Soares Neto , da de a UnB ( Universidade de Brasília ) , a alta nas em as matrículas do de o ensino a distância é também reflexo da de a crise .	ensino a distância; 27,28,29
+
+list##### ['Para o professor Joaquim Soares Neto , da de a UnB ( Universidade de Brasília ) , a alta nas em as matrículas do de o ensino a distância é também reflexo da de a crise .', 'ensino a distância; 27,28,29\n']
+####PRED#### Há apenas um problema : psicólogos dizem que a crise da de a meia-idade não existe .	meia-idade; 14
+
+list##### ['Há apenas um problema : psicólogos dizem que a crise da de a meia-idade não existe .', 'meia-idade; 14\n']
+####PRED#### O Judiciário , por esta linha de raciocínio , seria permeável à a a opinião pública , influenciada pelas por as acusações dos de os delatores .	opinião pública; 15,16 | linha de raciocínio; 6,7,8 | por esta linha de raciocínio; 4,5,6,7,8
+
+list##### ['O Judiciário , por esta linha de raciocínio , seria permeável à a a opinião pública , influenciada pelas por as acusações dos de os delatores .', 'opinião pública; 15,16 | linha de raciocínio; 6,7,8 | por esta linha de raciocínio; 4,5,6,7,8\n']
+####PRED#### César Pinto , 39 , trabalha com tecnologia há mais de dez anos , mas agora também quer entrar nesse em esse mercado .	trabalha com; 6,7 | entrar nesse; 19,20 | entrar em; 19,21
+
+list##### ['César Pinto , 39 , trabalha com tecnologia há mais de dez anos , mas agora também quer entrar nesse em esse mercado .', 'trabalha com; 6,7 | entrar nesse; 19,20 | entrar em; 19,21\n']
+####PRED#### Ele deixa o Brasil na em a sexta-feira ( 1º ) .	sexta-feira; 8
+
+list##### ['Ele deixa o Brasil na em a sexta-feira ( 1º ) .', 'sexta-feira; 8\n']
+####PRED#### A escritora americana Louise Hay morreu de causas naturais nesta em esta quarta-feira ( 30 ) , aos a os 90 anos .	quarta-feira; 13
+
+list##### ['A escritora americana Louise Hay morreu de causas naturais nesta em esta quarta-feira ( 30 ) , aos a os 90 anos .', 'quarta-feira; 13\n']
+####PRED#### Existe , sem dúvida , uma fase de baixa na em a meia-idade , disse o economista Andrew Oswald , da de a Universidade de Warwick ( Inglaterra ) , coautor do de o estudo .	sem dúvida; 3,4 | meia-idade; 13 | coautor do de o estudo; 31,32,33,34,35
+
+list##### ['Existe , sem dúvida , uma fase de baixa na em a meia-idade , disse o economista Andrew Oswald , da de a Universidade de Warwick ( Inglaterra ) , coautor do de o estudo .', 'sem dúvida; 3,4 | meia-idade; 13 | coautor do de o estudo; 31,32,33,34,35\n']
+####PRED#### Depois de 43 anos de guerra , as Farc ( Forças Armadas Revolucionárias da de a Colômbia ) desembarcam nesta em esta sexta-feira ( 1º ) , na em a Plaza de Bolívar , no em o centro de Bogotá .	desembarcam nesta; 19,20 | nesta sexta-feira; 20,23
+
+list##### ['Depois de 43 anos de guerra , as Farc ( Forças Armadas Revolucionárias da de a Colômbia ) desembarcam nesta em esta sexta-feira ( 1º ) , na em a Plaza de Bolívar , no em o centro de Bogotá .', 'desembarcam nesta; 19,20 | nesta sexta-feira; 20,23\n']
+####PRED#### Vi a mão dele de ele e virei um bicho .	None
+
+list##### ['Vi a mão dele de ele e virei um bicho .', 'None\n']
+####PRED#### As inúmeras flechadas disparadas pelo por o procurador-geral , Rodrigo Janot , estão fadadas a cair no em o vazio ?	estão fadadas a cair; 13,14,15,16
+
+list##### ['As inúmeras flechadas disparadas pelo por o procurador-geral , Rodrigo Janot , estão fadadas a cair no em o vazio ?', 'estão fadadas a cair; 13,14,15,16\n']
+####PRED#### O pessoal da de a pedalada fiscal e da de a contabilidade criativa não gosta muito desse de esse papo .	pedalada fiscal; 6,7 | contabilidade criativa; 12,13 | de esse; 18,19
+
+list##### ['O pessoal da de a pedalada fiscal e da de a contabilidade criativa não gosta muito desse de esse papo .', 'pedalada fiscal; 6,7 | contabilidade criativa; 12,13 | de esse; 18,19\n']
+####PRED#### Nossas descobertas são divertidas , mas o papo furado não é um assunto risível .	papo furado; 8,9
+
+list##### ['Nossas descobertas são divertidas , mas o papo furado não é um assunto risível .', 'papo furado; 8,9\n']
+####PRED#### Já a secretária-executiva do de o ministério , Maria Helena Castro , culpa as reduções feitas no em o Fies em 2015 , durante o governo Dilma Rousseff .	secretária-executiva; 3 | culpa as reduções; 13,14,15 | feitas no em; 16,17,18
+
+list##### ['Já a secretária-executiva do de o ministério , Maria Helena Castro , culpa as reduções feitas no em o Fies em 2015 , durante o governo Dilma Rousseff .', 'secretária-executiva; 3 | culpa as reduções; 13,14,15 | feitas no em; 16,17,18\n']
+####PRED#### Explosões foram registradas nesta em esta quinta-feira ( 31 ) na em a fábrica química Arkema , em Crosby ( 48 quilômetros de Houston ) , no em o Texas .	quinta-feira; 7
+
+list##### ['Explosões foram registradas nesta em esta quinta-feira ( 31 ) na em a fábrica química Arkema , em Crosby ( 48 quilômetros de Houston ) , no em o Texas .', 'quinta-feira; 7\n']
+####PRED#### A medida era " preventiva " .	A medida; 1,2
+
+list##### ['A medida era " preventiva " .', 'A medida; 1,2\n']
+####PRED#### Tampouco seriam quebrados recordes de velocidade nos em os trâmites processuais contra Lula .	quebrados recordes; 3,4
+
+list##### ['Tampouco seriam quebrados recordes de velocidade nos em os trâmites processuais contra Lula .', 'quebrados recordes; 3,4\n']
+####PRED#### Estava aguardando que ele voltasse de Cuba quando tivesse a anistia aos a os exilados políticos [ cujo movimento já existia , mas só veio a virar lei em 1979 ] .	virar lei; 27,28
+
+list##### ['Estava aguardando que ele voltasse de Cuba quando tivesse a anistia aos a os exilados políticos [ cujo movimento já existia , mas só veio a virar lei em 1979 ] .', 'virar lei; 27,28\n']
+####PRED#### Só após a onda de protestos o ministro Sarney Filho ( PV ) foi chamado para ajudar a apagar o incêndio .	ajudar a apagar; 17,18,19
+
+list##### ['Só após a onda de protestos o ministro Sarney Filho ( PV ) foi chamado para ajudar a apagar o incêndio .', 'ajudar a apagar; 17,18,19\n']
+####PRED#### Em São Paulo , onde era bancário , João Leonardo teve atuação de destaque na em a militância política de extrema-esquerda .	None
+
+list##### ['Em São Paulo , onde era bancário , João Leonardo teve atuação de destaque na em a militância política de extrema-esquerda .', 'None\n']
+####PRED#### Se uma pessoa próxima a você morre e você começa a pensar em como a vida é limitada , isso é uma crise da de a meia-idade ?	meia-idade; 26,27
+
+list##### ['Se uma pessoa próxima a você morre e você começa a pensar em como a vida é limitada , isso é uma crise da de a meia-idade ?', 'meia-idade; 26,27\n']
+####PRED#### A desculpa usada pelos por os deputados é que delimitar esses distritos é complicado e levaria tempo .	levaria tempo; 16,17
+
+list##### ['A desculpa usada pelos por os deputados é que delimitar esses distritos é complicado e levaria tempo .', 'levaria tempo; 16,17\n']
+####PRED#### No Em o período , 1,439 milhão pessoas conseguiram vagas no em o mercado de trabalho .	mercado de trabalho; 14,15,16
+
+list##### ['No Em o período , 1,439 milhão pessoas conseguiram vagas no em o mercado de trabalho .', 'mercado de trabalho; 14,15,16\n']
+####PRED#### A planilha faz parte dos de os documentos que corroboram a delação premiada , segundo investigadores .	faz parte; 3,4 | delação premiada; 12,13
+
+list##### ['A planilha faz parte dos de os documentos que corroboram a delação premiada , segundo investigadores .', 'faz parte; 3,4 | delação premiada; 12,13\n']
+####PRED#### A banda U2 anunciou nesta em esta quarta-feira ( 30 ) que " Songs of Experience " , seu novo álbum , está pronto para ser lançado após alguns ajustes .	quarta-feira; 8
+
+list##### ['A banda U2 anunciou nesta em esta quarta-feira ( 30 ) que " Songs of Experience " , seu novo álbum , está pronto para ser lançado após alguns ajustes .', 'quarta-feira; 8\n']
+####PRED#### Já classificada para a Copa do de o Mundo , a seleção brasileira lidera as eliminatórias sul-americanas com 33 pontos .	classificada para; 2,3
+
+list##### ['Já classificada para a Copa do de o Mundo , a seleção brasileira lidera as eliminatórias sul-americanas com 33 pontos .', 'classificada para; 2,3\n']
+####PRED#### Ela perdeu porque o modelo americano é diferente [ baseado num em um colégio eleitoral ] , afirmou .	baseado em; 10,12 | colégio eleitoral; 14,15
+
+list##### ['Ela perdeu porque o modelo americano é diferente [ baseado num em um colégio eleitoral ] , afirmou .', 'baseado em; 10,12 | colégio eleitoral; 14,15\n']
+####PRED#### Cada um só volta a assumir suas posições de origem na em a próxima quarta-feira ( 6 ) .	Cada um; 1,2 | volta a; 4,5 | posições de origem; 8,9,10
+
+list##### ['Cada um só volta a assumir suas posições de origem na em a próxima quarta-feira ( 6 ) .', 'Cada um; 1,2 | volta a; 4,5 | posições de origem; 8,9,10\n']
+####PRED#### Oficialmente , então , o governo deveria apresentar um Orçamento para 2018 com a previsão de um rombo de R$ 129 bilhões em suas contas - sem o espaço fiscal já anunciado pela por a equipe econômica .	espaço fiscal; 29,30
+
+list##### ['Oficialmente , então , o governo deveria apresentar um Orçamento para 2018 com a previsão de um rombo de R$ 129 bilhões em suas contas - sem o espaço fiscal já anunciado pela por a equipe econômica .', 'espaço fiscal; 29,30\n']
+####PRED#### Mike Hixenbaugh , repórter médico do de o " Houston Chronicle " , gravou um vídeo mostrando uma dessas de essas aglomerações de formigas enquanto trabalhava em uma reportagem sobre a inundação em Cypress Creek , segunda-feira .	repórter médico; 4,5 | segunda-feira; 37
+
+list##### ['Mike Hixenbaugh , repórter médico do de o " Houston Chronicle " , gravou um vídeo mostrando uma dessas de essas aglomerações de formigas enquanto trabalhava em uma reportagem sobre a inundação em Cypress Creek , segunda-feira .', 'repórter médico; 4,5 | segunda-feira; 37\n']
+####PRED#### Claro que a vitória da de a democracia , simbolizada pelo por o ato desta de esta sexta , não é o fim do de o caminho .	Claro que; 1,2 | fim do caminho; 23,24,27
+
+list##### ['Claro que a vitória da de a democracia , simbolizada pelo por o ato desta de esta sexta , não é o fim do de o caminho .', 'Claro que; 1,2 | fim do caminho; 23,24,27\n']
+####PRED#### Integrantes da de a equipe econômica também queriam que o presidente em exercício avaliasse outras propostas de ajuste fiscal , como o adiamento do de o reajuste de servidores públicos e o aumento da de a contribuição previdenciária desses de esses funcionários .	presidente em exercício; 11,12,13
+
+list##### ['Integrantes da de a equipe econômica também queriam que o presidente em exercício avaliasse outras propostas de ajuste fiscal , como o adiamento do de o reajuste de servidores públicos e o aumento da de a contribuição previdenciária desses de esses funcionários .', 'presidente em exercício; 11,12,13\n']
+####PRED#### PSG está na em a mira da de a Uefa desde a compra de Neymar , por 222 milhões de euros .	está na mira; 2,3,6
+
+list##### ['PSG está na em a mira da de a Uefa desde a compra de Neymar , por 222 milhões de euros .', 'está na mira; 2,3,6\n']
+####PRED#### Inclui aéreo , sem café da de a manhã .	None
+
+list##### ['Inclui aéreo , sem café da de a manhã .', 'None\n']
+####PRED#### Segundo Hua Chunying , porta-voz do de o Ministério de Relações Exteriores chinês , a questão norte-coreana é séria e não deve ser tratada como um jogo de videogame .	porta-voz; 5 | jogo de videogame; 27,28,29
+
+list##### ['Segundo Hua Chunying , porta-voz do de o Ministério de Relações Exteriores chinês , a questão norte-coreana é séria e não deve ser tratada como um jogo de videogame .', 'porta-voz; 5 | jogo de videogame; 27,28,29\n']
+####PRED#### Segundo vice-presidente da de a Câmara , Fufuca está no em o comando da de a Casa porque o presidente Rodrigo Maia ( DEM-RJ ) assumiu a Presidência da de a República .	está no comando; 9,10,13
+
+list##### ['Segundo vice-presidente da de a Câmara , Fufuca está no em o comando da de a Casa porque o presidente Rodrigo Maia ( DEM-RJ ) assumiu a Presidência da de a República .', 'está no comando; 9,10,13\n']
+####PRED#### A expectativa é de que a licitação ocorra no em o primeiro semestre do de o ano que vem .	que vem; 18,19
+
+list##### ['A expectativa é de que a licitação ocorra no em o primeiro semestre do de o ano que vem .', 'que vem; 18,19\n']
+####PRED#### Embora o texto-base tenha sido aprovado no em o início da de a madrugada , deputados e senadores não concluíram a votação dos de os cinco destaques ( mudanças no em o texto ) apresentados pela por a oposição .	texto-base; 3
+
+list##### ['Embora o texto-base tenha sido aprovado no em o início da de a madrugada , deputados e senadores não concluíram a votação dos de os cinco destaques ( mudanças no em o texto ) apresentados pela por a oposição .', 'texto-base; 3\n']
+####PRED#### Inclui aéreo ( com taxas e impostos ) e café da de a manhã .	café da manhã; 10,11,14
+
+list##### ['Inclui aéreo ( com taxas e impostos ) e café da de a manhã .', 'café da manhã; 10,11,14\n']
+####PRED#### Mas várias pesquisas psicológicas mais recentes não constataram nenhuma ansiedade específica da de a meia-idade - ou até a desmentiram por completo .	meia-idade; 15
+
+list##### ['Mas várias pesquisas psicológicas mais recentes não constataram nenhuma ansiedade específica da de a meia-idade - ou até a desmentiram por completo .', 'meia-idade; 15\n']
+####PRED#### No Em o trimestre encerrado em julho de 2016 , a taxa de desemprego era de 11,6 % , percentual que é 1,2 ponto percentual menor que o verificado em período equivalente deste de este ano .	taxa de desemprego; 12,13,14 | ponto percentual; 24,25 | período equivalente; 31,32
+
+list##### ['No Em o trimestre encerrado em julho de 2016 , a taxa de desemprego era de 11,6 % , percentual que é 1,2 ponto percentual menor que o verificado em período equivalente deste de este ano .', 'taxa de desemprego; 12,13,14 | ponto percentual; 24,25 | período equivalente; 31,32\n']
+####PRED#### Ele vivia junto à a a companheira há 14 anos , desde que teve o primeiro filho .	junto à; 3,4 | desde que; 12,13
+
+list##### ['Ele vivia junto à a a companheira há 14 anos , desde que teve o primeiro filho .', 'junto à; 3,4 | desde que; 12,13\n']
+####PRED#### Derrubando barreiras , o presidente quer reduzir o persistente desemprego , hoje em 10 % .	Derrubando barreiras; 1,2
+
+list##### ['Derrubando barreiras , o presidente quer reduzir o persistente desemprego , hoje em 10 % .', 'Derrubando barreiras; 1,2\n']
+####PRED#### Quando o depoimento veio a público , a defesa do de o ex-ministro negou que ele tenha recebido dinheiro de Funaro .	veio a público; 4,5,6
+
+list##### ['Quando o depoimento veio a público , a defesa do de o ex-ministro negou que ele tenha recebido dinheiro de Funaro .', 'veio a público; 4,5,6\n']
+####PRED#### Estudo atualizado será enviado ainda esta semana às a as caixas de entrada de todos os deputados federais .	caixas de entrada; 11,12,13
+
+list##### ['Estudo atualizado será enviado ainda esta semana às a as caixas de entrada de todos os deputados federais .', 'caixas de entrada; 11,12,13\n']
+####PRED#### Para um grupo que nasceu , em 1964 , como braço armado do de o Partido Comunista , adotar a democracia liberal como marco é uma mudança de dimensões históricas .	braço armado; 11,12
+
+list##### ['Para um grupo que nasceu , em 1964 , como braço armado do de o Partido Comunista , adotar a democracia liberal como marco é uma mudança de dimensões históricas .', 'braço armado; 11,12\n']
+####PRED#### A ameaça que a gente recebe de morte nessa em essa área que houve invasão hoje ... , disse Popyguá .	recebe de morte; 6,7,8
+
+list##### ['A ameaça que a gente recebe de morte nessa em essa área que houve invasão hoje ... , disse Popyguá .', 'recebe de morte; 6,7,8\n']
+####PRED#### Nesta Em esta quarta-feira ( 30 ) , Trump afirmou que " conversar não é a resposta " para resolver a crise .	quarta-feira; 4
+
+list##### ['Nesta Em esta quarta-feira ( 30 ) , Trump afirmou que " conversar não é a resposta " para resolver a crise .', 'quarta-feira; 4\n']
+####PRED#### Havia aproximadamente 15 pessoas , principalmente franceses que já tinham contato com a cultura brasileira e franco-brasileiros .	tinham contato; 10,11
+
+list##### ['Havia aproximadamente 15 pessoas , principalmente franceses que já tinham contato com a cultura brasileira e franco-brasileiros .', 'tinham contato; 10,11\n']
+####PRED#### O presidente francês , Emmanuel Macron , apresentou nesta em esta quinta-feira ( 31 ) os detalhes de sua reforma trabalhista .	quinta-feira; 12
+
+list##### ['O presidente francês , Emmanuel Macron , apresentou nesta em esta quinta-feira ( 31 ) os detalhes de sua reforma trabalhista .', 'quinta-feira; 12\n']
+####PRED#### Tite , como todo ser humano , gosta de elogios , mas não de oba-oba .	ser humano; 5,6 | oba-oba; 15
+
+list##### ['Tite , como todo ser humano , gosta de elogios , mas não de oba-oba .', 'ser humano; 5,6 | oba-oba; 15\n']
+####PRED#### Cifras bilionárias cobradas em ações penais pela por a força-tarefa da de a Lava Jato em Curitiba desde o início do de o escândalo , em 2014 , despencaram nas em as decisões do de o juiz Sergio Moro .	força-tarefa; 10
+
+list##### ['Cifras bilionárias cobradas em ações penais pela por a força-tarefa da de a Lava Jato em Curitiba desde o início do de o escândalo , em 2014 , despencaram nas em as decisões do de o juiz Sergio Moro .', 'força-tarefa; 10\n']
+####PRED#### Com isso , no em o projeto orçamentário para 2018 , que será enviado nesta em esta quinta ao a o Congresso , devem constar valores desatualizados para o deficit nas em as contas públicas .	Com isso; 1,2 | projeto orçamentário; 7,8 | contas públicas; 34,35
+
+list##### ['Com isso , no em o projeto orçamentário para 2018 , que será enviado nesta em esta quinta ao a o Congresso , devem constar valores desatualizados para o deficit nas em as contas públicas .', 'Com isso; 1,2 | projeto orçamentário; 7,8 | contas públicas; 34,35\n']
+####PRED#### Ela é muito importante pra mim em termos pessoais , para resgatar uma questão de honra e de princípios .	em termos; 7,8
+
+list##### ['Ela é muito importante pra mim em termos pessoais , para resgatar uma questão de honra e de princípios .', 'em termos; 7,8\n']
+####PRED#### A vista do de o bairro Las Condes é quase um porta-retratos : limpa e comovente .	A vista; 1,2
+
+list##### ['A vista do de o bairro Las Condes é quase um porta-retratos : limpa e comovente .', 'A vista; 1,2\n']
+####PRED#### Como a ideia fez sucesso , ele expandiu a proposta para incluir também anúncios virtuais , compartilhados no em o Facebook ou em outras redes sociais .	fez sucesso; 4,5
+
+list##### ['Como a ideia fez sucesso , ele expandiu a proposta para incluir também anúncios virtuais , compartilhados no em o Facebook ou em outras redes sociais .', 'fez sucesso; 4,5\n']
+####PRED#### Na Em a quarta-feira ( 30 ) , o juiz federal Rolando Spanholo , da de a 21ª Vara do de o Distrito Federal , suspendeu o decreto .	quarta-feira; 4
+
+list##### ['Na Em a quarta-feira ( 30 ) , o juiz federal Rolando Spanholo , da de a 21ª Vara do de o Distrito Federal , suspendeu o decreto .', 'quarta-feira; 4\n']
+####PRED#### O Prêmio de Água e Saneamento , realizado pelo por o BID ( Banco Interamericano de Desenvolvimento ) e pela por a Fundação Femsa , está com inscrições abertas até terça-feira ( 12 ) .	terça-feira; 31
+
+list##### ['O Prêmio de Água e Saneamento , realizado pelo por o BID ( Banco Interamericano de Desenvolvimento ) e pela por a Fundação Femsa , está com inscrições abertas até terça-feira ( 12 ) .', 'terça-feira; 31\n']
+####PRED#### A barreira de concreto contará com tecnologia de ponta para detectar atividade subterrânea .	contará com; 5,6 | de ponta; 8,9
+
+list##### ['A barreira de concreto contará com tecnologia de ponta para detectar atividade subterrânea .', 'contará com; 5,6 | de ponta; 8,9\n']
+####PRED#### Os baixos patamares de umidade relativa do de o ar colocaram São Paulo em estado de atenção nesta em esta quarta .	estado de atenção; 15,16,17
+
+list##### ['Os baixos patamares de umidade relativa do de o ar colocaram São Paulo em estado de atenção nesta em esta quarta .', 'estado de atenção; 15,16,17\n']
+####PRED#### Alguém fala sobre a vida " ser um jogo de xadrez " e outra cascata de obviedades .	cascata de; 15,16
+
+list##### ['Alguém fala sobre a vida " ser um jogo de xadrez " e outra cascata de obviedades .', 'cascata de; 15,16\n']
+####PRED#### O papo furado é muito mais difícil de detectar quando queremos concordar com ele .	papo furado; 2,3 | concordar com; 12,13
+
+list##### ['O papo furado é muito mais difícil de detectar quando queremos concordar com ele .', 'papo furado; 2,3 | concordar com; 12,13\n']
+####PRED#### Um alerta de segurança emitido pelas por as polícias Militar e Federal em Santa Catarina acabou dispensando funcionários da de a Justiça Federal de irem trabalhar nesta em esta quinta-feira ( 31 ) .	quinta-feira; 30
+
+list##### ['Um alerta de segurança emitido pelas por as polícias Militar e Federal em Santa Catarina acabou dispensando funcionários da de a Justiça Federal de irem trabalhar nesta em esta quinta-feira ( 31 ) .', 'quinta-feira; 30\n']
+####PRED#### Na Em a quarta-feira ( 30 ) , o ministro Gilmar Mendes pediu à a a AGU ( Advocacia-Geral da de a União ) para prestar esclarecimentos sobre a decisão após pedido de suspensão ingressado pelo por o PSOL .	prestar esclarecimentos; 26,27 | pedido de suspensão; 32,33,34
+
+list##### ['Na Em a quarta-feira ( 30 ) , o ministro Gilmar Mendes pediu à a a AGU ( Advocacia-Geral da de a União ) para prestar esclarecimentos sobre a decisão após pedido de suspensão ingressado pelo por o PSOL .', 'prestar esclarecimentos; 26,27 | pedido de suspensão; 32,33,34\n']
+####PRED#### O ponta esquerda foi um dos de os destaques da de a campanha que deu ao a o Monaco o título do de o Campeonato Francês , com 18 gols marcados .	ponta esquerda; 2,3
+
+list##### ['O ponta esquerda foi um dos de os destaques da de a campanha que deu ao a o Monaco o título do de o Campeonato Francês , com 18 gols marcados .', 'ponta esquerda; 2,3\n']
+####PRED#### Encontramos ossos da de a perna lateralmente onde estavam os restos mortais de outro cadáver .	restos mortais; 11,12
+
+list##### ['Encontramos ossos da de a perna lateralmente onde estavam os restos mortais de outro cadáver .', 'restos mortais; 11,12\n']
+####PRED#### Mas colombianos deram um salto também .	deram um salto; 3,4,5
+
+list##### ['Mas colombianos deram um salto também .', 'deram um salto; 3,4,5\n']
+####PRED#### As votações devem ser retomadas na em a próxima terça-feira ( 5 ) .	terça-feira; 10
+
+list##### ['As votações devem ser retomadas na em a próxima terça-feira ( 5 ) .', 'terça-feira; 10\n']
+####PRED#### A produção de algodão não deve ser coisa apenas de grandes produtores .	None
+
+list##### ['A produção de algodão não deve ser coisa apenas de grandes produtores .', 'None\n']
+####PRED#### Ela estava muito à a a frente da de a época , na em a Inglaterra dos de os anos 1930 .	à frente; 4,7
+
+list##### ['Ela estava muito à a a frente da de a época , na em a Inglaterra dos de os anos 1930 .', 'à frente; 4,7\n']
+####PRED#### Moro não toca no em o assunto verdadeiro da de a reportagem .	None
+
+list##### ['Moro não toca no em o assunto verdadeiro da de a reportagem .', 'None\n']
+####PRED#### A Prefeitura de SP fechou o cronograma para a licitação das de as empresas de varrição da de a cidade .	fechou o cronograma; 5,6,7
+
+list##### ['A Prefeitura de SP fechou o cronograma para a licitação das de as empresas de varrição da de a cidade .', 'fechou o cronograma; 5,6,7\n']
+####PRED#### Outra proposta é limitar as indenizações a demissões sem justa causa , acelerando sua tramitação nos em os tribunais .	sem justa causa; 9,10,11
+
+list##### ['Outra proposta é limitar as indenizações a demissões sem justa causa , acelerando sua tramitação nos em os tribunais .', 'sem justa causa; 9,10,11\n']
+####PRED#### Que bom que a população está se posicionando contra uma das de as maiores barbáries cometidas contra o meio ambiente por este governo corrupto e medíocre !	meio ambiente; 19,20
+
+list##### ['Que bom que a população está se posicionando contra uma das de as maiores barbáries cometidas contra o meio ambiente por este governo corrupto e medíocre !', 'meio ambiente; 19,20\n']
+####PRED#### Não podemos abrir mão de um atleta do de o nível do de o Coutinho , completou .	abrir mão; 3,4
+
+list##### ['Não podemos abrir mão de um atleta do de o nível do de o Coutinho , completou .', 'abrir mão; 3,4\n']
+####PRED#### Por volta das de as 13h desta de esta quinta-feira , o motorista do de o carro ainda não tinha sido identificado .	Por volta das; 1,2,3
+
+list##### ['Por volta das de as 13h desta de esta quinta-feira , o motorista do de o carro ainda não tinha sido identificado .', 'Por volta das; 1,2,3\n']
+####PRED#### Na Em a madrugada desta de esta quinta , por falta de quórum , o Congresso Nacional aprovou o texto-base , mas não concluiu a votação do de o projeto que revisa as metas fiscais de 2017 e de 2018 para um deficit de R$ 159 bilhões .	texto-base; 20
+
+list##### ['Na Em a madrugada desta de esta quinta , por falta de quórum , o Congresso Nacional aprovou o texto-base , mas não concluiu a votação do de o projeto que revisa as metas fiscais de 2017 e de 2018 para um deficit de R$ 159 bilhões .', 'texto-base; 20\n']
+####PRED#### O senador Antonio Anastasia ( PSDB-MG ) afirma que o leilão seria um " tiro no em o pé " do de o governo .	tiro no em o pé; 15,16,17,18,19
+
+list##### ['O senador Antonio Anastasia ( PSDB-MG ) afirma que o leilão seria um " tiro no em o pé " do de o governo .', 'tiro no em o pé; 15,16,17,18,19\n']
+####PRED#### Um pacote de 47 fraldas de fabricação chinesa , por exemplo , custa 200 mil bolívares , quase o valor do de o salário mínimo .	por exemplo; 10,11 | salário mínimo; 24,25
+
+list##### ['Um pacote de 47 fraldas de fabricação chinesa , por exemplo , custa 200 mil bolívares , quase o valor do de o salário mínimo .', 'por exemplo; 10,11 | salário mínimo; 24,25\n']
+####PRED#### O código tem quase 3.000 páginas e versa sobre áreas como salários , jornada de trabalho e padrões para a ventilação de escritórios .	jornada de trabalho; 14,15,16
+
+list##### ['O código tem quase 3.000 páginas e versa sobre áreas como salários , jornada de trabalho e padrões para a ventilação de escritórios .', 'jornada de trabalho; 14,15,16\n']
+####PRED#### Para o deslocamento , o deputado federal levou um leitão , feijão tropeiro , linguiça e carne de sol .	feijão tropeiro; 12,13 | carne de sol; 17,18,19
+
+list##### ['Para o deslocamento , o deputado federal levou um leitão , feijão tropeiro , linguiça e carne de sol .', 'feijão tropeiro; 12,13 | carne de sol; 17,18,19\n']
+####PRED#### PSOL chegou a afirmar que a não suspensão imediata dos de os efeitos do de o decreto que extingue a Renca poderia " gerar danos irreversíveis ao a o meio ambiente " .	meio ambiente; 30,31
+
+list##### ['PSOL chegou a afirmar que a não suspensão imediata dos de os efeitos do de o decreto que extingue a Renca poderia " gerar danos irreversíveis ao a o meio ambiente " .', 'meio ambiente; 30,31\n']
+####PRED#### Chopra pode ter lançado mão de um texto vago a fim de aparentar profundidade .	lançado mão; 4,5 | a fim de; 10,11,12
+
+list##### ['Chopra pode ter lançado mão de um texto vago a fim de aparentar profundidade .', 'lançado mão; 4,5 | a fim de; 10,11,12\n']
+####PRED#### Best-seller nos em os Estados Unidos e Reino Unido , o thriller de espionagem chamou a atenção de Theron antes mesmo de ser publicado em 2012 .	antes mesmo; 20,21
+
+list##### ['Best-seller nos em os Estados Unidos e Reino Unido , o thriller de espionagem chamou a atenção de Theron antes mesmo de ser publicado em 2012 .', 'antes mesmo; 20,21\n']
+####PRED#### O roteiro melhora bastante a história original do de o gibi , que não é lá essas coisas .	lá essas coisas; 16,17,18
+
+list##### ['O roteiro melhora bastante a história original do de o gibi , que não é lá essas coisas .', 'lá essas coisas; 16,17,18\n']
+####PRED#### Na Em a segunda-feira ( 28 ) , Michael Cohen , advogado pessoal do de o presidente e vice-presidente executivo das de as Organizações Trump , confirmou à a a Comissão de Inteligência da de a Câmara que houve negociações para a construção de uma Trump Tower em Moscou durante a campanha presidencial .	vice-presidente executivo; 19,20 | campanha presidencial; 52,53
+
+list##### ['Na Em a segunda-feira ( 28 ) , Michael Cohen , advogado pessoal do de o presidente e vice-presidente executivo das de as Organizações Trump , confirmou à a a Comissão de Inteligência da de a Câmara que houve negociações para a construção de uma Trump Tower em Moscou durante a campanha presidencial .', 'vice-presidente executivo; 19,20 | campanha presidencial; 52,53\n']
+####PRED#### Estamos numa em uma crescente , mas até chegar a Copa tem muita coisa para acontecer .	em uma crescente; 3,4,5 | até chegar; 8,9 | muita coisa; 13,14
+
+list##### ['Estamos numa em uma crescente , mas até chegar a Copa tem muita coisa para acontecer .', 'em uma crescente; 3,4,5 | até chegar; 8,9 | muita coisa; 13,14\n']
+####PRED#### O governador Raimundo Colombo ( PSD ) declarou , nesta em esta manhã , que existem " facções criminosas de outros Estados atuando em Santa Catarina " , mas não atribuiu as recentes mortes nem eventuais ameaças a algum grupo específico .	atuando em; 23,24
+
+list##### ['O governador Raimundo Colombo ( PSD ) declarou , nesta em esta manhã , que existem " facções criminosas de outros Estados atuando em Santa Catarina " , mas não atribuiu as recentes mortes nem eventuais ameaças a algum grupo específico .', 'atuando em; 23,24\n']
+####PRED#### Essa proposta , com condições mais vantajosas para os contribuintes , faz parte de um esforço final do de o Planalto para tentar aprovar a medida provisória que criou o programa de refinanciamento .	faz parte; 12,13 | medida provisória; 26,27 | programa de refinanciamento; 31,32,33
+
+list##### ['Essa proposta , com condições mais vantajosas para os contribuintes , faz parte de um esforço final do de o Planalto para tentar aprovar a medida provisória que criou o programa de refinanciamento .', 'faz parte; 12,13 | medida provisória; 26,27 | programa de refinanciamento; 31,32,33\n']
+####PRED#### As vagas informais de trabalho puxam a queda .	puxam a queda; 6,7,8
+
+list##### ['As vagas informais de trabalho puxam a queda .', 'puxam a queda; 6,7,8\n']
+####PRED#### Ele disse que o presidente interino da de a Câmara é vítima de " notícias negativas " , propagadas por " moralistas de plantão " .	presidente interino; 5,6 | moralistas de plantão; 22,23,24
+
+list##### ['Ele disse que o presidente interino da de a Câmara é vítima de " notícias negativas " , propagadas por " moralistas de plantão " .', 'presidente interino; 5,6 | moralistas de plantão; 22,23,24\n']
+####PRED#### Para quem vê a TV Câmara como " A Praça é Nossa " , foi uma sessão e tanto .	sessão e tanto; 17,18,19
+
+list##### ['Para quem vê a TV Câmara como " A Praça é Nossa " , foi uma sessão e tanto .', 'sessão e tanto; 17,18,19\n']
+####PRED#### Inclui café da de a manhã , passeios ( Valle Nevado e vinícola Concha y Toro ) .	café da manhã; 2,3,6
+
+list##### ['Inclui café da de a manhã , passeios ( Valle Nevado e vinícola Concha y Toro ) .', 'café da manhã; 2,3,6\n']
+####PRED#### O noticiário trata do de o ' pós-fato ' , quando as coisas já aconteceram .	None
+
+list##### ["O noticiário trata do de o ' pós-fato ' , quando as coisas já aconteceram .", 'None\n']
+####PRED#### Os autores não escondem o ponto de vista sobre o qual o livro se apoia .	ponto de vista; 6,7,8 | se apoia; 14,15
+
+list##### ['Os autores não escondem o ponto de vista sobre o qual o livro se apoia .', 'ponto de vista; 6,7,8 | se apoia; 14,15\n']
+####PRED#### As palavras que ele selecionou são desnecessariamente complexas , e os significados pretendidos não são claros .	None
+
+list##### ['As palavras que ele selecionou são desnecessariamente complexas , e os significados pretendidos não são claros .', 'None\n']
+####PRED#### O texto-base foi votado na em a madrugada desta de esta quinta , mas os destaques só serão apreciados na em a semana que vem .	texto-base; 2 | que vem; 24,25
+
+list##### ['O texto-base foi votado na em a madrugada desta de esta quinta , mas os destaques só serão apreciados na em a semana que vem .', 'texto-base; 2 | que vem; 24,25\n']
+####PRED#### Essa mudança foi necessária para amenizar a resistência das de as siglas que podem ser prejudicadas pela por a medida .	por a medida; 18,19,20
+
+list##### ['Essa mudança foi necessária para amenizar a resistência das de as siglas que podem ser prejudicadas pela por a medida .', 'por a medida; 18,19,20\n']
+####PRED#### Ele era dúvida por ter sofrido lesão no em o joelho direito em partida do de o Barcelona pela por a Supercopa da de a Espanha contra o Real Madrid , no em o último dia 16 .	sofrido lesão; 6,7
+
+list##### ['Ele era dúvida por ter sofrido lesão no em o joelho direito em partida do de o Barcelona pela por a Supercopa da de a Espanha contra o Real Madrid , no em o último dia 16 .', 'sofrido lesão; 6,7\n']
+####PRED#### Se a reclamação dos de os políticos para as eleições de 2018 é que não há dinheiro , por que não baratear a campanha e ao a o mesmo tempo aumentar a representatividade ?	por que; 19,20 | ao mesmo tempo; 26,28,29
+
+list##### ['Se a reclamação dos de os políticos para as eleições de 2018 é que não há dinheiro , por que não baratear a campanha e ao a o mesmo tempo aumentar a representatividade ?', 'por que; 19,20 | ao mesmo tempo; 26,28,29\n']
+####PRED#### O objetivo do de o governo é flexibilizar o mercado de trabalho , a partir da de a crença de que há hoje demasiados entraves à a a contratação e demissão de funcionários .	mercado de trabalho; 10,11,12 | a partir da; 14,15,16
+
+list##### ['O objetivo do de o governo é flexibilizar o mercado de trabalho , a partir da de a crença de que há hoje demasiados entraves à a a contratação e demissão de funcionários .', 'mercado de trabalho; 10,11,12 | a partir da; 14,15,16\n']
+####PRED#### Cada placa conta com um texto explicativo sobre a ditadura .	conta com; 3,4
+
+list##### ['Cada placa conta com um texto explicativo sobre a ditadura .', 'conta com; 3,4\n']
+####PRED#### A única queda foi no em o espaço de exposição , 8 % menor - o que significa que as editoras investiram menos no em o tamanho dos de os estandes .	investiram menos no; 22,23,24
+
+list##### ['A única queda foi no em o espaço de exposição , 8 % menor - o que significa que as editoras investiram menos no em o tamanho dos de os estandes .', 'investiram menos no; 22,23,24\n']
+####PRED#### Válido de 01 a 15 de dezembro .	de 01 a 15 de dezembro; 2,3,4,5,6,7
+
+list##### ['Válido de 01 a 15 de dezembro .', 'de 01 a 15 de dezembro; 2,3,4,5,6,7\n']
+####PRED#### O caso teve certa visibilidade , o que gerou uma caminhada solidária de pessoas com o mesmo propósito : de pensar a questão prisional .	o que; 7,8
+
+list##### ['O caso teve certa visibilidade , o que gerou uma caminhada solidária de pessoas com o mesmo propósito : de pensar a questão prisional .', 'o que; 7,8\n']
+####PRED#### Em 2017 , até 31 de julho já foram disponibilizadas 434 milhões de novas moedas .	None
+
+list##### ['Em 2017 , até 31 de julho já foram disponibilizadas 434 milhões de novas moedas .', 'None\n']
+####PRED#### Uma criança que ainda acredita no em o Coelhinho da de a Páscoa acreditaria .	Coelhinho da Páscoa; 9,10,11,13
+
+list##### ['Uma criança que ainda acredita no em o Coelhinho da de a Páscoa acreditaria .', 'Coelhinho da Páscoa; 9,10,11,13\n']
+####PRED#### Eles terão 60 dias para entregarem os estudos , que também terão que ser aprovados por Conpresp e Condephaat .	ter que; 2,13
+
+list##### ['Eles terão 60 dias para entregarem os estudos , que também terão que ser aprovados por Conpresp e Condephaat .', 'ter que; 2,13\n']
+####PRED#### Na Em a semana passada , por nota , Temer afirmou que a Renca não é um paraíso , como querem fazer parecer , erroneamente , alguns .	fazer parecer; 21,22
+
+list##### ['Na Em a semana passada , por nota , Temer afirmou que a Renca não é um paraíso , como querem fazer parecer , erroneamente , alguns .', 'fazer parecer; 21,22\n']
+####PRED#### Isso acontece porque as formigas se unem pelas por as pernas - 100 formigas significam 600 pernas - , criando uma rede flexível que repele líquidos devido ao a o revestimento de seus corpos .	se unem; 6,7
+
+list##### ['Isso acontece porque as formigas se unem pelas por as pernas - 100 formigas significam 600 pernas - , criando uma rede flexível que repele líquidos devido ao a o revestimento de seus corpos .', 'se unem; 6,7\n']
+####PRED#### Segundo um porta-voz , a decisão foi tomada " no em o espírito de paridade " com as medidas impostas pela por a Rússia em 28 de julho deste de este ano .	porta-voz; 3 | no espírito de; 10,13,14
+
+list##### ['Segundo um porta-voz , a decisão foi tomada " no em o espírito de paridade " com as medidas impostas pela por a Rússia em 28 de julho deste de este ano .', 'porta-voz; 3 | no espírito de; 10,13,14\n']
+####PRED#### A demora da de a licitação já gerava desconforto no em o mercado .	None
+
+list##### ['A demora da de a licitação já gerava desconforto no em o mercado .', 'None\n']
+####PRED#### Celebridades eram as estrelas de cinema , essas , sim , lindas , ricas e malcomportadas .	estrelas de cinema; 4,5,6 | essas , sim; 8,9,10
+
+list##### ['Celebridades eram as estrelas de cinema , essas , sim , lindas , ricas e malcomportadas .', 'estrelas de cinema; 4,5,6 | essas , sim; 8,9,10\n']
+####PRED#### O operador disse que usou o avião particular da de a família Bertin emprestado para fazer entregas de pagamento de propina a políticos , entre eles Henrique Eduardo Alves .	fazer entregas; 16,17 | entre eles; 25,26
+
+list##### ['O operador disse que usou o avião particular da de a família Bertin emprestado para fazer entregas de pagamento de propina a políticos , entre eles Henrique Eduardo Alves .', 'fazer entregas; 16,17 | entre eles; 25,26\n']
+####PRED#### Ele que vai decidir o que deve haver .	o que deve haver; 5,6,7,8
+
+list##### ['Ele que vai decidir o que deve haver .', 'o que deve haver; 5,6,7,8\n']
+####PRED#### Outros governantes , em ambos os lados do de o espectro político , tentaram implementar essa mesma reforma .	ambos os lados; 5,6,7 | espectro político; 10,11
+
+list##### ['Outros governantes , em ambos os lados do de o espectro político , tentaram implementar essa mesma reforma .', 'ambos os lados; 5,6,7 | espectro político; 10,11\n']
+####PRED#### Primeiro , porque aproxima o deputado de seu eleitorado .	None
+
+list##### ['Primeiro , porque aproxima o deputado de seu eleitorado .', 'None\n']
+####PRED#### Segundo a Polícia Civil , com o impacto da de a batida , Mata foi parar em cima do de o carro e se segurou pedindo ao a o motorista que parasse .	em cima; 17,18 | se segurou; 24,25
+
+list##### ['Segundo a Polícia Civil , com o impacto da de a batida , Mata foi parar em cima do de o carro e se segurou pedindo ao a o motorista que parasse .', 'em cima; 17,18 | se segurou; 24,25\n']
+####PRED#### Quero desafiar o rivotril .	None
+
+list##### ['Quero desafiar o rivotril .', 'None\n']
+####PRED#### Essas reduções ocorrem na em a esteira da de a crise econômica e desemprego .	em a é steer; 5,6,7,8
+
+list##### ['Essas reduções ocorrem na em a esteira da de a crise econômica e desemprego .', 'em a é steer; 5,6,7,8\n']
+####PRED#### A consequência ambiental seria grave : a área liberada para a mineração seria equivalente ao a o desmatamento acumulado de quatro anos em toda a Amazônia .	equivalente a; 14,15 | toda a; 24,25
+
+list##### ['A consequência ambiental seria grave : a área liberada para a mineração seria equivalente ao a o desmatamento acumulado de quatro anos em toda a Amazônia .', 'equivalente a; 14,15 | toda a; 24,25\n']
+####PRED#### Paraisópolis pode ter , assim , seu próprio representante na em a Câmara dos de os Deputados .	ter lugar; 3,11
+
+list##### ['Paraisópolis pode ter , assim , seu próprio representante na em a Câmara dos de os Deputados .', 'ter lugar; 3,11\n']
+####PRED#### Apesar dos de os elogios , o deputado não conseguiu pautar nenhum item da de a reforma política .	Apesar dos; 1,2 | reforma política; 17,18
+
+list##### ['Apesar dos de os elogios , o deputado não conseguiu pautar nenhum item da de a reforma política .', 'Apesar dos; 1,2 | reforma política; 17,18\n']
+####PRED#### Os procuradores recorreram ao a o Tribunal Regional Federal da de a 4ª Região contra várias decisões de Moro .	recorreram ao Tribunal; 3,4,7
+
+list##### ['Os procuradores recorreram ao a o Tribunal Regional Federal da de a 4ª Região contra várias decisões de Moro .', 'recorreram ao Tribunal; 3,4,7\n']
+####PRED#### Como o gás é tóxico , é permitido ficar no em o local por apenas cinco minutos .	None
+
+list##### ['Como o gás é tóxico , é permitido ficar no em o local por apenas cinco minutos .', 'None\n']
+####PRED#### Hoje tem notícia no em o jornal de que deve ser autorizada a criação do de o 36º partido político .	tem notícia; 2,3 | de que; 8,9 | partido político; 19,20
+
+list##### ['Hoje tem notícia no em o jornal de que deve ser autorizada a criação do de o 36º partido político .', 'tem notícia; 2,3 | de que; 8,9 | partido político; 19,20\n']
+####PRED#### É uma série adulta , feita para adultos .	feita para; 6,7
+
+list##### ['É uma série adulta , feita para adultos .', 'feita para; 6,7\n']
+####PRED#### Esses investimentos , diz o economista , teriam impacto positivo na em a produtividade .	None
+
+list##### ['Esses investimentos , diz o economista , teriam impacto positivo na em a produtividade .', 'None\n']
+####PRED#### Eu realmente não quero assistir Varys comendo seu lanche ou o meu personagem embaixo de uma árvore , esperando a chuva passar para que ele vá até algum lugar .	embaixo de; 14,15 | para que; 23,24 | vá até; 26,27
+
+list##### ['Eu realmente não quero assistir Varys comendo seu lanche ou o meu personagem embaixo de uma árvore , esperando a chuva passar para que ele vá até algum lugar .', 'embaixo de; 14,15 | para que; 23,24 | vá até; 26,27\n']
+####PRED#### Reforma política é assim : cada hora a gente acha que vai sair alguma coisa .	a gente; 8,9
+
+list##### ['Reforma política é assim : cada hora a gente acha que vai sair alguma coisa .', 'a gente; 8,9\n']
+####PRED#### O texto precisa ser enviado ao a o Congresso até esta quinta-feira ( 31 ) .	quinta-feira; 12
+
+list##### ['O texto precisa ser enviado ao a o Congresso até esta quinta-feira ( 31 ) .', 'quinta-feira; 12\n']
+####PRED#### Pouco depois de as águas subirem , o espírito empreendedor e de autopreservação comunitária dos de os insetos se manifestou .	Pouco depois; 1,2
+
+list##### ['Pouco depois de as águas subirem , o espírito empreendedor e de autopreservação comunitária dos de os insetos se manifestou .', 'Pouco depois; 1,2\n']
+####PRED#### Moradora da de a periferia de Caracas , Rusol Santos , 53 , despejou bicarbonato de sódio com bastante cuidado na em a vasilha de plástico transparente .	bicarbonato de sódio; 15,16,17
+
+list##### ['Moradora da de a periferia de Caracas , Rusol Santos , 53 , despejou bicarbonato de sódio com bastante cuidado na em a vasilha de plástico transparente .', 'bicarbonato de sódio; 15,16,17\n']
+####PRED#### A situação está invertida , Brasil no em o topo , Equador em sexto .	no topo; 7,8,9,10
+
+list##### ['A situação está invertida , Brasil no em o topo , Equador em sexto .', 'no topo; 7,8,9,10\n']
+####PRED#### Os dois morreram por causa do de o acidente , assim como o motorista , Henri Paul .	por causa; 4,5 | assim como; 13,14
+
+list##### ['Os dois morreram por causa do de o acidente , assim como o motorista , Henri Paul .', 'por causa; 4,5 | assim como; 13,14\n']
+####PRED#### A variação acumulada em 2017 , até agosto , foi de queda de 2,56 % .	None
+
+list##### ['A variação acumulada em 2017 , até agosto , foi de queda de 2,56 % .', 'None\n']
+####PRED#### Esta é a primeira vez que os artistas animados se apresentam no em o país .	None
+
+list##### ['Esta é a primeira vez que os artistas animados se apresentam no em o país .', 'None\n']
+####PRED#### O total de novos alunos em cursos presenciais caiu .	total de; 2,3
+
+list##### ['O total de novos alunos em cursos presenciais caiu .', 'total de; 2,3\n']
+####PRED#### A medida provisória que criou o Refis previa descontos sobre a multa que variavam de 25 % a 50 % , mas a comissão especial que analisou o texto ampliou esses percentuais para até 99 % .	medida provisória; 2,3 | comissão especial; 24,25
+
+list##### ['A medida provisória que criou o Refis previa descontos sobre a multa que variavam de 25 % a 50 % , mas a comissão especial que analisou o texto ampliou esses percentuais para até 99 % .', 'medida provisória; 2,3 | comissão especial; 24,25\n']
+####PRED#### Morcegos tiveram de ser removidos de pontes .	tiveram de ser; 2,3,4
+
+list##### ['Morcegos tiveram de ser removidos de pontes .', 'tiveram de ser; 2,3,4\n']
+####PRED#### O Fundo Nacional de Cultura é o único mecanismo da de a Lei Rouanet em que o poder público determina a destinação da de a verba .	poder público; 18,19
+
+list##### ['O Fundo Nacional de Cultura é o único mecanismo da de a Lei Rouanet em que o poder público determina a destinação da de a verba .', 'poder público; 18,19\n']
+####PRED#### Quando as pessoas se aproximavam da de a meia-idade , muitas tomavam consciência aguda de que sua vida era finita e , com isso , relatavam um medo crescente de que nunca conseguiriam alcançar suas metas .	se aproximavam; 4,5 | tomavam consciência; 12,13 | com isso; 23,24
+
+list##### ['Quando as pessoas se aproximavam da de a meia-idade , muitas tomavam consciência aguda de que sua vida era finita e , com isso , relatavam um medo crescente de que nunca conseguiriam alcançar suas metas .', 'se aproximavam; 4,5 | tomavam consciência; 12,13 | com isso; 23,24\n']
+####PRED#### Milú Villela já ofereceu jantares para dois outros ministros da de a pasta no em o governo de Michel Temer : Marcelo Calero e Roberto Freire .	None
+
+list##### ['Milú Villela já ofereceu jantares para dois outros ministros da de a pasta no em o governo de Michel Temer : Marcelo Calero e Roberto Freire .', 'None\n']
+####PRED#### Nos Em os microfones , os representantes do de o povo se revezaram para celebrar o jovem deputado .	se revezaram; 12,13
+
+list##### ['Nos Em os microfones , os representantes do de o povo se revezaram para celebrar o jovem deputado .', 'se revezaram; 12,13\n']
+####PRED#### Esse é o principal custo das de as empresas do de o segmento .	None
+
+list##### ['Esse é o principal custo das de as empresas do de o segmento .', 'None\n']
+####PRED#### Há nove anos promovendo o prêmio , os realizadores dizem acreditar num em um desenvolvimento sustentável para a região , que tem mais de 30 milhões de pessoas sem acesso à a a água potável e 90 milhões sem infraestrutura sanitária .	Há nove anos; 1,2,3 | desenvolvimento sustentável; 15,16 | infraestrutura sanitária; 39,40
+
+list##### ['Há nove anos promovendo o prêmio , os realizadores dizem acreditar num em um desenvolvimento sustentável para a região , que tem mais de 30 milhões de pessoas sem acesso à a a água potável e 90 milhões sem infraestrutura sanitária .', 'Há nove anos; 1,2,3 | desenvolvimento sustentável; 15,16 | infraestrutura sanitária; 39,40\n']
+####PRED#### O voto distrital é simples , aliás muito mais simples que nosso sistema atual .	None
+
+list##### ['O voto distrital é simples , aliás muito mais simples que nosso sistema atual .', 'None\n']
+####PRED#### Existe o medo do de o monitoramento .	Existe o medo; 1,2,3 | do de o; 4,5,6
+
+list##### ['Existe o medo do de o monitoramento .', 'Existe o medo; 1,2,3 | do de o; 4,5,6\n']
+####PRED#### O país vizinho também é um mercado vantajoso para os jogadores .	None
+
+list##### ['O país vizinho também é um mercado vantajoso para os jogadores .', 'None\n']
+####PRED#### Um prédio de 117 anos que abrigava uma creche desmoronou em Mumbai , Índia , deixando ao a o menos 16 mortos .	ao a o menos; 17,18,19,20
+
+list##### ['Um prédio de 117 anos que abrigava uma creche desmoronou em Mumbai , Índia , deixando ao a o menos 16 mortos .', 'ao a o menos; 17,18,19,20\n']
+####PRED#### A cultura emprega três vezes mais trabalhadores do de o que as outras lavouras de grãos , segundo Busato .	três vezes mais; 4,5,6 | do de o que; 8,9,10,11
+
+list##### ['A cultura emprega três vezes mais trabalhadores do de o que as outras lavouras de grãos , segundo Busato .', 'três vezes mais; 4,5,6 | do de o que; 8,9,10,11\n']
+####PRED#### Segundo uma pesquisa da de a Public Policy Polling ( PPP ) , ligada aos a os democratas , 66 % dos de os eleitores de Trump dizem desaprovar o trabalho do de o líder do de o Senado , McConnell .	líder do Senado; 35,37,39
+
+list##### ['Segundo uma pesquisa da de a Public Policy Polling ( PPP ) , ligada aos a os democratas , 66 % dos de os eleitores de Trump dizem desaprovar o trabalho do de o líder do de o Senado , McConnell .', 'líder do Senado; 35,37,39\n']
+####PRED#### Apesar de o texto base ter sido aprovado , a revisão só terá validade quando todas as emendas forem apreciadas .	Apesar de; 1,2
+
+list##### ['Apesar de o texto base ter sido aprovado , a revisão só terá validade quando todas as emendas forem apreciadas .', 'Apesar de; 1,2\n']
+####PRED#### É também o período em que a maioria delas de elas se casa , forma famílias , contrai financiamento para a compra da de a casa própria e , possivelmente , sofre choques imprevistos como divórcio ou desemprego .	se casa; 12,13
+
+list##### ['É também o período em que a maioria delas de elas se casa , forma famílias , contrai financiamento para a compra da de a casa própria e , possivelmente , sofre choques imprevistos como divórcio ou desemprego .', 'se casa; 12,13\n']
+####PRED#### Mas não é possível colocar a culpa em sua idade .	colocar a culpa; 5,6,7
+
+list##### ['Mas não é possível colocar a culpa em sua idade .', 'colocar a culpa; 5,6,7\n']
+####PRED#### Segundo a Polícia Civil , o motorista não parou e continuou dirigindo o carro até o viaduto do de o Cebolão , em São Paulo , onde o ciclista caiu .	None
+
+list##### ['Segundo a Polícia Civil , o motorista não parou e continuou dirigindo o carro até o viaduto do de o Cebolão , em São Paulo , onde o ciclista caiu .', 'None\n']
+####PRED#### Não há uma data para fazer IPO , mas provavelmente seria em 2019 .	fazer IPO; 6,7
+
+list##### ['Não há uma data para fazer IPO , mas provavelmente seria em 2019 .', 'fazer IPO; 6,7\n']
+####PRED#### A derrota ao a o governo ocorre em meio à a a viagem de Temer a China , onde participa de uma reunião de cúpula dos de os Brics .	em meio à; 8,9,10 | reunião de cúpula; 24,25,26
+
+list##### ['A derrota ao a o governo ocorre em meio à a a viagem de Temer a China , onde participa de uma reunião de cúpula dos de os Brics .', 'em meio à; 8,9,10 | reunião de cúpula; 24,25,26\n']
+####PRED#### Vale destacar , porém , que a comparação é feita com o trimestre imediatamente anterior para evitar distorções nos em os dados .	None
+
+list##### ['Vale destacar , porém , que a comparação é feita com o trimestre imediatamente anterior para evitar distorções nos em os dados .', 'None\n']
+####PRED#### O indicador teve estabilidade no em o trimestre encerrado em julho ( 0,2 % ) , com 54 mil novos postos formais no em o período .	teve estabilidade; 3,4 | novos postos; 20,21 | postos formais; 21,22
+
+list##### ['O indicador teve estabilidade no em o trimestre encerrado em julho ( 0,2 % ) , com 54 mil novos postos formais no em o período .', 'teve estabilidade; 3,4 | novos postos; 20,21 | postos formais; 21,22\n']
+####PRED#### Discutir parlamentarismo com esse sistema eleitoral , com essa composição política fragmentada , de mais de 25 partidos , não será um bom parlamentarismo .	None
+
+list##### ['Discutir parlamentarismo com esse sistema eleitoral , com essa composição política fragmentada , de mais de 25 partidos , não será um bom parlamentarismo .', 'None\n']
+####PRED#### Entre os argumentos de Janot estão as relações familiares de Barata Filho e Guiomar .	relações familiares; 8,9
+
+list##### ['Entre os argumentos de Janot estão as relações familiares de Barata Filho e Guiomar .', 'relações familiares; 8,9\n']
+####PRED#### O partido informou que retiraria o mandado de segurança , mas , no em o início da de a noite , o ministro já havia pedido esclarecimentos à a a AGU , que tem dez dias para responder .	mandado de segurança; 7,8,9
+
+list##### ['O partido informou que retiraria o mandado de segurança , mas , no em o início da de a noite , o ministro já havia pedido esclarecimentos à a a AGU , que tem dez dias para responder .', 'mandado de segurança; 7,8,9\n']
+####PRED#### São lideradas por uma rainha - o único membro capaz de reprodução , de acordo com Lawrence Gilbert , diretor do de o laboratório de espécies invasivas na em a Universidade do de o Texas em Austin .	de acordo com; 14,15,16
+
+list##### ['São lideradas por uma rainha - o único membro capaz de reprodução , de acordo com Lawrence Gilbert , diretor do de o laboratório de espécies invasivas na em a Universidade do de o Texas em Austin .', 'de acordo com; 14,15,16\n']
+####PRED#### Já foi registrada contaminação de mercúrio em alguns cursos d'água de água dentro da de a reserva .	cursos d'água; 9,10
+
+list##### ["Já foi registrada contaminação de mercúrio em alguns cursos d'água de água dentro da de a reserva .", "cursos d'água; 9,10\n"]
+####PRED#### É essa moeda que Gilmar Mendes despreza .	É essa moeda que; 1,2,3,4
+
+list##### ['É essa moeda que Gilmar Mendes despreza .', 'É essa moeda que; 1,2,3,4\n']
+####PRED#### A data era importante para que o governo conseguisse usar o valor atualizado no em o projeto de lei orçamentária de 2018 .	projeto de lei; 17,18,19
+
+list##### ['A data era importante para que o governo conseguisse usar o valor atualizado no em o projeto de lei orçamentária de 2018 .', 'projeto de lei; 17,18,19\n']
+####PRED#### O jovem atleta de 18 anos de idade foi especulado em clubes como Real Madrid e Barcelona .	de idade; 7,8 | anos de idade; 6,7,8
+
+list##### ['O jovem atleta de 18 anos de idade foi especulado em clubes como Real Madrid e Barcelona .', 'de idade; 7,8 | anos de idade; 6,7,8\n']
+####PRED#### Desde 2010 , os sete programas somaram cerca de R$ 25 bilhões em subsídios .	cerca de; 8,9
+
+list##### ['Desde 2010 , os sete programas somaram cerca de R$ 25 bilhões em subsídios .', 'cerca de; 8,9\n']
+####PRED#### A escalada nas em as tensões e o lançamento do de o míssil norte-coreano aumentou a pressão internacional por novas sanções contra o país .	None
+
+list##### ['A escalada nas em as tensões e o lançamento do de o míssil norte-coreano aumentou a pressão internacional por novas sanções contra o país .', 'None\n']
+####PRED#### Só deixava o pessoal ir embora depois que todos lutassem com ele , conta o filho André .	deixava embora; 2,6 | ir embora; 5,6 | depois que; 7,8 | lutassem com; 10,11
+
+list##### ['Só deixava o pessoal ir embora depois que todos lutassem com ele , conta o filho André .', 'deixava embora; 2,6 | ir embora; 5,6 | depois que; 7,8 | lutassem com; 10,11\n']
+####PRED#### O ministro retrucou : " Estou acelerando o processo de segurança [ jurídica ] de vocês " .	segurança jurídica; 11,13
+
+list##### ['O ministro retrucou : " Estou acelerando o processo de segurança [ jurídica ] de vocês " .', 'segurança jurídica; 11,13\n']
+####PRED#### Segundo Temer , que afirmou discutí-la discutir la com a Justiça Eleitoral e com o Poder Legislativo , a proposta de semipresidencialismo é uma das de as hipóteses " úteis para o Brasil " .	Justiça Eleitoral; 11,12 | Poder Legislativo; 16,17
+
+list##### ['Segundo Temer , que afirmou discutí-la discutir la com a Justiça Eleitoral e com o Poder Legislativo , a proposta de semipresidencialismo é uma das de as hipóteses " úteis para o Brasil " .', 'Justiça Eleitoral; 11,12 | Poder Legislativo; 16,17\n']
+####PRED#### Mesmo caindo nos em os pequenos truques da de a geografia , que tento explicar aos a os pequenos .	caindo nos; 2,3
+
+list##### ['Mesmo caindo nos em os pequenos truques da de a geografia , que tento explicar aos a os pequenos .', 'caindo nos; 2,3\n']
+####PRED#### As formigas podem ser agressivas e sorrateiras .	None
+
+list##### ['As formigas podem ser agressivas e sorrateiras .', 'None\n']
+####PRED#### Os repórteres não o acusaram quanto a " prazos processuais " , cumpridos ou não .	quanto a; 6,7
+
+list##### ['Os repórteres não o acusaram quanto a " prazos processuais " , cumpridos ou não .', 'quanto a; 6,7\n']
+####PRED#### Acho que se tiver que ter maioria no em o Congresso para voltar a discutir esse tema , nós deveríamos voltar a ouvir a sociedade .	tiver que ter; 4,5,6
+
+list##### ['Acho que se tiver que ter maioria no em o Congresso para voltar a discutir esse tema , nós deveríamos voltar a ouvir a sociedade .', 'tiver que ter; 4,5,6\n']
+####PRED#### Não acompanho muito os jogos do de o Brasileiro devido à a a diferença no em o fuso .	devido à; 10,11
+
+list##### ['Não acompanho muito os jogos do de o Brasileiro devido à a a diferença no em o fuso .', 'devido à; 10,11\n']
+####PRED#### O contribuinte terminou pagando duas vezes por programas que , desconexos , não cumprem a função .	duas vezes; 5,6
+
+list##### ['O contribuinte terminou pagando duas vezes por programas que , desconexos , não cumprem a função .', 'duas vezes; 5,6\n']
+####PRED#### Não podia fingir que não vi e tampouco cruzar os braços .	cruzar os braços; 9,10,11
+
+list##### ['Não podia fingir que não vi e tampouco cruzar os braços .', 'cruzar os braços; 9,10,11\n']
+####PRED#### A lei estabelece que , na em a sentença criminal , o juiz ' fixará o valor mínimo para reparação dos de os danos causados pela por a infração ' .	reparação dos danos; 20,21,24 | danos causados; 24,25
+
+list##### ["A lei estabelece que , na em a sentença criminal , o juiz ' fixará o valor mínimo para reparação dos de os danos causados pela por a infração ' .", 'reparação dos danos; 20,21,24 | danos causados; 24,25\n']
+####PRED#### O último emprego foi em um motel do de o Morumbi , zona oeste da de a cidade , onde atuava na em a manutenção do de o espaço .	zona oeste; 13,14
+
+list##### ['O último emprego foi em um motel do de o Morumbi , zona oeste da de a cidade , onde atuava na em a manutenção do de o espaço .', 'zona oeste; 13,14\n']
+####PRED#### Gilbert diz que as formigas lava-pés podem subir pelas por as pernas da de a calça de uma pessoa que esteja parada sobre um formigueiro sem saber .	formigas lava-pés; 5,6
+
+list##### ['Gilbert diz que as formigas lava-pés podem subir pelas por as pernas da de a calça de uma pessoa que esteja parada sobre um formigueiro sem saber .', 'formigas lava-pés; 5,6\n']
+####PRED#### A decisão foi dada em ação de inconstitucionalidade contra a privatização da de a companhia movida por Rede e PSOL .	ação de inconstitucionalidade; 6,7,8
+
+list##### ['A decisão foi dada em ação de inconstitucionalidade contra a privatização da de a companhia movida por Rede e PSOL .', 'ação de inconstitucionalidade; 6,7,8\n']
+####PRED#### Ganha US$ 70 mil mensais ( R$ 221 mil ) , o maior salário do de o esporte no em o país .	None
+
+list##### ['Ganha US$ 70 mil mensais ( R$ 221 mil ) , o maior salário do de o esporte no em o país .', 'None\n']
+####PRED#### Mortos e desaparecidos da de a ditadura militar que foram sepultados clandestinamente , com nome falso , em cemitérios de São Paulo entre 1969 e 1979 serão homenageados com a gravação de seus nomes em placas de aço .	ditadura militar; 7,8
+
+list##### ['Mortos e desaparecidos da de a ditadura militar que foram sepultados clandestinamente , com nome falso , em cemitérios de São Paulo entre 1969 e 1979 serão homenageados com a gravação de seus nomes em placas de aço .', 'ditadura militar; 7,8\n']
+####PRED#### A recomendação ocorre após a morte de pelo por o menos quatro agentes de segurança no em o Estado no em o último mês , entre policiais militares e agentes penitenciários .	pelo menos; 8,9 | agentes de segurança; 13,14 | policiais militares; 27,28 | agentes penitenciários; 30,31
+
+list##### ['A recomendação ocorre após a morte de pelo por o menos quatro agentes de segurança no em o Estado no em o último mês , entre policiais militares e agentes penitenciários .', 'pelo menos; 8,9 | agentes de segurança; 13,14 | policiais militares; 27,28 | agentes penitenciários; 30,31\n']
+####PRED#### O procurador acabou lamentando a " desfiguração " do de o projeto na em a Câmara .	None
+
+list##### ['O procurador acabou lamentando a " desfiguração " do de o projeto na em a Câmara .', 'None\n']
+####PRED#### O juiz federal Marcelo Bretas expediu novo mandado de prisão preventiva .	mandado de prisão; 8,9,10 | prisão preventiva; 10,11
+
+list##### ['O juiz federal Marcelo Bretas expediu novo mandado de prisão preventiva .', 'mandado de prisão; 8,9,10 | prisão preventiva; 10,11\n']
+####PRED#### O presidente em exercício , Rodrigo Maia ( DEM ) , disse que não iria alterar as decisões de Temer .	presidente em exercício; 2,3,4
+
+list##### ['O presidente em exercício , Rodrigo Maia ( DEM ) , disse que não iria alterar as decisões de Temer .', 'presidente em exercício; 2,3,4\n']
+####PRED#### Os eleitores sabem com quem reclamar e para quem pedir .	com reclamar; 4,6 | para pedir; 8,10
+
+list##### ['Os eleitores sabem com quem reclamar e para quem pedir .', 'com reclamar; 4,6 | para pedir; 8,10\n']
+####PRED#### Inclui três dias de esqui em Valle Nevado com aluguel de equipamentos .	None
+
+list##### ['Inclui três dias de esqui em Valle Nevado com aluguel de equipamentos .', 'None\n']
+####PRED#### Alguém , no em o filme ( o roteiro tem várias dessas de essas genialidades ) , chama Rosa de " feminista erótica " .	feminista erótica; 22,23
+
+list##### ['Alguém , no em o filme ( o roteiro tem várias dessas de essas genialidades ) , chama Rosa de " feminista erótica " .', 'feminista erótica; 22,23\n']
+####PRED#### Se aplicada solução no em o tempo devido , fosse em um ou outro sentido , todos seríamos poupados do de o segundo caso que deprecia mais o conceito do de o Supremo .	em o tempo devido; 5,6,7,8
+
+list##### ['Se aplicada solução no em o tempo devido , fosse em um ou outro sentido , todos seríamos poupados do de o segundo caso que deprecia mais o conceito do de o Supremo .', 'em o tempo devido; 5,6,7,8\n']
+####PRED#### O país mais procurado nesse em esse bloco econômico depois da de a Espanha é a Itália , com apenas 160 petições no em o primeiro semestre do de o ano .	bloco econômico; 8,9 | primeiro semestre; 26,27
+
+list##### ['O país mais procurado nesse em esse bloco econômico depois da de a Espanha é a Itália , com apenas 160 petições no em o primeiro semestre do de o ano .', 'bloco econômico; 8,9 | primeiro semestre; 26,27\n']
+####PRED#### Por que então a sra. foi alvo de um processo administrativo ?	Por que; 1,2 | alvo de; 7,8 | processo administrativo; 10,11
+
+list##### ['Por que então a sra. foi alvo de um processo administrativo ?', 'Por que; 1,2 | alvo de; 7,8 | processo administrativo; 10,11\n']
+####PRED#### Um homem encontrou um peixe em sua casa .	None
+
+list##### ['Um homem encontrou um peixe em sua casa .', 'None\n']
+####PRED#### Primeiro foram as barras de chocolate , depois os potes de Nutella e , por último , são os tubos de pasta de dente que dividem espaço com telefones de última geração .	por último; 15,16 | pasta de dente; 22,23,24 | última geração; 31,32
+
+list##### ['Primeiro foram as barras de chocolate , depois os potes de Nutella e , por último , são os tubos de pasta de dente que dividem espaço com telefones de última geração .', 'por último; 15,16 | pasta de dente; 22,23,24 | última geração; 31,32\n']
+####PRED#### Apesar de Cité Soleil estar em período calmo , a Minustah a classifica como área de risco .	Apesar de; 1,2
+
+list##### ['Apesar de Cité Soleil estar em período calmo , a Minustah a classifica como área de risco .', 'Apesar de; 1,2\n']
+####PRED#### Se é ao a o contrário e acontece com um uruguaio , ele se ofende .	ao contrário; 3,6
+
+list##### ['Se é ao a o contrário e acontece com um uruguaio , ele se ofende .', 'ao contrário; 3,6\n']
+####PRED#### A previsão era curtir o fim de sexta e o final de semana ao a o lado dos de os três .	fim de semana; 6,7,8 | final de semana; 11,12,13 | ao lado; 14,17
+
+list##### ['A previsão era curtir o fim de sexta e o final de semana ao a o lado dos de os três .', 'fim de semana; 6,7,8 | final de semana; 11,12,13 | ao lado; 14,17\n']
+####PRED#### Foi quando a crise de abastecimento de produtos básicos que atinge a Venezuela estava em seu pior momento .	crise de abastecimento; 4,5,6 | produtos básicos; 8,9 | em seu pior momento; 15,16,17,18
+
+list##### ['Foi quando a crise de abastecimento de produtos básicos que atinge a Venezuela estava em seu pior momento .', 'crise de abastecimento; 4,5,6 | produtos básicos; 8,9 | em seu pior momento; 15,16,17,18\n']
+####PRED#### O Observatório da de a Voz da de a Diáspora Venezuelana estima que mais de 2 milhões de pessoas deixaram o país desde que Hugo Chávez ( 1954-2013 ) chegou ao a o poder , em 1999 .	mais de; 14,15 | chegou ao poder; 30,31,32,34
+
+list##### ['O Observatório da de a Voz da de a Diáspora Venezuelana estima que mais de 2 milhões de pessoas deixaram o país desde que Hugo Chávez ( 1954-2013 ) chegou ao a o poder , em 1999 .', 'mais de; 14,15 | chegou ao poder; 30,31,32,34\n']
+####PRED#### A ideia é atrair investidores privados para financiar projetos de expansão de companhias de saneamento , sejam privadas , estaduais ou municipais .	sejam privadas estaduais ou municipais; 17,18,19,20,21,22
+
+list##### ['A ideia é atrair investidores privados para financiar projetos de expansão de companhias de saneamento , sejam privadas , estaduais ou municipais .', 'sejam privadas estaduais ou municipais; 17,18,19,20,21,22\n']
+####PRED#### Mas , do de o ponto de vista da de a Justiça , ainda sou bastante pessimista , sobretudo porque há muitos homens cuidando de questões que nos afetam , analisou .	ponto de vista; 6,7,8 | há muitos; 21,22 | cuidando de; 24,25
+
+list##### ['Mas , do de o ponto de vista da de a Justiça , ainda sou bastante pessimista , sobretudo porque há muitos homens cuidando de questões que nos afetam , analisou .', 'ponto de vista; 6,7,8 | há muitos; 21,22 | cuidando de; 24,25\n']
+####PRED#### Precisamos de um sistema novo , que eleja uma Câmara nova .	None
+
+list##### ['Precisamos de um sistema novo , que eleja uma Câmara nova .', 'None\n']
+####PRED#### As informações sobre o " direito de admissão " ( lista de torcedores da de a Argentina proibidos de entrar em estádios ) foram repassadas às a as autoridades uruguaias para que eles sejam barrados .	direito de admissão; 6,7,8 | para que; 31,32 | sejam barrados; 34,35
+
+list##### ['As informações sobre o " direito de admissão " ( lista de torcedores da de a Argentina proibidos de entrar em estádios ) foram repassadas às a as autoridades uruguaias para que eles sejam barrados .', 'direito de admissão; 6,7,8 | para que; 31,32 | sejam barrados; 34,35\n']
+####PRED#### O senhor não está fazendo justiça , está fazendo injustiça , afirmou o líder indígena .	fazendo justiça; 5,6 | fazendo injustiça; 9,10
+
+list##### ['O senhor não está fazendo justiça , está fazendo injustiça , afirmou o líder indígena .', 'fazendo justiça; 5,6 | fazendo injustiça; 9,10\n']
+####PRED#### Para comemorar o aniversário de Rogério Rosso ( PSD-DF ) , também presente na em a aeronave , serviu um sorvete de goiabada e queijo .	serviu um sorvete de goiabada e queijo; 19,20,21,22,23,24,25
+
+list##### ['Para comemorar o aniversário de Rogério Rosso ( PSD-DF ) , também presente na em a aeronave , serviu um sorvete de goiabada e queijo .', 'serviu um sorvete de goiabada e queijo; 19,20,21,22,23,24,25\n']
+####PRED#### Na Em a verdade , os deputados já sabem que o voto distrital é melhor , pois concordam em implementá-lo implementar lo em 2022 .	Na verdade; 1,2 | implementá-lo; 20,21
+
+list##### ['Na Em a verdade , os deputados já sabem que o voto distrital é melhor , pois concordam em implementá-lo implementar lo em 2022 .', 'Na verdade; 1,2 | implementá-lo; 20,21\n']
+####PRED#### Com os estudos em mãos , o edital de licitação será elaborado e publicado .	em mãos; 4,5
+
+list##### ['Com os estudos em mãos , o edital de licitação será elaborado e publicado .', 'em mãos; 4,5\n']
+####PRED#### Maia disse entender que o governo não avaliou corretamente o impacto da de a decisão .	None
+
+list##### ['Maia disse entender que o governo não avaliou corretamente o impacto da de a decisão .', 'None\n']
+####PRED#### Para os religiosos , a crise política brasileira tem origem na em a ausência de limites éticos .	crise política; 6,7 | tem origem; 9,10 | ausência de; 14,15
+
+list##### ['Para os religiosos , a crise política brasileira tem origem na em a ausência de limites éticos .', 'crise política; 6,7 | tem origem; 9,10 | ausência de; 14,15\n']
+####PRED#### Para quem gosta de filmes de ação , " Atômica " é uma delícia .	Para quem; 1,2 | é uma delícia; 12,13,14
+
+list##### ['Para quem gosta de filmes de ação , " Atômica " é uma delícia .', 'Para quem; 1,2 | é uma delícia; 12,13,14\n']
+####PRED#### O segundo risco é uma privatização disfarçada de um bem público essencial , o saneamento .	bem público; 10,11
+
+list##### ['O segundo risco é uma privatização disfarçada de um bem público essencial , o saneamento .', 'bem público; 10,11\n']
+####PRED#### Moscou tem até o próximo sábado ( 2 ) para cumprir a exigência .	tem até; 2,3
+
+list##### ['Moscou tem até o próximo sábado ( 2 ) para cumprir a exigência .', 'tem até; 2,3\n']
+####PRED#### Ao A o todo , 14 carros de passeio , a carreta e o caminhão foram destruídos pelo por o fogo .	Ao o todo; 1,3,4 | carros de passeio; 7,8,9
+
+list##### ['Ao A o todo , 14 carros de passeio , a carreta e o caminhão foram destruídos pelo por o fogo .', 'Ao o todo; 1,3,4 | carros de passeio; 7,8,9\n']
+####PRED#### Um país riquíssimo da de a Europa disse : é impossível , nós não temos área .	da de a; 4,5,6
+
+list##### ['Um país riquíssimo da de a Europa disse : é impossível , nós não temos área .', 'da de a; 4,5,6\n']
+####PRED#### Os oito finalistas apresentarão seus projetos para um público de especialistas e líderes do de o setor .	None
+
+list##### ['Os oito finalistas apresentarão seus projetos para um público de especialistas e líderes do de o setor .', 'None\n']
+####PRED#### Em particular afronta ao a o artigo 41 da de a Lei Orgânica da de a Magistratura .	Em particular; 1,2
+
+list##### ['Em particular afronta ao a o artigo 41 da de a Lei Orgânica da de a Magistratura .', 'Em particular; 1,2\n']
+####PRED#### Em julho , o site Vox fez um vídeo sobre as formigas mostrando que se mantinham unidas com tamanha força que podiam ser carregadas em massa e transferidas de superfície a superfície .	se mantinham; 15,16 | em massa; 25,26 | de superfície a superfície; 29,30,31,32
+
+list##### ['Em julho , o site Vox fez um vídeo sobre as formigas mostrando que se mantinham unidas com tamanha força que podiam ser carregadas em massa e transferidas de superfície a superfície .', 'se mantinham; 15,16 | em massa; 25,26 | de superfície a superfície; 29,30,31,32\n']
+####PRED#### Desobedecer a Gilmar Mendes tornou-se tornou se imperativo democrático , uma causa suprapartidária .	tornou-se; 5
+
+list##### ['Desobedecer a Gilmar Mendes tornou-se tornou se imperativo democrático , uma causa suprapartidária .', 'tornou-se; 5\n']
+####PRED#### Em novembro do de o ano passado , a OMC já havia considerado ilegais esses sete programas .	novembro do de o ano passado; 2,3,4,5,6,7
+
+list##### ['Em novembro do de o ano passado , a OMC já havia considerado ilegais esses sete programas .', 'novembro do de o ano passado; 2,3,4,5,6,7\n']
+####PRED#### Para 2017/18 , Moura acredita em uma alta de 17 % na em a área e de 16 % na em a produção .	em uma alta; 6,7,8 | em a área; 13,14,15 | em a produção; 21,22,23
+
+list##### ['Para 2017/18 , Moura acredita em uma alta de 17 % na em a área e de 16 % na em a produção .', 'em uma alta; 6,7,8 | em a área; 13,14,15 | em a produção; 21,22,23\n']
+####PRED#### O Ministério Público , em linha com a decisão , havia pedido o relaxamento do de o flagrante .	em linha com; 5,6,7
+
+list##### ['O Ministério Público , em linha com a decisão , havia pedido o relaxamento do de o flagrante .', 'em linha com; 5,6,7\n']
+####PRED#### Foram considerados não apenas os dados censitários , mas áreas geográficas com similaridades econômicas e sociais .	não apenas; 3,4
+
+list##### ['Foram considerados não apenas os dados censitários , mas áreas geográficas com similaridades econômicas e sociais .', 'não apenas; 3,4\n']
+####PRED#### Se um argentino está no em o exterior e é chamado de uruguaio , não dá atenção .	dá atenção; 16,17
+
+list##### ['Se um argentino está no em o exterior e é chamado de uruguaio , não dá atenção .', 'dá atenção; 16,17\n']
+####PRED#### Para Robertson , essa é um aberração .	None
+
+list##### ['Para Robertson , essa é um aberração .', 'None\n']
+####PRED#### Latino-americanos são mais de metade de todos os que buscaram asilo na em a Espanha .	mais de; 3,4 | buscaram asilo; 10,11
+
+list##### ['Latino-americanos são mais de metade de todos os que buscaram asilo na em a Espanha .', 'mais de; 3,4 | buscaram asilo; 10,11\n']
+####PRED#### Mesmo que o público tenha legítimo interesse em saber do de o que são suspeitos os políticos , há justificativa plausível para a permanência do de o segredo .	Mesmo que; 1,2 | segredo de Estado; 28,29
+
+list##### ['Mesmo que o público tenha legítimo interesse em saber do de o que são suspeitos os políticos , há justificativa plausível para a permanência do de o segredo .', 'Mesmo que; 1,2 | segredo de Estado; 28,29\n']
+####PRED#### Quando uma moeda é lançada sobre um agregado de insetos , o grupo se reforma lentamente em torno do de o objeto .	se reforma; 14,15 | em torno; 17,18
+
+list##### ['Quando uma moeda é lançada sobre um agregado de insetos , o grupo se reforma lentamente em torno do de o objeto .', 'se reforma; 14,15 | em torno; 17,18\n']
+####PRED#### A publicação tem como objetivo garantir novas adesões ao a o programa até que seja aprovada a MP que trata das de as regras do de o refinanciamento .	até que; 13,14
+
+list##### ['A publicação tem como objetivo garantir novas adesões ao a o programa até que seja aprovada a MP que trata das de as regras do de o refinanciamento .', 'até que; 13,14\n']
+####PRED#### A lei que regulamenta as delações premiadas é expressa : " O acordo de colaboração premiada deixa de ser sigiloso assim que recebida a denúncia " .	delações premiadas; 6,7 | colaboração premiada; 15,16 | assim que; 21,22
+
+list##### ['A lei que regulamenta as delações premiadas é expressa : " O acordo de colaboração premiada deixa de ser sigiloso assim que recebida a denúncia " .', 'delações premiadas; 6,7 | colaboração premiada; 15,16 | assim que; 21,22\n']
+####PRED#### Queremos saber quando começou esse planejamento e se tem mais envolvidos , comentou o delegado .	tem envolvidos; 9,11
+
+list##### ['Queremos saber quando começou esse planejamento e se tem mais envolvidos , comentou o delegado .', 'tem envolvidos; 9,11\n']
+####PRED#### A empresa já havia anunciado que um corte de energia elétrica provocado pela por a chuva impedia a refrigeração adequada de compostos armazenados na em a unidade e que existia o risco de explosão .	energia elétrica; 10,11
+
+list##### ['A empresa já havia anunciado que um corte de energia elétrica provocado pela por a chuva impedia a refrigeração adequada de compostos armazenados na em a unidade e que existia o risco de explosão .', 'energia elétrica; 10,11\n']
+####PRED#### É esta a testemunha que reconheceu o modelo do de o carro , mas não conseguiu anotar a placa do de o automóvel .	None
+
+list##### ['É esta a testemunha que reconheceu o modelo do de o carro , mas não conseguiu anotar a placa do de o automóvel .', 'None\n']
+####PRED#### O resto , nessa em essa querela , é cinismo .	None
+
+list##### ['O resto , nessa em essa querela , é cinismo .', 'None\n']
+####PRED#### A família de João Leonardo só soube da de a morte dele de ele em 1978 .	None
+
+list##### ['A família de João Leonardo só soube da de a morte dele de ele em 1978 .', 'None\n']
+####PRED#### Se persistir , o cenário pode afetar o transporte de cargas no em o país e as exportações .	transporte de cargas; 9,10,11
+
+list##### ['Se persistir , o cenário pode afetar o transporte de cargas no em o país e as exportações .', 'transporte de cargas; 9,10,11\n']
+####PRED#### Segundo ela , o fundo deve ter , no em o mínimo , R$ 200 milhões , e os empréstimos serão garantidos com recebíveis das de as operações das de as empresas financiadas .	no mínimo; 9,10,11,12
+
+list##### ['Segundo ela , o fundo deve ter , no em o mínimo , R$ 200 milhões , e os empréstimos serão garantidos com recebíveis das de as operações das de as empresas financiadas .', 'no mínimo; 9,10,11,12\n']
+####PRED#### Nesta Em esta quinta , a tempestade Harvey perdeu força enquanto avançava para o interior do de o Estado norte-americano de Louisiana e foi rebaixado para depressão tropical .	perdeu força; 9,10 | para o interior do; 13,14,15,16 | depressão tropical; 27,28
+
+list##### ['Nesta Em esta quinta , a tempestade Harvey perdeu força enquanto avançava para o interior do de o Estado norte-americano de Louisiana e foi rebaixado para depressão tropical .', 'perdeu força; 9,10 | para o interior do; 13,14,15,16 | depressão tropical; 27,28\n']
+####PRED#### Foi remetido pelo por o STF ( Supremo Tribunal Federal ) à a a Justiça paulista .	Supremo Tribunal Federal; 8,9,10
+
+list##### ['Foi remetido pelo por o STF ( Supremo Tribunal Federal ) à a a Justiça paulista .', 'Supremo Tribunal Federal; 8,9,10\n']
+####PRED#### Quase não há busca por outras alternativas europeias .	None
+
+list##### ['Quase não há busca por outras alternativas europeias .', 'None\n']
+####PRED#### Ele botou na em a cabeça que queria porque queria se casar .	botou na cabeça; 2,3,7 | se casar; 12,13
+
+list##### ['Ele botou na em a cabeça que queria porque queria se casar .', 'botou na cabeça; 2,3,7 | se casar; 12,13\n']
+####PRED#### Em reunião no em o Ministério do de o Planejamento , os executivos da de a estatal mineira informaram que a negociação com o BNDES não prosperou , pois o banco apresentou entraves jurídicos à a a concessão do de o empréstimo .	apresentou entraves; 32,33
+
+list##### ['Em reunião no em o Ministério do de o Planejamento , os executivos da de a estatal mineira informaram que a negociação com o BNDES não prosperou , pois o banco apresentou entraves jurídicos à a a concessão do de o empréstimo .', 'apresentou entraves; 32,33\n']
+####PRED#### Se aprovadas , as mudanças valerão para os estudantes que ingressarem a partir de 2019 .	a partir de; 12,13,14
+
+list##### ['Se aprovadas , as mudanças valerão para os estudantes que ingressarem a partir de 2019 .', 'a partir de; 12,13,14\n']
+####PRED#### E tem o meme de um chinês segurando o cartaz : Welcome to China , Mr .	None
+
+list##### ['E tem o meme de um chinês segurando o cartaz : Welcome to China , Mr .', 'None\n']
+####PRED#### Eles terão a missão de sugerir , em até sete meses , propostas para a venda ou concessão de operações da de a estatal .	terão missão; 2,4 | venda ou concessão; 16,17,18
+
+list##### ['Eles terão a missão de sugerir , em até sete meses , propostas para a venda ou concessão de operações da de a estatal .', 'terão missão; 2,4 | venda ou concessão; 16,17,18\n']
+####PRED#### Mesmo sem voos diretos , 4.000 brasileiros visitaram a Nicarágua no em o ano passado .	ano passado; 14,15
+
+list##### ['Mesmo sem voos diretos , 4.000 brasileiros visitaram a Nicarágua no em o ano passado .', 'ano passado; 14,15\n']
+####PRED#### O plantio , que está atualmente em 940 mil hectares , poderá atingir 2 milhões em cinco anos , segundo avaliação de Arlindo Moura , presidente da de a Abrapa ( Associação Brasileira dos de os Produtores de Algodão ) .	presidente da de a; 26,27,28,29,30
+
+list##### ['O plantio , que está atualmente em 940 mil hectares , poderá atingir 2 milhões em cinco anos , segundo avaliação de Arlindo Moura , presidente da de a Abrapa ( Associação Brasileira dos de os Produtores de Algodão ) .', 'presidente da de a; 26,27,28,29,30\n']
+####PRED#### São vagas de cabeleiro , lojista , cozinheiro , técnico de informática , advogado , gerente , designer , entre outros .	técnico de informática; 10,11,12 | entre outros; 20,21
+
+list##### ['São vagas de cabeleiro , lojista , cozinheiro , técnico de informática , advogado , gerente , designer , entre outros .', 'técnico de informática; 10,11,12 | entre outros; 20,21\n']
+####PRED#### Em comunicado interno , a direção do de o foro recomendou que o expediente fosse cumprido " preferencialmente em regime de tele-trabalho " , e que nenhum servidor permanecesse nos em os prédios da de a Justiça após as 18h .	regime de tele-trabalho; 20,21,22
+
+list##### ['Em comunicado interno , a direção do de o foro recomendou que o expediente fosse cumprido " preferencialmente em regime de tele-trabalho " , e que nenhum servidor permanecesse nos em os prédios da de a Justiça após as 18h .', 'regime de tele-trabalho; 20,21,22\n']
+####PRED#### Estudos mostram que mais de 70 % deles de eles seriam eleitos , com as campanhas que fizeram .	mais de; 4,5 | seriam eleitos; 11,12 | campanhas que; 16,17
+
+list##### ['Estudos mostram que mais de 70 % deles de eles seriam eleitos , com as campanhas que fizeram .', 'mais de; 4,5 | seriam eleitos; 11,12 | campanhas que; 16,17\n']
+####PRED#### Segundo Janot , o ministro esteve na em a cerimônia como padrinho da de a noiva , Beatriz Barata .	None
+
+list##### ['Segundo Janot , o ministro esteve na em a cerimônia como padrinho da de a noiva , Beatriz Barata .', 'None\n']
+####PRED#### O número quintuplicou em relação aos a os seis primeiros meses de 2016 .	em relação; 4,5
+
+list##### ['O número quintuplicou em relação aos a os seis primeiros meses de 2016 .', 'em relação; 4,5\n']
+####PRED#### Mas ele toca de novo e eu vou rolando devagarinho até encostar os pés no em o chão frio .	de novo; 4,5
+
+list##### ['Mas ele toca de novo e eu vou rolando devagarinho até encostar os pés no em o chão frio .', 'de novo; 4,5\n']
+####PRED#### A expectativa da de a gestão Doria é arrecadar cerca de R$ 7 bilhões com privatizações .	arrecadar cerca de; 9,10,11
+
+list##### ['A expectativa da de a gestão Doria é arrecadar cerca de R$ 7 bilhões com privatizações .', 'arrecadar cerca de; 9,10,11\n']
+####PRED#### As frases não pretendem ter significado e mascaram sua falta de sentido com uma formulação vaga .	falta de sentido; 10,11,12 | formulação vaga; 15,16
+
+list##### ['As frases não pretendem ter significado e mascaram sua falta de sentido com uma formulação vaga .', 'falta de sentido; 10,11,12 | formulação vaga; 15,16\n']
+####PRED#### Segundo envolvidos nas em as tratativas , Funaro relatou que usou um avião do de o grupo Bertin para transportar o dinheiro a Natal .	None
+
+list##### ['Segundo envolvidos nas em as tratativas , Funaro relatou que usou um avião do de o grupo Bertin para transportar o dinheiro a Natal .', 'None\n']
+####PRED#### Um dos de os itens centrais da de a reforma trabalhista é que as empresas terão mais liberdade para negociar a jornada e o salário com seus funcionários .	reforma trabalhista; 10,11
+
+list##### ['Um dos de os itens centrais da de a reforma trabalhista é que as empresas terão mais liberdade para negociar a jornada e o salário com seus funcionários .', 'reforma trabalhista; 10,11\n']
+####PRED#### Grandes bancos , montadoras , em vez de pagar imposto , recolhiam para o Fiset .	em vez de; 6,7,8
+
+list##### ['Grandes bancos , montadoras , em vez de pagar imposto , recolhiam para o Fiset .', 'em vez de; 6,7,8\n']
+####PRED#### Achincalhar Gilmar Mendes tornou-se tornou se o esporte preferido do de o brasileiro neste em este momento .	tornou-se; 4 | tornou se; 5,6
+
+list##### ['Achincalhar Gilmar Mendes tornou-se tornou se o esporte preferido do de o brasileiro neste em este momento .', 'tornou-se; 4 | tornou se; 5,6\n']
+####PRED#### O ministro Mendonça Filho ( DEM-PE ) afirmou em entrevista coletiva nesta em esta quinta que a crise é o principal fator para a estagnação e negou que as mudanças do de o Fies tenham tido impacto nos em os dados .	em entrevista coletiva; 9,10,11 | tido impacto; 36,37
+
+list##### ['O ministro Mendonça Filho ( DEM-PE ) afirmou em entrevista coletiva nesta em esta quinta que a crise é o principal fator para a estagnação e negou que as mudanças do de o Fies tenham tido impacto nos em os dados .', 'em entrevista coletiva; 9,10,11 | tido impacto; 36,37\n']
+####PRED#### Contou ao a o pai que sabia que seu destino era ser um foco de atenção .	foco de atenção; 14,15,16
+
+list##### ['Contou ao a o pai que sabia que seu destino era ser um foco de atenção .', 'foco de atenção; 14,15,16\n']
+####PRED#### Segundo ele , todos demonstraram interesse na em a aquisição da de a Eletrobrás , que será privatizada .	demonstraram interesse; 5,6
+
+list##### ['Segundo ele , todos demonstraram interesse na em a aquisição da de a Eletrobrás , que será privatizada .', 'demonstraram interesse; 5,6\n']
+####PRED#### Em 1980 , colocou sua experiência no em o livro " Você Pode Curar a Sua Vida " , defendendo que crenças e ideias podem causar problemas emocionais e doenças físicas .	causar problemas; 26,27 | problemas emocionais; 27,28 | doenças físicas; 30,31
+
+list##### ['Em 1980 , colocou sua experiência no em o livro " Você Pode Curar a Sua Vida " , defendendo que crenças e ideias podem causar problemas emocionais e doenças físicas .', 'causar problemas; 26,27 | problemas emocionais; 27,28 | doenças físicas; 30,31\n']
+####PRED#### Sergio Moro gosta de saídas artificiosas .	None
+
+list##### ['Sergio Moro gosta de saídas artificiosas .', 'None\n']
+####PRED#### Eu trouxe meu filho para ele ver o que a gente passa aqui em Brasília .	a gente; 10,11
+
+list##### ['Eu trouxe meu filho para ele ver o que a gente passa aqui em Brasília .', 'a gente; 10,11\n']
+####PRED#### A pendência de análise de vetos presidenciais impedia que o Congresso analisasse a meta .	Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:
+
+list##### ['A pendência de análise de vetos presidenciais impedia que o Congresso analisasse a meta .', "Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:\n"]
+####PRED#### 1 A
+
+list##### ['1 A\n']
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Thu Dec 4 22:41:43 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19411428
+    JobName = PT_inf
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = (null)
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_PT_inference.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_PT.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_PT.err
+- Requested resources:
+    Timelimit = 12:30:00 ( 45000s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 09:45:43 ( 35143s )
+    MaxRSS = 2399984K ( 2343.734M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    (null)
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+

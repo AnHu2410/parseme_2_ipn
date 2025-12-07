@@ -1,0 +1,1126 @@
+INFO 12-03 22:54:24 [utils.py:253] non-default args: {'max_model_len': 2500, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'model': '../Qwen3-32B-INT8'}
+INFO 12-03 22:54:24 [model.py:631] Resolved architecture: Qwen3ForCausalLM
+INFO 12-03 22:54:24 [model.py:1745] Using max model len 2500
+INFO 12-03 22:54:30 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-03 22:54:30 [vllm.py:500] Cudagraph is disabled under eager mode
+WARNING 12-03 22:54:31 [system_utils.py:103] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:35 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='../Qwen3-32B-INT8', speculative_config=None, tokenizer='../Qwen3-32B-INT8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=2500, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=../Qwen3-32B-INT8, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:41 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://0.0.0.0:37859 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:41 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:42 [gpu_model_runner.py:3259] Starting to load model ../Qwen3-32B-INT8...
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:42 [compressed_tensors_w8a8_int8.py:62] Using CutlassScaledMMLinearKernel for CompressedTensorsW8A8Int8
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:54 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:55:54 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:21 [default_loader.py:314] Loading weights took 26.22 seconds
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:21 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:21 [gpu_model_runner.py:3338] Model loading took 32.3027 GiB memory and 38.664591 seconds
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:24 [gpu_worker.py:359] Available KV cache memory: 29.09 GiB
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:24 [kv_cache_utils.py:1229] GPU KV cache size: 119,152 tokens
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:24 [kv_cache_utils.py:1234] Maximum concurrency for 2,500 tokens per request: 47.43x
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:24 [core.py:250] init engine (profile, create kv cache, warmup model) took 2.86 seconds
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m INFO 12-03 22:56:25 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-03 22:56:25 [llm.py:352] Supported tasks: ['generate']
+WARNING 12-03 22:56:25 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1;36m(EngineCore_DP0 pid=3357426)[0;0m WARNING 12-03 22:56:26 [utils.py:250] Using default LoRA kernel configs
+####PRED#### La musique sacrée	None
+
+list##### ['La musique sacrée', 'None\n']
+####PRED#### Malone L' année 1996 a été qualifiée par les Nations Unies d' année internationale pour l' élimination de la pauvreté .	None
+
+list##### ["Malone L' année 1996 a été qualifiée par les Nations Unies d' année internationale pour l' élimination de la pauvreté .", 'None\n']
+####PRED#### L' un des de les personnages du de le roman en sculpte des de les reproductions , destinées à être utilisées pour une animation touristique .	animation touristique; 24,25
+
+list##### ["L' un des de les personnages du de le roman en sculpte des de les reproductions , destinées à être utilisées pour une animation touristique .", 'animation touristique; 24,25\n']
+####PRED#### Tout comme son père , Shinjiro Koizumi visite le Yasukuni-jinja tous les 15 aout , jour de l' anniversaire de la capitulation du de le Japon qui a mis fin à la 2nd Guerre Mondiale .	Tout comme; 1,2 | mis fin; 29,30 | Guerre Mondiale; 34,35
+
+list##### ["Tout comme son père , Shinjiro Koizumi visite le Yasukuni-jinja tous les 15 aout , jour de l' anniversaire de la capitulation du de le Japon qui a mis fin à la 2nd Guerre Mondiale .", 'Tout comme; 1,2 | mis fin; 29,30 | Guerre Mondiale; 34,35\n']
+####PRED#### On parle parfois du de le « seeing de coupole » qui désigne le seeing tel que mesuré dans la coupole d' un télescope .	seeing de coupole; 8,9,10 | tel que; 16,17
+
+list##### ["On parle parfois du de le « seeing de coupole » qui désigne le seeing tel que mesuré dans la coupole d' un télescope .", 'seeing de coupole; 8,9,10 | tel que; 16,17\n']
+####PRED#### Il a fallu planter un poteau sur la tranchée de deuxième ligne pour l' y ligoter .	Il a fallu; 1,2,3 | planter poteau; 4,6 | tranchée de ligne; 9,10,12 | ligoter à; 16,15
+
+list##### ["Il a fallu planter un poteau sur la tranchée de deuxième ligne pour l' y ligoter .", 'Il a fallu; 1,2,3 | planter poteau; 4,6 | tranchée de ligne; 9,10,12 | ligoter à; 16,15\n']
+####PRED#### Quand le duc Georges-Guillaume de Brunswick-Lunebourg a hérité de la Principauté de Lunebourg , il a nommé Josias comme major général , et commandement de l' armée de la principauté .	major général; 20,21
+
+list##### ["Quand le duc Georges-Guillaume de Brunswick-Lunebourg a hérité de la Principauté de Lunebourg , il a nommé Josias comme major général , et commandement de l' armée de la principauté .", 'major général; 20,21\n']
+####PRED#### Dans son autobiographie , Budd Boetticher indique qu' en 1955 il avait décidé de diriger un film sur de vraies corridas , avec comme personnage principal le meilleur matador au à le monde .	de vraies corridas; 19,20,21
+
+list##### ["Dans son autobiographie , Budd Boetticher indique qu' en 1955 il avait décidé de diriger un film sur de vraies corridas , avec comme personnage principal le meilleur matador au à le monde .", 'de vraies corridas; 19,20,21\n']
+####PRED#### Les commandants des de les compagnies étaient généralement issus des de les familles nobles de la ville .	issus des; 9,10
+
+list##### ['Les commandants des de les compagnies étaient généralement issus des de les familles nobles de la ville .', 'issus des; 9,10\n']
+####PRED#### Après deux semaines de répétition au à le cours desquelles Gil Norton passe plusieurs jours avec Dave Grohl dans sa chambre d' hôtel à « ne garder que les simples bases des de les chansons » , l' enregistrement commence le 18 novembre 1996 aux à les Bear Creek Studios de Woodinville dans l' État de Washington .	à le cours de; 7,8,9,10 | Bear Creek Studios; 48,49,50 | l' État de; 38,55,56
+
+list##### ["Après deux semaines de répétition au à le cours desquelles Gil Norton passe plusieurs jours avec Dave Grohl dans sa chambre d' hôtel à « ne garder que les simples bases des de les chansons » , l' enregistrement commence le 18 novembre 1996 aux à les Bear Creek Studios de Woodinville dans l' État de Washington .", "à le cours de; 7,8,9,10 | Bear Creek Studios; 48,49,50 | l' État de; 38,55,56\n"]
+####PRED#### La phase générale	None
+
+list##### ['La phase générale', 'None\n']
+####PRED#### Caudron . Le dossier de la sécurité des de les jouets me tient particulièrement à cur .	à cur; 15,16
+
+list##### ['Caudron . Le dossier de la sécurité des de les jouets me tient particulièrement à cur .', 'à cur; 15,16\n']
+####PRED#### Pour assurer le ramassage des de les déchets ménagères , les villageois ont acheté un tracteur à benne .	déchets ménagères; 8,9 | tracteur à benne; 16,17,18
+
+list##### ['Pour assurer le ramassage des de les déchets ménagères , les villageois ont acheté un tracteur à benne .', 'déchets ménagères; 8,9 | tracteur à benne; 16,17,18\n']
+####PRED#### Memramcook fait maintenant partie du de le comté de Westmorland .	fait partie; 2,4
+
+list##### ['Memramcook fait maintenant partie du de le comté de Westmorland .', 'fait partie; 2,4\n']
+####PRED#### La voie était constituée par des de les rails à gorge type Broca .	rails à gorge; 9,10,11
+
+list##### ['La voie était constituée par des de les rails à gorge type Broca .', 'rails à gorge; 9,10,11\n']
+####PRED#### La Jamaïque est membre du de le Commonwealth depuis 1962 et est donc une monarchie constitutionnelle .	monarchie constitutionnelle; 15,16
+
+list##### ['La Jamaïque est membre du de le Commonwealth depuis 1962 et est donc une monarchie constitutionnelle .', 'monarchie constitutionnelle; 15,16\n']
+####PRED#### La clôture du de le chœur en fer forgé du de le XVIIIe siècle	fer forgé; 8,9
+
+list##### ['La clôture du de le chœur en fer forgé du de le XVIIIe siècle', 'fer forgé; 8,9\n']
+####PRED#### Brinkhorst Monsieur le Président , notre commission n' est pas véritablement associée à des de les lignes budgétaires spécifiques .	lignes budgétaires; 18,19
+
+list##### ["Brinkhorst Monsieur le Président , notre commission n' est pas véritablement associée à des de les lignes budgétaires spécifiques .", 'lignes budgétaires; 18,19\n']
+####PRED#### Troisième recrue du de le mercato estival , le latéral gauche estime que cette venue au à le SOR est « un dernier défi » pour lui .	latéral gauche; 10,11
+
+list##### ['Troisième recrue du de le mercato estival , le latéral gauche estime que cette venue au à le SOR est « un dernier défi » pour lui .', 'latéral gauche; 10,11\n']
+####PRED#### Manifestations culturelles et festivités	None
+
+list##### ['Manifestations culturelles et festivités', 'None\n']
+####PRED#### L ' harmonisation progressive des de les taxes d ' infrastructure routière est la principale étape à franchir sur cette voie .	à franchir; 17,18 | sur cette voie; 19,20,21
+
+list##### ["L ' harmonisation progressive des de les taxes d ' infrastructure routière est la principale étape à franchir sur cette voie .", 'à franchir; 17,18 | sur cette voie; 19,20,21\n']
+####PRED#### Un militaire de carrière avant-guerre	militaire de carrière; 2,3,4 | avant-guerre; 5
+
+list##### ['Un militaire de carrière avant-guerre', 'militaire de carrière; 2,3,4 | avant-guerre; 5\n']
+####PRED#### Convergences , et pouvoir suprême du de le Pontife romain	pouvoir suprême; 4,5 | Pontife romain; 9,10
+
+list##### ['Convergences , et pouvoir suprême du de le Pontife romain', 'pouvoir suprême; 4,5 | Pontife romain; 9,10\n']
+####PRED#### Le groupe du de le millionnaire tunisien Larbi Nasra lance Hannibal TV le 12 février 2005 à 19 h 00 ( heure tunisienne ) mais son lancement officiel n' a lieu que le 13 février ( date du de le premier anniversaire de l' octroi de l' autorisation de diffusion à la chaîne ) .	a lieu; 30,31
+
+list##### ["Le groupe du de le millionnaire tunisien Larbi Nasra lance Hannibal TV le 12 février 2005 à 19 h 00 ( heure tunisienne ) mais son lancement officiel n' a lieu que le 13 février ( date du de le premier anniversaire de l' octroi de l' autorisation de diffusion à la chaîne ) .", 'a lieu; 30,31\n']
+####PRED#### Le site internet de l' équipe .	site internet; 2,3
+
+list##### ["Le site internet de l' équipe .", 'site internet; 2,3\n']
+####PRED#### Nelson Downs n' a jamais pris de cours de magie , il était autodidacte et très jeune il développa une remarquable habileté pour la manipulation de cartes et de pièces .	cours de magie; 8,9,10 | très jeune; 16,17 | développa habileté; 19,22 | manipulation de cartes; 25,26,27 | manipulation de pièces; 25,29,30
+
+list##### ["Nelson Downs n' a jamais pris de cours de magie , il était autodidacte et très jeune il développa une remarquable habileté pour la manipulation de cartes et de pièces .", 'cours de magie; 8,9,10 | très jeune; 16,17 | développa habileté; 19,22 | manipulation de cartes; 25,26,27 | manipulation de pièces; 25,29,30\n']
+####PRED#### Je crois aussi , Monsieur le Président , qu' il faut être optimiste .	il faut; 10,11
+
+list##### ["Je crois aussi , Monsieur le Président , qu' il faut être optimiste .", 'il faut; 10,11\n']
+####PRED#### Il devient abbé commendataire de l' abbaye Saint-Pierre d' Auxerre en 1646 et de l' abbaye de Perseigne .	abbé commendataire; 3,4
+
+list##### ["Il devient abbé commendataire de l' abbaye Saint-Pierre d' Auxerre en 1646 et de l' abbaye de Perseigne .", 'abbé commendataire; 3,4\n']
+####PRED#### En carrosse , arrive une Juive fréquentant les milieux aisés de Vienne .	En carrosse; 1,2
+
+list##### ['En carrosse , arrive une Juive fréquentant les milieux aisés de Vienne .', 'En carrosse; 1,2\n']
+####PRED#### Récemment , des de les promoteurs de la paix au à le Moyen-Orient ont choisi de porter la khamsa comme symbole d' une communauté d' origine et de tradition entre islam et judaïsme .	communauté d' origine; 24,25,26 | entre islam et judaïsme; 30,31,32,33
+
+list##### ["Récemment , des de les promoteurs de la paix au à le Moyen-Orient ont choisi de porter la khamsa comme symbole d' une communauté d' origine et de tradition entre islam et judaïsme .", "communauté d' origine; 24,25,26 | entre islam et judaïsme; 30,31,32,33\n"]
+####PRED#### Roger de Harlay nait à Cézy vers 1616 est issu d' une lignée cadette de la famille de Achille de Harlay .	d' une; 12,13 | lignée cadette; 14,15 | famille de; 18,19
+
+list##### ["Roger de Harlay nait à Cézy vers 1616 est issu d' une lignée cadette de la famille de Achille de Harlay .", "d' une; 12,13 | lignée cadette; 14,15 | famille de; 18,19\n"]
+####PRED#### Le Forbin a été équipé d' un système d' information , le Combat Management System ( CMS ) , utilisable depuis un Central Opération logé derrière la passerelle .	système d' information; 8,9,10 | Central Opération; 23,24
+
+list##### ["Le Forbin a été équipé d' un système d' information , le Combat Management System ( CMS ) , utilisable depuis un Central Opération logé derrière la passerelle .", "système d' information; 8,9,10 | Central Opération; 23,24\n"]
+####PRED#### Maelius mais l' autre partie des de les tribuns , dont Quintus Caecilius , Quintus Iunius et Sextus Titinius s' opposent à toute poursuite judiciaire .	s' opposent; 20,21
+
+list##### ["Maelius mais l' autre partie des de les tribuns , dont Quintus Caecilius , Quintus Iunius et Sextus Titinius s' opposent à toute poursuite judiciaire .", "s' opposent; 20,21\n"]
+####PRED#### Cormatin tente de se justifier en déclarant n' avoir cherché qu' à gagner du de le temps .	gagner du temps; 13,14,17
+
+list##### ["Cormatin tente de se justifier en déclarant n' avoir cherché qu' à gagner du de le temps .", 'gagner du temps; 13,14,17\n']
+####PRED#### Sancoins est chef-lieu de son district de 1790 à 1795 , regroupant les cantons de Dun-le-Roi , La Guerche-sur-l’Aubois , Nérondes , Ourouer-les-Bourdelins et Sancoins .	chef-lieu de; 3,4
+
+list##### ['Sancoins est chef-lieu de son district de 1790 à 1795 , regroupant les cantons de Dun-le-Roi , La Guerche-sur-l’Aubois , Nérondes , Ourouer-les-Bourdelins et Sancoins .', 'chef-lieu de; 3,4\n']
+####PRED#### Britannique , à soupapes latérales .	None
+
+list##### ['Britannique , à soupapes latérales .', 'None\n']
+####PRED#### Le film est présenté sur la chaîne britannique Channel 4 dans une émission sur les histoires de fantômes chinois en 1990 présentée par Jonathan Ross avec d' autres films similaires du de le genre tels que L' Exorciste chinois , Zu , les guerriers de la montagne magique , Esprit d' amour ( en ) , Spiritual Love ( en ) et Rouge .	histoires de fantômes; 16,17,18 | guerriers de la montagne magique; 44,45,46,47,48 | Esprit d' amour; 50,51,52 | Spiritual Love; 57,58
+
+list##### ["Le film est présenté sur la chaîne britannique Channel 4 dans une émission sur les histoires de fantômes chinois en 1990 présentée par Jonathan Ross avec d' autres films similaires du de le genre tels que L' Exorciste chinois , Zu , les guerriers de la montagne magique , Esprit d' amour ( en ) , Spiritual Love ( en ) et Rouge .", "histoires de fantômes; 16,17,18 | guerriers de la montagne magique; 44,45,46,47,48 | Esprit d' amour; 50,51,52 | Spiritual Love; 57,58\n"]
+####PRED#### Législation linguistique en Tchécoslovaquie pendant la Première République	Première République; 7,8
+
+list##### ['Législation linguistique en Tchécoslovaquie pendant la Première République', 'Première République; 7,8\n']
+####PRED#### Sa carrière est lancée .	est lancée; 3,4
+
+list##### ['Sa carrière est lancée .', 'est lancée; 3,4\n']
+####PRED#### Le navigateur allemand Otto von Kotzebue , naviguant en service russe , a touché terre sur l' île Mejit le 1ᵉʳ janvier 1817 et l' a nommée l' île du de le Nouvel An .	touché terre; 14,15 | Nouvel An; 33,34
+
+list##### ["Le navigateur allemand Otto von Kotzebue , naviguant en service russe , a touché terre sur l' île Mejit le 1ᵉʳ janvier 1817 et l' a nommée l' île du de le Nouvel An .", 'touché terre; 14,15 | Nouvel An; 33,34\n']
+####PRED#### Dans une interview donnée au à le Sankei Shimbun en mai 2013 , il a refusé de commenter les propos négationnistes du de le maire d' Osaka	interview donnée; 3,4 | commenter les propos; 18,19 | maire d'; 25,26
+
+list##### ["Dans une interview donnée au à le Sankei Shimbun en mai 2013 , il a refusé de commenter les propos négationnistes du de le maire d' Osaka", "interview donnée; 3,4 | commenter les propos; 18,19 | maire d'; 25,26\n"]
+####PRED#### Le 16 mars , la Conférence des de les présidents a constaté qu’un grand nombre d’opposants au à le régime , parmi lesquels des de les personnalités politiques , des de les journalistes et des de les membres d’ONG , avaient été arrêtés au à le Belarus .	grand nombre; 14,15
+
+list##### ['Le 16 mars , la Conférence des de les présidents a constaté qu’un grand nombre d’opposants au à le régime , parmi lesquels des de les personnalités politiques , des de les journalistes et des de les membres d’ONG , avaient été arrêtés au à le Belarus .', 'grand nombre; 14,15\n']
+####PRED#### Cingonius , nom de personne d’origine gauloise .	nom de personne; 3,4,5 | d’origine gauloise; 6,7
+
+list##### ['Cingonius , nom de personne d’origine gauloise .', 'nom de personne; 3,4,5 | d’origine gauloise; 6,7\n']
+####PRED#### En 1898 , sa famille déménage à Cheyenne ( Wyoming ) , où il entre à l' Académie militaire de Kearney .	None
+
+list##### ["En 1898 , sa famille déménage à Cheyenne ( Wyoming ) , où il entre à l' Académie militaire de Kearney .", 'None\n']
+####PRED#### Association fédérative nationale des de les étudiants universitaires scientifiques	None
+
+list##### ['Association fédérative nationale des de les étudiants universitaires scientifiques', 'None\n']
+####PRED#### Il obtient un poste d' administrateur à Aurich en 1803 .	d' administrateur; 5,6
+
+list##### ["Il obtient un poste d' administrateur à Aurich en 1803 .", "d' administrateur; 5,6\n"]
+####PRED#### Stahl écrivit dans le Kreuzzeitung un article programme : « Das Banner der Conservativen » ( la bannière des de les conservateurs ) un résumé de son livre de 1845 : Das monarchische Princip ( le principe monarchique ) .	Das Banner der Conservativen; 11,12,13,14 | Das monarchische Princip; 32,33,34
+
+list##### ['Stahl écrivit dans le Kreuzzeitung un article programme : « Das Banner der Conservativen » ( la bannière des de les conservateurs ) un résumé de son livre de 1845 : Das monarchische Princip ( le principe monarchique ) .', 'Das Banner der Conservativen; 11,12,13,14 | Das monarchische Princip; 32,33,34\n']
+####PRED#### Le système de combat du de le Forbin permet au à le navire de prendre le statut de plate-forme C2 .	système de combat; 2,3,4 | prendre statut; 15,17 | plate-forme C2; 19,20
+
+list##### ['Le système de combat du de le Forbin permet au à le navire de prendre le statut de plate-forme C2 .', 'système de combat; 2,3,4 | prendre statut; 15,17 | plate-forme C2; 19,20\n']
+####PRED#### Cette ligne à double voie a été construite entre 1897 et 1901 par la Direction générale impériale des de les chemins de fer d' Alsace-Lorraine .	ligne à double voie; 2,3,4,5 | chemins de fer; 21,22,23
+
+list##### ["Cette ligne à double voie a été construite entre 1897 et 1901 par la Direction générale impériale des de les chemins de fer d' Alsace-Lorraine .", 'ligne à double voie; 2,3,4,5 | chemins de fer; 21,22,23\n']
+####PRED#### Pilote d' essai	d' essai; 2,3
+
+list##### ["Pilote d' essai", "d' essai; 2,3\n"]
+####PRED#### Thibaud , prince de Salerne , a une fille d' une très grande beauté .	d' une très grande; 10,11,12,13
+
+list##### ["Thibaud , prince de Salerne , a une fille d' une très grande beauté .", "d' une très grande; 10,11,12,13\n"]
+####PRED#### Une déviation en voie rapide a été inaugurée en 1993 .	en voie rapide; 3,4,5
+
+list##### ['Une déviation en voie rapide a été inaugurée en 1993 .', 'en voie rapide; 3,4,5\n']
+####PRED#### Le Syndicat Français des de les Ostéopathes ( SFDO ) est un syndicat professionnel dont l’objectif est la défense et la promotion de l' ostéopathie en France .	Syndicat professionnel; 2,13 | défense et promotion; 19,20,22
+
+list##### ["Le Syndicat Français des de les Ostéopathes ( SFDO ) est un syndicat professionnel dont l’objectif est la défense et la promotion de l' ostéopathie en France .", 'Syndicat professionnel; 2,13 | défense et promotion; 19,20,22\n']
+####PRED#### Sa vie et son œuvre	None
+
+list##### ['Sa vie et son œuvre', 'None\n']
+####PRED#### Réglementé par la Loi 4 , l’équipement de base obligatoire de tout joueur comprend un maillot et un short .	l’équipement de base obligatoire; 7,8,9,10
+
+list##### ['Réglementé par la Loi 4 , l’équipement de base obligatoire de tout joueur comprend un maillot et un short .', 'l’équipement de base obligatoire; 7,8,9,10\n']
+####PRED#### Comme au à le biathlon , les participants commencent en courant sur une distance d' environ 1 kilomètre pour les circuit longs et 400 mètres pour les circuits courts .	courant sur; 11,12
+
+list##### ["Comme au à le biathlon , les participants commencent en courant sur une distance d' environ 1 kilomètre pour les circuit longs et 400 mètres pour les circuits courts .", 'courant sur; 11,12\n']
+####PRED#### Toru Hashimoto concernant les femmes de réconfort .	femmes de réconfort; 5,6,7
+
+list##### ['Toru Hashimoto concernant les femmes de réconfort .', 'femmes de réconfort; 5,6,7\n']
+####PRED#### Les régimes politiques des de les différents pays de l' archipel sont relativement hétérogènes .	None
+
+list##### ["Les régimes politiques des de les différents pays de l' archipel sont relativement hétérogènes .", 'None\n']
+####PRED#### C' est pour l' essentiel : éveil aux à les fondamentaux , sensibilisation au à le paysage , acquisition des de les outils théoriques .	pour l' essentiel; 3,4,5 | éveil aux; 7,8 | éveil à; 7,9 | sensibilisation au; 13,14 | sensibilisation à; 13,15 | acquisition des; 19,20 | acquisition de; 19,21
+
+list##### ["C' est pour l' essentiel : éveil aux à les fondamentaux , sensibilisation au à le paysage , acquisition des de les outils théoriques .", "pour l' essentiel; 3,4,5 | éveil aux; 7,8 | éveil à; 7,9 | sensibilisation au; 13,14 | sensibilisation à; 13,15 | acquisition des; 19,20 | acquisition de; 19,21\n"]
+####PRED#### L' influence d' une classe de lecteurs bourgeois périmera ce roman de chevalerie avec des de les figures dérisoires comme Don Quichote et les récits s' inscriront dans un contexte moins virtuel avec Boccace , en Italie , et plus tard en France avec Rabelais .	roman de chevalerie; 11,12,13 | inscriront dans; 27,28
+
+list##### ["L' influence d' une classe de lecteurs bourgeois périmera ce roman de chevalerie avec des de les figures dérisoires comme Don Quichote et les récits s' inscriront dans un contexte moins virtuel avec Boccace , en Italie , et plus tard en France avec Rabelais .", 'roman de chevalerie; 11,12,13 | inscriront dans; 27,28\n']
+####PRED#### il remporte la course en 3 h 39 min 54 s ( son record personnel et le record de la course ) .	record personnel; 14,15 | record de la course; 18,19,20
+
+list##### ['il remporte la course en 3 h 39 min 54 s ( son record personnel et le record de la course ) .', 'record personnel; 14,15 | record de la course; 18,19,20\n']
+####PRED#### Les planteurs créèrent un réseau routier important et organisèrent la gestion de l' eau dans cet environnement difficile .	réseau routier; 5,6 | gestion de l'eau; 11,12,13,14 | environnement difficile; 17,18
+
+list##### ["Les planteurs créèrent un réseau routier important et organisèrent la gestion de l' eau dans cet environnement difficile .", "réseau routier; 5,6 | gestion de l'eau; 11,12,13,14 | environnement difficile; 17,18\n"]
+####PRED#### La version anglaise de Mr vampire est de faible qualité , redoublant les personnages avec des de les accents américains .	de faible qualité; 8,9,10
+
+list##### ['La version anglaise de Mr vampire est de faible qualité , redoublant les personnages avec des de les accents américains .', 'de faible qualité; 8,9,10\n']
+####PRED#### Des De les expériences sur les animaux ont démontré la toxicité et le caractère cancérigène de certains phtalates .	caractère cancérigène; 14,15
+
+list##### ['Des De les expériences sur les animaux ont démontré la toxicité et le caractère cancérigène de certains phtalates .', 'caractère cancérigène; 14,15\n']
+####PRED#### L' Arabie saoudite est un pays pratiquant la peine de mort .	peine de mort; 9,10,11
+
+list##### ["L' Arabie saoudite est un pays pratiquant la peine de mort .", 'peine de mort; 9,10,11\n']
+####PRED#### On retrouve l’image du de le bon sauvage dans le récit par Jacques Cartier de ses rencontres avec les autochtones d’Hochelaga .	bon sauvage; 7,8
+
+list##### ['On retrouve l’image du de le bon sauvage dans le récit par Jacques Cartier de ses rencontres avec les autochtones d’Hochelaga .', 'bon sauvage; 7,8\n']
+####PRED#### Les gouvernements conservateurs allemand et britannique sont farouchement opposés au à le quatrième programme contre la pauvreté .	farouchement opposés; 8,9
+
+list##### ['Les gouvernements conservateurs allemand et britannique sont farouchement opposés au à le quatrième programme contre la pauvreté .', 'farouchement opposés; 8,9\n']
+####PRED#### Erik Bye est né à Brooklyn , New York , il est le fils de Rønnaug ( no ) ( née Dahl ) et du de le chanteur d' opéra Erik Ole Bye ( en ) .	chanteur d' opéra; 28,29,30
+
+list##### ["Erik Bye est né à Brooklyn , New York , il est le fils de Rønnaug ( no ) ( née Dahl ) et du de le chanteur d' opéra Erik Ole Bye ( en ) .", "chanteur d' opéra; 28,29,30\n"]
+####PRED#### En 2015 une version non expurgée et beaucoup plus complète que celle retrouvée en 1991 et détenue par la Filmarchiv Austria ( datant des de les années 1930 et d' origine néerlandaise ) a été découverte en France .	beaucoup plus; 8,9 | d' origine; 30,31
+
+list##### ["En 2015 une version non expurgée et beaucoup plus complète que celle retrouvée en 1991 et détenue par la Filmarchiv Austria ( datant des de les années 1930 et d' origine néerlandaise ) a été découverte en France .", "beaucoup plus; 8,9 | d' origine; 30,31\n"]
+####PRED#### « Deux armées d' une égale pauvreté sont prêtes à s' affronter ... »	s' affronter; 12,13
+
+list##### ["« Deux armées d' une égale pauvreté sont prêtes à s' affronter ... »", "s' affronter; 12,13\n"]
+####PRED#### Le Bourget abritait également des de les tavernes sur la route des de les Flandres dès le XIᵉ siècle , et un relais de poste créé au à le XVᵉ siècle .	relais de poste; 23,24,25
+
+list##### ['Le Bourget abritait également des de les tavernes sur la route des de les Flandres dès le XIᵉ siècle , et un relais de poste créé au à le XVᵉ siècle .', 'relais de poste; 23,24,25\n']
+####PRED#### Naquît ainsi la narration de la légendaire bataille entre le Principe Enrico et Giovanni Baldesio ( Zanén de la Bàla ) gonfalonier majeur de la cité .	gonfalonier majeur; 22,23
+
+list##### ['Naquît ainsi la narration de la légendaire bataille entre le Principe Enrico et Giovanni Baldesio ( Zanén de la Bàla ) gonfalonier majeur de la cité .', 'gonfalonier majeur; 22,23\n']
+####PRED#### En 1924 , il quitte son village pour venir tenter sa chance à Montréal .	tenter chance; 10,12
+
+list##### ['En 1924 , il quitte son village pour venir tenter sa chance à Montréal .', 'tenter chance; 10,12\n']
+####PRED#### La phase pilote	phase pilote; 2,3
+
+list##### ['La phase pilote', 'phase pilote; 2,3\n']
+####PRED#### Sur le Tour d' Italie , le Russe termine cinquième sans être en mesure de viser la victoire .	être en mesure de; 12,13,14,15
+
+list##### ["Sur le Tour d' Italie , le Russe termine cinquième sans être en mesure de viser la victoire .", 'être en mesure de; 12,13,14,15\n']
+####PRED#### Fin de carrière à Romorantin et à Déols ( depuis 2014 )	Fin de carrière; 1,2,3
+
+list##### ['Fin de carrière à Romorantin et à Déols ( depuis 2014 )', 'Fin de carrière; 1,2,3\n']
+####PRED#### On accède à l' ESAJ avec un baccalauréat et après un entretien jugeant de culture générale et de la motivation du de le candidat .	culture générale; 15,16
+
+list##### ["On accède à l' ESAJ avec un baccalauréat et après un entretien jugeant de culture générale et de la motivation du de le candidat .", 'culture générale; 15,16\n']
+####PRED#### Il comprenait six lignes mises en service entre 1900 et 1916 .	mises en service; 5,6,7
+
+list##### ['Il comprenait six lignes mises en service entre 1900 et 1916 .', 'mises en service; 5,6,7\n']
+####PRED#### La République dominicaine et Haïti sont dotés de régimes républicains .	None
+
+list##### ['La République dominicaine et Haïti sont dotés de régimes républicains .', 'None\n']
+####PRED#### Dépôt et usine électrique	None
+
+list##### ['Dépôt et usine électrique', 'None\n']
+####PRED#### En courant continu , on peut observer des de les lésions aux à les point d' entrée et de sortie .	courant continu; 2,3 | point d' entrée; 15,16,17 | point de sortie; 15,19,20
+
+list##### ["En courant continu , on peut observer des de les lésions aux à les point d' entrée et de sortie .", "courant continu; 2,3 | point d' entrée; 15,16,17 | point de sortie; 15,19,20\n"]
+####PRED#### Le point de vue du de le réalisateur	point de vue; 2,3,4
+
+list##### ['Le point de vue du de le réalisateur', 'point de vue; 2,3,4\n']
+####PRED#### Très engagé dans le mouvement antinucléaire , Günther Schwab écrit en 1968 , Morgen holt dich der Teufel ( littéralement « Le Diable t' emportera demain » ) .	Morgen holt dich der Teufel; 14,15,16,17,18
+
+list##### ["Très engagé dans le mouvement antinucléaire , Günther Schwab écrit en 1968 , Morgen holt dich der Teufel ( littéralement « Le Diable t' emportera demain » ) .", 'Morgen holt dich der Teufel; 14,15,16,17,18\n']
+####PRED#### En 2001 , le film Harry Potter à l' école des de les sorciers présente un jeu d' échecs sorcier auquel ae lequel Harry et Ron jouent , présentant une reine rouge du de le jeu de Lewis .	jeu d' échecs; 17,18,19 | jeu de Lewis; 36,37,38
+
+list##### ["En 2001 , le film Harry Potter à l' école des de les sorciers présente un jeu d' échecs sorcier auquel ae lequel Harry et Ron jouent , présentant une reine rouge du de le jeu de Lewis .", "jeu d' échecs; 17,18,19 | jeu de Lewis; 36,37,38\n"]
+####PRED#### Il ne dispute son premier match avec les mauves que le 19 février 1994 .	dispute match; 3,6 | avec les mauves; 7,8,9
+
+list##### ['Il ne dispute son premier match avec les mauves que le 19 février 1994 .', 'dispute match; 3,6 | avec les mauves; 7,8,9\n']
+####PRED#### Après quelques années passées à Ringerike , ils s' installent dans le quartier Nordstrand d' Oslo , où ils reprennent un bed and breakfast .	s' installent; 9,10 | bed and breakfast; 22,23,24
+
+list##### ["Après quelques années passées à Ringerike , ils s' installent dans le quartier Nordstrand d' Oslo , où ils reprennent un bed and breakfast .", "s' installent; 9,10 | bed and breakfast; 22,23,24\n"]
+####PRED#### Développer une réflexion scientifique	développer une réflexion; 1,2,3
+
+list##### ['Développer une réflexion scientifique', 'développer une réflexion; 1,2,3\n']
+####PRED#### Il écrit une lettre-cirulaire aux à les curés de son diocèse touchant les restaurations des de les églises , en 1857 .	lettre-cirulaire; 4
+
+list##### ['Il écrit une lettre-cirulaire aux à les curés de son diocèse touchant les restaurations des de les églises , en 1857 .', 'lettre-cirulaire; 4\n']
+####PRED#### À Londres , Puisaye , informé des de les événements , condamne les agissements de son major-général .	major-général; 17
+
+list##### ['À Londres , Puisaye , informé des de les événements , condamne les agissements de son major-général .', 'major-général; 17\n']
+####PRED#### Puis il gravit les échelons en étant successivement champion de Nationale 3 , Nationale 2 puis de Nationale 1 et accède donc pour la saison 2009-2010 en Pro B , l' antichambre de l' élite .	gravit les échelons; 3,4,5 | antichambre de l'élite; 32,33,34,35
+
+list##### ["Puis il gravit les échelons en étant successivement champion de Nationale 3 , Nationale 2 puis de Nationale 1 et accède donc pour la saison 2009-2010 en Pro B , l' antichambre de l' élite .", "gravit les échelons; 3,4,5 | antichambre de l'élite; 32,33,34,35\n"]
+####PRED#### Artiom Rebrov est issu du de le centre de formation du de le Dynamo Moscou .	centre de formation; 8,9,10
+
+list##### ['Artiom Rebrov est issu du de le centre de formation du de le Dynamo Moscou .', 'centre de formation; 8,9,10\n']
+####PRED#### Les figurines de Lewis dans la culture populaire	culture populaire; 7,8
+
+list##### ['Les figurines de Lewis dans la culture populaire', 'culture populaire; 7,8\n']
+####PRED#### Popstars et enfin pour faire partie du de le Fifi show .	faire partie; 5,6
+
+list##### ['Popstars et enfin pour faire partie du de le Fifi show .', 'faire partie; 5,6\n']
+####PRED#### Sylvie-Catherine Beaudoin a dit au à le parent de Mirianne qu’elle la trouvait particulièrement expressive et à l’aise et elle la encouragée à commencer une carrière de comédienne , c’est elle qui la guidée .	à l’aise; 17,18
+
+list##### ['Sylvie-Catherine Beaudoin a dit au à le parent de Mirianne qu’elle la trouvait particulièrement expressive et à l’aise et elle la encouragée à commencer une carrière de comédienne , c’est elle qui la guidée .', 'à l’aise; 17,18\n']
+####PRED#### Petit -fils d' émigrants tchèque et slovaque , établis dans la région de Chicago ( Illinois ) avant la Première Guerre mondiale , Eugene Cernan naît dans cette ville et grandit dans sa banlieue , à Maywood .	petit-fils; 1,3 | Première Guerre mondiale; 21,22,23
+
+list##### ["Petit -fils d' émigrants tchèque et slovaque , établis dans la région de Chicago ( Illinois ) avant la Première Guerre mondiale , Eugene Cernan naît dans cette ville et grandit dans sa banlieue , à Maywood .", 'petit-fils; 1,3 | Première Guerre mondiale; 21,22,23\n']
+####PRED#### L’emploi de l’irrigation , commencé à Saint-Domingue , a atteint sa plénitude dans la région orientale de Cuba .	atteint plénitude; 11,13 | région orientale; 16,17
+
+list##### ['L’emploi de l’irrigation , commencé à Saint-Domingue , a atteint sa plénitude dans la région orientale de Cuba .', 'atteint plénitude; 11,13 | région orientale; 16,17\n']
+####PRED#### 1860-1870 : développement , militarisation et problèmes internes	None
+
+list##### ['1860-1870 : développement , militarisation et problèmes internes', 'None\n']
+####PRED#### Henri Matisse , André Derain , Georges Braque et Guillaume Apollinaire qui découvrent le tableau , le perçoivent comme un acte de « terrorisme » .	acte de terrorisme; 21,22,23,24
+
+list##### ['Henri Matisse , André Derain , Georges Braque et Guillaume Apollinaire qui découvrent le tableau , le perçoivent comme un acte de « terrorisme » .', 'acte de terrorisme; 21,22,23,24\n']
+####PRED#### Il y aura 4 ligues distinctes : la Super ligue ( en 2009 à Leiria ) , la 1ʳᵉ ligue ( First League ) , la 2ᵉ ligue ( Second League ) et la 3ᵉ ligue ( Third League ) .	Il y aura; 1,2,3 | Super ligue; 10,11 | 1ʳᵉ ligue; 20,21 | First League; 23,24 | 2ᵉ ligue; 28,29 | Second League; 31,32 | 3ᵉ ligue; 36,37 | Third League; 39,40
+
+list##### ['Il y aura 4 ligues distinctes : la Super ligue ( en 2009 à Leiria ) , la 1ʳᵉ ligue ( First League ) , la 2ᵉ ligue ( Second League ) et la 3ᵉ ligue ( Third League ) .', 'Il y aura; 1,2,3 | Super ligue; 10,11 | 1ʳᵉ ligue; 20,21 | First League; 23,24 | 2ᵉ ligue; 28,29 | Second League; 31,32 | 3ᵉ ligue; 36,37 | Third League; 39,40\n']
+####PRED#### Entre novembre 1775 et février 1776 , le colonel Henry Knox et une équipe d' ingénieurs utilisèrent des de les traîneaux pour récupérer 60 tonnes d' artillerie lourde qui avaient été capturées au à le Fort Ticonderoga .	artillerie lourde; 27,28
+
+list##### ["Entre novembre 1775 et février 1776 , le colonel Henry Knox et une équipe d' ingénieurs utilisèrent des de les traîneaux pour récupérer 60 tonnes d' artillerie lourde qui avaient été capturées au à le Fort Ticonderoga .", 'artillerie lourde; 27,28\n']
+####PRED#### Ce match a lieu dans un contexte tendu après le massacre de Boipatong .	a lieu; 3,4
+
+list##### ['Ce match a lieu dans un contexte tendu après le massacre de Boipatong .', 'a lieu; 3,4\n']
+####PRED#### Il produit des de les publications de type polycopié ( ODT ) , site web , module SCORM , présentation ( DHTML ) .	site web; 14,15 | module SCORM; 17,18 | présentation DHTML; 20,22
+
+list##### ['Il produit des de les publications de type polycopié ( ODT ) , site web , module SCORM , présentation ( DHTML ) .', 'site web; 14,15 | module SCORM; 17,18 | présentation DHTML; 20,22\n']
+####PRED#### En 1997 , il prend part à l' événement Global Hardcore	prend part; 5,6
+
+list##### ["En 1997 , il prend part à l' événement Global Hardcore", 'prend part; 5,6\n']
+####PRED#### Le tronçon entre Bouzonville et Dillingen a été mis en service le 1ᵉʳ juillet 1901 .	mis en service; 9,10,11
+
+list##### ['Le tronçon entre Bouzonville et Dillingen a été mis en service le 1ᵉʳ juillet 1901 .', 'mis en service; 9,10,11\n']
+####PRED#### En se développant , elle recrute largement dans les classes populaires .	classes populaires; 10,11
+
+list##### ['En se développant , elle recrute largement dans les classes populaires .', 'classes populaires; 10,11\n']
+####PRED#### Le style unique de la cache de Lewis a inspiré la série d' animation en anglais Noggin the Nog .	série d' animation; 12,13,14
+
+list##### ["Le style unique de la cache de Lewis a inspiré la série d' animation en anglais Noggin the Nog .", "série d' animation; 12,13,14\n"]
+####PRED#### Effets négatifs de la rétention d' information	rétention d' information; 5,6,7
+
+list##### ["Effets négatifs de la rétention d' information", "rétention d' information; 5,6,7\n"]
+####PRED#### Ludwig von Vincke vient d' une vieille famille aristocratique .	vient d'; 4,5
+
+list##### ["Ludwig von Vincke vient d' une vieille famille aristocratique .", "vient d'; 4,5\n"]
+####PRED#### Elle ne doit pas être confondue avec la géo-ingénierie du de le sous-sol ( mines ) .	sous-sol; 13
+
+list##### ['Elle ne doit pas être confondue avec la géo-ingénierie du de le sous-sol ( mines ) .', 'sous-sol; 13\n']
+####PRED#### Villemarest a accusé Hjalmar Schacht , Otto Abetz , Ernst Achenbach d’en faire partie .	d’en faire partie; 12,13,14
+
+list##### ['Villemarest a accusé Hjalmar Schacht , Otto Abetz , Ernst Achenbach d’en faire partie .', 'd’en faire partie; 12,13,14\n']
+####PRED#### Lenquette ( qui en 1981 reprit le poste de correspondant à Londres ) , Jean-Michel Reusser , Arnaud Viviant , Laurence Romance , Jean-Luc Manet , Éric Ouzounian , David Dufresne , Ian Holchaker , Frank Brignaudy , Mehdi Boukhelf .	None
+
+list##### ['Lenquette ( qui en 1981 reprit le poste de correspondant à Londres ) , Jean-Michel Reusser , Arnaud Viviant , Laurence Romance , Jean-Luc Manet , Éric Ouzounian , David Dufresne , Ian Holchaker , Frank Brignaudy , Mehdi Boukhelf .', 'None\n']
+####PRED#### Josias II de Waldeck a servi dans l' armée de l' Électeur Frédéric-Guillaume Ier de Brandebourg , où il était colonel de l' infanterie .	servi dans; 6,7
+
+list##### ["Josias II de Waldeck a servi dans l' armée de l' Électeur Frédéric-Guillaume Ier de Brandebourg , où il était colonel de l' infanterie .", 'servi dans; 6,7\n']
+####PRED#### Seeing de coupole	None
+
+list##### ['Seeing de coupole', 'None\n']
+####PRED#### Très rapidement , les violences reprennent , des de les escarmouches éclatent , les deux camps s’en rejettent la responsabilité , le 18 mai Cormatin reçoit une lettre des de les Chouans de Fougères se plaignant de l’assassinat de 17 hommes et 3 femmes par des de les gardes territoriaux républicains .	s’en rejettent; 17,18
+
+list##### ['Très rapidement , les violences reprennent , des de les escarmouches éclatent , les deux camps s’en rejettent la responsabilité , le 18 mai Cormatin reçoit une lettre des de les Chouans de Fougères se plaignant de l’assassinat de 17 hommes et 3 femmes par des de les gardes territoriaux républicains .', 's’en rejettent; 17,18\n']
+####PRED#### Une invention de reliques , en latin inventio reliquarum , est un récit portant sur la découverte ou la redécouverte souvent « miraculeuse » d' ossements d' un saint , martyr ou non ( singulièrement , en Palestine , un prophète ) , ou d' un objet qui a touché ce saint , notamment le brandeum , linceul entourant le saint ou linge mis volontairement au à le contact de la relique .	portant sur; 14,15 | le contact de; 68,69,70
+
+list##### ["Une invention de reliques , en latin inventio reliquarum , est un récit portant sur la découverte ou la redécouverte souvent « miraculeuse » d' ossements d' un saint , martyr ou non ( singulièrement , en Palestine , un prophète ) , ou d' un objet qui a touché ce saint , notamment le brandeum , linceul entourant le saint ou linge mis volontairement au à le contact de la relique .", 'portant sur; 14,15 | le contact de; 68,69,70\n']
+####PRED#### Déjà épuisé par une année d' un commandement éprouvant , Raglan fut profondément affecté par le sentiment d' avoir envoyé ses hommes à l' abattoir .	à l'abattoir; 23,24,25 | commandement éprouvant; 8,9 | avoir envoyé; 19,20 | sentiment d'; 17,18 | affecté par; 14,15 | à l'; 23,24
+
+list##### ["Déjà épuisé par une année d' un commandement éprouvant , Raglan fut profondément affecté par le sentiment d' avoir envoyé ses hommes à l' abattoir .", "à l'abattoir; 23,24,25 | commandement éprouvant; 8,9 | avoir envoyé; 19,20 | sentiment d'; 17,18 | affecté par; 14,15 | à l'; 23,24\n"]
+####PRED#### Celle-ci se compose principalement d’observateurs militaires et d’un spécialiste des de les affaires politiques ( P-3 ) .	se compose; 2,3 | affaires politiques; 13,14
+
+list##### ['Celle-ci se compose principalement d’observateurs militaires et d’un spécialiste des de les affaires politiques ( P-3 ) .', 'se compose; 2,3 | affaires politiques; 13,14\n']
+####PRED#### Le jeu propose 6 types de vaisseaux : éclaireurs , transports , destroyers , croiseurs , cuirassés , et porte-avions .	porte-avions; 20
+
+list##### ['Le jeu propose 6 types de vaisseaux : éclaireurs , transports , destroyers , croiseurs , cuirassés , et porte-avions .', 'porte-avions; 20\n']
+####PRED#### Entre 2005 et 2007 , il joue pour l' équipe réserve du de le Saturn Ramenskoïe en troisième division .	équipe réserve; 10,11 | troisième division; 18,19
+
+list##### ["Entre 2005 et 2007 , il joue pour l' équipe réserve du de le Saturn Ramenskoïe en troisième division .", 'équipe réserve; 10,11 | troisième division; 18,19\n']
+####PRED#### Dans les trois premières années , le couple s' est concentré sur l' ajout de peintures avec des de les thèmes bibliques , pour passer plus tard , aux à les portraits et aux à les impressionnistes .	s' concentré; 9, 11
+
+list##### ["Dans les trois premières années , le couple s' est concentré sur l' ajout de peintures avec des de les thèmes bibliques , pour passer plus tard , aux à les portraits et aux à les impressionnistes .", "s' concentré; 9, 11\n"]
+####PRED#### Le mot « invention » , du de le latin inventio , est ici à prendre dans le sens de « découverte » , comme pour les mises au à le jour de vestiges divers , le verbe latin invenire signifiant trouver en français .	mises au jour; 28,29,30,31,32
+
+list##### ['Le mot « invention » , du de le latin inventio , est ici à prendre dans le sens de « découverte » , comme pour les mises au à le jour de vestiges divers , le verbe latin invenire signifiant trouver en français .', 'mises au jour; 28,29,30,31,32\n']
+####PRED#### Grohl en profite pour retourner dans sa Virginie natale où il écrit plusieurs nouvelles chansons et en enregistre deux aux à les WGNS Studios de Washington : Walking After You et une version acoustique d' Everlong .	profite pour; 3,4 | retourner dans; 5,6 | Walking After You; 28,29,30
+
+list##### ["Grohl en profite pour retourner dans sa Virginie natale où il écrit plusieurs nouvelles chansons et en enregistre deux aux à les WGNS Studios de Washington : Walking After You et une version acoustique d' Everlong .", 'profite pour; 3,4 | retourner dans; 5,6 | Walking After You; 28,29,30\n']
+####PRED#### Initialement , l' Ensemble Elyma s' est fait connaître par ses interprétations du de le répertoire de la flûte douce .	s' fait connaître; 6,8,9 | flûte douce; 19,20
+
+list##### ["Initialement , l' Ensemble Elyma s' est fait connaître par ses interprétations du de le répertoire de la flûte douce .", "s' fait connaître; 6,8,9 | flûte douce; 19,20\n"]
+####PRED#### La chapelle Saint-Fiacre était en ruine en 1888 .	en ruine; 5,6
+
+list##### ['La chapelle Saint-Fiacre était en ruine en 1888 .', 'en ruine; 5,6\n']
+####PRED#### Chez ces hyménoptères , il y a un dilemme entre le nombre d’œufs et la survie de ceux-ci .	il y a; 5,6,7
+
+list##### ['Chez ces hyménoptères , il y a un dilemme entre le nombre d’œufs et la survie de ceux-ci .', 'il y a; 5,6,7\n']
+####PRED#### Il fut inscrit à la faculté de droit de Recife , qui venait d’être transféré de la ville d’Olinda vers Recife .	faculté de droit; 6,7,8
+
+list##### ['Il fut inscrit à la faculté de droit de Recife , qui venait d’être transféré de la ville d’Olinda vers Recife .', 'faculté de droit; 6,7,8\n']
+####PRED#### LoveHKFilm le décrit comme « très probablement l' entrée dans le célèbre genre de la comédie d' horreur de Hong Kong » et « un film amusant qui met en vedette Lam Ching-ying à son meilleur » .	met en vedette; 29,30,31 | à son meilleur; 34,35,36
+
+list##### ["LoveHKFilm le décrit comme « très probablement l' entrée dans le célèbre genre de la comédie d' horreur de Hong Kong » et « un film amusant qui met en vedette Lam Ching-ying à son meilleur » .", 'met en vedette; 29,30,31 | à son meilleur; 34,35,36\n']
+####PRED#### Un programme européen soutient ce type de recherche .	None
+
+list##### ['Un programme européen soutient ce type de recherche .', 'None\n']
+####PRED#### En équipe nationale	None
+
+list##### ['En équipe nationale', 'None\n']
+####PRED#### J' ai constaté que lorsqu' il évoquait le profil de l' Europe dans le monde , M. Prodi a parlé de l' élargissement et a dit que l' élargissement déplacerait le centre de gravité de l' Union européenne vers l' est .	centre de gravité; 32,33,34
+
+list##### ["J' ai constaté que lorsqu' il évoquait le profil de l' Europe dans le monde , M. Prodi a parlé de l' élargissement et a dit que l' élargissement déplacerait le centre de gravité de l' Union européenne vers l' est .", 'centre de gravité; 32,33,34\n']
+####PRED#### En 1802 , le malacologiste français Pierre Dénys de Montfort a reconnu l' existence de deux types de poulpes géants dans son Histoire naturelle générale et particulière des de les mollusques , une description encyclopédique des de les mollusques .	Histoire naturelle; 23,24 | Histoire naturelle générale et particulière; 23,24,25,26,27 | description encyclopédique; 34,35
+
+list##### ["En 1802 , le malacologiste français Pierre Dénys de Montfort a reconnu l' existence de deux types de poulpes géants dans son Histoire naturelle générale et particulière des de les mollusques , une description encyclopédique des de les mollusques .", 'Histoire naturelle; 23,24 | Histoire naturelle générale et particulière; 23,24,25,26,27 | description encyclopédique; 34,35\n']
+####PRED#### Il entame un cycle universitaire à l' université de Purdue ( Indiana ) .	None
+
+list##### ["Il entame un cycle universitaire à l' université de Purdue ( Indiana ) .", 'None\n']
+####PRED#### Cela a duré une demie-heure .	demie-heure; 5
+
+list##### ['Cela a duré une demie-heure .', 'demie-heure; 5\n']
+####PRED#### Son siège social est situé dans le 15ᵉ arrondissement de Paris .	siège social; 2,3
+
+list##### ['Son siège social est situé dans le 15ᵉ arrondissement de Paris .', 'siège social; 2,3\n']
+####PRED#### Cinéma indépendant et rôles secondaires ( années 2000 )	Cinéma indépendant; 1,2
+
+list##### ['Cinéma indépendant et rôles secondaires ( années 2000 )', 'Cinéma indépendant; 1,2\n']
+####PRED#### L' énergie électrique nécessaire est fournie par un générateur sous la forme d' une dynamo ou d' un alternateur , entraîné par le moteur , charge une batterie permettant de fournir de façon continue une tension de 12 volts .	sous la forme d'; 10,11,12,13 | de façon; 32,33
+
+list##### ["L' énergie électrique nécessaire est fournie par un générateur sous la forme d' une dynamo ou d' un alternateur , entraîné par le moteur , charge une batterie permettant de fournir de façon continue une tension de 12 volts .", "sous la forme d'; 10,11,12,13 | de façon; 32,33\n"]
+####PRED#### La ville d' Eisfeld administre aussi la commune indépendante de Sachsenbrunn .	None
+
+list##### ["La ville d' Eisfeld administre aussi la commune indépendante de Sachsenbrunn .", 'None\n']
+####PRED#### Il possède un mode d' utilisation pour débutant , " Starter " , qui masque les fonctionnalités les plus compliquées de l' éditeur .	mode d' utilisation; 4,5,6
+
+list##### ['Il possède un mode d\' utilisation pour débutant , " Starter " , qui masque les fonctionnalités les plus compliquées de l\' éditeur .', "mode d' utilisation; 4,5,6\n"]
+####PRED#### Avec l' émission de télévision Chorus ( 1979 ) d' Antoine de Caunes , puis Les Enfants du de le rock ( 1981 ) auxquels à lesquels contribua Bruno Blum , le rock touchait désormais le grand public français .	émission de télévision; 3,4,5 | Les Enfants du rock; 16,17,18,21 | contribua à; 28,26 | touchait le public; 34,36,38 | grand public; 37,38
+
+list##### ["Avec l' émission de télévision Chorus ( 1979 ) d' Antoine de Caunes , puis Les Enfants du de le rock ( 1981 ) auxquels à lesquels contribua Bruno Blum , le rock touchait désormais le grand public français .", 'émission de télévision; 3,4,5 | Les Enfants du rock; 16,17,18,21 | contribua à; 28,26 | touchait le public; 34,36,38 | grand public; 37,38\n']
+####PRED#### Le mythe du de le bon sauvage chez Cartier dans Voyages au à le Canada	bon sauvage; 6,7
+
+list##### ['Le mythe du de le bon sauvage chez Cartier dans Voyages au à le Canada', 'bon sauvage; 6,7\n']
+####PRED#### Ce premier choix détermine l' espace disponible pour l' équipement et les bonus-malus de défense ;	bonus-malus; 13
+
+list##### ["Ce premier choix détermine l' espace disponible pour l' équipement et les bonus-malus de défense ;", 'bonus-malus; 13\n']
+####PRED#### Le tirage photographique est une étape dans le processus de restitution d' une image présente sur une pellicule .	tirage photographique; 2,3 | image présente; 14,15
+
+list##### ["Le tirage photographique est une étape dans le processus de restitution d' une image présente sur une pellicule .", 'tirage photographique; 2,3 | image présente; 14,15\n']
+####PRED#### Les figurines de Lewis apparaissent dans le roman Le Braconnier du de le lac perdu de Peter May ( titre original : The Chessmen , soit « les pièces d' échecs » en anglais ) .	pièces d'échecs; 29,30,31
+
+list##### ["Les figurines de Lewis apparaissent dans le roman Le Braconnier du de le lac perdu de Peter May ( titre original : The Chessmen , soit « les pièces d' échecs » en anglais ) .", "pièces d'échecs; 29,30,31\n"]
+####PRED#### Atkins Madame la Présidente , c' est une motion de procédure .	motion de procédure; 9,10,11
+
+list##### ["Atkins Madame la Présidente , c' est une motion de procédure .", 'motion de procédure; 9,10,11\n']
+####PRED#### Structure protéique du de le virus	None
+
+list##### ['Structure protéique du de le virus', 'None\n']
+####PRED#### Les surfaces agricoles utilisées ont diminué et sont passées de 1 397 hectares en 2000 à 1 251 hectares en 2010 .	surfaces agricoles; 2,3 | être passé de; 8,9,10
+
+list##### ['Les surfaces agricoles utilisées ont diminué et sont passées de 1\xa0397 hectares en 2000 à 1\xa0251 hectares en 2010 .', 'surfaces agricoles; 2,3 | être passé de; 8,9,10\n']
+####PRED#### Dans les années 1970 , le rupteur a été associé à un transistor , puis remplacé par un capteur à effet Hall , augmentant la fiabilité et la qualité de l' allumage .	capteur à effet Hall; 20,21,23,24,25
+
+list##### ["Dans les années 1970 , le rupteur a été associé à un transistor , puis remplacé par un capteur à effet Hall , augmentant la fiabilité et la qualité de l' allumage .", 'capteur à effet Hall; 20,21,23,24,25\n']
+####PRED#### En 1944 , elle commence à travailler au à le service de messagerie de l' ANC , tout en continuant sa scolartité au à le lycée de Orlando dans la banlieue de Johannesburg .	tout en; 18,19
+
+list##### ["En 1944 , elle commence à travailler au à le service de messagerie de l' ANC , tout en continuant sa scolartité au à le lycée de Orlando dans la banlieue de Johannesburg .", 'tout en; 18,19\n']
+####PRED#### Il est le fils de John Heyman , producteur de films tels que Le Messager et Jésus , et de Norma Heyman , productrice des de les Liaisons dangereuses et de Madame Henderson présente .	tels que; 12,13
+
+list##### ['Il est le fils de John Heyman , producteur de films tels que Le Messager et Jésus , et de Norma Heyman , productrice des de les Liaisons dangereuses et de Madame Henderson présente .', 'tels que; 12,13\n']
+####PRED#### Nbamu est un terme d' origine bantoue	d' origine; 5,6
+
+list##### ["Nbamu est un terme d' origine bantoue", "d' origine; 5,6\n"]
+####PRED#### Caserne Jeanne-d' Arc	None
+
+list##### ["Caserne Jeanne-d' Arc", 'None\n']
+####PRED#### Il y a quelques années , on disait déjà au à le sein de ce Parlement que le Maroc n' accepterait pas de nouvel accord avec l' UE .	Il y a; 1,2,3 | au à le sein de; 10,11,12,13,14
+
+list##### ["Il y a quelques années , on disait déjà au à le sein de ce Parlement que le Maroc n' accepterait pas de nouvel accord avec l' UE .", 'Il y a; 1,2,3 | au à le sein de; 10,11,12,13,14\n']
+####PRED#### Louis Rouffe est né le 10 avril 1849 à La Tour-d' Aigues , dans le Vaucluse , où ses parents , artistes ambulants , se trouvaient de passage .	artiste ambulant; 23,24 | se trouver de passage; 26,27,28,29
+
+list##### ["Louis Rouffe est né le 10 avril 1849 à La Tour-d' Aigues , dans le Vaucluse , où ses parents , artistes ambulants , se trouvaient de passage .", 'artiste ambulant; 23,24 | se trouver de passage; 26,27,28,29\n']
+####PRED#### Il semblerait que le premier site des de les deux capitales congolaises ait été l' île Mbamu ;	Il semblerait que; 1,2,3
+
+list##### ["Il semblerait que le premier site des de les deux capitales congolaises ait été l' île Mbamu ;", 'Il semblerait que; 1,2,3\n']
+####PRED#### Il démissionne de l' Unesco pour protester contre l' admission de l' Espagne franquiste .	démissionne de; 2,3 | protester contre; 7,8
+
+list##### ["Il démissionne de l' Unesco pour protester contre l' admission de l' Espagne franquiste .", 'démissionne de; 2,3 | protester contre; 7,8\n']
+####PRED#### Le théâtre occupait une superficie de plus de 5 000 m² .	plus de; 7,8
+
+list##### ['Le théâtre occupait une superficie de plus de 5\xa0000 m² .', 'plus de; 7,8\n']
+####PRED#### Les nations suivantes participent à l' édition 2009 .	participent à; 4,5
+
+list##### ["Les nations suivantes participent à l' édition 2009 .", 'participent à; 4,5\n']
+####PRED#### En tant que tel , il dispose de pouvoirs réduits et doit organiser une élection présidentielle anticipée	En tant que; 1,2,3 | dispose de; 7,8 | élection présidentielle; 15,16
+
+list##### ['En tant que tel , il dispose de pouvoirs réduits et doit organiser une élection présidentielle anticipée', 'En tant que; 1,2,3 | dispose de; 7,8 | élection présidentielle; 15,16\n']
+####PRED#### Choisissant de suivre la Confédération esclavagiste et son État d' adoption , il entre dans l' armée des de les États confédérés en tant que colonel du de le 7th Texas Cavalry , le 29 octobre .	en tant que; 21,22,23
+
+list##### ["Choisissant de suivre la Confédération esclavagiste et son État d' adoption , il entre dans l' armée des de les États confédérés en tant que colonel du de le 7th Texas Cavalry , le 29 octobre .", 'en tant que; 21,22,23\n']
+####PRED#### Un État politiquement partagé entre les deux partis	None
+
+list##### ['Un État politiquement partagé entre les deux partis', 'None\n']
+####PRED#### Ce produit est également exporté avec succès et a contribué à donner une impulsion significative à l’économie locale .	donner une impulsion; 12,13,14
+
+list##### ['Ce produit est également exporté avec succès et a contribué à donner une impulsion significative à l’économie locale .', 'donner une impulsion; 12,13,14\n']
+####PRED#### Le 4 septembre 1870 , lors de la guerre franco-allemande , il devient préfet de la défense nationale .	lors de; 6,7 | préfet de la défense nationale; 14,15,16,17,18
+
+list##### ['Le 4 septembre 1870 , lors de la guerre franco-allemande , il devient préfet de la défense nationale .', 'lors de; 6,7 | préfet de la défense nationale; 14,15,16,17,18\n']
+####PRED#### Au-delà des de les grandes différences dans le plan , le Code de droit canonique de 1983 et le code des de les canons des de les Églises orientales de 1990 se rejoignent sur de nombreuses dispositions du de le droit .	Code de droit canonique; 12,13,14,15 | se rejoignent; 32,33 | de droit; 39,40
+
+list##### ['Au-delà des de les grandes différences dans le plan , le Code de droit canonique de 1983 et le code des de les canons des de les Églises orientales de 1990 se rejoignent sur de nombreuses dispositions du de le droit .', 'Code de droit canonique; 12,13,14,15 | se rejoignent; 32,33 | de droit; 39,40\n']
+####PRED#### Sa longueur était de 22 km .	longueur de; 2,4
+
+list##### ['Sa longueur était de 22 km .', 'longueur de; 2,4\n']
+####PRED#### Une idée erronée propagée par un érudit en a fait un château bâti par les Templiers .	en a fait; 8,9,10
+
+list##### ['Une idée erronée propagée par un érudit en a fait un château bâti par les Templiers .', 'en a fait; 8,9,10\n']
+####PRED#### Le retour des de les Springboks sur la scène internationale a lieu le 15 août 1992 à l' occasion d' un match à domicile contre les All Blacks .	à domicile; 24,25 | à l' occasion; 17,18,19 | a lieu; 11,12
+
+list##### ["Le retour des de les Springboks sur la scène internationale a lieu le 15 août 1992 à l' occasion d' un match à domicile contre les All Blacks .", "à domicile; 24,25 | à l' occasion; 17,18,19 | a lieu; 11,12\n"]
+####PRED#### Le canon est développé par Krupp Ag , des de les essais sont effectués à partir du de le canon de 152 mm M 37 russe puis avec le canon de 155 mm GBT-T 419 français , sans résultats probants .	à partir du; 15,16,17
+
+list##### ['Le canon est développé par Krupp Ag , des de les essais sont effectués à partir du de le canon de 152 mm M 37 russe puis avec le canon de 155 mm GBT-T 419 français , sans résultats probants .', 'à partir du; 15,16,17\n']
+####PRED#### Marquage suprapubien corps allongé et marquage à partir d’une glande de la poitrine .	à partir de; 7,8,9
+
+list##### ['Marquage suprapubien corps allongé et marquage à partir d’une glande de la poitrine .', 'à partir de; 7,8,9\n']
+####PRED#### Promu lieutenant le 1ᵉʳ octobre 1929 , il est admis à l' école des de les officiers de gendarmerie de Versailles le 7 octobre 1930 , avant d' être affecté comme stagiaire au à le 7ᵉ régiment de chasseurs , le 1ᵉʳ avril 1931 .	école des officiers de gendarmerie; 13,14,17,19 | avant d'être; 27,28,29 | être affecté; 29,30 | stagiaire au à le; 32,33,34,35
+
+list##### ["Promu lieutenant le 1ᵉʳ octobre 1929 , il est admis à l' école des de les officiers de gendarmerie de Versailles le 7 octobre 1930 , avant d' être affecté comme stagiaire au à le 7ᵉ régiment de chasseurs , le 1ᵉʳ avril 1931 .", "école des officiers de gendarmerie; 13,14,17,19 | avant d'être; 27,28,29 | être affecté; 29,30 | stagiaire au à le; 32,33,34,35\n"]
+####PRED#### Il comprend également une étude de la théorie de Teichmüller .	None
+
+list##### ['Il comprend également une étude de la théorie de Teichmüller .', 'None\n']
+####PRED#### Il pratique la boxe , le football , le ski nautique , le chant et joue du de le piano .	ski nautique; 10,11 | joue du; 16,17 | de le; 18,19
+
+list##### ['Il pratique la boxe , le football , le ski nautique , le chant et joue du de le piano .', 'ski nautique; 10,11 | joue du; 16,17 | de le; 18,19\n']
+####PRED#### L' église Saint-Vaast a été dynamitée en 1917 par les Allemands , puis sa reconstruction démarra le 24 août 1930 la première pierre après les vêpres .	première pierre; 22,23
+
+list##### ["L' église Saint-Vaast a été dynamitée en 1917 par les Allemands , puis sa reconstruction démarra le 24 août 1930 la première pierre après les vêpres .", 'première pierre; 22,23\n']
+####PRED#### Le Nouveau-Brunswick est créé en 1784 à partir du de le comté de Sunbury et d' une portion du de le comté de Cumberland .	à partir de; 7,8,9 | de le; 19,20 | de le; 21,22
+
+list##### ["Le Nouveau-Brunswick est créé en 1784 à partir du de le comté de Sunbury et d' une portion du de le comté de Cumberland .", 'à partir de; 7,8,9 | de le; 19,20 | de le; 21,22\n']
+####PRED#### La musique sacrée est représentée par non moins de treize messes-parodies , ainsi que par deux fragments de telles messes , et par 64 motets .	non moins; 7,8 | ainsi que; 13,14
+
+list##### ['La musique sacrée est représentée par non moins de treize messes-parodies , ainsi que par deux fragments de telles messes , et par 64 motets .', 'non moins; 7,8 | ainsi que; 13,14\n']
+####PRED#### Son coéquipier Oscar Freire gagne une étape et le classement par points du de le Tour .	classement par points; 10,11,12
+
+list##### ['Son coéquipier Oscar Freire gagne une étape et le classement par points du de le Tour .', 'classement par points; 10,11,12\n']
+####PRED#### Il est utilisé notamment par des de les organismes de formation , dans le secteur public , et environ 50 établissements d' enseignement supérieur .	secteur public; 15,16 | établissements d' enseignement supérieur; 21,22,23,24
+
+list##### ["Il est utilisé notamment par des de les organismes de formation , dans le secteur public , et environ 50 établissements d' enseignement supérieur .", "secteur public; 15,16 | établissements d' enseignement supérieur; 21,22,23,24\n"]
+####PRED#### Ignasi Guardans Cambó ( EN ) Monsieur le Président , je voudrais présenter une motion de procédure au à le titre de l' article 166 concernant l' annexe II ( A ) du de le règlement de cette Assemblée .	motion de procédure; 15,16,17 | au titre de; 18,19,20,21 | règlement de l'Assemblée; 36,37,38,39
+
+list##### ["Ignasi Guardans Cambó ( EN ) Monsieur le Président , je voudrais présenter une motion de procédure au à le titre de l' article 166 concernant l' annexe II ( A ) du de le règlement de cette Assemblée .", "motion de procédure; 15,16,17 | au titre de; 18,19,20,21 | règlement de l'Assemblée; 36,37,38,39\n"]
+####PRED#### Il apprend le grec , le latin , le syriaque , l’hébreu , l’italien , l’espagnol et l’anglais .	None
+
+list##### ['Il apprend le grec , le latin , le syriaque , l’hébreu , l’italien , l’espagnol et l’anglais .', 'None\n']
+####PRED#### En 1768 , Memramcook est annexé au à le comté de Cumberland , en Nouvelle-Écosse , dans l' Amérique du de le Nord britannique .	Amérique du Nord; 19,20,21,23
+
+list##### ["En 1768 , Memramcook est annexé au à le comté de Cumberland , en Nouvelle-Écosse , dans l' Amérique du de le Nord britannique .", 'Amérique du Nord; 19,20,21,23\n']
+####PRED#### Je suis heureuse de constater que la commission des de les budgets adopte une attitude responsable vis-à-vis de cette question parce que l' idée qui consiste à l' imposer en tant que procédure d' urgence sans débat est inacceptable .	vis-à-vis de; 17,18 | en tant que; 31,32,33
+
+list##### ["Je suis heureuse de constater que la commission des de les budgets adopte une attitude responsable vis-à-vis de cette question parce que l' idée qui consiste à l' imposer en tant que procédure d' urgence sans débat est inacceptable .", 'vis-à-vis de; 17,18 | en tant que; 31,32,33\n']
+####PRED#### Il semble que ces prélèvements peuvent ensuite être stockés dans des de les centres , dont au à le moins Puzrish-Dagan qui aurait été spécialisé dans l' élevage si on en juge par la documentation qui en provient .	au à le moins; 17,18,19,20
+
+list##### ["Il semble que ces prélèvements peuvent ensuite être stockés dans des de les centres , dont au à le moins Puzrish-Dagan qui aurait été spécialisé dans l' élevage si on en juge par la documentation qui en provient .", 'au à le moins; 17,18,19,20\n']
+####PRED#### Sa descendance est la famille Ali Fadil Aldjidey de N' djamena au à le Tchad .	None
+
+list##### ["Sa descendance est la famille Ali Fadil Aldjidey de N' djamena au à le Tchad .", 'None\n']
+####PRED#### Il fait ses débuts professionnels en 2011 contre Paraná Clube .	faire ses débuts; 2,3,4
+
+list##### ['Il fait ses débuts professionnels en 2011 contre Paraná Clube .', 'faire ses débuts; 2,3,4\n']
+####PRED#### Sans doute , à cette époque , on prenait connaissance de cette musique en assistant à la messe dans les églises collégiales ou paroissiales .	Sans doute; 1,2 | prenait connaissance; 9,10
+
+list##### ['Sans doute , à cette époque , on prenait connaissance de cette musique en assistant à la messe dans les églises collégiales ou paroissiales .', 'Sans doute; 1,2 | prenait connaissance; 9,10\n']
+####PRED#### La caisse du de le village a permis la réalisation de plusieurs projets , entre autres le bétonnage des de les différentes artères du de le village .	entre autres; 15,16
+
+list##### ['La caisse du de le village a permis la réalisation de plusieurs projets , entre autres le bétonnage des de les différentes artères du de le village .', 'entre autres; 15,16\n']
+####PRED#### La première partie de la collection a été exposée le 5 novembre 1987 au à le musée de l' archidiocèse de Varsovie ( Muzeum Archidiecezji Warszawskiej ) dans la rue Solect .	exposée à; 9,15
+
+list##### ["La première partie de la collection a été exposée le 5 novembre 1987 au à le musée de l' archidiocèse de Varsovie ( Muzeum Archidiecezji Warszawskiej ) dans la rue Solect .", 'exposée à; 9,15\n']
+####PRED#### Starr de Roméo Beaudry en 1928 .	None
+
+list##### ['Starr de Roméo Beaudry en 1928 .', 'None\n']
+####PRED#### Metz en 1908 .	None
+
+list##### ['Metz en 1908 .', 'None\n']
+####PRED#### Hisar construit dans le but d' empêcher tout navire en provenance de la mer Noire d' atteindre la cité impériale .	en provenance de; 10,11,12 | but d'; 5,6
+
+list##### ["Hisar construit dans le but d' empêcher tout navire en provenance de la mer Noire d' atteindre la cité impériale .", "en provenance de; 10,11,12 | but d'; 5,6\n"]
+####PRED#### L’enseignement et les directions de thèses ont formé le cœur de ses activités .	directions de thèses; 4,5,6 | cœur de; 10,11
+
+list##### ['L’enseignement et les directions de thèses ont formé le cœur de ses activités .', 'directions de thèses; 4,5,6 | cœur de; 10,11\n']
+####PRED#### Les gradins , disposés en hémicycle , formaient une cavea insérée dans un rectangle .	disposés en hémicycle; 4,5,6 | cavea insérée dans un rectangle; 10,11,12,13,14
+
+list##### ['Les gradins , disposés en hémicycle , formaient une cavea insérée dans un rectangle .', 'disposés en hémicycle; 4,5,6 | cavea insérée dans un rectangle; 10,11,12,13,14\n']
+####PRED#### Les travaux commencent en 1906 , mais , comme Masqueray meurt en 1917 , les travaux intérieurs se poursuivent sous la direction d' autres architectes , jusqu' en 1931 .	travaux intérieurs; 2,17 | se poursuivent; 18,19 | jusqu' en; 27,28
+
+list##### ["Les travaux commencent en 1906 , mais , comme Masqueray meurt en 1917 , les travaux intérieurs se poursuivent sous la direction d' autres architectes , jusqu' en 1931 .", "travaux intérieurs; 2,17 | se poursuivent; 18,19 | jusqu' en; 27,28\n"]
+####PRED#### La définition complète du de le projet de M.	None
+
+list##### ['La définition complète du de le projet de M.', 'None\n']
+####PRED#### Les départs ont lieu en individuel ou en pelotons .	ont lieu; 3,4
+
+list##### ['Les départs ont lieu en individuel ou en pelotons .', 'ont lieu; 3,4\n']
+####PRED#### Il a servi en tant que président de la Shandong Normal University de 1984 à 1990 .	en tant que; 4,5,6
+
+list##### ['Il a servi en tant que président de la Shandong Normal University de 1984 à 1990 .', 'en tant que; 4,5,6\n']
+####PRED#### Par exemple , pour les spécialistes , le canon 776 § 2 du de le CCEO apporte une précision utile , par rapport à son équivalent latin ( c. 1055 ) : « par l' institution du de le Christ , le mariage ... » .	Par exemple; 1,2 | par rapport à; 22,23,24
+
+list##### ["Par exemple , pour les spécialistes , le canon 776 § 2 du de le CCEO apporte une précision utile , par rapport à son équivalent latin ( c. 1055 ) : « par l' institution du de le Christ , le mariage ... » .", 'Par exemple; 1,2 | par rapport à; 22,23,24\n']
+####PRED#### Oddy Madame le Président , je ne contredirai pas les orateurs précédents , Mme Fontaine a produit un excellent rapport .	Madame le Président; 2,3,4
+
+list##### ['Oddy Madame le Président , je ne contredirai pas les orateurs précédents , Mme Fontaine a produit un excellent rapport .', 'Madame le Président; 2,3,4\n']
+####PRED#### Sultanat de la région Salamat d' Am-Timan tenu par Cheikh Mahamat Annadif Ali Fadel de l' ethnie Salamat .	de la région; 2,3,4 | tenu par; 8,9 | de l' ethnie; 15,16,17
+
+list##### ["Sultanat de la région Salamat d' Am-Timan tenu par Cheikh Mahamat Annadif Ali Fadel de l' ethnie Salamat .", "de la région; 2,3,4 | tenu par; 8,9 | de l' ethnie; 15,16,17\n"]
+####PRED#### Son observation a également été enregistrée par l' expédition espagnole de Ruy López de Villalobos en décembre 1542 .	expédition espagnole; 9,10
+
+list##### ["Son observation a également été enregistrée par l' expédition espagnole de Ruy López de Villalobos en décembre 1542 .", 'expédition espagnole; 9,10\n']
+####PRED#### Les rapports tant juifs que polonais parlaient d' une atmosphère de panique parmi la société juive dans l' été 1946 .	tant que; 3,5
+
+list##### ["Les rapports tant juifs que polonais parlaient d' une atmosphère de panique parmi la société juive dans l' été 1946 .", 'tant que; 3,5\n']
+####PRED#### Le 3 août 1843 , le père Langlois , en présence du de le vicaire général du de le diocèse de Paris , monseigneur Eglée , de cinq docteurs , dont Joseph Récamier , et de membres du de le Conseil de la Congrégation pour la Propagation de la Foi , ainsi que du de le frère du de le martyr , reconnaît officiellement les reliques de saint Pierre Dumoulin-Borie , rapportées de Corée après son exécution .	en présence de; 10,11,12 | vicaire général; 14,15 | Conseil de la Congrégation pour la Propagation de la Foi; 39,40,41,42,43,44,45,46,47,48 | ainsi que; 50,51
+
+list##### ['Le 3 août 1843 , le père Langlois , en présence du de le vicaire général du de le diocèse de Paris , monseigneur Eglée , de cinq docteurs , dont Joseph Récamier , et de membres du de le Conseil de la Congrégation pour la Propagation de la Foi , ainsi que du de le frère du de le martyr , reconnaît officiellement les reliques de saint Pierre Dumoulin-Borie , rapportées de Corée après son exécution .', 'en présence de; 10,11,12 | vicaire général; 14,15 | Conseil de la Congrégation pour la Propagation de la Foi; 39,40,41,42,43,44,45,46,47,48 | ainsi que; 50,51\n']
+####PRED#### À 18 ans , elle rejoint la Ligue de la jeunesse de l' ANC et est chargée d' ouvrir des de les succursales de la Ligue dans le Transvaal .	chargée d' ouvrir; 17,18,19 | de la Ligue; 24,25,26
+
+list##### ["À 18 ans , elle rejoint la Ligue de la jeunesse de l' ANC et est chargée d' ouvrir des de les succursales de la Ligue dans le Transvaal .", "chargée d' ouvrir; 17,18,19 | de la Ligue; 24,25,26\n"]
+####PRED#### En courant alternatif , on ne parle que de points de contact ( pas de distinction entre entrée et sortie ) .	courant alternatif; 2,3 | points de contact; 10,11,12 | pas de distinction entre; 14,15,16,17 | entrée et sortie; 18,19,20
+
+list##### ['En courant alternatif , on ne parle que de points de contact ( pas de distinction entre entrée et sortie ) .', 'courant alternatif; 2,3 | points de contact; 10,11,12 | pas de distinction entre; 14,15,16,17 | entrée et sortie; 18,19,20\n']
+####PRED#### Description du de le théâtre	None
+
+list##### ['Description du de le théâtre', 'None\n']
+####PRED#### De nouvelles signatures apparaissent , de plus en plus nombreuses dans les années 1980 .	de plus en plus; 6,7,8,9
+
+list##### ['De nouvelles signatures apparaissent , de plus en plus nombreuses dans les années 1980 .', 'de plus en plus; 6,7,8,9\n']
+####PRED#### J' ai essayé hier soir ainsi que ce matin , à la première heure .	hier soir; 5,6 | à la première heure; 11,12,13,14
+
+list##### ["J' ai essayé hier soir ainsi que ce matin , à la première heure .", 'hier soir; 5,6 | à la première heure; 11,12,13,14\n']
+####PRED#### La mandarine de Sauveterre est élaborée uniquement lors des de les premières montées de sève , juste avant d' entrée dans une nouvelle lune .	lors des; 8,9 | juste avant; 17,18
+
+list##### ["La mandarine de Sauveterre est élaborée uniquement lors des de les premières montées de sève , juste avant d' entrée dans une nouvelle lune .", 'lors des; 8,9 | juste avant; 17,18\n']
+####PRED#### Rome subit de graves troubles civils .	troubles civils; 5,6
+
+list##### ['Rome subit de graves troubles civils .', 'troubles civils; 5,6\n']
+####PRED#### Isidore Soucy apprend jeune à jouer du de le violon .	jouer du violon; 6,7,10
+
+list##### ['Isidore Soucy apprend jeune à jouer du de le violon .', 'jouer du violon; 6,7,10\n']
+####PRED#### De retour à Genève en 1880 , il travaille comme assistant de Carl Graebe à l' École de Chimie nouvellement créée tout en préparant à l' université de Bonn sa thèse ès sciences , qu' il obtient en 1881 .	De retour; 1,2 | tout en; 22,23 | ès sciences; 32,33
+
+list##### ["De retour à Genève en 1880 , il travaille comme assistant de Carl Graebe à l' École de Chimie nouvellement créée tout en préparant à l' université de Bonn sa thèse ès sciences , qu' il obtient en 1881 .", 'De retour; 1,2 | tout en; 22,23 | ès sciences; 32,33\n']
+####PRED#### Le résultat de l' enquête ( ses conclusions ) est remit par écrit , dans un rapport , au à le moins aux à les autorités concernées et peut être connu du de le public .	à le moins; 19,20,21 | remit par écrit; 11,12,13 | à le public; 32,34,35
+
+list##### ["Le résultat de l' enquête ( ses conclusions ) est remit par écrit , dans un rapport , au à le moins aux à les autorités concernées et peut être connu du de le public .", 'à le moins; 19,20,21 | remit par écrit; 11,12,13 | à le public; 32,34,35\n']
+####PRED#### Diplômé de l’Institut d' études politiques de Paris en 1953 , agrégé d’histoire en 1956 , attaché de recherche au à le CNRS en 1965 , assistant puis maître assistant à l’université de Nanterre , il soutient en mai 1969 sa thèse de doctorat d’État portant sur «	d’histoire; 13 | maître assistant; 29,30 | doctorat d’État; 44,45 | portant sur; 46,47
+
+list##### ["Diplômé de l’Institut d' études politiques de Paris en 1953 , agrégé d’histoire en 1956 , attaché de recherche au à le CNRS en 1965 , assistant puis maître assistant à l’université de Nanterre , il soutient en mai 1969 sa thèse de doctorat d’État portant sur «", 'd’histoire; 13 | maître assistant; 29,30 | doctorat d’État; 44,45 | portant sur; 46,47\n']
+####PRED#### Outre les techniques de ski , la randonnée à ski requiert des de les savoir-faire qui nécessitent un entraînement régulier , gage de sécurité : connaissance de la méthode de recherche de victimes d' avalanche , organisation des de les premiers secours , vie et survie en altitude , confection d' abris ( igloos , tranchées ) , secourisme / évacuation en milieu isolé et hostile , etc .	savoir-faire; 15 | premiers secours; 41,42 | vie et survie; 44,45,46 | milieu isolé; 64,65 | milieu hostile; 66,67 | etc.; 68
+
+list##### ["Outre les techniques de ski , la randonnée à ski requiert des de les savoir-faire qui nécessitent un entraînement régulier , gage de sécurité : connaissance de la méthode de recherche de victimes d' avalanche , organisation des de les premiers secours , vie et survie en altitude , confection d' abris ( igloos , tranchées ) , secourisme / évacuation en milieu isolé et hostile , etc .", 'savoir-faire; 15 | premiers secours; 41,42 | vie et survie; 44,45,46 | milieu isolé; 64,65 | milieu hostile; 66,67 | etc.; 68\n']
+####PRED#### Le ski de randonnée demande une bonne technique permettant une économie de l' effort , un sens aigu du de le terrain et de la répartition de l' effort , une connaissance de la neige pour déceler les pièges ( plaques à vent , crevasses ) .	ski de randonnée; 2,3,4 | sens aigu; 17,18 | plaques à vent; 41,42,43
+
+list##### ["Le ski de randonnée demande une bonne technique permettant une économie de l' effort , un sens aigu du de le terrain et de la répartition de l' effort , une connaissance de la neige pour déceler les pièges ( plaques à vent , crevasses ) .", 'ski de randonnée; 2,3,4 | sens aigu; 17,18 | plaques à vent; 41,42,43\n']
+####PRED#### À l’âge de sept ans , Mirianne faisait de la figuration , dans la série Au À le nom du de le père et du de le fils , elle y voyait Sylvie-Catherine jouer un rôle et ça l’impressionnait .	À l’âge de; 1,2,3 | de la figuration; 9,10,11 | Au À le nom du de le père et du de le fils; 16,17,18,19,20,21,22,23,24,25,26,27,28 | jouer un rôle; 34,35,36
+
+list##### ['À l’âge de sept ans , Mirianne faisait de la figuration , dans la série Au À le nom du de le père et du de le fils , elle y voyait Sylvie-Catherine jouer un rôle et ça l’impressionnait .', 'À l’âge de; 1,2,3 | de la figuration; 9,10,11 | Au À le nom du de le père et du de le fils; 16,17,18,19,20,21,22,23,24,25,26,27,28 | jouer un rôle; 34,35,36\n']
+####PRED#### L' objectif est généralement correctif , plus que préventif ( le préventif relevant plutôt des de les écotechnologies et de l' écoconception ) .	plus que; 7,8
+
+list##### ["L' objectif est généralement correctif , plus que préventif ( le préventif relevant plutôt des de les écotechnologies et de l' écoconception ) .", 'plus que; 7,8\n']
+####PRED#### Il est ensuite quatrième du de le Tour de France , puis troisième après la disqualification de Bernhard Kohl .	None
+
+list##### ['Il est ensuite quatrième du de le Tour de France , puis troisième après la disqualification de Bernhard Kohl .', 'None\n']
+####PRED#### En décembre 2010 , Jennifer commence à fréquenter son partenaire Nicholas Hoult	None
+
+list##### ['En décembre 2010 , Jennifer commence à fréquenter son partenaire Nicholas Hoult', 'None\n']
+####PRED#### Fondé en 1973 sous le nom d’Association Française de Défense de l’Ostéopathie ( AFDO ) , il constitue la plus ancienne organisation professionnelle française d’ostéopathes .	plus ancienne; 20,21 | d’ostéopathes; 25
+
+list##### ['Fondé en 1973 sous le nom d’Association Française de Défense de l’Ostéopathie ( AFDO ) , il constitue la plus ancienne organisation professionnelle française d’ostéopathes .', 'plus ancienne; 20,21 | d’ostéopathes; 25\n']
+####PRED#### Gravement déprimé , il mourut du de le choléra le 28 juin .	mourut du; 5,6 | mourut de le; 5,7,8 | le 28 juin; 10,11,12
+
+list##### ['Gravement déprimé , il mourut du de le choléra le 28 juin .', 'mourut du; 5,6 | mourut de le; 5,7,8 | le 28 juin; 10,11,12\n']
+####PRED#### De son côté , Raglan reprocha à Pélissier d' avoir renoncé à l' attaque du de le côté de la ville .	de son côté; 1,2,3 | de le côté de; 18,19,20,21
+
+list##### ["De son côté , Raglan reprocha à Pélissier d' avoir renoncé à l' attaque du de le côté de la ville .", 'de son côté; 1,2,3 | de le côté de; 18,19,20,21\n']
+####PRED#### Il existe aussi des de les restrictions concernant les doubles mandats , qui empêchent de se présenter le Président de la République , les membres du de le gouvernement , les juges de la Cour constitutionnelle , les procureurs , les maires et membres de conseils municipaux , etc .	Il existe; 1,2 | de les; 5,6 | se présenter; 16,17 | Président de la République; 19,20,21,22 | membres du gouvernement; 25,26,29 | juges de la Cour constitutionnelle; 32,33,34,35,36 | conseils municipaux; 46,47 | etc.; 49,50
+
+list##### ['Il existe aussi des de les restrictions concernant les doubles mandats , qui empêchent de se présenter le Président de la République , les membres du de le gouvernement , les juges de la Cour constitutionnelle , les procureurs , les maires et membres de conseils municipaux , etc .', 'Il existe; 1,2 | de les; 5,6 | se présenter; 16,17 | Président de la République; 19,20,21,22 | membres du gouvernement; 25,26,29 | juges de la Cour constitutionnelle; 32,33,34,35,36 | conseils municipaux; 46,47 | etc.; 49,50\n']
+####PRED#### Douze équipes seront inscrites dans les deux divisions principales : il n' y aura qu' un seul vainqueur , en additionnant les scores masculins et féminins , sans distinction .	il n' y aura; 11,12,13,14 | qu' un seul; 15,16,17
+
+list##### ["Douze équipes seront inscrites dans les deux divisions principales : il n' y aura qu' un seul vainqueur , en additionnant les scores masculins et féminins , sans distinction .", "il n' y aura; 11,12,13,14 | qu' un seul; 15,16,17\n"]
+####PRED#### En juin 1594 , les Cosaques Zaporogues reçoivent l' envoyé de l' empereur Erich Lassota von Steblau et acceptent une alliance avec l' empire contre l' empire ottoman .	None
+
+list##### ["En juin 1594 , les Cosaques Zaporogues reçoivent l' envoyé de l' empereur Erich Lassota von Steblau et acceptent une alliance avec l' empire contre l' empire ottoman .", 'None\n']
+####PRED#### Trevor Wye est né le 6 juin 1935 au à le Royaume-Uni .	est né; 3,4
+
+list##### ['Trevor Wye est né le 6 juin 1935 au à le Royaume-Uni .', 'est né; 3,4\n']
+####PRED#### Le jeune George y passe l' équivalent du de le bac en 1907 , au à le lycée de Hamburg ( en ) ( État de New York ) .	lycée de Hamburg; 18,19,20
+
+list##### ["Le jeune George y passe l' équivalent du de le bac en 1907 , au à le lycée de Hamburg ( en ) ( État de New York ) .", 'lycée de Hamburg; 18,19,20\n']
+####PRED#### La décision provisoire de la Cour de Justice , en date du de le 24 septembre , empêchera en effet la Commission de soutenir les quelque 800 demandes introduites par des de les organismes de lutte contre la pauvreté de toute l' Europe .	en date; 10,11 | en effet; 17,18 | de lutte contre la pauvreté; 33,34,35,36,37 | de toute l' Europe; 38,39,40,41
+
+list##### ["La décision provisoire de la Cour de Justice , en date du de le 24 septembre , empêchera en effet la Commission de soutenir les quelque 800 demandes introduites par des de les organismes de lutte contre la pauvreté de toute l' Europe .", "en date; 10,11 | en effet; 17,18 | de lutte contre la pauvreté; 33,34,35,36,37 | de toute l' Europe; 38,39,40,41\n"]
+####PRED#### Il n' est jusqu' à sa date de naissance qui ne soit sujet à conjecture .	jusqu'à; 4,5 | date de naissance; 7,8,9 | sujet à; 13,14
+
+list##### ["Il n' est jusqu' à sa date de naissance qui ne soit sujet à conjecture .", "jusqu'à; 4,5 | date de naissance; 7,8,9 | sujet à; 13,14\n"]
+####PRED#### Elles avaient lieu en deux tours , le scrutin étant indirect des de les grands électeurs étaient élus par la population divisée en trois classes , les plus riches avaient beaucoup plus d' influences sur l' élection que les plus pauvres , lors d' un second tour les grands électeurs élisaient à leur tour les représentants .	avaient lieu; 2,3 | à leur tour; 52,53,54
+
+list##### ["Elles avaient lieu en deux tours , le scrutin étant indirect des de les grands électeurs étaient élus par la population divisée en trois classes , les plus riches avaient beaucoup plus d' influences sur l' élection que les plus pauvres , lors d' un second tour les grands électeurs élisaient à leur tour les représentants .", 'avaient lieu; 2,3 | à leur tour; 52,53,54\n']
+####PRED#### Il fut confié à une de ses sœurs à Marseille .	confié à; 3,4
+
+list##### ['Il fut confié à une de ses sœurs à Marseille .', 'confié à; 3,4\n']
+####PRED#### Au À le XIᵉ siècle , l' ancien hameau de Burgellum possède une léproserie .	None
+
+list##### ["Au À le XIᵉ siècle , l' ancien hameau de Burgellum possède une léproserie .", 'None\n']
+####PRED#### La guerre d' Algérie et le prix Nobel	prix Nobel; 7,8
+
+list##### ["La guerre d' Algérie et le prix Nobel", 'prix Nobel; 7,8\n']
+####PRED#### Elle peut être mise en œuvre soit préalablement à certains projets ou décisions ( exemples : en environnement , en urbanisme en France , en Suisse , en Belgique , soit postérieurement à certains évènements souvent catastrophiques ( exemples : accidents majeurs ou meurtres de masse dans de nombreux pays du de le Commonwealth comme le Royaume-Uni , l' Irlande , l' Australie ou le Canada , changement climatique en Belgique ) .	mise en œuvre; 4,5,6 | accidents majeurs; 42,43 | meurtres de masse; 44,45,46 | changement climatique; 68,69
+
+list##### ["Elle peut être mise en œuvre soit préalablement à certains projets ou décisions ( exemples : en environnement , en urbanisme en France , en Suisse , en Belgique , soit postérieurement à certains évènements souvent catastrophiques ( exemples : accidents majeurs ou meurtres de masse dans de nombreux pays du de le Commonwealth comme le Royaume-Uni , l' Irlande , l' Australie ou le Canada , changement climatique en Belgique ) .", 'mise en œuvre; 4,5,6 | accidents majeurs; 42,43 | meurtres de masse; 44,45,46 | changement climatique; 68,69\n']
+####PRED#### Les exécutés sont très généralement décapités d' un coup de sabre , ou lapidés pour l' adultère , rarement par d' autres méthodes comme le crucifiement ou l' arme à feu .	d' un coup de sabre; 7,8,9,10,11 | arme à feu; 29,30,31
+
+list##### ["Les exécutés sont très généralement décapités d' un coup de sabre , ou lapidés pour l' adultère , rarement par d' autres méthodes comme le crucifiement ou l' arme à feu .", "d' un coup de sabre; 7,8,9,10,11 | arme à feu; 29,30,31\n"]
+####PRED#### Le groupe excepté William Goldsmith se rassemble de nouveau aux à les studios Grandmaster Recorders d' Hollywood en février 1997 pendant quatre semaines aux à les cours desquelles ils ré-enregistrent la majorité de l' album , avec Dave Grohl à la batterie .	se rassemble; 6,7 | de nouveau; 8,9 | aux à; 10,11 | aux à les cours desquelles; 24,25,26,27,28 | à la batterie; 40,41,42
+
+list##### ["Le groupe excepté William Goldsmith se rassemble de nouveau aux à les studios Grandmaster Recorders d' Hollywood en février 1997 pendant quatre semaines aux à les cours desquelles ils ré-enregistrent la majorité de l' album , avec Dave Grohl à la batterie .", 'se rassemble; 6,7 | de nouveau; 8,9 | aux à; 10,11 | aux à les cours desquelles; 24,25,26,27,28 | à la batterie; 40,41,42\n']
+####PRED#### Prodi devrait normalement attendre le nouveau mandat du de le Parlement et à la suite de la nomination de la nouvelle Commission .	à la suite de; 13,14,15,16
+
+list##### ['Prodi devrait normalement attendre le nouveau mandat du de le Parlement et à la suite de la nomination de la nouvelle Commission .', 'à la suite de; 13,14,15,16\n']
+####PRED#### Au À le XIIIᵉ siècle , le château de Cabrera et ses environs , dont Maçanet , appartiennent à la famille des de les Hortal ( qui prend plus tard le nom de Cabrera ) , vassaux des de les Serralongue , seigneurs de la baronnie de Cabrenys ( d' où vient le nom de Cabrenç ) .	d' où; 51,52
+
+list##### ["Au À le XIIIᵉ siècle , le château de Cabrera et ses environs , dont Maçanet , appartiennent à la famille des de les Hortal ( qui prend plus tard le nom de Cabrera ) , vassaux des de les Serralongue , seigneurs de la baronnie de Cabrenys ( d' où vient le nom de Cabrenç ) .", "d' où; 51,52\n"]
+####PRED#### Ils se poursuivent en essayant d' améliorer la qualité environnementale des de les murs anti-bruit , en leur faisant produire des de les services écologiques ( panneaux solaires , etc. ) ou des de les services écosystémiques ( végétalisation intégrée ou de plantes grimpantes épurant l' air et l' eau , produisant de l' oxygène et des de les aménités … ) .	murs anti-bruit; 14,15 | services écologiques; 24,25 | services écosystémiques; 36,37 | végétalisation intégrée; 39,40 | plantes grimpantes; 43,44
+
+list##### ["Ils se poursuivent en essayant d' améliorer la qualité environnementale des de les murs anti-bruit , en leur faisant produire des de les services écologiques ( panneaux solaires , etc. ) ou des de les services écosystémiques ( végétalisation intégrée ou de plantes grimpantes épurant l' air et l' eau , produisant de l' oxygène et des de les aménités … ) .", 'murs anti-bruit; 14,15 | services écologiques; 24,25 | services écosystémiques; 36,37 | végétalisation intégrée; 39,40 | plantes grimpantes; 43,44\n']
+####PRED#### Quelques années plus tard , d' autres collaboreront à la revue Les Epées , qui , créée en 2001 par David Foubert , revendique expressément l' héritage de Réaction , et paraît jusqu' en 2010 .	plus tard; 3,4 | jusqu' en; 33,34
+
+list##### ["Quelques années plus tard , d' autres collaboreront à la revue Les Epées , qui , créée en 2001 par David Foubert , revendique expressément l' héritage de Réaction , et paraît jusqu' en 2010 .", "plus tard; 3,4 | jusqu' en; 33,34\n"]
+####PRED#### Les canonistes d' Occident se réfèrent volontiers au à le CCEO , dans la mesure où certains de ses canons apportent des de les précisions ou des de les nuances utiles pour mieux comprendre la volonté du de le législateur .	dans la mesure où; 13,14,15,16
+
+list##### ["Les canonistes d' Occident se réfèrent volontiers au à le CCEO , dans la mesure où certains de ses canons apportent des de les précisions ou des de les nuances utiles pour mieux comprendre la volonté du de le législateur .", 'dans la mesure où; 13,14,15,16\n']
+####PRED#### La rétention d' information s' oppose au à le partage d' information , considéré comme l' un des de les trois piliers de l' ingénierie des de les connaissances .	rétention d' information; 2,3,4 | s' oppose; 5,6 | partage d' information; 10,11,12 | ingénierie des connaissances; 25,26,29
+
+list##### ["La rétention d' information s' oppose au à le partage d' information , considéré comme l' un des de les trois piliers de l' ingénierie des de les connaissances .", "rétention d' information; 2,3,4 | s' oppose; 5,6 | partage d' information; 10,11,12 | ingénierie des connaissances; 25,26,29\n"]
+####PRED#### En l' espace de dix ans , la jeune actrice va être très active , en jouant notamment dans près de 30 films , dont de nombreux sont pour un cinéma indépendant .	l' espace de; 2,3,4 | près de; 20,21 | cinéma indépendant; 31,32
+
+list##### ["En l' espace de dix ans , la jeune actrice va être très active , en jouant notamment dans près de 30 films , dont de nombreux sont pour un cinéma indépendant .", "l' espace de; 2,3,4 | près de; 20,21 | cinéma indépendant; 31,32\n"]
+####PRED#### Pour remporter la victoire une équipe doit vaincre 2 titans du de le camp adverse , ou bien forcer l' adversaire à abandonner .	ou bien; 17,18
+
+list##### ["Pour remporter la victoire une équipe doit vaincre 2 titans du de le camp adverse , ou bien forcer l' adversaire à abandonner .", 'ou bien; 17,18\n']
+####PRED#### Le canon est usiné d' une seule pièce et a une longueur de 7,0 mètres ( le calcul se faisant par la multiplication du de le diamètre par le calibre , ici 128×55= 7 040 mm ) .	se faisant; 19,20
+
+list##### ["Le canon est usiné d' une seule pièce et a une longueur de 7,0 mètres ( le calcul se faisant par la multiplication du de le diamètre par le calibre , ici 128×55= 7\xa0040 mm ) .", 'se faisant; 19,20\n']
+####PRED#### Personnalités de Polynésie française	None
+
+list##### ['Personnalités de Polynésie française', 'None\n']
+####PRED#### Un tel régime pourrait faire l' objet d' un accord séparé ou d' un protocole se rapportant au à le Traité sur la non-prolifération .	faire l' objet; 5,6,7 | se rapportant; 16,17
+
+list##### ["Un tel régime pourrait faire l' objet d' un accord séparé ou d' un protocole se rapportant au à le Traité sur la non-prolifération .", "faire l' objet; 5,6,7 | se rapportant; 16,17\n"]
+####PRED#### Il est à noter que cette dernière place ne qualifie que pour le troisième tour de qualification , et non pour les barrages comme les deux précédentes .	tour de qualification; 15,16,17
+
+list##### ['Il est à noter que cette dernière place ne qualifie que pour le troisième tour de qualification , et non pour les barrages comme les deux précédentes .', 'tour de qualification; 15,16,17\n']
+####PRED#### Il joue son premier match en équipe nationale le 3 novembre 1996 , en amical contre l' Indonésie .	équipe nationale; 7,8 | en amical; 14,15
+
+list##### ["Il joue son premier match en équipe nationale le 3 novembre 1996 , en amical contre l' Indonésie .", 'équipe nationale; 7,8 | en amical; 14,15\n']
+####PRED#### Suivant la tradition militaire ancestrale de la famille , il s' engagea dans une brillante carrière militaire .	s' engagea; 11,12
+
+list##### ["Suivant la tradition militaire ancestrale de la famille , il s' engagea dans une brillante carrière militaire .", "s' engagea; 11,12\n"]
+####PRED#### L' activité tectonique locale est liée à l' interaction entre la plaque eurasiatique et la plaque nord-américaine .	None
+
+list##### ["L' activité tectonique locale est liée à l' interaction entre la plaque eurasiatique et la plaque nord-américaine .", 'None\n']
+####PRED#### Le 18 avril 1893 le 14ᵉ Régiment de Dragons s' installa au à le quartier Louvois .	s' installa; 10,11
+
+list##### ["Le 18 avril 1893 le 14ᵉ Régiment de Dragons s' installa au à le quartier Louvois .", "s' installa; 10,11\n"]
+####PRED#### Ils venaient aussi d' autres régions de Ligurie , du de le Montferrat , de certaines villes de la Plaine du de le Pô , notamment de Pavie , Plaisance et Parme , et de Corse , mais ont été formés et organisés à Gênes .	de le; 11,12 | de le; 22,23
+
+list##### ["Ils venaient aussi d' autres régions de Ligurie , du de le Montferrat , de certaines villes de la Plaine du de le Pô , notamment de Pavie , Plaisance et Parme , et de Corse , mais ont été formés et organisés à Gênes .", 'de le; 11,12 | de le; 22,23\n']
+####PRED#### Adelaide Tshukudu est née à Vereeniging au à le Transvaal .	est née; 3,4
+
+list##### ['Adelaide Tshukudu est née à Vereeniging au à le Transvaal .', 'est née; 3,4\n']
+####PRED#### Memramcook est fondé en 1700 dans la seigneurie de Beaubassin , en Acadie , dans la Nouvelle-France .	fondé en; 3,4 | seigneurie de; 8,9
+
+list##### ['Memramcook est fondé en 1700 dans la seigneurie de Beaubassin , en Acadie , dans la Nouvelle-France .', 'fondé en; 3,4 | seigneurie de; 8,9\n']
+####PRED#### En effet , un passage de L' Histoire naturelle du de le Romain Pline l' Ancien ( Iᵉʳ siècle ) narre également le cas d' un monstre marin à tentacules attaquant des de les réserves de poissons en saumure .	En effet; 1,2
+
+list##### ["En effet , un passage de L' Histoire naturelle du de le Romain Pline l' Ancien ( Iᵉʳ siècle ) narre également le cas d' un monstre marin à tentacules attaquant des de les réserves de poissons en saumure .", 'En effet; 1,2\n']
+####PRED#### Fortification de Dorchester Heights	None
+
+list##### ['Fortification de Dorchester Heights', 'None\n']
+####PRED#### Cette musique est composée en partie par de célèbres compositeurs internationaux ( Willaert , Josquin et Mouton ) et en partie par des de les compositeurs locaux ( Lupus , Gheerkin , Lapperdey et Raedt ) .	en partie; 5,6 | en partie; 20,21
+
+list##### ['Cette musique est composée en partie par de célèbres compositeurs internationaux ( Willaert , Josquin et Mouton ) et en partie par des de les compositeurs locaux ( Lupus , Gheerkin , Lapperdey et Raedt ) .', 'en partie; 5,6 | en partie; 20,21\n']
+####PRED#### La façade est caractérisée par des de les imposants contreforts verticaux , et par quatre ordres d' ouvertures : les arcades d' entrée ( en bas ) , et trois ordres de fenêtres superposées de forme différente .	ordres d' ouvertures; 16,17,18 | arcades d' entrée; 21,22,23 | en bas; 25,26
+
+list##### ["La façade est caractérisée par des de les imposants contreforts verticaux , et par quatre ordres d' ouvertures : les arcades d' entrée ( en bas ) , et trois ordres de fenêtres superposées de forme différente .", "ordres d' ouvertures; 16,17,18 | arcades d' entrée; 21,22,23 | en bas; 25,26\n"]
+####PRED#### Après la Première Guerre mondiale , la frontière franco-allemande coupe la ligne entre les gares de Guerstling et Kerprich-Hemmersdorf mais le trafic voyageur s' est poursuivi entre Bouzonville et Dillingen .	Guerre mondiale; 4,5 | s' est poursuivi; 25,26,27
+
+list##### ["Après la Première Guerre mondiale , la frontière franco-allemande coupe la ligne entre les gares de Guerstling et Kerprich-Hemmersdorf mais le trafic voyageur s' est poursuivi entre Bouzonville et Dillingen .", "Guerre mondiale; 4,5 | s' est poursuivi; 25,26,27\n"]
+####PRED#### Derain dira même au à le collectionneur et marchand d' art Daniel-Henry Kahnweiler : « Un jour , nous apprendrons que Picasso s' est pendu derrière sa grande toile » .	marchand d' art; 9,10,11
+
+list##### ["Derain dira même au à le collectionneur et marchand d' art Daniel-Henry Kahnweiler : « Un jour , nous apprendrons que Picasso s' est pendu derrière sa grande toile » .", "marchand d' art; 9,10,11\n"]
+####PRED#### Elle est décorée , entre autres , par Giottino , Giovanni da Milano et Fra Angelico .	entre autres; 5,6
+
+list##### ['Elle est décorée , entre autres , par Giottino , Giovanni da Milano et Fra Angelico .', 'entre autres; 5,6\n']
+####PRED#### Une lettre du de le 24 mars 2004 du de le ministre grec de l’intérieur nous a informé que Mme Kaldi avait été nommée afin de remplacer M. Folias au à le Parlement européen à compter du de le 24 mars 2004 .	ministre de l’intérieur; 12,14,15 | afin de; 25,26 | à compter du; 35,36,37
+
+list##### ['Une lettre du de le 24 mars 2004 du de le ministre grec de l’intérieur nous a informé que Mme Kaldi avait été nommée afin de remplacer M. Folias au à le Parlement européen à compter du de le 24 mars 2004 .', 'ministre de l’intérieur; 12,14,15 | afin de; 25,26 | à compter du; 35,36,37\n']
+####PRED#### La chapelle Sainte-Cécile , située rue du de le Chevalier-de-la-Barre , fut construite en 1951 par l' abbé Fernand Pentel et appartient actuellement à la mairie .	None
+
+list##### ["La chapelle Sainte-Cécile , située rue du de le Chevalier-de-la-Barre , fut construite en 1951 par l' abbé Fernand Pentel et appartient actuellement à la mairie .", 'None\n']
+####PRED#### Les éruptions du de le Balagan-Tas ont libéré des de les basaltes alcalins typiques de volcans de rift .	volcans de rift; 16,17,18
+
+list##### ['Les éruptions du de le Balagan-Tas ont libéré des de les basaltes alcalins typiques de volcans de rift .', 'volcans de rift; 16,17,18\n']
+####PRED#### Le réseau était construit à voie métrique et à voie unique avec des de les évitements permettant le croisement des de les tramways .	voie métrique; 6,7 | voie unique; 10,11 | de les; 14,15
+
+list##### ['Le réseau était construit à voie métrique et à voie unique avec des de les évitements permettant le croisement des de les tramways .', 'voie métrique; 6,7 | voie unique; 10,11 | de les; 14,15\n']
+####PRED#### Dans les bonus du de le DVD de Mr . Vampire , Bey Logan dit que le film a des de les « effets visuels très basiques car on n' était qu' au à le début de l' apparition des de les effets visuels dans les films de Hong Kong » .	effets visuels; 24,25
+
+list##### ["Dans les bonus du de le DVD de Mr . Vampire , Bey Logan dit que le film a des de les « effets visuels très basiques car on n' était qu' au à le début de l' apparition des de les effets visuels dans les films de Hong Kong » .", 'effets visuels; 24,25\n']
+####PRED#### Pour faciliter les rencontres des de les deux amants , une galerie couverte est édifiée entre les deux maisons , au à le grand dam de la population messine qui voyait dans sa ville s' étaler publiquement l' adultère royal .	s' étaler; 35,36
+
+list##### ["Pour faciliter les rencontres des de les deux amants , une galerie couverte est édifiée entre les deux maisons , au à le grand dam de la population messine qui voyait dans sa ville s' étaler publiquement l' adultère royal .", "s' étaler; 35,36\n"]
+####PRED#### il le prône dans son single la vraie force citant ces paroles " le virus de la musique était en moi depuis tout petit ,papa au à le son de sa Guitare et les chants de mamans qui berçaient mes ... " .	virus de la musique; 15,16,17,18 | depuis tout petit; 22,23,24 | à le son de; 27,28,29,30,31 | chants de mamans; 35,36,37 | berçaient mes; 39,40
+
+list##### ['il le prône dans son single la vraie force citant ces paroles " le virus de la musique était en moi depuis tout petit ,papa au à le son de sa Guitare et les chants de mamans qui berçaient mes ... " .', 'virus de la musique; 15,16,17,18 | depuis tout petit; 22,23,24 | à le son de; 27,28,29,30,31 | chants de mamans; 35,36,37 | berçaient mes; 39,40\n']
+####PRED#### Cette image fut également renforcée selon Georges Lynch , par des de les médisances propagées par le groupe Mötley Crüe , à l' époque où ils tournaient ensemble .	à l'époque; 22,23,24 | médisances propagées; 14,15
+
+list##### ["Cette image fut également renforcée selon Georges Lynch , par des de les médisances propagées par le groupe Mötley Crüe , à l' époque où ils tournaient ensemble .", "à l'époque; 22,23,24 | médisances propagées; 14,15\n"]
+####PRED#### Nous devons être très prudents quant à la manière dont nous dépensons l' argent des de les contribuables européens et nous devons nous tourner vers l' avenir .	quant à; 6,7 | manière dont; 9,10 | nous tourner vers; 23,24,25
+
+list##### ["Nous devons être très prudents quant à la manière dont nous dépensons l' argent des de les contribuables européens et nous devons nous tourner vers l' avenir .", 'quant à; 6,7 | manière dont; 9,10 | nous tourner vers; 23,24,25\n']
+####PRED#### Passage laborieux au à le Racing ( 1986-1989 )	None
+
+list##### ['Passage laborieux au à le Racing ( 1986-1989 )', 'None\n']
+####PRED#### De même , l’extension de la région sinistrée , qui devait être orientée vers le Sud , selon les spécialistes en la matière , a été déviée vers la plaine et des de les zones périphériques déjà fortement saturées .	De même; 1,2 | en la matière; 21,22,23 | déviée vers; 27,28 | fortement saturées; 38,39
+
+list##### ['De même , l’extension de la région sinistrée , qui devait être orientée vers le Sud , selon les spécialistes en la matière , a été déviée vers la plaine et des de les zones périphériques déjà fortement saturées .', 'De même; 1,2 | en la matière; 21,22,23 | déviée vers; 27,28 | fortement saturées; 38,39\n']
+####PRED#### Né à Marseille , d' une famille avec des de les origines italiennes , Lucas De Rossi passe son enfance à Carry-le-Rouet .	d' origines; 5,12
+
+list##### ["Né à Marseille , d' une famille avec des de les origines italiennes , Lucas De Rossi passe son enfance à Carry-le-Rouet .", "d' origines; 5,12\n"]
+####PRED#### Après la fin de ses études au à le Lycée Thiers , à dix-sept ans , il débuta dans la comédie , puis dans le mime .	débuta dans; 18,19
+
+list##### ['Après la fin de ses études au à le Lycée Thiers , à dix-sept ans , il débuta dans la comédie , puis dans le mime .', 'débuta dans; 18,19\n']
+####PRED#### - sur le plan économique , politique et culturel - , mais nous savons tous combien c' est important .	sur le plan; 2,3,4
+
+list##### ["- sur le plan économique , politique et culturel - , mais nous savons tous combien c' est important .", 'sur le plan; 2,3,4\n']
+####PRED#### La carte possède trois titans .	None
+
+list##### ['La carte possède trois titans .', 'None\n']
+####PRED#### Le parti conservateur était en train de se former .	en train de; 5,6,7
+
+list##### ['Le parti conservateur était en train de se former .', 'en train de; 5,6,7\n']
+####PRED#### Maghreb de Fès	Maghreb de Fès; 1,2,3
+
+list##### ['Maghreb de Fès', 'Maghreb de Fès; 1,2,3\n']
+####PRED#### Mokem arrête du de le jour au à le lendemain ses prestations avec Intouchable et Lil Jahson , quant à lui , arrête de rapper après l' album Regarde -moi bien toi de Manu Key .	du jour au lendemain; 3,6,7,10 | quant à; 19,20
+
+list##### ["Mokem arrête du de le jour au à le lendemain ses prestations avec Intouchable et Lil Jahson , quant à lui , arrête de rapper après l' album Regarde -moi bien toi de Manu Key .", 'du jour au lendemain; 3,6,7,10 | quant à; 19,20\n']
+####PRED#### Le courant électrique qui traverse le corps utilise les voies de moindre résistance , par ordre croissant : fibres nerveuses , vaisseaux ( contenant un liquide ) , muscles , tendons , graisse , os .	courant électrique; 2,3 | voies de moindre résistance; 10,11,12,13 | ordre croissant; 16,17 | fibres nerveuses; 19,20
+
+list##### ['Le courant électrique qui traverse le corps utilise les voies de moindre résistance , par ordre croissant : fibres nerveuses , vaisseaux ( contenant un liquide ) , muscles , tendons , graisse , os .', 'courant électrique; 2,3 | voies de moindre résistance; 10,11,12,13 | ordre croissant; 16,17 | fibres nerveuses; 19,20\n']
+####PRED#### L' aigle royal	aigle royal; 2,3
+
+list##### ["L' aigle royal", 'aigle royal; 2,3\n']
+####PRED#### Sa carrière en sport automobile débute en 1964 en participant à la saison inaugurale du de le championnat de France de Formule 3 .	championnat de France; 18,19,20
+
+list##### ['Sa carrière en sport automobile débute en 1964 en participant à la saison inaugurale du de le championnat de France de Formule 3 .', 'championnat de France; 18,19,20\n']
+####PRED#### Dans ses plis se loge la magie du de le tango glorieux du de le Buenos Aires . "	None
+
+list##### ['Dans ses plis se loge la magie du de le tango glorieux du de le Buenos Aires . "', 'None\n']
+####PRED#### Elle a été prolongée vers	None
+
+list##### ['Elle a été prolongée vers', 'None\n']
+####PRED#### Je souhaiterais toutefois faire quelques remarques sur le côté politique du de le discours de M. Prodi .	None
+
+list##### ['Je souhaiterais toutefois faire quelques remarques sur le côté politique du de le discours de M. Prodi .', 'None\n']
+####PRED#### Ils ont redécouvert également nombre d' œuvres du de le baroque latino-américain de compositeurs tels que Domenico Zipoli , Manuel de Sumaya , Juan de Araujo ou Tomás de Torrejón y Velasco .	tels que; 15,16
+
+list##### ["Ils ont redécouvert également nombre d' œuvres du de le baroque latino-américain de compositeurs tels que Domenico Zipoli , Manuel de Sumaya , Juan de Araujo ou Tomás de Torrejón y Velasco .", 'tels que; 15,16\n']
+####PRED#### À 12 ans il était déjà un expert .	À 12 ans; 1,2,3
+
+list##### ['À 12 ans il était déjà un expert .', 'À 12 ans; 1,2,3\n']
+####PRED#### Un premier château fort fut alors construit à l' entrée Nord du de le village , entouré d' un fossé alimenté par le Dorfgiessen , il n' existe plus aujourd'hui .	à entrée; 8,11
+
+list##### ["Un premier château fort fut alors construit à l' entrée Nord du de le village , entouré d' un fossé alimenté par le Dorfgiessen , il n' existe plus aujourd'hui .", 'à entrée; 8,11\n']
+####PRED#### Le PUC termine 6ᵉ des de les championnats de France 1995 et 1996 , puis tombe à la 8ᵉ place en 1997 .	championnats de France; 8,9,10
+
+list##### ['Le PUC termine 6ᵉ des de les championnats de France 1995 et 1996 , puis tombe à la 8ᵉ place en 1997 .', 'championnats de France; 8,9,10\n']
+####PRED#### L’Acadie est cédée au à le Royaume-Uni en 1713 mais la souveraineté sur le territoire au à le nord de la rivière Mésagouèche , incluant Memramcook , est contesté .	au nord de; 16,17,18,19
+
+list##### ['L’Acadie est cédée au à le Royaume-Uni en 1713 mais la souveraineté sur le territoire au à le nord de la rivière Mésagouèche , incluant Memramcook , est contesté .', 'au nord de; 16,17,18,19\n']
+####PRED#### En 1857 , le Kansas assembla une constituante qui rédigea la Constitution ( pro-esclavagiste ) de Lecompton .	pro-esclavagiste; 14
+
+list##### ['En 1857 , le Kansas assembla une constituante qui rédigea la Constitution ( pro-esclavagiste ) de Lecompton .', 'pro-esclavagiste; 14\n']
+####PRED#### La première mention du de le lieu date de 1134 , lorsque Louis VI cède la terre du de le Bourget à l' abbaye de Montmartre .	date de; 8,9 | cède à; 15, 22 | abbaye de; 24, 25
+
+list##### ["La première mention du de le lieu date de 1134 , lorsque Louis VI cède la terre du de le Bourget à l' abbaye de Montmartre .", 'date de; 8,9 | cède à; 15, 22 | abbaye de; 24, 25\n']
+####PRED#### Yucatán et Cuba	None
+
+list##### ['Yucatán et Cuba', 'None\n']
+####PRED#### il s' agit de Hamza Hajji .	s' agit de; 2,3,4
+
+list##### ["il s' agit de Hamza Hajji .", "s' agit de; 2,3,4\n"]
+####PRED#### L’aigle royal est l’un des de les plus grands prédateurs du de le chamois .	l’un des; 4,5,7
+
+list##### ['L’aigle royal est l’un des de les plus grands prédateurs du de le chamois .', 'l’un des; 4,5,7\n']
+####PRED#### Pierre Dénys de Montfort a d' abord été militaire : officier , aide de camp , secrétaire du de le représentant Claude Roberjot en 1795 , puis attaché en 1799 au à le cabinet de géologie du de le Muséum d' histoire naturelle de Paris .	d' abord; 6,7 | aide de camp; 13,14,15 | cabinet de géologie; 34,35,36 | Muséum d' histoire naturelle; 40,41,42,43
+
+list##### ["Pierre Dénys de Montfort a d' abord été militaire : officier , aide de camp , secrétaire du de le représentant Claude Roberjot en 1795 , puis attaché en 1799 au à le cabinet de géologie du de le Muséum d' histoire naturelle de Paris .", "d' abord; 6,7 | aide de camp; 13,14,15 | cabinet de géologie; 34,35,36 | Muséum d' histoire naturelle; 40,41,42,43\n"]
+####PRED#### Peu après la première du de le film , Hugo Bettauer fut assassiné par un ancien membre du de le Parti nazi , Otto Rothstock .	Peu après; 1,2 | de le; 6,7 | de le; 19,20
+
+list##### ['Peu après la première du de le film , Hugo Bettauer fut assassiné par un ancien membre du de le Parti nazi , Otto Rothstock .', 'Peu après; 1,2 | de le; 6,7 | de le; 19,20\n']
+####PRED#### Il fusionne au à le début des de les années 2000 avec le Lille Université Club .	fusionne avec; 2,12 | à le début des; 4,5,6,7 | de les; 8,9
+
+list##### ['Il fusionne au à le début des de les années 2000 avec le Lille Université Club .', 'fusionne avec; 2,12 | à le début des; 4,5,6,7 | de les; 8,9\n']
+####PRED#### La couleur du de le numéro doit contraster avec celle du de le maillot .	contraster avec; 8,9
+
+list##### ['La couleur du de le numéro doit contraster avec celle du de le maillot .', 'contraster avec; 8,9\n']
+####PRED#### Le hip-hop canadien désigne le mouvement hip-hop ayant émergé dans les années 1980 au à le Canada .	hip-hop; 2 | hip-hop; 7
+
+list##### ['Le hip-hop canadien désigne le mouvement hip-hop ayant émergé dans les années 1980 au à le Canada .', 'hip-hop; 2 | hip-hop; 7\n']
+####PRED#### Il faut ajouter que les Catalans , peuple terrien et paysan à l' origine , mais investissant de plus en plus dans la mer et le commerce maritime , étaient les premières victimes des de les actes de barbarie sauvage et de piraterie maures .	à l'origine; 12,13,14 | de plus en plus; 18,19,20,21 | de barbarie; 39,40 | de piraterie; 42,43 | actes de barbarie; 37,38,39,40 | actes de piraterie; 37,38,42,43
+
+list##### ["Il faut ajouter que les Catalans , peuple terrien et paysan à l' origine , mais investissant de plus en plus dans la mer et le commerce maritime , étaient les premières victimes des de les actes de barbarie sauvage et de piraterie maures .", "à l'origine; 12,13,14 | de plus en plus; 18,19,20,21 | de barbarie; 39,40 | de piraterie; 42,43 | actes de barbarie; 37,38,39,40 | actes de piraterie; 37,38,42,43\n"]
+####PRED#### Les anti-esclavagistes refusèrent de la ratifier , le président James Buchanan l' accepta néanmoins et fut désavoué par le Congrès qui exigea une nouvelle élection .	None
+
+list##### ["Les anti-esclavagistes refusèrent de la ratifier , le président James Buchanan l' accepta néanmoins et fut désavoué par le Congrès qui exigea une nouvelle élection .", 'None\n']
+####PRED#### À cela s' ajoutent les deux lignes du de le réseau urbain « TIPRY » , qui est géré par la communauté de communes des de les Portes de Romilly-sur-Seine .	communauté de communes; 22,23,24
+
+list##### ["À cela s' ajoutent les deux lignes du de le réseau urbain « TIPRY » , qui est géré par la communauté de communes des de les Portes de Romilly-sur-Seine .", 'communauté de communes; 22,23,24\n']
+####PRED#### Cependant , lorsqu' il juge utile à la bonne administration d' une bande , le ministre des de les Affaires autochtones peut désigner le conseil d' une bande , comprenant un chef et des de les conseillers par le biais d' élections .	par le biais de; 38,39,40,41
+
+list##### ["Cependant , lorsqu' il juge utile à la bonne administration d' une bande , le ministre des de les Affaires autochtones peut désigner le conseil d' une bande , comprenant un chef et des de les conseillers par le biais d' élections .", 'par le biais de; 38,39,40,41\n']
+####PRED#### La couverture en gaz naturel ne dépasse guère les 35 % , l’eau potable fait défaut dans beaucoup de localités …	fait défaut; 15,16
+
+list##### ['La couverture en gaz naturel ne dépasse guère les 35 % , l’eau potable fait défaut dans beaucoup de localités …', 'fait défaut; 15,16\n']
+####PRED#### Dans ce contexte donc , la commission institutionnelle a eu la grande joie de constater qu' il est possible d' aligner le nouveau budget sur les nouvelles priorités .	eu joie; 10,13 | aligner sur; 21,25
+
+list##### ["Dans ce contexte donc , la commission institutionnelle a eu la grande joie de constater qu' il est possible d' aligner le nouveau budget sur les nouvelles priorités .", 'eu joie; 10,13 | aligner sur; 21,25\n']
+####PRED#### Picasso aurait voulu s’opposer à l’idéal esthétique d' Ingres ou Matisse en présentant une œuvre provocante , choquante et délibérément inachevée .	s’opposer à; 4,5 | présentant une œuvre; 13,14,15 | délibérément inachevée; 20,21
+
+list##### ["Picasso aurait voulu s’opposer à l’idéal esthétique d' Ingres ou Matisse en présentant une œuvre provocante , choquante et délibérément inachevée .", 's’opposer à; 4,5 | présentant une œuvre; 13,14,15 | délibérément inachevée; 20,21\n']
+####PRED#### Ce fut alors au à le tour des de les pro-esclavagistes de boycotter le processus , ce qui permit à leurs adversaires de se déclarer victorieux .	au à le tour; 4,5,6,7 | se déclarer; 24,25
+
+list##### ['Ce fut alors au à le tour des de les pro-esclavagistes de boycotter le processus , ce qui permit à leurs adversaires de se déclarer victorieux .', 'au à le tour; 4,5,6,7 | se déclarer; 24,25\n']
+####PRED#### Pendant cette journée , il reçut une grave blessure à la jambe .	reçut blessure; 6,9
+
+list##### ['Pendant cette journée , il reçut une grave blessure à la jambe .', 'reçut blessure; 6,9\n']
+####PRED#### Quand l' église a été ouverte au à le culte , elle n' avait aucune décoration intérieure , blanche et des de les verrières incolores , selon le goût du de le XVIIIᵉ siècle .	ouverte au culte; 6,7,10 | selon le goût; 27,28,29
+
+list##### ["Quand l' église a été ouverte au à le culte , elle n' avait aucune décoration intérieure , blanche et des de les verrières incolores , selon le goût du de le XVIIIᵉ siècle .", 'ouverte au culte; 6,7,10 | selon le goût; 27,28,29\n']
+####PRED#### Tout en ne publiant pas de recherche mathématique de manière conventionnelle au à le cours des de les années 1980 , il a produit plusieurs manuscrits influents avec une distribution limitée , à la fois mathématique et biographique .	à la fois; 34,35,36
+
+list##### ['Tout en ne publiant pas de recherche mathématique de manière conventionnelle au à le cours des de les années 1980 , il a produit plusieurs manuscrits influents avec une distribution limitée , à la fois mathématique et biographique .', 'à la fois; 34,35,36\n']
+####PRED#### Ainsi depuis 1999 , l' AFNEUS lutte contre la désaffection des de les études scientifiques en participant et en organisant des de les rencontres nationales pour échanger des de les réflexions sur le sujet .	lutte contre; 7,8 | participant à; 17,22 | organisant des; 20,21 | échanger des; 27,28 | sur le sujet; 32,33,34
+
+list##### ["Ainsi depuis 1999 , l' AFNEUS lutte contre la désaffection des de les études scientifiques en participant et en organisant des de les rencontres nationales pour échanger des de les réflexions sur le sujet .", 'lutte contre; 7,8 | participant à; 17,22 | organisant des; 20,21 | échanger des; 27,28 | sur le sujet; 32,33,34\n']
+####PRED#### Par sa situation géographique en bordure de l' océan Atlantique , Marsilly s' est tournée comme les communes voisines d' Esnandes et de Nieul-sur-Mer vers la pratique de la mytiliculture qui constitue encore aujourd'hui une activité importante pour l' économie de la commune avec 30 exploitations conchylicoles recensées .	s' est tournée; 13,14,15 | aujourd'hui; 34 | exploitations conchylicoles; 46,47
+
+list##### ["Par sa situation géographique en bordure de l' océan Atlantique , Marsilly s' est tournée comme les communes voisines d' Esnandes et de Nieul-sur-Mer vers la pratique de la mytiliculture qui constitue encore aujourd'hui une activité importante pour l' économie de la commune avec 30 exploitations conchylicoles recensées .", "s' est tournée; 13,14,15 | aujourd'hui; 34 | exploitations conchylicoles; 46,47\n"]
+####PRED#### On passait dans Clermont par la rue de Paris ( quartier de la Croix de Creil , de Béthancourtel ) , la place Descuignères ( quartier Saint-André ) , la rue du de le Général-d - Gaulle , la place Camille-Sellier ( quartier de l' Équipée ) et la rue de Saint-Just .	passait dans; 1,2 | rue de; 7,8 | de le; 33,34 | quartier de; 26,27 | rue de; 50,51
+
+list##### ["On passait dans Clermont par la rue de Paris ( quartier de la Croix de Creil , de Béthancourtel ) , la place Descuignères ( quartier Saint-André ) , la rue du de le Général-d - Gaulle , la place Camille-Sellier ( quartier de l' Équipée ) et la rue de Saint-Just .", 'passait dans; 1,2 | rue de; 7,8 | de le; 33,34 | quartier de; 26,27 | rue de; 50,51\n']
+####PRED#### Comme toute méthode visant à améliorer la qualité d' un produit , il est difficile de mesurer exactement le gain apporté par la conception ergonomique .	gain apporté; 20,21
+
+list##### ["Comme toute méthode visant à améliorer la qualité d' un produit , il est difficile de mesurer exactement le gain apporté par la conception ergonomique .", 'gain apporté; 20,21\n']
+####PRED#### Le 21 novembre 1935 , Paillole rejoint l' administration centrale du de le Ministère de la guerre et obtient le grade de capitaine le 25 juin 1936 .	None
+
+list##### ["Le 21 novembre 1935 , Paillole rejoint l' administration centrale du de le Ministère de la guerre et obtient le grade de capitaine le 25 juin 1936 .", 'None\n']
+####PRED#### Un photographe aurait demandé aux à les deux groupes de poser nu sous la douche , le groupe américain aurait décliné , et à la suite de ce refus , le groupe Accept aurait alors donné son accord .	à la suite de; 24,25,26 | donné accord; 36,38
+
+list##### ['Un photographe aurait demandé aux à les deux groupes de poser nu sous la douche , le groupe américain aurait décliné , et à la suite de ce refus , le groupe Accept aurait alors donné son accord .', 'à la suite de; 24,25,26 | donné accord; 36,38\n']
+####PRED#### Le corps de ces prostituées perçu comme mutilé est à l' origine de cet effroi .	à l'origine; 10,11,12
+
+list##### ["Le corps de ces prostituées perçu comme mutilé est à l' origine de cet effroi .", "à l'origine; 10,11,12\n"]
+####PRED#### Il devient professeur d’hébreu au à le Collège royal en 1719 et garde des de les imprimés de la Bibliothèque du de le roi de 1726 à 1761 .	professeur d’hébreu; 3,4 | Collège royal; 8,9 | Bibliothèque du roi; 20,21,24 | garde des imprimés; 13,14,17
+
+list##### ['Il devient professeur d’hébreu au à le Collège royal en 1719 et garde des de les imprimés de la Bibliothèque du de le roi de 1726 à 1761 .', 'professeur d’hébreu; 3,4 | Collège royal; 8,9 | Bibliothèque du roi; 20,21,24 | garde des imprimés; 13,14,17\n']
+####PRED#### Chacune des de les provinces centrales est chargée de payer à tour de rôle un tribut dont le montant est établi par avance avec des de les représentants du de le pouvoir central en fonction des de les spécialités et des de les capacités de la région .	à tour de rôle; 11,12,13,14 | en fonction de; 35,36,37
+
+list##### ['Chacune des de les provinces centrales est chargée de payer à tour de rôle un tribut dont le montant est établi par avance avec des de les représentants du de le pouvoir central en fonction des de les spécialités et des de les capacités de la région .', 'à tour de rôle; 11,12,13,14 | en fonction de; 35,36,37\n']
+####PRED#### Boetticher commença à tourner des de les scènes lors de corridas à Nogales en mai 1958 .	commença à tourner; 2,3,4 | lors de; 9,10
+
+list##### ['Boetticher commença à tourner des de les scènes lors de corridas à Nogales en mai 1958 .', 'commença à tourner; 2,3,4 | lors de; 9,10\n']
+####PRED#### Plusieurs monuments chrétiens délaissés tombent en ruine .	tombent en ruine; 5,6,7
+
+list##### ['Plusieurs monuments chrétiens délaissés tombent en ruine .', 'tombent en ruine; 5,6,7\n']
+####PRED#### Elle fuit et essaie de persuader l’aubergiste de venir avec elle .	essaie de; 4,5 | persuader de; 6,8 | venir avec; 9,10
+
+list##### ['Elle fuit et essaie de persuader l’aubergiste de venir avec elle .', 'essaie de; 4,5 | persuader de; 6,8 | venir avec; 9,10\n']
+####PRED#### Leur taille dépend du de le nombre total d’athlètes dans la catégorie .	None
+
+list##### ['Leur taille dépend du de le nombre total d’athlètes dans la catégorie .', 'None\n']
+####PRED#### Les courriers saisis apportent la preuve aux à les yeux des de les Républicains du de le double-jeu des de les Chouans .	à les yeux de; 8,9,10,11 | double-jeu; 18
+
+list##### ['Les courriers saisis apportent la preuve aux à les yeux des de les Républicains du de le double-jeu des de les Chouans .', 'à les yeux de; 8,9,10,11 | double-jeu; 18\n']
+####PRED#### Le 21 juillet 2012 , il connait sa première titularisation contre le Clube Atlético Paranaense .	None
+
+list##### ['Le 21 juillet 2012 , il connait sa première titularisation contre le Clube Atlético Paranaense .', 'None\n']
+####PRED#### Au À le XVᵉ siècle une petite chapelle fut accolée au à le Sud de la chapelle initiale .	à le Sud; 12,13,14
+
+list##### ['Au À le XVᵉ siècle une petite chapelle fut accolée au à le Sud de la chapelle initiale .', 'à le Sud; 12,13,14\n']
+####PRED#### Le 14 juin à vingt et une heures ( dont pas plus d' une heure après le début du de le procès et le lendemain de son arrestation ) , le soldat Gabrielli est passé par les armes .	vingt et une; 6,7,8 | passé par les armes; 36,37,38,39
+
+list##### ["Le 14 juin à vingt et une heures ( dont pas plus d' une heure après le début du de le procès et le lendemain de son arrestation ) , le soldat Gabrielli est passé par les armes .", 'vingt et une; 6,7,8 | passé par les armes; 36,37,38,39\n']
+####PRED#### Lors des de les matches internationaux , les joueurs portent également un numéro de plus petite taille sur le devant du de le short ou du de le maillot .	Lors des; 1,2 | numéro de plus petite taille; 13,14,15,16,17
+
+list##### ['Lors des de les matches internationaux , les joueurs portent également un numéro de plus petite taille sur le devant du de le short ou du de le maillot .', 'Lors des; 1,2 | numéro de plus petite taille; 13,14,15,16,17\n']
+####PRED#### Ce projet qui a concerné le retour de 3 962 fonctionnaires et agents de l' État , a également permis la restauration de certains édifices publics , le désenclavement de plusieurs régions , la fourniture en eau potable et le rééquipement de nombreux services de l' administration publique .	None
+
+list##### ["Ce projet qui a concerné le retour de 3\xa0962 fonctionnaires et agents de l' État , a également permis la restauration de certains édifices publics , le désenclavement de plusieurs régions , la fourniture en eau potable et le rééquipement de nombreux services de l' administration publique .", 'None\n']
+####PRED#### « Je n' ai pas voulu écrire une histoire spécifiquement italienne mais traiter un cas général , valable dans tous les pays et placé au à le centre du de le problème des de les rapports entre l' action et la morale , entre l' action politique pure et l' activité de guerre et de résistance .	action politique; 39,47 | action politique pure; 39,47,48 | activité de guerre; 51,53 | activité de résistance; 51,56
+
+list##### ["« Je n' ai pas voulu écrire une histoire spécifiquement italienne mais traiter un cas général , valable dans tous les pays et placé au à le centre du de le problème des de les rapports entre l' action et la morale , entre l' action politique pure et l' activité de guerre et de résistance .", 'action politique; 39,47 | action politique pure; 39,47,48 | activité de guerre; 51,53 | activité de résistance; 51,56\n']
+####PRED#### Le geste d' Ahala suscite des de les réactions de tribuns de la plèbe qui tentent de faire condamner Ahala pour son crime , en vain .	en vain; 25,26
+
+list##### ["Le geste d' Ahala suscite des de les réactions de tribuns de la plèbe qui tentent de faire condamner Ahala pour son crime , en vain .", 'en vain; 25,26\n']
+####PRED#### En 2015 , la boxeuse devient championne de Chine et remporte la médaille de bronze du de le championnat d' Asie .	championne de Chine; 7,8,9 | médaille de bronze; 13,14,15 | championnat d' Asie; 19,20,21
+
+list##### ["En 2015 , la boxeuse devient championne de Chine et remporte la médaille de bronze du de le championnat d' Asie .", "championne de Chine; 7,8,9 | médaille de bronze; 13,14,15 | championnat d' Asie; 19,20,21\n"]
+####PRED#### Au À le sommet ( 1997-2002 )	Au À le sommet; 1,2,3,4
+
+list##### ['Au À le sommet ( 1997-2002 )', 'Au À le sommet; 1,2,3,4\n']
+####PRED#### La Cerise sur le ghetto ( 2003–2006 )	Cerise sur le ghetto; 2,3,4,5
+
+list##### ['La Cerise sur le ghetto ( 2003–2006 )', 'Cerise sur le ghetto; 2,3,4,5\n']
+####PRED#### Luis Fernandez choisit à l' été 1986 de signer au à le Racing	à l' été; 4,5,6 | signer au; 9,10
+
+list##### ["Luis Fernandez choisit à l' été 1986 de signer au à le Racing", "à l' été; 4,5,6 | signer au; 9,10\n"]
+####PRED#### Le comité en plus des de les volontariats , vit des de les cotisations des de les citoyens qu' ils vivent au à le village , ou à l' étranger , tous cotisent .	en plus; 3,4 | à l'étranger; 28,29,30
+
+list##### ["Le comité en plus des de les volontariats , vit des de les cotisations des de les citoyens qu' ils vivent au à le village , ou à l' étranger , tous cotisent .", "en plus; 3,4 | à l'étranger; 28,29,30\n"]
+####PRED#### D’après K .	None
+
+list##### ['D’après K .', 'None\n']
+####PRED#### Sa famille déménage en Norvège lorsqu' il est âgé de six ans .	déménage en; 3,4 | lorsqu' il est âgé de; 6,7,8,9,10 | âgé de; 9,10
+
+list##### ["Sa famille déménage en Norvège lorsqu' il est âgé de six ans .", "déménage en; 3,4 | lorsqu' il est âgé de; 6,7,8,9,10 | âgé de; 9,10\n"]
+####PRED#### Au À le niveau de la croisée du de le transept , la grande grille ouvrant sur les stalles et le chœur est entourée des de les statues de saint Vincent de Paul à gauche et de saint Charles Borromée à droite , œuvres du de le sculpteur Jean-Baptiste Dupuis .	à gauche; 35,36 | à droite; 41,42
+
+list##### ['Au À le niveau de la croisée du de le transept , la grande grille ouvrant sur les stalles et le chœur est entourée des de les statues de saint Vincent de Paul à gauche et de saint Charles Borromée à droite , œuvres du de le sculpteur Jean-Baptiste Dupuis .', 'à gauche; 35,36 | à droite; 41,42\n']
+####PRED#### Ensuite l' absence de la faune locale des de les ancêtres sauvages des de les espèces domestiquées , ce qui implique une importation des de les troupeaux .	ce qui; 19,20
+
+list##### ["Ensuite l' absence de la faune locale des de les ancêtres sauvages des de les espèces domestiquées , ce qui implique une importation des de les troupeaux .", 'ce qui; 19,20\n']
+####PRED#### En 1987 , la NSWRL donne son accord pour qu' une équipe basée à Brisbane joue la Winfield Cup .	donne accord; 6,8 | pour qu'; 9,10
+
+list##### ["En 1987 , la NSWRL donne son accord pour qu' une équipe basée à Brisbane joue la Winfield Cup .", "donne accord; 6,8 | pour qu'; 9,10\n"]
+####PRED#### La première mention faite du de le village date de 778 ( sous le règne de Charlemagne , sous le nom de « Bladbolsheim » : pays de l' aimable souverain ) dans le testament de l' évêque Remigius de Strasbourg .	sous le règne de; 13,14,15,16 | souverain dans le testament; 31,33,34,35 | évêque de Strasbourg; 38,40,41
+
+list##### ["La première mention faite du de le village date de 778 ( sous le règne de Charlemagne , sous le nom de « Bladbolsheim » : pays de l' aimable souverain ) dans le testament de l' évêque Remigius de Strasbourg .", 'sous le règne de; 13,14,15,16 | souverain dans le testament; 31,33,34,35 | évêque de Strasbourg; 38,40,41\n']
+####PRED#### Le soulèvement de Nalyvaïko	None
+
+list##### ['Le soulèvement de Nalyvaïko', 'None\n']
+####PRED#### Le président de la faculté de droit était alors le docteur Pedro Francisco de Paula Cavalcanti , baron puis vicomte de Camaragibe , qui , nommé à ce poste en novembre 1854 , allait exercer cette charge tout au à le long des de les études de Cícero Dantas .	tout au long; 38,39,40,42,43
+
+list##### ['Le président de la faculté de droit était alors le docteur Pedro Francisco de Paula Cavalcanti , baron puis vicomte de Camaragibe , qui , nommé à ce poste en novembre 1854 , allait exercer cette charge tout au à le long des de les études de Cícero Dantas .', 'tout au long; 38,39,40,42,43\n']
+####PRED#### Il refuse et reste avec sa belle-fille et sa petite -fille qui craignent un pogrom .	belle-fille; 7 | petite-fille; 10,11
+
+list##### ['Il refuse et reste avec sa belle-fille et sa petite -fille qui craignent un pogrom .', 'belle-fille; 7 | petite-fille; 10,11\n']
+####PRED#### Dès 1368 est mentionnée l' existence d' une chapelle papale , la « Capella magna » ( la Cappella Maggiore en italien ) , destinée à accueillir les célébrations liturgiques ou cérémonielles de la cour pontificale et depuis 1492 , les conclaves .	Capella magna; 14,15 | Cappella Maggiore; 19,20 | cour pontificale; 35,36 | conclaves; 42
+
+list##### ["Dès 1368 est mentionnée l' existence d' une chapelle papale , la « Capella magna » ( la Cappella Maggiore en italien ) , destinée à accueillir les célébrations liturgiques ou cérémonielles de la cour pontificale et depuis 1492 , les conclaves .", 'Capella magna; 14,15 | Cappella Maggiore; 19,20 | cour pontificale; 35,36 | conclaves; 42\n']
+####PRED#### Koizumi a expliqué que ce genre de problèmes devait être étudié par des de les historiens et des de les spécialistes plutôt que par des de les politiciens .	ce genre de; 5,6,7 | plutôt que; 22,23
+
+list##### ['Koizumi a expliqué que ce genre de problèmes devait être étudié par des de les historiens et des de les spécialistes plutôt que par des de les politiciens .', 'ce genre de; 5,6,7 | plutôt que; 22,23\n']
+####PRED#### La ville était traversée par la route nationale 16 , ancienne route royale de Paris à Dunkerque .	route nationale; 7,8 | route royale; 12,13
+
+list##### ['La ville était traversée par la route nationale 16 , ancienne route royale de Paris à Dunkerque .', 'route nationale; 7,8 | route royale; 12,13\n']
+####PRED#### Conquête de Majorque	None
+
+list##### ['Conquête de Majorque', 'None\n']
+####PRED#### À titre d' exemple , en 1994 , la seconde version de la base de données Vax Rally corrige 20 des de les 75 problèmes d' utilisabilité identifiés sur la première version .	À titre d' exemple; 1,2,3,4 | base de données; 14,15,16 | d' utilisabilité; 26,27
+
+list##### ["À titre d' exemple , en 1994 , la seconde version de la base de données Vax Rally corrige 20 des de les 75 problèmes d' utilisabilité identifiés sur la première version .", "À titre d' exemple; 1,2,3,4 | base de données; 14,15,16 | d' utilisabilité; 26,27\n"]
+####PRED#### Le duo est très bien accueilli , comme en dénote cet extrait du de le journal La Nacíon " Il nous est rarement donné de nous noyer dans les secrets de la mélodie et l' harmonie d' un tango ou d' une milonga grâce aux à les frasés remplis d' émotions .	nous noyer; 26,27 | grâce à; 45,46
+
+list##### ['Le duo est très bien accueilli , comme en dénote cet extrait du de le journal La Nacíon " Il nous est rarement donné de nous noyer dans les secrets de la mélodie et l\' harmonie d\' un tango ou d\' une milonga grâce aux à les frasés remplis d\' émotions .', 'nous noyer; 26,27 | grâce à; 45,46\n']
+####PRED#### À la suite notamment du de le Livre vert de la Commission européenne , sur la lutte contre le bruit ( 4 novembre 1996 ) , puis à la suite du de le Grenelle de l’Environnement , des de les appels à propositions Bruit et nuisances sonores sont régulièrement produits , avec le Programme de recherche et d' innovation dans les transports terrestres ( Predit ) .	à la suite de; 1,2,3,5 | à la suite de; 28,29,30,32 | appels à propositions; 41,42,43
+
+list##### ["À la suite notamment du de le Livre vert de la Commission européenne , sur la lutte contre le bruit ( 4 novembre 1996 ) , puis à la suite du de le Grenelle de l’Environnement , des de les appels à propositions Bruit et nuisances sonores sont régulièrement produits , avec le Programme de recherche et d' innovation dans les transports terrestres ( Predit ) .", 'à la suite de; 1,2,3,5 | à la suite de; 28,29,30,32 | appels à propositions; 41,42,43\n']
+####PRED#### La scène hip-hop canadienne dénombre ses propres artistes depuis l' émergence de la scène — le premier single de rap canadien connu s' intitule The Bum Rap des de les Singing Fools , publié en 1982 .	The Bum Rap; 25,26,27
+
+list##### ["La scène hip-hop canadienne dénombre ses propres artistes depuis l' émergence de la scène — le premier single de rap canadien connu s' intitule The Bum Rap des de les Singing Fools , publié en 1982 .", 'The Bum Rap; 25,26,27\n']
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Thu Dec 4 01:57:30 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19409506
+    JobName = FR_inf
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = (null)
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_FR_inference.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_FR.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_FR.err
+- Requested resources:
+    Timelimit = 12:30:00 ( 45000s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 03:04:07 ( 11047s )
+    MaxRSS = 2378824K ( 2323.070M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    * !!! Less than 30% of requested walltime used !!! Consider adaptation of your batch script.
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+

@@ -1,0 +1,245 @@
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+==((====))==  Unsloth 2025.11.3: Fast Qwen3 patching. Transformers: 4.57.1. vLLM: 0.11.2.
+   \\   /|    NVIDIA H100 PCIe. Num GPUs = 1. Max memory: 79.109 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.9.0+cu128. CUDA: 9.0. CUDA Toolkit: 12.8. Triton: 3.5.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.33.post1. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+<|im_start|>user
+You are a helpful system for identifying multiple-word expressions (MWEs). Identify all MWEs in the given sentence, and output their surface forms. Each sentence is a string of words delimited by'\n'. An MWE is defined as a sequence that satisfies the following three conditions. 1. It consists of multiple words that are always realized by the same lexemes. The individual lexemes cannot be replaced by synonyms without distorting the meaning of the expression as a whole or violating language conventions. 2. It displays semantic, lexical, or syntactic idiomaticity. Semantic idiomaticity occurs when the meaning of an expression cannot be explicitly derived from its components. Lexical idiomaticity occurs when one or more components of an expression are not used as stand-alone words in standard English. Syntactic idiomaticity occurs when the grammar of an expression cannot be derived directly from that of its components. For example, semantically idiomatic MWEs include 'break up', the lexically idiomatic include 'to and fro', and syntactically idiomatic MWEs include 'long time no see'. 3. It is not a multi-word named entity, i.e., a specific name of a person, facility, etc.
+ Remember that you can identify congruent MWEs across different languages. For example, you can identify the Romanian MWE 'pur și simplu' because you know the English MWE 'pure and simple'. Similarly, the Portuguese MWE 'ter lugar' is easy to identify because of the English MWE 'take place'. And the French MWE 'feu de circulation' is easy to identify, because it is almost congruent to the English MWE 'traffic lights'. Respond by providing all tokens of the MWE, and their indices. If no MWE occurs, output 'None'. If there are multiple MWEs, separate them by |, for example 'to and fro; 7,8,9 | break up; 12, 13'. Sentence: Šāda
+iznākuma
+iemesls
+ir
+–
+paralēlo
+importētāju
+šībrīža
+darbības
+uzstādījums
+šķiet
+vieglas
+īstermiņa
+peļņas
+sasniegšana
+par
+katru
+cenu
+,
+nevis
+paredzamas
+ilgtermiņa
+darbības
+organizēšana
+.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+par katru cenu; 15,16,17<|im_end|>
+
+<|im_start|>user
+You are a helpful system for identifying multiple-word expressions (MWEs). Identify all MWEs in the given sentence, and output their surface forms. Each sentence is a string of words delimited by'\n'. An MWE is defined as a sequence that satisfies the following three conditions. 1. It consists of multiple words that are always realized by the same lexemes. The individual lexemes cannot be replaced by synonyms without distorting the meaning of the expression as a whole or violating language conventions. 2. It displays semantic, lexical, or syntactic idiomaticity. Semantic idiomaticity occurs when the meaning of an expression cannot be explicitly derived from its components. Lexical idiomaticity occurs when one or more components of an expression are not used as stand-alone words in standard English. Syntactic idiomaticity occurs when the grammar of an expression cannot be derived directly from that of its components. For example, semantically idiomatic MWEs include 'break up', the lexically idiomatic include 'to and fro', and syntactically idiomatic MWEs include 'long time no see'. 3. It is not a multi-word named entity, i.e., a specific name of a person, facility, etc.
+ Remember that you can identify congruent MWEs across different languages. For example, you can identify the Romanian MWE 'pur și simplu' because you know the English MWE 'pure and simple'. Similarly, the Portuguese MWE 'ter lugar' is easy to identify because of the English MWE 'take place'. And the French MWE 'feu de circulation' is easy to identify, because it is almost congruent to the English MWE 'traffic lights'. Respond by providing all tokens of the MWE, and their indices. If no MWE occurs, output 'None'. If there are multiple MWEs, separate them by |, for example 'to and fro; 7,8,9 | break up; 12, 13'. Sentence: Ja
+līdz
+šim
+zāļu
+viltojumi
+ir
+tikuši
+uzskatīti
+par
+trešās
+pasaules
+problēmu
+,
+tad
+tagad
+šis
+noziegums
+ir
+atnācis
+arī
+uz
+Eiropas
+Savienību
+.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+līdz šim; 2,3|trešās pasaules; 10,11<|im_end|>
+
+<|im_start|>user
+You are a helpful system for identifying multiple-word expressions (MWEs). Identify all MWEs in the given sentence, and output their surface forms. Each sentence is a string of words delimited by'\n'. An MWE is defined as a sequence that satisfies the following three conditions. 1. It consists of multiple words that are always realized by the same lexemes. The individual lexemes cannot be replaced by synonyms without distorting the meaning of the expression as a whole or violating language conventions. 2. It displays semantic, lexical, or syntactic idiomaticity. Semantic idiomaticity occurs when the meaning of an expression cannot be explicitly derived from its components. Lexical idiomaticity occurs when one or more components of an expression are not used as stand-alone words in standard English. Syntactic idiomaticity occurs when the grammar of an expression cannot be derived directly from that of its components. For example, semantically idiomatic MWEs include 'break up', the lexically idiomatic include 'to and fro', and syntactically idiomatic MWEs include 'long time no see'. 3. It is not a multi-word named entity, i.e., a specific name of a person, facility, etc.
+ Remember that you can identify congruent MWEs across different languages. For example, you can identify the Romanian MWE 'pur și simplu' because you know the English MWE 'pure and simple'. Similarly, the Portuguese MWE 'ter lugar' is easy to identify because of the English MWE 'take place'. And the French MWE 'feu de circulation' is easy to identify, because it is almost congruent to the English MWE 'traffic lights'. Respond by providing all tokens of the MWE, and their indices. If no MWE occurs, output 'None'. If there are multiple MWEs, separate them by |, for example 'to and fro; 7,8,9 | break up; 12, 13'. Sentence: Zibenīgā
+ātrumā
+izrāva
+litru
+uz
+trijiem
+,
+uzmontēja
+ķēdi
+un
+turpināja
+strādāt
+,
+turklāt
+tā
+_
+,
+it
+kā
+būtu
+iztempuši
+tikai
+termosu
+ar
+aveņu
+tēju
+.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+it kā; 17,18<|im_end|>
+
+###############Length combined dataset:  698
+made it
+GPU = NVIDIA H100 PCIe. Max memory = 79.109 GB.
+30.119 GB of memory reserved.
+Unsloth: Will smartly offload gradients to save VRAM!
+{'loss': 2.1526, 'grad_norm': 0.42024776339530945, 'learning_rate': 0.0, 'epoch': 0.02}
+{'loss': 2.1028, 'grad_norm': 0.40367668867111206, 'learning_rate': 4e-05, 'epoch': 0.05}
+{'loss': 2.1839, 'grad_norm': 0.42303359508514404, 'learning_rate': 8e-05, 'epoch': 0.07}
+{'loss': 2.1192, 'grad_norm': 0.5338115692138672, 'learning_rate': 0.00012, 'epoch': 0.09}
+{'loss': 2.0176, 'grad_norm': 0.6577929258346558, 'learning_rate': 0.00016, 'epoch': 0.11}
+{'loss': 1.7416, 'grad_norm': 0.6915730237960815, 'learning_rate': 0.0002, 'epoch': 0.14}
+{'loss': 1.4982, 'grad_norm': 0.7286974787712097, 'learning_rate': 0.00019759036144578314, 'epoch': 0.16}
+{'loss': 1.2212, 'grad_norm': 0.797536313533783, 'learning_rate': 0.00019518072289156628, 'epoch': 0.18}
+{'loss': 0.9668, 'grad_norm': 0.7379449009895325, 'learning_rate': 0.00019277108433734942, 'epoch': 0.21}
+{'loss': 0.8534, 'grad_norm': 2.976128339767456, 'learning_rate': 0.00019036144578313252, 'epoch': 0.23}
+{'loss': 0.5903, 'grad_norm': 1.1739412546157837, 'learning_rate': 0.00018795180722891569, 'epoch': 0.25}
+{'loss': 0.4754, 'grad_norm': 0.8712395429611206, 'learning_rate': 0.0001855421686746988, 'epoch': 0.28}
+{'loss': 0.4155, 'grad_norm': 0.41443344950675964, 'learning_rate': 0.00018313253012048193, 'epoch': 0.3}
+{'loss': 0.3755, 'grad_norm': 0.212942972779274, 'learning_rate': 0.00018072289156626507, 'epoch': 0.32}
+{'loss': 0.3611, 'grad_norm': 0.18836650252342224, 'learning_rate': 0.0001783132530120482, 'epoch': 0.34}
+{'loss': 0.4027, 'grad_norm': 0.16733869910240173, 'learning_rate': 0.00017590361445783134, 'epoch': 0.37}
+{'loss': 0.2888, 'grad_norm': 0.14940012991428375, 'learning_rate': 0.00017349397590361447, 'epoch': 0.39}
+{'loss': 0.3162, 'grad_norm': 0.1451294869184494, 'learning_rate': 0.0001710843373493976, 'epoch': 0.41}
+{'loss': 0.335, 'grad_norm': 0.15255916118621826, 'learning_rate': 0.00016867469879518074, 'epoch': 0.44}
+{'loss': 0.282, 'grad_norm': 0.13279621303081512, 'learning_rate': 0.00016626506024096388, 'epoch': 0.46}
+{'loss': 0.3064, 'grad_norm': 0.13396437466144562, 'learning_rate': 0.00016385542168674699, 'epoch': 0.48}
+{'loss': 0.3932, 'grad_norm': 0.14119946956634521, 'learning_rate': 0.00016144578313253015, 'epoch': 0.5}
+{'loss': 0.2769, 'grad_norm': 0.13364025950431824, 'learning_rate': 0.00015903614457831326, 'epoch': 0.53}
+{'loss': 0.3089, 'grad_norm': 0.14305955171585083, 'learning_rate': 0.0001566265060240964, 'epoch': 0.55}
+{'loss': 0.255, 'grad_norm': 0.1354241669178009, 'learning_rate': 0.00015421686746987953, 'epoch': 0.57}
+{'loss': 0.2633, 'grad_norm': 0.1444200724363327, 'learning_rate': 0.00015180722891566266, 'epoch': 0.6}
+{'loss': 0.2275, 'grad_norm': 0.13818912208080292, 'learning_rate': 0.00014939759036144577, 'epoch': 0.62}
+{'loss': 0.2829, 'grad_norm': 0.17052730917930603, 'learning_rate': 0.00014698795180722893, 'epoch': 0.64}
+{'loss': 0.3987, 'grad_norm': 0.1650458723306656, 'learning_rate': 0.00014457831325301204, 'epoch': 0.66}
+{'loss': 0.3256, 'grad_norm': 0.14888428151607513, 'learning_rate': 0.00014216867469879518, 'epoch': 0.69}
+{'loss': 0.3317, 'grad_norm': 0.17393086850643158, 'learning_rate': 0.00013975903614457834, 'epoch': 0.71}
+{'loss': 0.2899, 'grad_norm': 0.16166090965270996, 'learning_rate': 0.00013734939759036145, 'epoch': 0.73}
+{'loss': 0.2718, 'grad_norm': 0.16657286882400513, 'learning_rate': 0.00013493975903614458, 'epoch': 0.76}
+{'loss': 0.2689, 'grad_norm': 0.17430837452411652, 'learning_rate': 0.00013253012048192772, 'epoch': 0.78}
+{'loss': 0.2753, 'grad_norm': 0.1678287237882614, 'learning_rate': 0.00013012048192771085, 'epoch': 0.8}
+{'loss': 0.2649, 'grad_norm': 0.17553529143333435, 'learning_rate': 0.00012771084337349396, 'epoch': 0.83}
+{'loss': 0.2484, 'grad_norm': 0.16489450633525848, 'learning_rate': 0.00012530120481927712, 'epoch': 0.85}
+{'loss': 0.361, 'grad_norm': 0.165501669049263, 'learning_rate': 0.00012289156626506023, 'epoch': 0.87}
+{'loss': 0.2386, 'grad_norm': 0.14680254459381104, 'learning_rate': 0.0001204819277108434, 'epoch': 0.89}
+{'loss': 0.2706, 'grad_norm': 0.12405247241258621, 'learning_rate': 0.00011807228915662652, 'epoch': 0.92}
+{'loss': 0.2278, 'grad_norm': 0.10228224098682404, 'learning_rate': 0.00011566265060240964, 'epoch': 0.94}
+{'loss': 0.2914, 'grad_norm': 0.11747144907712936, 'learning_rate': 0.00011325301204819279, 'epoch': 0.96}
+{'loss': 0.2766, 'grad_norm': 0.1221264973282814, 'learning_rate': 0.00011084337349397591, 'epoch': 0.99}
+{'loss': 0.2435, 'grad_norm': 0.13501599431037903, 'learning_rate': 0.00010843373493975903, 'epoch': 1.0}
+{'loss': 0.2338, 'grad_norm': 0.09622354060411453, 'learning_rate': 0.00010602409638554218, 'epoch': 1.02}
+{'loss': 0.3026, 'grad_norm': 0.113508440554142, 'learning_rate': 0.0001036144578313253, 'epoch': 1.05}
+{'loss': 0.2019, 'grad_norm': 0.09231516718864441, 'learning_rate': 0.00010120481927710844, 'epoch': 1.07}
+{'loss': 0.2487, 'grad_norm': 0.10280265659093857, 'learning_rate': 9.879518072289157e-05, 'epoch': 1.09}
+{'loss': 0.317, 'grad_norm': 0.12556007504463196, 'learning_rate': 9.638554216867471e-05, 'epoch': 1.11}
+{'loss': 0.265, 'grad_norm': 0.10614833980798721, 'learning_rate': 9.397590361445784e-05, 'epoch': 1.14}
+{'loss': 0.2712, 'grad_norm': 0.10784260183572769, 'learning_rate': 9.156626506024096e-05, 'epoch': 1.16}
+{'loss': 0.2796, 'grad_norm': 0.11857356876134872, 'learning_rate': 8.91566265060241e-05, 'epoch': 1.18}
+{'loss': 0.2466, 'grad_norm': 0.12031968683004379, 'learning_rate': 8.674698795180724e-05, 'epoch': 1.21}
+{'loss': 0.2819, 'grad_norm': 0.11571148782968521, 'learning_rate': 8.433734939759037e-05, 'epoch': 1.23}
+{'loss': 0.2639, 'grad_norm': 0.11764886975288391, 'learning_rate': 8.192771084337349e-05, 'epoch': 1.25}
+{'loss': 0.2598, 'grad_norm': 0.1335369497537613, 'learning_rate': 7.951807228915663e-05, 'epoch': 1.28}
+{'loss': 0.3332, 'grad_norm': 0.13092438876628876, 'learning_rate': 7.710843373493976e-05, 'epoch': 1.3}
+{'loss': 0.2297, 'grad_norm': 0.11422601342201233, 'learning_rate': 7.469879518072289e-05, 'epoch': 1.32}
+{'loss': 0.2565, 'grad_norm': 0.12657250463962555, 'learning_rate': 7.228915662650602e-05, 'epoch': 1.34}
+{'loss': 0.2431, 'grad_norm': 0.11541147530078888, 'learning_rate': 6.987951807228917e-05, 'epoch': 1.37}
+{'loss': 0.2056, 'grad_norm': 0.11294875293970108, 'learning_rate': 6.746987951807229e-05, 'epoch': 1.39}
+{'loss': 0.2749, 'grad_norm': 0.12315423786640167, 'learning_rate': 6.506024096385543e-05, 'epoch': 1.41}
+{'loss': 0.2671, 'grad_norm': 0.1241433247923851, 'learning_rate': 6.265060240963856e-05, 'epoch': 1.44}
+{'loss': 0.2614, 'grad_norm': 0.12157167494297028, 'learning_rate': 6.02409638554217e-05, 'epoch': 1.46}
+{'loss': 0.2561, 'grad_norm': 0.13898713886737823, 'learning_rate': 5.783132530120482e-05, 'epoch': 1.48}
+{'loss': 0.235, 'grad_norm': 0.12052109837532043, 'learning_rate': 5.5421686746987955e-05, 'epoch': 1.5}
+{'loss': 0.2348, 'grad_norm': 0.1242034062743187, 'learning_rate': 5.301204819277109e-05, 'epoch': 1.53}
+{'loss': 0.2649, 'grad_norm': 0.14620868861675262, 'learning_rate': 5.060240963855422e-05, 'epoch': 1.55}
+{'loss': 0.2871, 'grad_norm': 0.13761408627033234, 'learning_rate': 4.8192771084337354e-05, 'epoch': 1.57}
+{'loss': 0.238, 'grad_norm': 0.12238280475139618, 'learning_rate': 4.578313253012048e-05, 'epoch': 1.6}
+{'loss': 0.2865, 'grad_norm': 0.13181689381599426, 'learning_rate': 4.337349397590362e-05, 'epoch': 1.62}
+{'loss': 0.3343, 'grad_norm': 0.14573556184768677, 'learning_rate': 4.0963855421686746e-05, 'epoch': 1.64}
+{'loss': 0.2457, 'grad_norm': 0.12680049240589142, 'learning_rate': 3.855421686746988e-05, 'epoch': 1.66}
+{'loss': 0.2193, 'grad_norm': 0.12856711447238922, 'learning_rate': 3.614457831325301e-05, 'epoch': 1.69}
+{'loss': 0.2486, 'grad_norm': 0.13107383251190186, 'learning_rate': 3.3734939759036146e-05, 'epoch': 1.71}
+{'loss': 0.2727, 'grad_norm': 0.1428416222333908, 'learning_rate': 3.132530120481928e-05, 'epoch': 1.73}
+{'loss': 0.2666, 'grad_norm': 0.13609996438026428, 'learning_rate': 2.891566265060241e-05, 'epoch': 1.76}
+{'loss': 0.2661, 'grad_norm': 0.13486118614673615, 'learning_rate': 2.6506024096385545e-05, 'epoch': 1.78}
+{'loss': 0.2518, 'grad_norm': 0.13384225964546204, 'learning_rate': 2.4096385542168677e-05, 'epoch': 1.8}
+{'loss': 0.2412, 'grad_norm': 0.2256816178560257, 'learning_rate': 2.168674698795181e-05, 'epoch': 1.83}
+{'loss': 0.3195, 'grad_norm': 0.14483463764190674, 'learning_rate': 1.927710843373494e-05, 'epoch': 1.85}
+{'loss': 0.2009, 'grad_norm': 0.11434457451105118, 'learning_rate': 1.6867469879518073e-05, 'epoch': 1.87}
+{'loss': 0.2653, 'grad_norm': 0.1325700581073761, 'learning_rate': 1.4457831325301205e-05, 'epoch': 1.89}
+{'loss': 0.2104, 'grad_norm': 0.12383418530225754, 'learning_rate': 1.2048192771084338e-05, 'epoch': 1.92}
+{'loss': 0.244, 'grad_norm': 0.12846508622169495, 'learning_rate': 9.63855421686747e-06, 'epoch': 1.94}
+{'loss': 0.2378, 'grad_norm': 0.12623867392539978, 'learning_rate': 7.228915662650602e-06, 'epoch': 1.96}
+{'loss': 0.2975, 'grad_norm': 0.1454729288816452, 'learning_rate': 4.819277108433735e-06, 'epoch': 1.99}
+{'loss': 0.283, 'grad_norm': 0.1644366830587387, 'learning_rate': 2.4096385542168676e-06, 'epoch': 2.0}
+{'train_runtime': 663.9232, 'train_samples_per_second': 2.103, 'train_steps_per_second': 0.133, 'train_loss': 0.4437318584797057, 'epoch': 2.0}
+663.9232 seconds used for training.
+11.07 minutes used for training.
+Peak reserved memory = 30.119 GB.
+Peak reserved memory for training = 0.0 GB.
+Peak reserved memory % of max memory = 38.073 %.
+Peak reserved memory for training % of max memory = 0.0 %.
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Thu Dec 4 23:01:21 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19414399
+    JobName = LV_finetuning
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = H100
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_finetune_LV.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_train_LV.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_train_LV.err
+- Requested resources:
+    Timelimit = 15:00:00 ( 54000s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 00:15:59 ( 959s )
+    MaxRSS = 7063256K ( 6897.711M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    * !!! Less than 10% of requested walltime used !!! Consider adaptation of your batch script.
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+

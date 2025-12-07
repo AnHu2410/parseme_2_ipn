@@ -1,0 +1,340 @@
+INFO 12-04 19:13:57 [utils.py:253] non-default args: {'max_model_len': 5000, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'model': '../Qwen3-32B-INT8'}
+INFO 12-04 19:13:57 [model.py:631] Resolved architecture: Qwen3ForCausalLM
+INFO 12-04 19:13:57 [model.py:1745] Using max model len 5000
+INFO 12-04 19:14:05 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-04 19:14:05 [vllm.py:500] Cudagraph is disabled under eager mode
+WARNING 12-04 19:14:05 [system_utils.py:103] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:34 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='../Qwen3-32B-INT8', speculative_config=None, tokenizer='../Qwen3-32B-INT8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=5000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=../Qwen3-32B-INT8, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:42 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://0.0.0.0:41595 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:42 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:43 [gpu_model_runner.py:3259] Starting to load model ../Qwen3-32B-INT8...
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:43 [compressed_tensors_w8a8_int8.py:62] Using CutlassScaledMMLinearKernel for CompressedTensorsW8A8Int8
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:56 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:15:56 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:24 [default_loader.py:314] Loading weights took 27.62 seconds
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:24 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:25 [gpu_model_runner.py:3338] Model loading took 32.3027 GiB memory and 40.990308 seconds
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:27 [gpu_worker.py:359] Available KV cache memory: 29.09 GiB
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:27 [kv_cache_utils.py:1229] GPU KV cache size: 119,152 tokens
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:27 [kv_cache_utils.py:1234] Maximum concurrency for 5,000 tokens per request: 23.79x
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:27 [core.py:250] init engine (profile, create kv cache, warmup model) took 2.85 seconds
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m INFO 12-04 19:16:28 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-04 19:16:29 [llm.py:352] Supported tasks: ['generate']
+WARNING 12-04 19:16:29 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1;36m(EngineCore_DP0 pid=3464698)[0;0m WARNING 12-04 19:16:30 [utils.py:250] Using default LoRA kernel configs
+####PRED#### Skärpan och närvaron av revolutionen på landsbygden oroade hovet och nationalförsamlingen i Versailles .	None
+
+list##### ['Skärpan och närvaron av revolutionen på landsbygden oroade hovet och nationalförsamlingen i Versailles .', 'None\n']
+####PRED#### Det första världskriget förde med sig förändringar och nya utvecklingar i kolonialpolitik .	förde med sig; 3,4,5
+
+list##### ['Det första världskriget förde med sig förändringar och nya utvecklingar i kolonialpolitik .', 'förde med sig; 3,4,5\n']
+####PRED#### Den industriella revolutionen ägde rum i Storbritannien tidigare än i något annat land .	ägde rum; 4,5
+
+list##### ['Den industriella revolutionen ägde rum i Storbritannien tidigare än i något annat land .', 'ägde rum; 4,5\n']
+####PRED#### Historien för Carcassonne är direkt knuten till den för dess befästa stad .	för dess befästa stad; 9,10,11,12
+
+list##### ['Historien för Carcassonne är direkt knuten till den för dess befästa stad .', 'för dess befästa stad; 9,10,11,12\n']
+####PRED#### Under 700-talet f.Kr. började Grekland komma ut ur den mörka tidsålder som följde den mykenska civilisationens fall .	komma ut ur; 6,7,8
+
+list##### ['Under 700-talet f.Kr. började Grekland komma ut ur den mörka tidsålder som följde den mykenska civilisationens fall .', 'komma ut ur; 6,7,8\n']
+####PRED#### Under medeltiden hade inte de flesta kristna tillgång till bibeln på sina modersmål .	tillgång till; 8,9
+
+list##### ['Under medeltiden hade inte de flesta kristna tillgång till bibeln på sina modersmål .', 'tillgång till; 8,9\n']
+####PRED#### Denna affär kan ses som startpunkten för hans karriär som radikal revolutionär .	ses som; 4,5 | startpunkten för; 6,7 | karriär som; 9,10
+
+list##### ['Denna affär kan ses som startpunkten för hans karriär som radikal revolutionär .', 'ses som; 4,5 | startpunkten för; 6,7 | karriär som; 9,10\n']
+####PRED#### Vid sin återkomst lekte de med tanken att bo i Sydamerika , långt borta från problemen i efterkrigstidens Belgien .	långt borta; 13,14
+
+list##### ['Vid sin återkomst lekte de med tanken att bo i Sydamerika , långt borta från problemen i efterkrigstidens Belgien .', 'långt borta; 13,14\n']
+####PRED#### ” Så jag hatar att ge er en liten börda , men republikens öde vilar på era axlar ” , sade han till folksamlingen som kommit till en idrottsplan på University of North Carolina .	ge en börda; 6,8,10
+
+list##### ['” Så jag hatar att ge er en liten börda , men republikens öde vilar på era axlar ” , sade han till folksamlingen som kommit till en idrottsplan på University of North Carolina .', 'ge en börda; 6,8,10\n']
+####PRED#### Det fanns en tidpunkt , sade mr Panvalkar , då han kände att de borde lämna byggnaden .	lämna byggnaden; 16,17
+
+list##### ['Det fanns en tidpunkt , sade mr Panvalkar , då han kände att de borde lämna byggnaden .', 'lämna byggnaden; 16,17\n']
+####PRED#### Mate-9-telefonerna saknar ett artificiellt intelligens-gränssnitt , som Google Assistant eller Apples Siri .	artificiellt intelligens-gränssnitt; 4,5
+
+list##### ['Mate-9-telefonerna saknar ett artificiellt intelligens-gränssnitt , som Google Assistant eller Apples Siri .', 'artificiellt intelligens-gränssnitt; 4,5\n']
+####PRED#### Lite mer än 70 % av plantorna som odlats med jordfröer var vid liv efter 17 dagar – bara lite mer än plantorna som odlats från rymdfröer – just över 66 % .	vid liv; 13,14
+
+list##### ['Lite mer än 70 % av plantorna som odlats med jordfröer var vid liv efter 17 dagar – bara lite mer än plantorna som odlats från rymdfröer – just över 66 % .', 'vid liv; 13,14\n']
+####PRED#### Emellertid finns det många MLA:er med djupt hållna religiösa trosuppfattningar som motsätter sig all ny lagstiftning .	motsätter sig; 12,13
+
+list##### ['Emellertid finns det många MLA:er med djupt hållna religiösa trosuppfattningar som motsätter sig all ny lagstiftning .', 'motsätter sig; 12,13\n']
+####PRED#### Det ledde till avslöjanden över de senaste två dagarna att åtminstone sex andra journalister i Quebec var föremål för provinspolisens övervakningsverksamhet .	ledde till; 2,3 | var föremål för; 17,18,19
+
+list##### ['Det ledde till avslöjanden över de senaste två dagarna att åtminstone sex andra journalister i Quebec var föremål för provinspolisens övervakningsverksamhet .', 'ledde till; 2,3 | var föremål för; 17,18,19\n']
+####PRED#### Sen tar reklamen slut .	tar slut; 2,4
+
+list##### ['Sen tar reklamen slut .', 'tar slut; 2,4\n']
+####PRED#### Naturligtvis bjuder kontorslandskapet på många kläder men erbjuder föga i matväg .	bjuder på; 2,4 | erbjuder föga i matväg; 8,9,10,11
+
+list##### ['Naturligtvis bjuder kontorslandskapet på många kläder men erbjuder föga i matväg .', 'bjuder på; 2,4 | erbjuder föga i matväg; 8,9,10,11\n']
+####PRED#### RSPB:s ståndpunkt har även gjort att det kommit i konflikt med flera ledande naturvårdare , från namninsamlingens författare Mark Avery till TV-presentatören Chris Packham .	kommit i konflikt; 8,9,10
+
+list##### ['RSPB:s ståndpunkt har även gjort att det kommit i konflikt med flera ledande naturvårdare , från namninsamlingens författare Mark Avery till TV-presentatören Chris Packham .', 'kommit i konflikt; 8,9,10\n']
+####PRED#### Jag tar inte lätt på att kalla det för en best .	tar på; 2,5
+
+list##### ['Jag tar inte lätt på att kalla det för en best .', 'tar på; 2,5\n']
+####PRED#### Jag lade märke till några stycken .	lade märke till; 2,3,4
+
+list##### ['Jag lade märke till några stycken .', 'lade märke till; 2,3,4\n']
+####PRED#### Eden innefattar att lagstiftarna svär trohet till Hong Kong som en del av Folkrepubliken Kina .	svär trohet; 5,6
+
+list##### ['Eden innefattar att lagstiftarna svär trohet till Hong Kong som en del av Folkrepubliken Kina .', 'svär trohet; 5,6\n']
+####PRED#### Men att ha låtit Glenda få en sådan fullträff , vem kan klandra det ?	ha låtit få; 3,4,6
+
+list##### ['Men att ha låtit Glenda få en sådan fullträff , vem kan klandra det ?', 'ha låtit få; 3,4,6\n']
+####PRED#### Från regissörens synvinkel är filmen en oviss balansakt mellan gladlynt familjestoj och slagkraftigt samhällsdrama .	None
+
+list##### ['Från regissörens synvinkel är filmen en oviss balansakt mellan gladlynt familjestoj och slagkraftigt samhällsdrama .', 'None\n']
+####PRED#### På en nivå fungerar den som en vänlig opretentiös hjärtevärmare som verkar skräddarsydd för att ses en söndag eftermiddag .	en nivå; 2,3 | en söndag eftermiddag; 17,18,19
+
+list##### ['På en nivå fungerar den som en vänlig opretentiös hjärtevärmare som verkar skräddarsydd för att ses en söndag eftermiddag .', 'en nivå; 2,3 | en söndag eftermiddag; 17,18,19\n']
+####PRED#### Mer än 5,7 miljoner floridabor har redan gått och röstat efter cirka två veckor med personligt förtidsröstande .	gått och röstat; 8,9,10
+
+list##### ['Mer än 5,7 miljoner floridabor har redan gått och röstat efter cirka två veckor med personligt förtidsröstande .', 'gått och röstat; 8,9,10\n']
+####PRED#### Han tillskrivs äran för att ha hjälpt ansträngningar för att hantera de skuldberg som skapats av lokala ledningar i Kina .	hjälpt ansträngningar; 7,8
+
+list##### ['Han tillskrivs äran för att ha hjälpt ansträngningar för att hantera de skuldberg som skapats av lokala ledningar i Kina .', 'hjälpt ansträngningar; 7,8\n']
+####PRED#### Ansträngningen på internet sades vara den främsta drivkraften för enhetens kapitalutgifter .	drivkraften; 8
+
+list##### ['Ansträngningen på internet sades vara den främsta drivkraften för enhetens kapitalutgifter .', 'drivkraften; 8\n']
+####PRED#### Alejandra González Anaya , en av paradens kreativa chefer , förklarade för CNN varför Mexiko har beslutat att det är dags nu att bjuda på en sådan show .	en av; 5,6 | bjuda på; 24,25
+
+list##### ['Alejandra González Anaya , en av paradens kreativa chefer , förklarade för CNN varför Mexiko har beslutat att det är dags nu att bjuda på en sådan show .', 'en av; 5,6 | bjuda på; 24,25\n']
+####PRED#### Inte alla omvandlingar i regionen har varit framgångsrika .	framgångsrika; 8
+
+list##### ['Inte alla omvandlingar i regionen har varit framgångsrika .', 'framgångsrika; 8\n']
+####PRED#### I Pyongyang såg jag några personer använda smarttelefoner , men långt färre .	långt färre; 11,12
+
+list##### ['I Pyongyang såg jag några personer använda smarttelefoner , men långt färre .', 'långt färre; 11,12\n']
+####PRED#### Men arkitektur kan bygga broar mellan de levande och de döda och , i någon mån , göra gränsen otydlig .	bygga broar; 4,5 | i någon mån; 14,15,16
+
+list##### ['Men arkitektur kan bygga broar mellan de levande och de döda och , i någon mån , göra gränsen otydlig .', 'bygga broar; 4,5 | i någon mån; 14,15,16\n']
+####PRED#### 2007 var den mest framgångsrika filmen El Greco , regisserad av Yannis Smaragdis .	var den mest framgångsrika filmen; 2,3,4,5,6 | regisserad av; 10,11
+
+list##### ['2007 var den mest framgångsrika filmen El Greco , regisserad av Yannis Smaragdis .', 'var den mest framgångsrika filmen; 2,3,4,5,6 | regisserad av; 10,11\n']
+####PRED#### En monsun är en årstidsbunden dominerande vind som håller i sig i flera månader , och för in en regions regnperiod .	håller i sig; 9,10,11 | för in; 17,18
+
+list##### ['En monsun är en årstidsbunden dominerande vind som håller i sig i flera månader , och för in en regions regnperiod .', 'håller i sig; 9,10,11 | för in; 17,18\n']
+####PRED#### Det resulterade dock i att viktiga tunga artilleripjäser övergavs , och det är en fråga för historisk diskussion varför järnvägen till Flensburg aldrig användes ordentligt för evakueringen .	övergavs; 9
+
+list##### ['Det resulterade dock i att viktiga tunga artilleripjäser övergavs , och det är en fråga för historisk diskussion varför järnvägen till Flensburg aldrig användes ordentligt för evakueringen .', 'övergavs; 9\n']
+####PRED#### Det exakta året för giftermålet mellan Herodes Antipas och Herodias är föremål för debatt mellan forskare .	föremål för debatt; 12,13,14
+
+list##### ['Det exakta året för giftermålet mellan Herodes Antipas och Herodias är föremål för debatt mellan forskare .', 'föremål för debatt; 12,13,14\n']
+####PRED#### Det lade grunden för integration där statens ekonomiska och juridiska maskineri kunde tillämpas genom hela Medelhavet på samma sätt som en gång gjordes från Latium för hela Italien .	lade grunden; 2,3 | på samma sätt; 17,18,19
+
+list##### ['Det lade grunden för integration där statens ekonomiska och juridiska maskineri kunde tillämpas genom hela Medelhavet på samma sätt som en gång gjordes från Latium för hela Italien .', 'lade grunden; 2,3 | på samma sätt; 17,18,19\n']
+####PRED#### Khitanerna hade genomfört flera aggressiva förhandlingar om att utvidga sina gränser söderut , medan de manipulerade flera inkompetenta kinesiska ambassadörer vilka gick med på Liao-kungadömets krav .	gick med på; 22,23,24
+
+list##### ['Khitanerna hade genomfört flera aggressiva förhandlingar om att utvidga sina gränser söderut , medan de manipulerade flera inkompetenta kinesiska ambassadörer vilka gick med på Liao-kungadömets krav .', 'gick med på; 22,23,24\n']
+####PRED#### Tell Amarna-breven , som kommer från 1300-talet fvt , inkluderar tio brev från kungarna i Gezer som svär trohet till den egyptiske faraon .	svär trohet; 18,19
+
+list##### ['Tell Amarna-breven , som kommer från 1300-talet fvt , inkluderar tio brev från kungarna i Gezer som svär trohet till den egyptiske faraon .', 'svär trohet; 18,19\n']
+####PRED#### Tvångsdop stod i strid med den katolska kyrkans lag , och teoretiskt sett kunde alla som hade blivit tvingade till dop lagligen återgå till judendom .	i strid med; 3,4,5 | teoretiskt sett; 12,13
+
+list##### ['Tvångsdop stod i strid med den katolska kyrkans lag , och teoretiskt sett kunde alla som hade blivit tvingade till dop lagligen återgå till judendom .', 'i strid med; 3,4,5 | teoretiskt sett; 12,13\n']
+####PRED#### Framgången för American Motors storleksmässigt kompakta Rambler sporrade GM och Ford att introducera sina egna storleksminskade bilar 1960 .	storleksmässigt kompakta; 5,6
+
+list##### ['Framgången för American Motors storleksmässigt kompakta Rambler sporrade GM och Ford att introducera sina egna storleksminskade bilar 1960 .', 'storleksmässigt kompakta; 5,6\n']
+####PRED#### Kina besegrades och 1842 gick de med på villkoren i Nankingfördraget .	gick med på; 5,6,7,8
+
+list##### ['Kina besegrades och 1842 gick de med på villkoren i Nankingfördraget .', 'gick med på; 5,6,7,8\n']
+####PRED#### Det var så framgångsrikt att militären fortsatte att använda det i många år efter kriget , och det var fortfarande i bruk i vissa länder på 1980-talet .	i bruk; 21,22
+
+list##### ['Det var så framgångsrikt att militären fortsatte att använda det i många år efter kriget , och det var fortfarande i bruk i vissa länder på 1980-talet .', 'i bruk; 21,22\n']
+####PRED#### En mental konflikt grep Herzl , mellan lusten för litterär framgång och en vilja att agera som en offentlig person .	agera som; 16,17
+
+list##### ['En mental konflikt grep Herzl , mellan lusten för litterär framgång och en vilja att agera som en offentlig person .', 'agera som; 16,17\n']
+####PRED#### Vid ett tillfälle antyds det att han är en agent under täckmantel , vars mål är Homer .	under täckmantel; 11,12
+
+list##### ['Vid ett tillfälle antyds det att han är en agent under täckmantel , vars mål är Homer .', 'under täckmantel; 11,12\n']
+####PRED#### Disney fick också reda på att Universal ägde upphovsrätten till Oswald .	fick reda på; 2,4,5
+
+list##### ['Disney fick också reda på att Universal ägde upphovsrätten till Oswald .', 'fick reda på; 2,4,5\n']
+####PRED#### Rafferty släppte två album till under 1990-talet i vad musikern Tom Robinson senare beskrev som ” en ordentlig återkomst till högform ” .	till under; 5,6 | en ordentlig återkomst; 17,18,19 | till högform; 20,21
+
+list##### ['Rafferty släppte två album till under 1990-talet i vad musikern Tom Robinson senare beskrev som ” en ordentlig återkomst till högform ” .', 'till under; 5,6 | en ordentlig återkomst; 17,18,19 | till högform; 20,21\n']
+####PRED#### Blunt spelade huvudrollen 2011 i den brittiska komedin Laxfiske i Jemen regisserad av Lasse Hallström och med Ewan McGregor och Kristin Scott Thomas som motspelare .	regisserad av; 12,13
+
+list##### ['Blunt spelade huvudrollen 2011 i den brittiska komedin Laxfiske i Jemen regisserad av Lasse Hallström och med Ewan McGregor och Kristin Scott Thomas som motspelare .', 'regisserad av; 12,13\n']
+####PRED#### Hon spelade huvudrollen i filmen The Five-Year Engagement från 2012 , regisserad av Nicholas Stoller och med Jason Segel som motspelare .	huvudrollen; 3 | regisserad av; 12,13 | motspelare; 21
+
+list##### ['Hon spelade huvudrollen i filmen The Five-Year Engagement från 2012 , regisserad av Nicholas Stoller och med Jason Segel som motspelare .', 'huvudrollen; 3 | regisserad av; 12,13 | motspelare; 21\n']
+####PRED#### Då hon fått ett rykte som en expert i ämnet tog hon med sig de färdigheterna tillbaka till Radiuminstitutet tillsammans med en liten skiva polonium .	tog med sig; 11,13,14 | tillsammans med; 20,21
+
+list##### ['Då hon fått ett rykte som en expert i ämnet tog hon med sig de färdigheterna tillbaka till Radiuminstitutet tillsammans med en liten skiva polonium .', 'tog med sig; 11,13,14 | tillsammans med; 20,21\n']
+####PRED#### Med 71 mål på 137 internationella matcher har han slagit rekord i antal mål för DFB .	slagit rekord; 10,11 | i antal mål; 12,13,14
+
+list##### ['Med 71 mål på 137 internationella matcher har han slagit rekord i antal mål för DFB .', 'slagit rekord; 10,11 | i antal mål; 12,13,14\n']
+####PRED#### Bilden visar tydligt den smala pekskärmsstrimman ovanför tangentbordet som har förutsetts i rykten .	förutsetts; 11 | i rykten; 12,13
+
+list##### ['Bilden visar tydligt den smala pekskärmsstrimman ovanför tangentbordet som har förutsetts i rykten .', 'förutsetts; 11 | i rykten; 12,13\n']
+####PRED#### Ryssland tillkännagav ett inställande av kontraktet i början av oktober .	tillkännagav; 2 | inställande; 4 | i början; 7,8 | av oktober; 9,10
+
+list##### ['Ryssland tillkännagav ett inställande av kontraktet i början av oktober .', 'tillkännagav; 2 | inställande; 4 | i början; 7,8 | av oktober; 9,10\n']
+####PRED#### Ur denna synvinkel är förlegade strukturer och en självbelåten elit anledningen till varför sjukvårdssystemet , utbildningen och utrikeshandeln i USA är i så dåligt skick .	i så dåligt skick; 22,23,24,25
+
+list##### ['Ur denna synvinkel är förlegade strukturer och en självbelåten elit anledningen till varför sjukvårdssystemet , utbildningen och utrikeshandeln i USA är i så dåligt skick .', 'i så dåligt skick; 22,23,24,25\n']
+####PRED#### Tidningen ” Die ZEIT ” förhörde sig först med fastighetsföretaget om dess tveksamma kassaflöden och hotet om insolvens i juli .	förhörde sig; 6,7
+
+list##### ['Tidningen ” Die ZEIT ” förhörde sig först med fastighetsföretaget om dess tveksamma kassaflöden och hotet om insolvens i juli .', 'förhörde sig; 6,7\n']
+####PRED#### Simon Krätschmer famlar runt ensam genom den fallfärdiga , olycksbådande baracken .	famlar runt; 3,4
+
+list##### ['Simon Krätschmer famlar runt ensam genom den fallfärdiga , olycksbådande baracken .', 'famlar runt; 3,4\n']
+####PRED#### ETA är på väg ut , avslöjade den franska kontingenten .	på väg ut; 3,4,5
+
+list##### ['ETA är på väg ut , avslöjade den franska kontingenten .', 'på väg ut; 3,4,5\n']
+####PRED#### De som har åldern inne kommer att erbjudas 500 euro av staten , att spendera före 31 december 2017 .	har åldern inne; 3,4,5
+
+list##### ['De som har åldern inne kommer att erbjudas 500 euro av staten , att spendera före 31 december 2017 .', 'har åldern inne; 3,4,5\n']
+####PRED#### Den senaste siffran hänför sig till 24 oktober förra året och säger oss att vår diesel kostar 1,335 euro per liter jämfört med eurozonens genomsnitt på 1,165 euro .	hänför sig till; 4,5,6 | jämfört med; 22,23
+
+list##### ['Den senaste siffran hänför sig till 24 oktober förra året och säger oss att vår diesel kostar 1,335 euro per liter jämfört med eurozonens genomsnitt på 1,165 euro .', 'hänför sig till; 4,5,6 | jämfört med; 22,23\n']
+####PRED#### En betydligt högre kostnad vilken klart överskrider genomsnittet för de länder som använder den enda valutan , vilket motsvarar 1,365 euro per liter .	genomsnittet; 8
+
+list##### ['En betydligt högre kostnad vilken klart överskrider genomsnittet för de länder som använder den enda valutan , vilket motsvarar 1,365 euro per liter .', 'genomsnittet; 8\n']
+####PRED#### Den kommer att gå ut på beskattning .	gå ut på; 4,5,6
+
+list##### ['Den kommer att gå ut på beskattning .', 'gå ut på; 4,5,6\n']
+####PRED#### Studenter vid LUISS University meddelades under ett möte som ägde rum i Rom .	ägde rum; 10,11
+
+list##### ['Studenter vid LUISS University meddelades under ett möte som ägde rum i Rom .', 'ägde rum; 10,11\n']
+####PRED#### I krigsfilmer eller cowboy och indianfilmer var slagen , slagsmålen och misshandeln inte av denna värld .	slagsmålen; 10
+
+list##### ['I krigsfilmer eller cowboy och indianfilmer var slagen , slagsmålen och misshandeln inte av denna värld .', 'slagsmålen; 10\n']
+####PRED#### Den festliga dedikationen ägde rum den 30 april 1955 .	ägde rum; 4,5 | den 30 april 1955; 6,7,8,9
+
+list##### ['Den festliga dedikationen ägde rum den 30 april 1955 .', 'ägde rum; 4,5 | den 30 april 1955; 6,7,8,9\n']
+####PRED#### 1832 såldes det före detta klostret till fabrikören Georg Reichenbach av staten Württemberg under villkoret att etablera en bomullsfabrik där .	före detta; 4,5 | under villkoret att; 14,15,16
+
+list##### ['1832 såldes det före detta klostret till fabrikören Georg Reichenbach av staten Württemberg under villkoret att etablera en bomullsfabrik där .', 'före detta; 4,5 | under villkoret att; 14,15,16\n']
+####PRED#### Bland dem finns det före detta klostret till klosterkyrkan för St. Petrus och Paulus .	till klosterkyrkan; 8,9
+
+list##### ['Bland dem finns det före detta klostret till klosterkyrkan för St. Petrus och Paulus .', 'till klosterkyrkan; 8,9\n']
+####PRED#### Både tidpunkten och händelseföljden för incidenten diskuterades energiskt .	Både ... och; 1,3
+
+list##### ['Både tidpunkten och händelseföljden för incidenten diskuterades energiskt .', 'Både ... och; 1,3\n']
+####PRED#### I april 2012 tillkännagav den turkiske presidenten Erdogan sina regeringsplaner på att frigöra Bosporen genom att bygga Istanbulkanalen parallellt med den .	tillkännagav; 4 | bygga parallellt; 17,19
+
+list##### ['I april 2012 tillkännagav den turkiske presidenten Erdogan sina regeringsplaner på att frigöra Bosporen genom att bygga Istanbulkanalen parallellt med den .', 'tillkännagav; 4 | bygga parallellt; 17,19\n']
+####PRED#### Dess ledning , däremot , har inte varit utan kritik .	utan kritik; 9,10
+
+list##### ['Dess ledning , däremot , har inte varit utan kritik .', 'utan kritik; 9,10\n']
+####PRED#### Denna klausul inkluderar tiden det tar att resa till klienternas hem under arbetstid .	det tar; 5,6
+
+list##### ['Denna klausul inkluderar tiden det tar att resa till klienternas hem under arbetstid .', 'det tar; 5,6\n']
+####PRED#### Talesmannen uteslöt inte möjligheten att andra också skulle utredas .	utredas; 9
+
+list##### ['Talesmannen uteslöt inte möjligheten att andra också skulle utredas .', 'utredas; 9\n']
+####PRED#### Resultatet av detta experiment ger ytterligare stöd för att ruccolafrön kan flygas och förvaras på den internationella rymdstationen ISS i sex månader utan att det väsentligt påverkar deras förmåga att gro och växa på jorden .	flygas; 12 | förvaras; 14 | att gro och växa; 30,31,33
+
+list##### ['Resultatet av detta experiment ger ytterligare stöd för att ruccolafrön kan flygas och förvaras på den internationella rymdstationen ISS i sex månader utan att det väsentligt påverkar deras förmåga att gro och växa på jorden .', 'flygas; 12 | förvaras; 14 | att gro och växa; 30,31,33\n']
+####PRED#### Som ett resultat öppnar många personer e-postmeddelanden eller klickar ouppmärksamt på länkar och bilagor utan någon tanke på konsekvenserna .	Som ett resultat; 1,2,3
+
+list##### ['Som ett resultat öppnar många personer e-postmeddelanden eller klickar ouppmärksamt på länkar och bilagor utan någon tanke på konsekvenserna .', 'Som ett resultat; 1,2,3\n']
+####PRED#### Sedan 1960-talet har stadens ekonomi varit i brant förfall .	i brant förfall; 7,8,9
+
+list##### ['Sedan 1960-talet har stadens ekonomi varit i brant förfall .', 'i brant förfall; 7,8,9\n']
+####PRED#### I ett tal till kabinettet kort efter att tyska styrkor korsat gränsen lade Chamberlain skulden på både Tyskland och Österrike .	lade skulden på; 13,15,16 | både ... och; 17,19
+
+list##### ['I ett tal till kabinettet kort efter att tyska styrkor korsat gränsen lade Chamberlain skulden på både Tyskland och Österrike .', 'lade skulden på; 13,15,16 | både ... och; 17,19\n']
+####PRED#### Vad är gränserna som kan förhindra uttrycket av trosuppfattningar vid privata företag ?	privata företag; 11,12
+
+list##### ['Vad är gränserna som kan förhindra uttrycket av trosuppfattningar vid privata företag ?', 'privata företag; 11,12\n']
+####PRED#### Rafferty spelade in en ny version av sin Humblebums-låt ” Her Father Did n't Like Me Anyway ” på albumet Over My Head ( 1994 ) .	spelade in; 2,3 | Her Father Did n't Like Me Anyway; 11,12,13,14,15,16,17
+
+list##### ["Rafferty spelade in en ny version av sin Humblebums-låt ” Her Father Did n't Like Me Anyway ” på albumet Over My Head ( 1994 ) .", "spelade in; 2,3 | Her Father Did n't Like Me Anyway; 11,12,13,14,15,16,17\n"]
+####PRED#### Nationella reaktioner på händelserna i Kansas visade hur djupt delat landet hade blivit .	djupt delat; 9,10
+
+list##### ['Nationella reaktioner på händelserna i Kansas visade hur djupt delat landet hade blivit .', 'djupt delat; 9,10\n']
+####PRED#### Bloch är intresserad av att etablera hopp som den vägledande principen för sin marxism och betonar den implicita humanism som är inneboende i mystisk tradition .	vägledande principen; 9,10,11 | inneboende i; 22,23
+
+list##### ['Bloch är intresserad av att etablera hopp som den vägledande principen för sin marxism och betonar den implicita humanism som är inneboende i mystisk tradition .', 'vägledande principen; 9,10,11 | inneboende i; 22,23\n']
+####PRED#### Nyheten om företagets bedrägeri – som hade pågått i flera år – sänkte VW:s värde med tiotals miljarder euro och kostade högste direktören Martin Winterkorn hans jobb .	None
+
+list##### ['Nyheten om företagets bedrägeri – som hade pågått i flera år – sänkte VW:s värde med tiotals miljarder euro och kostade högste direktören Martin Winterkorn hans jobb .', 'None\n']
+####PRED#### I allmänhet exploderar de inte katastrofalt .	I allmänhet; 1,2
+
+list##### ['I allmänhet exploderar de inte katastrofalt .', 'I allmänhet; 1,2\n']
+####PRED#### Jag älskar att leka med det , och jag letar alltid efter musor som passar in på beskrivningen för det är så intressant att göra en kollektion när jag hittar en .	letar efter; 10,12 | passar in; 15,16 | göra en kollektion; 25,26,27
+
+list##### ['Jag älskar att leka med det , och jag letar alltid efter musor som passar in på beskrivningen för det är så intressant att göra en kollektion när jag hittar en .', 'letar efter; 10,12 | passar in; 15,16 | göra en kollektion; 25,26,27\n']
+####PRED#### Weiss hedrades med litteraturprisen från städerna Köln och Bremen .	hedrades med; 2,3
+
+list##### ['Weiss hedrades med litteraturprisen från städerna Köln och Bremen .', 'hedrades med; 2,3\n']
+####PRED#### De senaste 50 åren har förstörelse av livmiljöer runt jordbruksmarker försämrat cirka 40 % av jordbruksarealer världen över genom erosion , försaltning , kompaktering , utarmning av näringsämnen , förorening och urbanisering .	världen över; 17,18
+
+list##### ['De senaste 50 åren har förstörelse av livmiljöer runt jordbruksmarker försämrat cirka 40 % av jordbruksarealer världen över genom erosion , försaltning , kompaktering , utarmning av näringsämnen , förorening och urbanisering .', 'världen över; 17,18\n']
+####PRED#### Genom att färdigställa denna maglev-sträckning tror jag att regeringen förväntar sig större ekonomisk utveckling i Japan .	förväntar sig; 10,11
+
+list##### ['Genom att färdigställa denna maglev-sträckning tror jag att regeringen förväntar sig större ekonomisk utveckling i Japan .', 'förväntar sig; 10,11\n']
+####PRED#### Valkretsen är i kommunalområdet för North Kesteven , där 62 % av de röstande stödde att lämna EU .	lämna EU; 16,17
+
+list##### ['Valkretsen är i kommunalområdet för North Kesteven , där 62 % av de röstande stödde att lämna EU .', 'lämna EU; 16,17\n']
+####PRED#### Dess kamp mot det Osmanska imperiet i Medelhavet innebar stora begränsningar för den militära styrka det kunde sätta in mot rebellerna i Nederländerna .	sätta in; 18,19
+
+list##### ['Dess kamp mot det Osmanska imperiet i Medelhavet innebar stora begränsningar för den militära styrka det kunde sätta in mot rebellerna i Nederländerna .', 'sätta in; 18,19\n']
+####PRED#### ” Agora var enbart för inbjudna men många av dessa marknadsplatser är lättåtkomliga om du vet hur du ska leta ” , lägger dr Lee till .	lägger till; 23,26
+
+list##### ['” Agora var enbart för inbjudna men många av dessa marknadsplatser är lättåtkomliga om du vet hur du ska leta ” , lägger dr Lee till .', 'lägger till; 23,26\n']
+####PRED#### Hitchcocks filmer innehåller ibland rollkaraktärer som kämpar med sina förhållanden till sina mödrar .	förhållanden till; 10,11
+
+list##### ['Hitchcocks filmer innehåller ibland rollkaraktärer som kämpar med sina förhållanden till sina mödrar .', 'förhållanden till; 10,11\n']
+####PRED#### De islamiska medborgare som har bosatt sig sedan början av 1960-talet emigrerade i huvudsak från Turkiet .	bosatt sig; 6,7 | i huvudsak; 13,14
+
+list##### ['De islamiska medborgare som har bosatt sig sedan början av 1960-talet emigrerade i huvudsak från Turkiet .', 'bosatt sig; 6,7 | i huvudsak; 13,14\n']
+####PRED#### Hong Kongs regering , som leds av Beijing-vänliga lagstiftare , har ansett att paret inte bör tillträda posten .	tillträda; 17
+
+list##### ['Hong Kongs regering , som leds av Beijing-vänliga lagstiftare , har ansett att paret inte bör tillträda posten .', 'tillträda; 17\n']
+####PRED#### Ett koldrivet kraftverk i Badarpur , sydöstra Dehli , kommer att stängas av i 10 dagar , tillsammans med dieselgeneratorer i staden .	stängas av; 12,13 | tillsammans med; 18,19
+
+list##### ['Ett koldrivet kraftverk i Badarpur , sydöstra Dehli , kommer att stängas av i 10 dagar , tillsammans med dieselgeneratorer i staden .', 'stängas av; 12,13 | tillsammans med; 18,19\n']
+####PRED#### Förstörelse av livsmiljöer ökar storligen ett områdes sårbarhet mot naturkatastrofer som översvämningar och torka , missväxt , sjukdomsspridning och vattenförorening .	Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:
+
+list##### ['Förstörelse av livsmiljöer ökar storligen ett områdes sårbarhet mot naturkatastrofer som översvämningar och torka , missväxt , sjukdomsspridning och vattenförorening .', "Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:\n"]
+####PRED#### 
+
+list##### ['\n']
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Fri Dec 5 00:46:34 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19414299
+    JobName = SV_inf
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = (null)
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_SV_inference.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_SV.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_SV.err
+- Requested resources:
+    Timelimit = 12:30:00 ( 45000s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 05:35:32 ( 20132s )
+    MaxRSS = 2389844K ( 2333.832M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    * !!! Less than 50% of requested walltime used !!! Consider adaptation of your batch script.
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+

@@ -1,0 +1,145 @@
+INFO 12-05 09:12:41 [utils.py:253] non-default args: {'max_model_len': 5000, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'model': '../Qwen3-32B-INT8'}
+INFO 12-05 09:12:41 [model.py:631] Resolved architecture: Qwen3ForCausalLM
+INFO 12-05 09:12:41 [model.py:1745] Using max model len 5000
+INFO 12-05 09:12:47 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-05 09:12:47 [vllm.py:500] Cudagraph is disabled under eager mode
+WARNING 12-05 09:12:48 [system_utils.py:103] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:13:57 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='../Qwen3-32B-INT8', speculative_config=None, tokenizer='../Qwen3-32B-INT8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=5000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=../Qwen3-32B-INT8, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:03 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://0.0.0.0:52955 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:03 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:04 [gpu_model_runner.py:3259] Starting to load model ../Qwen3-32B-INT8...
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:04 [compressed_tensors_w8a8_int8.py:62] Using CutlassScaledMMLinearKernel for CompressedTensorsW8A8Int8
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:17 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:17 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:43 [default_loader.py:314] Loading weights took 25.59 seconds
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:43 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:44 [gpu_model_runner.py:3338] Model loading took 32.3027 GiB memory and 38.901792 seconds
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:46 [gpu_worker.py:359] Available KV cache memory: 29.09 GiB
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:46 [kv_cache_utils.py:1229] GPU KV cache size: 119,152 tokens
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:46 [kv_cache_utils.py:1234] Maximum concurrency for 5,000 tokens per request: 23.79x
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:46 [core.py:250] init engine (profile, create kv cache, warmup model) took 2.86 seconds
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m INFO 12-05 09:14:47 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-05 09:14:47 [llm.py:352] Supported tasks: ['generate']
+WARNING 12-05 09:14:48 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1;36m(EngineCore_DP0 pid=3538682)[0;0m WARNING 12-05 09:14:49 [utils.py:250] Using default LoRA kernel configs
+####PRED#### 当初 から バウ を 気 に 入っ ている 、 暴力団 の 娘 。	気 に 入っ; 5, 6, 7
+
+list##### ['当初 から バウ を 気 に 入っ ている 、 暴力団 の 娘 。', '気 に 入っ; 5, 6, 7\n']
+####PRED#### 利用日 の 1か月前 から 当日 まで 発売 。	1か月前; 3 | から まで; 4, 6 | 発売; 7
+
+list##### ['利用日 の 1か月前 から 当日 まで 発売 。', '1か月前; 3 | から まで; 4, 6 | 発売; 7\n']
+####PRED#### デザイン も 良い し , 秋 の 夜長 に ピッタリ な サイト だ と 思い ます 。	秋 の 夜長; 6,7,8 | ピッタリ な; 10,11 | 思い ます; 15,16
+
+list##### ['デザイン も 良い し , 秋 の 夜長 に ピッタリ な サイト だ と 思い ます 。', '秋 の 夜長; 6,7,8 | ピッタリ な; 10,11 | 思い ます; 15,16\n']
+####PRED#### わいわい 楽しく やる とき に おすすめ 。	None
+
+list##### ['わいわい 楽しく やる とき に おすすめ 。', 'None\n']
+####PRED#### ブロフェルド の 最初 の 登場 は シリーズ 第二作 『 ロシア より 愛 を こめ て 』 で 、 その 次 が 第四作 『 サンダーボール作戦 』 である 。	最初 の 登場 は; 3, 4, 5, 6 | より 愛 を こめ て; 11, 12, 13, 14, 15
+
+list##### ['ブロフェルド の 最初 の 登場 は シリーズ 第二作 『 ロシア より 愛 を こめ て 』 で 、 その 次 が 第四作 『 サンダーボール作戦 』 である 。', '最初 の 登場 は; 3, 4, 5, 6 | より 愛 を こめ て; 11, 12, 13, 14, 15\n']
+####PRED#### うどん屋さん の 屋号 ながら 、 豚バラ丼 が メイン を 張っ てる 。	の 屋号 ながら; 2, 3, 4 | メイン を 張る; 8, 9, 10 | 張っ てる; 10, 11
+
+list##### ['うどん屋さん の 屋号 ながら 、 豚バラ丼 が メイン を 張っ てる 。', 'の 屋号 ながら; 2, 3, 4 | メイン を 張る; 8, 9, 10 | 張っ てる; 10, 11\n']
+####PRED#### 一点 突破し た もの が あなた に ある か 。	一点突破し; 1,2
+
+list##### ['一点 突破し た もの が あなた に ある か 。', '一点突破し; 1,2\n']
+####PRED#### 主に アダルトゲーム や ドラマCD の シナリオ を 手がける 。	None
+
+list##### ['主に アダルトゲーム や ドラマCD の シナリオ を 手がける 。', 'None\n']
+####PRED#### 物心 つい た ころ から ある お店 です 。	物心 つい た ころ から; 1, 2, 3, 4, 5
+
+list##### ['物心 つい た ころ から ある お店 です 。', '物心 つい た ころ から; 1, 2, 3, 4, 5\n']
+####PRED#### 妹 は 、 医学生 の 彼 が いる 短大生 。	医学生; 4
+
+list##### ['妹 は 、 医学生 の 彼 が いる 短大生 。', '医学生; 4\n']
+####PRED#### parejo と 似 た 形状 である が 先端 と 吸い口 から Figurado の 特徴 が ある 。	と 似 た; 2,3,4 | 形状 である; 5,6 | と 吸い口 から; 9,10,11
+
+list##### ['parejo と 似 た 形状 である が 先端 と 吸い口 から Figurado の 特徴 が ある 。', 'と 似 た; 2,3,4 | 形状 である; 5,6 | と 吸い口 から; 9,10,11\n']
+####PRED#### この 間 、 552人 の 卒業生 を 輩出し た 。	輩出し; 8
+
+list##### ['この 間 、 552人 の 卒業生 を 輩出し た 。', '輩出し; 8\n']
+####PRED#### 街なか で 同じ だけ 食べ て 飲ん だら 結構 な お値段 に なる はず 。	食べ て; 5,6 | 飲ん だら; 7,8 | 構造 な; 9,10 | なる はず; 13,14
+
+list##### ['街なか で 同じ だけ 食べ て 飲ん だら 結構 な お値段 に なる はず 。', '食べ て; 5,6 | 飲ん だら; 7,8 | 構造 な; 9,10 | なる はず; 13,14\n']
+####PRED#### そんな 日々 を 支える の は 、 家族 の 存在 。	支える の は; 4,5,6
+
+list##### ['そんな 日々 を 支える の は 、 家族 の 存在 。', '支える の は; 4,5,6\n']
+####PRED#### のち 横光利一 に 師事し 、 33年 文壇 に 出 て 、 徳田秋声 の 娘 と 結婚 。	師事し; 4 | 出 て; 9, 10
+
+list##### ['のち 横光利一 に 師事し 、 33年 文壇 に 出 て 、 徳田秋声 の 娘 と 結婚 。', '師事し; 4 | 出 て; 9, 10\n']
+####PRED#### セルCD 、 DVD を いっそ 無く し て レンタル の 幅 を もう 少し 広げ て貰い たい ところ 。	無く し て; 6,7,8 | レンタル の 幅 を; 9,10,11,12 | もう 少し; 13,14 | 広げ て貰い たい; 15,16,17
+
+list##### ['セルCD 、 DVD を いっそ 無く し て レンタル の 幅 を もう 少し 広げ て貰い たい ところ 。', '無く し て; 6,7,8 | レンタル の 幅 を; 9,10,11,12 | もう 少し; 13,14 | 広げ て貰い たい; 15,16,17\n']
+####PRED#### 同じ 文章 は 上祐氏 の mixi日記 に も アップさ れ てい ます 。	アップさ れ て; 9, 10, 11
+
+list##### ['同じ 文章 は 上祐氏 の mixi日記 に も アップさ れ てい ます 。', 'アップさ れ て; 9, 10, 11\n']
+####PRED#### 池袋 に ある サラリーマン の 友 。	池袋 に ある; 0, 1, 2
+
+list##### ['池袋 に ある サラリーマン の 友 。', '池袋 に ある; 0, 1, 2\n']
+####PRED#### 公園 に 面し た テラス が 居心地 が イイ です 。	居心地; 7 | イイ; 9
+
+list##### ['公園 に 面し た テラス が 居心地 が イイ です 。', '居心地; 7 | イイ; 9\n']
+####PRED#### 翌日 、 党本部 から 事務局 の 幹部 が 県連 を 訪れ て 陳謝 。	訪れ て; 11,12
+
+list##### ['翌日 、 党本部 から 事務局 の 幹部 が 県連 を 訪れ て 陳謝 。', '訪れ て; 11,12\n']
+####PRED#### すごく おもしろい 占い な ので 、 気 に なっ た 人 は 是非 受け てもらい たい です ね 。	すごく おもしろい; 1, 2 | 気 に なっ た; 7, 8, 9, 10 | 受け てもらい; 14, 15
+
+list##### ['すごく おもしろい 占い な ので 、 気 に なっ た 人 は 是非 受け てもらい たい です ね 。', 'すごく おもしろい; 1, 2 | 気 に なっ た; 7, 8, 9, 10 | 受け てもらい; 14, 15\n']
+####PRED#### それ が 当たり前 、 普通 であっ て 、 驚い たり 、 嫌がっ たり し ない 。	普通 であっ て; 5,6,7 | 驚い たり; 9,10 | 嫌がっ たり; 12,13
+
+list##### ['それ が 当たり前 、 普通 であっ て 、 驚い たり 、 嫌がっ たり し ない 。', '普通 であっ て; 5,6,7 | 驚い たり; 9,10 | 嫌がっ たり; 12,13\n']
+####PRED#### 似 た よう な コンセプト が ウィリアム・トムソン の サイフォン式レコーダー に も あらわれ ている 。	あらわれ ている; 12,13
+
+list##### ['似 た よう な コンセプト が ウィリアム・トムソン の サイフォン式レコーダー に も あらわれ ている 。', 'あらわれ ている; 12,13\n']
+####PRED#### 遺体 の そば に 吉住さん の もの と み られる 手提げバッグ と 病院 の 駐車場 に 車 が 残さ れ てい て 、 吉住さん は 出勤途中 に 事件 に 遭っ た と み られ てい ます 。	出勤途中; 27 | 遭っ た; 31, 32 | 残さ れ て; 19, 20, 21
+
+list##### ['遺体 の そば に 吉住さん の もの と み られる 手提げバッグ と 病院 の 駐車場 に 車 が 残さ れ てい て 、 吉住さん は 出勤途中 に 事件 に 遭っ た と み られ てい ます 。', '出勤途中; 27 | 遭っ た; 31, 32 | 残さ れ て; 19, 20, 21\n']
+####PRED#### 区内 の 農作地 の 大部分 が 水田 であり 、 農業 は 稲作 が 中心 と なっ ている 。	であり; 8 | なっ ている; 16, 17
+
+list##### ['区内 の 農作地 の 大部分 が 水田 であり 、 農業 は 稲作 が 中心 と なっ ている 。', 'であり; 8 | なっ ている; 16, 17\n']
+####PRED#### 飯田氏 は , “ よろしい でしょう か ” と 聞い ておき ながら , こちら の 返事 も 待た ず に 一方的 に 電話 を 切っ てしまい まし た 。	Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:
+
+list##### ['飯田氏 は , “ よろしい でしょう か ” と 聞い ておき ながら , こちら の 返事 も 待た ず に 一方的 に 電話 を 切っ てしまい まし た 。', "Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:\n"]
+####PRED#### 1 飯田氏
+
+list##### ['1 飯田氏\n']
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Fri Dec 5 12:13:17 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19417820
+    JobName = JA_inf
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = (null)
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_JA_inference.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_JA.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_JA.err
+- Requested resources:
+    Timelimit = 12:30:00 ( 45000s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 03:02:23 ( 10943s )
+    MaxRSS = 2373440K ( 2317.812M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    * !!! Less than 30% of requested walltime used !!! Consider adaptation of your batch script.
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+

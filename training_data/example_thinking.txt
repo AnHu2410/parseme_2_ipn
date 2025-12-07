@@ -1,0 +1,932 @@
+Na Em a noite desta de esta quarta ( 30 ) , um policial foi morto a tiros em horário de folga , em Camboriú .	<think>
+Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given Portuguese sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track.
+
+The words are: 
+1. Na
+2. Em
+3. a
+4. noite
+5. desta
+6. de
+7. esta
+8. quarta
+9. (
+10. 30
+11. )
+12. ,
+13. um
+14. policial
+15. foi
+16. morto
+17. a
+18. tiros
+19. em
+20. horário
+21. de
+22. folga
+23. ,
+24. em
+25. Camboriú
+26. .
+
+Now, applying the MWE criteria. The first condition is that the MWE consists of multiple words that are always realized by the same lexemes. They can't be replaced by synonyms without changing the meaning. The second is that they show semantic, lexical, or syntactic idiomaticity. Third, they can't be multi-word named entities.
+
+Looking at the words, let's check for possible MWEs. The first thing I notice is "em horário de folga". "Horário de folga" might be a fixed expression in Portuguese meaning "off-duty hours" or "time off". But I need to check if it's an MWE. However, "horário de folga" is a standard phrase, maybe not an idiom. Let me think. "Horário de folga" could be a literal translation of "off-duty hours", but in Portuguese, "folga" is a noun meaning "day off" or "rest", so "horário de folga" might be a set phrase. But is it an MWE? It might be a collocation, but does it meet the idiomaticity criteria? The meaning might be derivable from the components, so maybe not semantic idiomaticity. However, if it's a fixed expression that's used in a specific way, perhaps it's a syntactic or lexical MWE. Wait, "folga" as a noun is used here, but in Portuguese, "folga" is a common noun, so maybe not lexically idiomatic. Hmm.
+
+Another possible MWE is "a tiros", which is "by gunfire" or "shot at". In Portuguese, "a tiros" is a prepositional phrase that's commonly used to indicate the manner of an action. For example, "foi morto a tiros" means "was killed by gunfire". This might be a syntactically idiomatic expression because the structure "a tiros" is a fixed way to express the means of an action. The preposition "a" here is used in a specific way that might not be directly derived from the individual components. So "a tiros" could be an MWE.
+
+Another candidate is "em Camboriú". "Camboriú" is a proper noun, the name of a city. Since the third condition says MWEs shouldn't be multi-word named entities, this would be excluded. So "em Camboriú" is a prepositional phrase with a proper noun, not an MWE.
+
+Looking at "na noite desta quarta", "quarta" here is short for "quarta-feira" (Thursday). So "na noite desta quarta" would be "on the night of this Thursday". This might be a fixed expression, but again, the components are standard. "Na noite de" is a common phrase, but not sure if it's an MWE. It might be a collocation but not an idiom.
+
+Another possibility is "foi morto a tiros". The entire verb phrase, but the MWE is more about the prepositional phrase "a tiros" as discussed earlier. The rest of the sentence doesn't seem to have other fixed expressions. 
+
+So the most likely MWE here is "a tiros" (indices 17, 18). Let me double-check. "A tiros" is a fixed expression in Portuguese, meaning "by gunfire" or "shot at". It's a prepositional phrase that's used in a specific way, so it might have syntactic idiomaticity because the structure is fixed. Also, "tiros" is a noun meaning "shots", and "a" is a preposition here, but the combination is a set phrase. So yes, that's an MWE. 
+
+Are there others? "em horário de folga" – "horário de folga" might be a fixed phrase, but I'm not sure if it's an MWE. If the meaning is directly derived from the components, then it's not an idiom. "Horário" is "time", "folga" is "day off", so "horário de folga" would be "time off" or "off-duty hours". That might be a literal translation, so perhaps not an MWE. 
+
+Another check: "na noite desta quarta" – "desta quarta" is "of this Thursday", but again, it's a standard prepositional phrase. 
+
+So the only MWE in the sentence is "a tiros" with indices 17 and 18.
+</think>
+
+a tiros; 17,18<|im_end|>
+Recomendamos que no em o dia de hoje os trabalhos rotineiros sejam prestados preferencialmente em regime de tele-trabalho .	<think>
+Okay, let's tackle this query step by step. The user wants me to identify all multiple-word expressions (MWEs) in the given Portuguese sentence. The sentence is provided as a list of words separated by newlines.
+
+First, I need to recall the definition of an MWE. The three conditions are: 1) the sequence must consist of fixed lexemes that can't be replaced by synonyms without changing the meaning or violating conventions. 2) It must show idiomaticity in semantics, lexicon, or syntax. 3) It shouldn't be a named entity.
+
+Looking at the sentence: "Recomendamos que no em o dia de hoje os trabalhos rotineiros sejam prestados preferencialmente em regime de tele-trabalho."
+
+Breaking it down into words with their indices (assuming each word is indexed starting from 1):
+
+1. Recomendamos
+2. que
+3. no
+4. em
+5. o
+6. dia
+7. de
+8. hoje
+9. os
+10. trabalhos
+11. rotineiros
+12. sejam
+13. prestados
+14. preferencialmente
+15. em
+16. regime
+17. de
+18. tele-trabalho
+19. .
+
+Now, I need to check for MWEs. Let's go through possible candidates.
+
+First, "em regime de" comes to mind. In Portuguese, "em regime de" is a common MWE meaning "in the regime of" or "under the regime of." However, I need to verify if this is fixed. For example, "em regime de" might be used in phrases like "em regime de emergência" (in emergency regime). But does "em regime de" function as a fixed expression? It might be more of a syntactic structure rather than an idiomatic expression. Alternatively, "tele-trabalho" is a compound word, but that's a single lexeme, not an MWE.
+
+Another possibility is "dia de hoje." In Portuguese, "hoje" is "today," so "dia de hoje" literally means "day of today," but in Portuguese, "hoje" can be used as a noun, so "dia de hoje" might be a fixed expression meaning "today." However, I'm not sure if that's considered an MWE. In English, "today" is a single word, but in Portuguese, "dia de hoje" might be used as a fixed phrase. However, I need to check if it's an idiomatic expression. If it's just a literal translation, maybe not. Alternatively, "trabalhos rotineiros" could be a noun phrase, but that's not an MWE.
+
+Looking at "tele-trabalho," this is a compound noun meaning "remote work." It's a single lexeme, so not an MWE.
+
+What about "em regime de tele-trabalho"? That's a longer phrase, but it's a prepositional phrase. However, the user mentioned that MWEs shouldn't be named entities. "Tele-trabalho" is a compound noun, but the entire phrase might not be an MWE unless it's a fixed expression.
+
+Another possible MWE is "no em o dia de hoje." Wait, that seems incorrect. Let me check the original sentence again. The words are: "no", "em", "o", "dia", "de", "hoje". The phrase "no dia de hoje" is "today" in Portuguese. But "no dia de hoje" is a fixed expression. "No dia de hoje" is equivalent to "today" in Portuguese, so "no dia de hoje" is an MWE. Let me verify that. Yes, in Portuguese, "no dia de hoje" is a fixed expression meaning "today." So the indices would be 3 (no), 6 (dia), 7 (de), 8 (hoje). That's four words: "no dia de hoje." However, the user's example for English MWEs includes "break up" and "to and fro." So in Portuguese, "no dia de hoje" would be a semantic MWE because it's an idiomatic way to say "today," where the individual words don't convey the same meaning as the whole phrase.
+
+Wait, but "no dia de hoje" is more of a literal translation. In Portuguese, "hoje" can be used as a noun, so "no dia de hoje" is "today," but maybe it's more of a fixed phrase. However, I'm not entirely sure. Another possibility is "trabalhos rotineiros" but that's just a noun phrase, not an MWE.
+
+Another candidate is "em regime de." If that's a fixed expression, but I'm not certain. In Portuguese, "em regime de" is used in phrases like "em regime de emergência" (in emergency regime), but it's a prepositional phrase. It might not be an MWE unless it's a fixed collocation. However, the user's example included "take place" as a syntactically idiomatic MWE. So maybe "em regime de" is similar, but I'm not sure.
+
+Wait, the user also mentioned that MWEs can be congruent with other languages. For example, "em regime de" might be similar to "in the regime of," but in English, "in the regime of" isn't an MWE. So maybe that's not it.
+
+Looking back, "no dia de hoje" seems more likely. If I consider that "hoje" can be a noun, then "dia de hoje" is "today's day," but the phrase "no dia de hoje" is used to mean "today." However, in Portuguese, "hoje" is an adverb, not a noun, so "no dia de hoje" might be a fixed expression. Alternatively, maybe it's just a literal translation and not an MWE.
+
+Another angle: the user's example of "to and fro" is a lexical MWE because "to" and "fro" aren't used as standalone words. In Portuguese, "de hoje" is "of today," so "no dia de hoje" might not be an MWE. But if "no dia de hoje" is a fixed expression, then it would be an MWE.
+
+Alternatively, "tele-trabalho" is a compound noun, but that's a single word. The user specified that MWEs are sequences of multiple words, so "tele-trabalho" is a single lexeme, not an MWE.
+
+Another possibility: "trabalhos rotineiros" is a noun phrase, but not an MWE. "sejam prestados" is a verb phrase, but again, not an MWE.
+
+Wait, the user's example included "long time no see" as a syntactically idiomatic MWE. In Portuguese, "muito tempo sem ver" is "long time without seeing," but that's a literal translation. However, "long time no see" is a fixed expression. If there's a similar phrase in Portuguese, maybe "muito tempo sem ver" is an MWE. But in the given sentence, the phrase is "long time no see" in the example. So I need to check if the Portuguese sentence has any similar fixed expressions.
+
+Looking at the original sentence again: "Recomendamos que no em o dia de hoje os trabalhos rotineiros sejam prestados preferencialmente em regime de tele-trabalho."
+
+Wait, the words are: "no", "em", "o", "dia", "de", "hoje". The phrase "no dia de hoje" is "today." If that's an MWE, then it's an MWE. However, in Portuguese, "hoje" is an adverb, so "no dia de hoje" might be a way to say "today," but I'm not sure if that's a fixed expression. Alternatively, maybe "em regime de tele-trabalho" is an MWE, but that's a prepositional phrase.
+
+Alternatively, "regime de tele-trabalho" is a noun phrase, but not an MWE.
+
+Another thought: "tele-trabalho" is a compound noun, but it's a single lexeme. The user specified that MWEs are sequences of multiple words. So "tele-trabalho" is not an MWE.
+
+After considering all possibilities, the most likely MWE in the sentence is "no dia de hoje." Let's check the indices: "no" is at position 3, "dia" at 6, "de" at 7, "hoje" at 8. Wait, but the words in the sentence are:
+
+1. Recomendamos
+2. que
+3. no
+4. em
+5. o
+6. dia
+7. de
+8. hoje
+9. os
+...
+
+So the phrase "no dia de hoje" would be words 3, 6, 7, 8. Wait, but "no" is at 3, then "em" at 4, "o" at 5, "dia" at 6, "de" at 7, "hoje" at 8. So the phrase "no dia de hoje" would be "no" (3), "dia" (6), "de" (7), "hoje" (8). But there's a gap between "no" (3) and "dia" (6), which are separated by "em" (4) and "o" (5). That doesn't make sense. So maybe I made a mistake here.
+
+Wait, the original sentence is: "Recomendamos que no em o dia de hoje os trabalhos rotineiros sejam prestados preferencialmente em regime de tele-trabalho."
+
+Wait, the words are:
+
+1. Recomendamos
+2. que
+3. no
+4. em
+5. o
+6. dia
+7. de
+8. hoje
+...
+
+So the phrase "no dia de hoje" would be "no" (3), "dia" (6), "de" (7), "hoje" (8). But between "no" (3) and "dia" (6), there are words "em" (4) and "o" (5). That would make the phrase "no em o dia de hoje," which doesn't make sense. Wait, that can't be right. So maybe there's a mistake in the original sentence's word segmentation.
+
+Wait, perhaps the original sentence is: "Recomendamos que no em o dia de hoje os trabalhos rotineiros sejam prestados preferencialmente em regime de tele-trabalho."
+
+Wait, but "no em o dia de hoje" would be "no em o dia de hoje," which seems like a mistake. Maybe the original sentence has a typo. Alternatively, perhaps the correct phrase is "no dia de hoje," which would be "no dia de hoje," but in the given words, "no" is at position 3, "em" at 4, "o" at 5, "dia" at 6. So the correct phrase would be "no dia de hoje" but the words are "no", "em", "o", "dia", "de", "hoje". That seems like a mistake in the sentence. Maybe the original sentence is supposed to be "no dia de hoje," but the words are split as "no", "em", "o", "dia", "de", "hoje," which doesn't make sense. So perhaps there's a typo in the input. However, as per the given input, the words are as listed.
+
+If the sentence is correctly split, then "no dia de hoje" would require the words "no", "dia", "de", "hoje" with no intervening words. But in the given input, between "no" (3) and "dia" (6), there are "em" (4) and "o" (5). Therefore, "no dia de hoje" is not a contiguous sequence. That suggests that there's no MWE in the given sentence.
+
+Alternatively, maybe the user made a mistake in the word splitting. For example, perhaps "no dia de hoje" is a correct phrase, but the words are split as "no", "dia", "de", "hoje" without the intervening words. But according to the input, the words are split as listed.
+
+Therefore, considering the given words, there might be no MWEs. The only possible candidate was "no dia de hoje," but the words are not contiguous. Alternatively, maybe "em regime de" is a fixed expression. Let's check that. "em regime de" is a prepositional phrase, but it's not an MWE unless it's a fixed collocation. However, in Portuguese, "em regime de" is used in phrases like "em regime de emergência" (in emergency regime), but it's not an MWE by itself.
+
+Another possibility: "trabalhos rotineiros" is a noun phrase, but not an MWE. "sejam prestados" is a verb phrase, but again, not an MWE.
+
+Given all this, I think there are no MWEs in the given sentence as per the provided word list. The possible candidates either aren't contiguous or don't meet the criteria for idiomaticity.
+</think>
+
+None<|im_end|>
+Macron planeja implementar a reforma por meio de decreto presidencial , o que significa que vai saltar os legisladores .	<think>
+Okay, let's tackle this query. The user wants me to identify all MWEs in the given sentence. The sentence is in Portuguese, and the example mentions that MWEs can be identified across languages if they are congruent with English ones. 
+
+First, I need to parse the sentence. The words are: Macron, planeja, implementar, a, reforma, por, meio, de, decreto, presidencial, , , o, que, significa, que, vai, saltar, os, legisladores, .
+
+Looking at each word, I need to check if any sequences meet the three conditions of MWEs. Let's go through the conditions again.
+
+Condition 1: The MWE must consist of multiple words that are always realized by the same lexemes. They can't be replaced by synonyms without changing the meaning or violating conventions.
+
+Condition 2: It has semantic, lexical, or syntactic idiomaticity. Semantic idioms can't be derived from their components. Lexical idioms have components not used as standalone words. Syntactic idioms have grammar not derived from components.
+
+Condition 3: Not a named entity.
+
+Now, checking the Portuguese words. Let's see if any phrases are known MWEs. For example, "por meio de" is a common phrase in Portuguese, meaning "by means of." In English, it's "by means of" or "through," so that's a congruent MWE. Let's check if "por meio de" is a fixed expression. Yes, it's a prepositional phrase that's used as a single unit. The individual words "por" and "meio" can be standalone, but together they form an MWE. However, does it have semantic idiomaticity? The meaning of "por meio de" is "by means of," which is the same as the literal translation. So maybe not semantic idiomaticity. But syntactically, maybe? Wait, the structure "por meio de" is a fixed prepositional phrase. In Portuguese, it's a common collocation, so it might be considered an MWE. However, the user's example for English includes "take place" as a syntactically idiomatic MWE. But in this case, "por meio de" is a standard prepositional phrase. Hmm.
+
+Another possible MWE is "saltar os legisladores." Wait, "saltar" can mean "to jump over" or "to skip." But "saltar os legisladores" might be a specific expression. However, I'm not sure if that's a standard MWE. Alternatively, "vai saltar os legisladores" – does that mean skipping the legislators? Not sure. Maybe not a standard MWE.
+
+What about "decreto presidencial"? That's a noun phrase meaning "presidential decree." Each word is standard, so probably not an MWE.
+
+Looking for other possibilities. "por meio de" is a common phrase, but I'm not sure if it's an MWE here. The user's example for "take place" is a syntactically idiomatic MWE. But "por meio de" is a standard prepositional phrase, so maybe not. Alternatively, maybe "por meio de" is considered an MWE because it's a fixed collocation. But I need to check if the components can be replaced by synonyms. If you say "por meio de" vs. "por meio de" – replacing with synonyms might not be possible without changing meaning. However, in Portuguese, "por meio de" is a fixed expression, so maybe it's an MWE.
+
+Another possibility is "o que significa que" – but that's a common structure, not an MWE. "O que significa que" is like "which means that" in English. But it's a standard grammatical structure, not an idiom.
+
+So, the only possible MWE here might be "por meio de" (indices 6,7,8). Let me check the indices again. The words are:
+
+1: Macron
+2: planeja
+3: implementar
+4: a
+5: reforma
+6: por
+7: meio
+8: de
+9: decreto
+10: presidencial
+11: ,
+12: o
+13: que
+14: significa
+15: que
+16: vai
+17: saltar
+18: os
+19: legisladores
+20: .
+
+So "por meio de" is at positions 6,7,8. If that's an MWE, then that's the only one. But I need to confirm if it's considered an MWE. Since the user's example included "take place" as an MWE, which is a congruent phrase with "ter lugar" in Portuguese, which is "take place" in English. So "por meio de" is congruent with "by means of" in English, which is a standard MWE. Therefore, "por meio de" is an MWE here. 
+
+Another possible MWE could be "saltar os legisladores," but I don't think that's a standard MWE. "Saltar" in this context might mean "to skip over," but without more context, it's hard to tell. However, "saltar" as a verb can be used in different ways, so it's not a fixed expression.
+
+So the answer would be "por meio de; 6,7,8".
+</think>
+
+por meio de; 6,7,8<|im_end|>
+Por exemplo , indenizações por demissão podem subir de 20 % para 25 % do de o salário por ano trabalhado na em a firma .	<think>
+Okay, let's tackle this problem step by step. The user wants me to identify all multi-word expressions (MWEs) in the given Portuguese sentence. The sentence is:
+
+Por
+exemplo
+,
+indenizações
+por
+demissão
+podem
+subir
+de
+20
+%
+para
+25
+%
+do
+de
+o
+salário
+por
+ano
+trabalhado
+na
+em
+a
+firma
+.
+
+First, I need to recall the three conditions for an MWE. They must consist of multiple words that are always realized by the same lexemes, show semantic, lexical, or syntactic idiomaticity, and not be a named entity.
+
+Looking at the sentence, I'll go through each part. The first part is "Por exemplo," which translates to "For example." In Portuguese, "por exemplo" is a common MWE used to introduce examples. This is a fixed expression, so it's likely an MWE. The words "por" and "exemplo" are not synonyms here; replacing them would change the meaning. Also, "por exemplo" is a standard phrase, so it's a semantic MWE.
+
+Next, "indenizações por demissão" – "indenizações" is indemnities or compensations, "por demissão" means "due to dismissal." This seems like a compound noun phrase. However, I'm not sure if "por demissão" is a fixed expression. It might be a common collocation but not an MWE. The same with "do salário por ano trabalhado na firma" – "do salário" is "of the salary," "por ano trabalhado" is "per year worked," and "na firma" is "in the company." These are standard prepositional phrases, not fixed expressions.
+
+Looking for other possible MWEs: "de 20% para 25%" – "from 20% to 25%." This is a common way to express a range, but again, it's a standard prepositional phrase, not an MWE. "trabalhado na firma" – "worked in the company," which is just a verb phrase.
+
+The phrase "por exemplo" is the only one that stands out as a fixed expression. The rest are standard collocations or prepositional phrases. I don't see any other MWEs here. Also, checking for named entities, but the sentence doesn't mention specific names, so that's not an issue.
+
+So the only MWE here is "por exemplo" with indices 0 and 1.
+</think>
+
+por exemplo; 0,1<|im_end|>
+Diante da de a indignação popular , abandonaram o plano .	<think>
+Okay, let's tackle this problem step by step. The user wants me to identify all the multiple-word expressions (MWEs) in the given sentence. The sentence is in Portuguese, and the words are separated by newlines. The task is to check each sequence of words against three conditions to determine if they qualify as MWEs.
+
+First, I need to understand the sentence structure. The sentence provided is:
+
+Diante
+da
+de
+a
+indignação
+popular
+,
+abandonaram
+o
+plano
+.
+
+Breaking it down into tokens with their indices (assuming each word is numbered starting from 1):
+
+1. Diante
+2. da
+3. de
+4. a
+5. indignação
+6. popular
+7. ,
+8. abandonaram
+9. o
+10. plano
+11. .
+
+Now, I need to check for MWEs based on the three conditions. Let's go through each condition one by one.
+
+Condition 1: The MWE must consist of multiple words that are always realized by the same lexemes. The individual lexemes can't be replaced by synonyms without changing the meaning or violating conventions. So, for example, if there's a phrase like "break up," you can't replace "break" with "end" without changing the meaning.
+
+Condition 2: The MWE must display semantic, lexical, or syntactic idiomaticity. Semantic idiomaticity means the meaning isn't derived from the components. Lexical idiomaticity involves words not used as standalone. Syntactic idiomaticity is when the grammar isn't derived from the components.
+
+Condition 3: It shouldn't be a multi-word named entity, like a proper name.
+
+Looking at the Portuguese sentence, I need to check for any sequences that fit these criteria. Let's look at possible phrases:
+
+- "Diante da" – "Diante da" is a prepositional phrase. In Portuguese, "diante de" is a common expression meaning "before" or "in front of." However, here it's "diante da," which is "diante de + a (feminine article)." But "diante da" might be a fixed expression. However, I need to check if it's an MWE. Let's see. If "diante de" is an MWE, then "diante da" would be a variant. However, in Portuguese, "diante de" is a prepositional phrase, but does it count as an MWE? The user mentioned examples like "to and fro" in English, which is a lexical MWE. In Portuguese, "diante de" might be a fixed prepositional phrase, but I'm not sure if it's considered an MWE here. Also, "da" is a contraction of "de + a," so maybe "diante da" is just a prepositional phrase with a contraction, not an MWE.
+
+Next, "de a" – that doesn't make sense. "de" and "a" are prepositions and articles, so they are used separately. Not an MWE.
+
+"indignação popular" – "popular" is an adjective modifying "indignação." This is a standard adjective-noun phrase, not an MWE. The meaning is straightforward: popular indignation. No idiomaticity here.
+
+"abandonaram o plano" – "abandonaram" is the verb, "o plano" is the direct object. This is a standard verb-noun phrase. No idiomaticity.
+
+Looking for any other possible sequences. "da de a" – that's just a series of prepositions and articles, not meaningful as an MWE.
+
+What about "diante da de a indignação popular"? That seems too long and doesn't form a known expression.
+
+Wait, maybe "diante da" is part of an MWE. In Portuguese, "diante de" is a prepositional phrase, but "diante da" would be "diante de + a." However, "diante da" might not be a fixed expression. For example, "diante da crise" (in front of the crisis) is common, but "diante da" alone isn't an MWE. It's more of a prepositional phrase with a contraction.
+
+Another possibility is "abandonaram o plano." But that's a standard verb-noun phrase. No idiomaticity.
+
+What about "popular indignação"? That's the reverse of the normal adjective-noun order. In Portuguese, adjectives usually come after the noun, so "indignação popular" is correct. "Popular indignação" would be incorrect, but in this sentence, it's "indignação popular," which is correct. So that's not an MWE.
+
+Are there any idiomatic expressions in Portuguese that might be present here? For example, "ter lugar" (to take place) is a Portuguese MWE, but that's not in the sentence. The sentence has "abandonaram o plano," which is straightforward.
+
+Another thought: "da de a" – but that's just a series of prepositions and articles. No meaning as a single MWE.
+
+I don't see any sequences that meet all three conditions. The sentence doesn't contain any fixed expressions that can't be broken down into individual words with standard meanings. All the phrases are either prepositional, adjective-noun, or verb-object structures without idiomaticity.
+</think>
+
+None<|im_end|>
+O embaixador foi sequestrado por guerrilheiros do de o MR-8 ( Movimento Revolucionário Oito de Outubro ) e da de a ALN ( Aliança Libertadora Nacional ) , da de a qual João Leonardo fazia parte .	<think>
+Okay, let's tackle this query. The user wants me to identify all multi-word expressions (MWEs) in the given sentence. The sentence is in Portuguese, and the instructions mention that I can use knowledge of English MWEs to help identify congruent ones in other languages.
+
+First, I need to parse the sentence. The user provided it as a list of words separated by newlines. Let me list them out with their indices to track positions:
+
+1. O
+2. embaixador
+3. foi
+4. sequestrado
+5. por
+6. guerrilheiros
+7. do
+8. de
+9. o
+10. MR-8
+11. (
+12. Movimento
+13. Revolucionário
+14. Oito
+15. de
+16. Outubro
+17. )
+18. e
+19. da
+20. de
+21. a
+22. ALN
+23. (
+24. Aliança
+25. Libertadora
+26. Nacional
+27. )
+28. ,
+29. da
+30. de
+31. a
+32. qual
+33. João
+34. Leonardo
+35. fazia
+36. parte
+37. .
+
+Now, looking for MWEs. The key points are that they must consist of multiple words that are always the same lexemes, show idiomaticity (semantic, lexical, or syntactic), and not be named entities.
+
+First, check for named entities. The text mentions MR-8 and ALN in parentheses. These are acronyms for organizations, so they are named entities. The user specified to exclude MWEs that are multi-word named entities, so MR-8 and ALN are out.
+
+Next, look for possible MWEs. The Portuguese phrase "da de a" appears a couple of times. Let's see: "da de a" occurs at positions 19-21, 30-32. But in Portuguese, "da" is a contraction of "de + a" (of the), so "da de a" would be "de a de a", which doesn't make sense. Wait, maybe I'm misunderstanding. Let me check the structure again.
+
+Looking at the sentence structure, the phrases "da de a ALN" and "da de a qual" are present. The "da de a" might be part of a prepositional phrase. However, in Portuguese, "da" is "de + a", so "da de a" would be "de a de a", which seems incorrect. Maybe it's a mistake in the sentence structure or a typo? Alternatively, perhaps the user intended "da de a" as a fixed expression. However, I don't recognize "da de a" as a standard MWE in Portuguese. It might be a grammatical structure rather than an idiomatic expression.
+
+Another possibility is the phrase "Movimento Revolucionário Oito de Outubro" which is the full name of MR-8. Since it's a named entity, it's excluded. Similarly, "Aliança Libertadora Nacional" is the full name of ALN, also a named entity.
+
+Looking for other possible MWEs. The phrase "fazer parte" (to be part of) is a common verb phrase in Portuguese. However, in the sentence, it's "fazia parte", which is the past tense. But "fazer parte" is a fixed expression, so that might be an MWE. However, the user's definition says that MWEs can't be multi-word named entities, and "fazer parte" is a standard verb phrase, not a named entity. Wait, but does "fazer parte" qualify as an MWE? Let's check the criteria. It's a sequence of words that can't be replaced by synonyms without changing meaning. However, "fazer parte" is a standard collocation, but in Portuguese, "parte" can be used as a noun, so "fazer parte" might be more of a fixed verb-noun collocation rather than an idiomatic expression. The meaning is straightforward: "to be part of". So it might not be semantically idiomatic. Therefore, maybe not an MWE.
+
+Another possibility is "sequestrado por guerrilheiros", but that's a common verb + agent construction, not necessarily an MWE. Similarly, "foi sequestrado" is a passive voice construction, which is standard syntax.
+
+Looking for lexical idioms, like words that aren't used as standalone. For example, "MR-8" is an acronym, but that's a named entity. "Oito de Outubro" is part of the name of the movement, again a named entity. "Aliança Libertadora Nacional" is another named entity.
+
+The phrase "da de a" seems to be a recurring structure. But in Portuguese, "da" is "de + a", so "da de a" would be "de a de a", which doesn't make sense. Unless there's a typo, like "da de a" should be "da de a" as in "da (de a)"? Maybe the user made a mistake in the sentence structure, but assuming it's correct, I don't see an MWE here.
+
+Another angle: the user mentioned that MWEs can be congruent across languages. For example, "to and fro" in English corresponds to "pur și simplu" in Romanian. So, maybe "da de a" is a Portuguese equivalent of an English MWE. But I can't think of an English MWE that maps to "da de a". It doesn't ring a bell. Alternatively, "da de a" might be a grammatical construction rather than an idiom.
+
+Given all this, I don't see any MWEs that meet the criteria. The named entities are excluded, and other phrases either are standard collocations or grammatical structures without idiomaticity. Therefore, the answer should be "None".
+</think>
+
+None<|im_end|>
+Voltou na em a clandestinidade para o Brasil , em 1971 , indo primeiro para Pernambuco e depois Bahia , onde foi morto em circunstâncias não esclarecidas .	<think>
+Okay, let's tackle this query. The user provided a sentence in Portuguese and wants me to identify all the multiple-word expressions (MWEs) based on the given criteria. First, I need to understand the sentence structure and break it down into words.
+
+The sentence is: "Voltou na em a clandestinidade para o Brasil , em 1971 , indo primeiro para Pernambuco e depois Bahia , onde foi morto em circunstâncias não esclarecidas ."
+
+Each word is separated by a newline, so the indices would be 1 to 25. Now, I need to check for MWEs that meet the three conditions: fixed lexemes, idiomaticity (semantic, lexical, or syntactic), and not named entities.
+
+First, looking for semantic idioms. In Portuguese, "em circunstâncias não esclarecidas" might be a phrase that's used as a fixed expression, but I'm not sure. "Circunstâncias não esclarecidas" translates to "unexplained circumstances," which might be a common phrase but not necessarily an MWE. 
+
+Next, lexical idioms. Are there any words that aren't used standalone? "Clandestinidade" is a noun, but "em a clandestinidade" seems like a preposition + article + noun, which is standard. "Para o Brasil" is "to Brazil," which is a standard prepositional phrase. "Pernambuco" and "Bahia" are proper nouns, so they're named entities and should be excluded.
+
+Syntactic idioms: "em 1971" is a time expression, but that's standard. "indo primeiro para Pernambuco" – "indo" is a gerund, but "primeiro para" is a standard adverbial phrase. "depois Bahia" – "depois" is an adverb, and "Bahia" is a proper noun. 
+
+Wait, "em circunstâncias não esclarecidas" – "em" is a preposition, "circunstâncias" is plural noun, "não esclarecidas" is a past participle. But is this a fixed phrase? In Portuguese, "em circunstâncias não esclarecidas" might be a common expression used in legal or journalistic contexts, but does it meet the criteria for an MWE? The user mentioned that MWEs can be congruent with English ones, like "traffic lights" in French. However, "em circunstâncias não esclarecidas" doesn't have an exact English equivalent. 
+
+Another possible MWE is "em a clandestinidade." Wait, "em a clandestinidade" – "em" is a preposition, "a" is an article, and "clandestinidade" is a noun. But "em a clandestinidade" doesn't seem like a standard phrase. Maybe "em clandestinidade" would be more common, without the article. So that might not be an MWE.
+
+Looking at other parts: "foi morto em circunstâncias não esclarecidas." "Foi morto" is "was killed," which is a standard passive construction. "em circunstâncias não esclarecidas" again, same as before. 
+
+I think the only possible MWE here is "em circunstâncias não esclarecidas." But I need to check if it's a fixed phrase. If it's commonly used in a specific way that can't be altered, like "under unexplained circumstances," but in Portuguese, maybe it's a standard phrase. However, without knowing specific idioms in Portuguese, I might be missing something. Alternatively, there might be none. 
+
+Wait, the user mentioned that MWEs can be identified if they are congruent with English ones. For example, "ter lugar" in Portuguese corresponds to "take place." In the given sentence, "foi morto em circunstâncias..." doesn't have a direct congruent English MWE. 
+
+Another angle: "em a clandestinidade" – maybe "em a" is a preposition and article, but that's standard. "Clandestinidade" is a noun. So probably not an MWE. 
+
+I think there are no MWEs in this sentence. The user's example had "to and fro" and "break up," but in this Portuguese sentence, the phrases are standard prepositions and articles, not fixed expressions. Therefore, the answer is "None."
+</think>
+
+None<|im_end|>
+Ele foi para o norte de Pernambuco com o objetivo de montar um núcleo de guerrilha .	<think>
+Okay, let's tackle this problem. The user wants me to identify all multi-word expressions (MWEs) in the given Portuguese sentence. The sentence is:
+
+Ele
+foi
+para
+o
+norte
+de
+Pernambuco
+com
+o
+objetivo
+de
+montar
+um
+núcleo
+de
+guerrilha
+.
+
+First, I need to recall the definition of MWEs provided. The three conditions are: 1) the sequence must consist of multiple words that are always realized by the same lexemes, with no synonyms allowed without distorting meaning. 2) They must show semantic, lexical, or syntactic idiomaticity. 3) They shouldn't be named entities.
+
+Looking at the sentence, let's break it down word by word. The words are in Portuguese, but the user mentioned that MWEs can be identified across languages by congruence. For example, if there's a known English MWE that's similar in structure or meaning to a Portuguese one.
+
+First, check for possible MWEs. Let's go through the sentence step by step.
+
+"Ele foi para o norte de Pernambuco com o objetivo de montar um núcleo de guerrilha."
+
+Looking for sequences that might be MWEs. Let's consider each part:
+
+- "para o norte" – In Portuguese, "para o norte" means "to the north." But is this an MWE? In English, "to the north" is a prepositional phrase, not an idiom. However, "para o norte" in Portuguese might be a fixed expression. But I'm not sure if it's considered an MWE here. The user mentioned examples like "break up" (semantic), "to and fro" (lexical), and "long time no see" (syntactic). "Para o norte" seems more like a standard prepositional phrase rather than an idiom. So maybe not.
+
+- "núcleo de guerrilha" – "núcleo de guerrilha" translates to "guerrilla nucleus." But "núcleo" here might be a specific term in a military or political context. However, is "núcleo de guerrilha" a fixed expression? I'm not certain. It might be a compound noun, but not an MWE as per the criteria.
+
+- "montar um núcleo de guerrilha" – "to set up a guerrilla nucleus." This is a verb phrase, but unless it's a fixed expression, it might not qualify. The user's example with "montar" could be part of an MWE, but I don't think "montar um núcleo" is an idiom.
+
+- "com o objetivo de" – "with the aim of." In English, "with the aim of" is a prepositional phrase, but is it an MWE? It might be a common collocation, but not necessarily an idiom. The user's example for syntactic idiomaticity includes "long time no see," which is a non-standard structure. "Com o objetivo de" seems standard, so maybe not.
+
+- "de guerrilha" – "of guerrilla." This is a prepositional phrase, but again, not an MWE.
+
+Looking for lexical idiomaticity: Are any words used in a non-standard way? "Guerrilha" is a standard term for "guerrilla." "Núcleo" is "nucleus." No obvious lexical idioms here.
+
+Semantic idiomaticity: Any expressions where the meaning isn't the sum of parts? For example, "break up" means to end a relationship, not just to separate. But in the given sentence, "montar um núcleo de guerrilha" is just "to set up a guerrilla nucleus," which is literal. No semantic idioms here.
+
+Syntactic idiomaticity: Any non-standard grammar? The structure "com o objetivo de montar" is standard. "Para o norte de Pernambuco" is a standard prepositional phrase.
+
+Named entities: "Pernambuco" is a state in Brazil, so it's a named entity. The user specified to exclude multi-word named entities. The rest of the sentence doesn't have other named entities.
+
+Wait, the user said to exclude MWEs that are multi-word named entities. So "Pernambuco" is a proper noun, but it's a single word. The rest of the sentence doesn't have other named entities.
+
+Hmm, maybe I'm missing something. Let me check again. The sentence is about someone going to the north of Pernambuco with the aim of setting up a guerrilla nucleus. Are there any phrases that are fixed expressions in Portuguese?
+
+In Portuguese, "núcleo de guerrilha" might be a term used in a specific context, but unless it's a known MWE, it's hard to say. Similarly, "montar um núcleo" is a verb-noun collocation but not necessarily an idiom.
+
+Another angle: the user mentioned that MWEs can be congruent with English ones. For example, "ter lugar" in Portuguese is like "take place" in English. Is there any such congruence here?
+
+"Com o objetivo de" – similar to "with the aim of" in English. But that's a direct translation, not an MWE.
+
+"Para o norte de Pernambuco" – "to the north of Pernambuco." In English, that would be "to the north of Pernambuco," which is a standard prepositional phrase. Not an MWE.
+
+"Montar um núcleo" – "to set up a nucleus." Again, standard.
+
+I don't see any MWEs that meet all three criteria. The user's examples include things like "break up," "to and fro," "long time no see," which are idioms. The given sentence doesn't have such expressions. All the phrases are standard or literal.
+
+Therefore, the answer should be 'None' because there are no MWEs in the sentence that satisfy all the conditions.
+</think>
+
+None<|im_end|>
+Só que à a a medida que a organização dele de ele foi tendo baixas , acabou ficando parado lá naquele em aquele lugar , sem fazer nenhuma ação , sem participar do de o movimento , tentando sobreviver ali naquele em aquele local .	<think>
+Okay, let's see. The user wants me to identify all the multiple-word expressions (MWEs) in the given Portuguese sentence. The sentence is split into individual words by newlines. The task is to find sequences that meet three conditions: they consist of fixed lexemes that can't be replaced by synonyms, show idiomaticity (semantic, lexical, or syntactic), and aren't named entities.
+
+First, I need to go through each word and look for possible MWEs. Let me start by reading the sentence again carefully. The sentence is in Portuguese, so I need to think about common Portuguese MWEs, but the user also mentioned that I can use knowledge of English MWEs that are congruent with Portuguese ones. For example, if there's a Portuguese phrase that's similar to an English one, like "ter lugar" (take place), I should recognize that.
+
+Looking at the words: "Só que à a a medida que a organização dele de ele foi tendo baixas, acabou ficando parado lá naquele em aquele lugar, sem fazer nenhuma ação, sem participar do de o movimento, tentando sobreviver ali naquele em aquele local."
+
+Hmm. Let's break it down. The first part is "Só que à a a medida que..." Wait, "medida que" is a common Portuguese expression, similar to "as" in English. But "medida que" is a fixed phrase. Let me check if that's an MWE. "Medida que" is a conjunction used to express "as" or "as the", so that's a syntactic idiomaticity because the structure might not be directly derived from the individual words. Also, "medida que" is a fixed expression. So that's an MWE: "medida que" at positions 5,6 (since the words are numbered starting from 0? Wait, the user didn't specify the numbering, but in the example, they used indices like 7,8,9. Wait, the original sentence is split into words by '\n', so each word is a separate token. Let me count the words properly.
+
+Wait, the input is a list of words separated by newlines. Let me list them with indices:
+
+0: Só
+1: que
+2: à
+3: a
+4: a
+5: medida
+6: que
+7: a
+8: organização
+9: dele
+10: de
+11: ele
+12: foi
+13: tendo
+14: baixas
+15: ,
+16: acabou
+17: ficando
+18: parado
+19: lá
+20: naquele
+21: em
+22: aquele
+23: lugar
+24: ,
+25: sem
+26: fazer
+27: nenhuma
+28: ação
+29: ,
+30: sem
+31: participar
+32: do
+33: de
+34: o
+35: movimento
+36: ,
+37: tentando
+38: sobreviver
+39: ali
+40: naquele
+41: em
+42: aquele
+43: local
+44: .
+
+So the indices go from 0 to 44. Now, looking for MWEs.
+
+First, "medida que" is at positions 5 and 6. That's a common Portuguese MWE, similar to "as" in English. So that's an MWE. Then, "naquele em aquele lugar" – but "naquele" is "in that", "em" is "in", "aquele" is "that", "lugar" is "place". But maybe "naquele lugar" is an MWE, but "naquele em aquele lugar" seems redundant. Wait, the original sentence has "lá naquele em aquele lugar". Maybe "lá naquele lugar" is more common. But the user's example shows that "to and fro" is an MWE. So maybe "naquele lugar" is not an MWE, but "lá naquele lugar" is a phrase, but not sure.
+
+Another possible MWE is "sem fazer nenhuma ação" – but "sem fazer" is a common phrase, but "sem fazer nenhuma ação" might not be an MWE. "Sem participar do movimento" – "participar do" is a common verb + preposition, but not sure if it's an MWE.
+
+Wait, looking for fixed expressions. Let's check "tendo baixas" – "tendo" is "having", "baixas" is "low", but "tendo baixas" might not be an MWE. "Ficando parado" – "ficando" is "being", "parado" is "stopped", but again, not sure.
+
+What about "naquele em aquele local"? That seems redundant. "Naquele local" would be "in that place", but the original has "lá naquele em aquele lugar" and "ali naquele em aquele local". The repetition of "naquele em aquele" might be a mistake, but perhaps "lá naquele lugar" is a common phrase, but "lá" is "there", "naquele" is "in that", "lugar" is "place". So "lá naquele lugar" might be a fixed phrase, but I'm not sure if it's an MWE.
+
+Another possibility is "sem fazer nenhuma ação" – "sem fazer" is "without doing", but "sem fazer nenhuma ação" is "without doing any action", which is a common phrase but not necessarily an MWE. Similarly, "sem participar do movimento" – "participar do" is a verb + preposition, but again, not sure.
+
+Looking for lexical idiomaticity: words that aren't used as standalone. For example, "tendendo baixas" – but "baixas" is a standalone word. "Ficando parado" – "parado" is a standalone word.
+
+What about "tendo baixas" – "tendo" is a gerund, "baixas" is plural. Maybe "tendo baixas" is a common phrase, but not sure.
+
+Wait, "medida que" is definitely an MWE. Then, "tendo baixas" – maybe not. "Ficando parado" – not sure. "Lá naquele lugar" – maybe "lá naquele lugar" is an MWE. But I'm not certain. Alternatively, "sem fazer nenhuma ação" – "sem fazer" is a common phrase, but "nenhuma ação" is "no action", which is a common collocation.
+
+Another possible MWE is "do de o movimento" – but that seems like a mistake in the sentence. The original has "participar do de o movimento", which might be a typo. "Do de o" doesn't make sense. Maybe "do movimento" is correct, but the user's sentence has "do de o movimento", which is likely an error. But since I have to work with the given text, perhaps that's not an MWE.
+
+Wait, looking back, the user mentioned that MWEs can be congruent with English ones. For example, "ter lugar" is "take place". Are there any such in the sentence? The sentence has "tendo baixas" – "having losses" (if "baixas" is "losses"), but not sure. "Ficando parado" – "being stopped". Not sure.
+
+Another possible MWE is "sem fazer" – "without doing", but that's a common phrase, not sure if it's an MWE. "Sem participar" – "without participating", again common.
+
+Wait, the user's example included "break up" as a semantic MWE. In Portuguese, "quebrar" is to break, "up" is not a Portuguese word. So maybe "quebrar" isn't part of an MWE here. But "medida que" is a fixed phrase, so that's an MWE.
+
+So far, I think "medida que" (positions 5,6) is an MWE. Are there others?
+
+Looking at "naquele em aquele lugar" – "naquele" is "in that", "em" is "in", "aquele" is "that", "lugar" is "place". The phrase "lá naquele lugar" – "lá" is "there", "naquele lugar" is "in that place". Maybe "lá naquele lugar" is an MWE, but I'm not sure. However, "lá" and "naquele lugar" are separate. Alternatively, "lá naquele" is "there in that", but that's not an MWE.
+
+Another possibility: "tendo baixas" – but "tendo" is a gerund, "baixas" is "losses", so "tendo baixas" is "having losses", which is a common collocation but not an MWE.
+
+What about "sem fazer nenhuma ação" – "without doing any action". But again, not an MWE.
+
+Wait, the user mentioned that "to and fro" is lexically idiomatic because "to and fro" isn't used as standalone. In Portuguese, "de um lado para o outro" is "to and fro", but that's a different phrase. However, in the given sentence, "lá naquele em aquele lugar" has "em" which is a preposition, but that's standard.
+
+I think the only MWE here is "medida que" at positions 5 and 6. Are there others?
+
+Wait, "naquele lugar" – "naquele" is "in that", "lugar" is "place", so "naquele lugar" is "in that place". But is that an MWE? It's a common phrase, but not sure if it's an MWE. Similarly, "naquele local" – "in that place".
+
+Another thought: "sem fazer" – "without doing" is a common prepositional phrase, but not an MWE. "Sem participar" – same thing.
+
+What about "do de o movimento" – that seems like a mistake, but the user might have intended "do movimento" (of the movement), so "participar do movimento" is a common phrase. However, the given text has "do de o movimento", which is likely a typo. But since I have to work with the given text, maybe that's not an MWE.
+
+So, after checking, the only MWE I can confidently identify is "medida que" at positions 5 and 6. Are there others?
+
+Wait, "tendo baixas" – "tendo" is "having", "baixas" is "losses". In Portuguese, "baixas" can mean "losses" in a military context. So "tendo baixas" is "having losses", which is a common collocation, but not an MWE. It's a verb + noun, so not necessarily an MWE.
+
+Another possibility: "ficando parado" – "being stopped". But again, not an MWE.
+
+I think that's it. The only MWE is "medida que".
+</think>
+
+medida que; 5,6<|im_end|>
+O último contato que tive com ele foi quando da de a libertação relacionada ao a o embaixador americano .	<think>
+Okay, let's see. The user wants me to identify all the multiple-word expressions (MWEs) in the given Portuguese sentence. The sentence is: "O último contato que tive com ele foi quando da de a libertação relacionada ao a o embaixador americano." 
+
+First, I need to recall the definition of MWEs. They have three conditions: fixed lexemes that can't be replaced by synonyms, idiomaticity in semantic, lexical, or syntactic aspects, and they shouldn't be named entities.
+
+Looking at the sentence, I'll go through each word and check for possible MWEs. Let's break it down word by word.
+
+Starting with "O último contato que tive com ele foi quando da de a libertação relacionada ao a o embaixador americano."
+
+The first thing that stands out is "quando da" – in Portuguese, "quando da" is a common expression used to refer to the time of an event. It's similar to "when the" in English, but the structure is fixed. For example, "quando da guerra" would mean "when the war" or "during the war." The words "quando da" together form an MWE because they can't be separated or replaced without changing the meaning. This would be a syntactically idiomatic MWE since the structure isn't standard in regular syntax.
+
+Next, "ao a o" – wait, that seems odd. The original sentence has "ao a o embaixador americano." Let me check the original again. The user provided the sentence as: "O último contato que tive com ele foi quando da de a libertação relacionada ao a o embaixador americano." So there's "ao a o embaixador..." That might be a typo or a grammatical error. In Portuguese, "ao" is a contraction of "a o," meaning "to the." So "ao embaixador" would be "to the ambassador." But here, it's written as "ao a o embaixador," which might be a mistake. However, if we consider "ao a o" as part of the sentence, maybe it's a typo. Alternatively, maybe it's "ao a o" as a separate MWE, but that seems unlikely. It might be a mistake in the sentence, but the user might expect me to identify MWEs regardless of possible errors.
+
+Another possible MWE is "libertação relacionada ao" – but "relacionada ao" is a prepositional phrase, not an MWE. "Libertação" means liberation, but "relacionada ao" is just "related to," which is a common phrase but not an MWE.
+
+Looking at "embaixador americano" – that's a noun phrase, but not an MWE. "Embaixador" is ambassador, "americano" is American, so it's a standard noun phrase, not an MWE.
+
+Another possible MWE is "quando da" as mentioned before. That's a fixed expression. Also, "de a" – but "de a" doesn't seem to be an MWE. "De a" would be "of the," but in Portuguese, "de a" is not a standard expression. However, in the sentence, there's "quando da de a libertação..." which might be "when the of the liberation," which doesn't make sense. That part might be a mistake, but the user might have intended "quando da libertação" (when the liberation), so "quando da" is the MWE.
+
+So the main MWE here is "quando da," which is a fixed expression. The rest of the sentence doesn't seem to have other MWEs. The other parts are standard phrases or possible typos. Since the user mentioned that MWEs can be congruent across languages, and "quando da" is similar to English "when the," which is an MWE, but in Portuguese it's a fixed expression.
+
+Therefore, the only MWE in the sentence is "quando da" with indices 7,8 (assuming the words are numbered starting from 1). Let me check the indices again. The sentence is split into words separated by '\n', so each word is on a new line. Let me list them:
+
+1. O
+2. último
+3. contato
+4. que
+5. tive
+6. com
+7. ele
+8. foi
+9. quando
+10. da
+11. de
+12. a
+13. libertação
+14. relacionada
+15. ao
+16. a
+17. o
+18. embaixador
+19. americano
+20. .
+
+Wait, the original input is a single line with words separated by spaces, but the user said each sentence is a string of words delimited by '\n'. Wait, the user's input is:
+
+Sentence: O
+último
+contato
+que
+tive
+com
+ele
+foi
+quando
+da
+de
+a
+libertação
+relacionada
+ao
+a
+o
+embaixador
+americano
+.
+
+But in the actual input, the user might have used line breaks for each word. However, the way the user presented the sentence is with each word on a new line. So the indices would be:
+
+1. O
+2. último
+3. contato
+4. que
+5. tive
+6. com
+7. ele
+8. foi
+9. quando
+10. da
+11. de
+12. a
+13. libertação
+14. relacionada
+15. ao
+16. a
+17. o
+18. embaixador
+19. americano
+20. .
+
+So "quando da" would be words 9 and 10. So indices 9,10. Then "quando da" is the MWE. Are there any others? Let's see. The phrase "ao a o" is words 15,16,17. But that's likely a mistake, but maybe in Portuguese, "ao" is a contraction of "a o," so "ao embaixador" is correct. But the original has "ao a o embaixador," which is "ao a o" – that's probably a typo. However, the user might expect me to identify MWEs even if there are typos. But "ao a o" doesn't form an MWE. "a o" is not an MWE. "ao" is a preposition, but not an MWE. So I think the only MWE here is "quando da" at positions 9 and 10.
+</think>
+
+quando da; 9,10<|im_end|>
+Sobre as buscas aos a os restos mortais , afirmou que estamos fazendo isto por questão de história , de registro , para que não fiquem impunes , para que todos saibam o que aconteceu de verdade .	<think>
+Okay, let's tackle this query step by step. The user wants me to identify all multi-word expressions (MWEs) in the given Portuguese sentence. The sentence is provided as a list of words separated by newlines. First, I need to recall the definition of MWEs provided. 
+
+The three conditions are: 1. The MWE must consist of multiple words that are always realized by the same lexemes, and replacing any part with synonyms would distort the meaning. 2. It must show semantic, lexical, or syntactic idiomaticity. 3. It shouldn't be a multi-word named entity.
+
+Looking at the sentence, I need to check for sequences that fit these criteria. Let's start by translating the sentence to understand the context better. The sentence translates to: "About the searches for the mortal remains, he said we are doing this for the sake of history, of record, so that they do not go unpunished, so that everyone knows what really happened."
+
+Now, let's go through the words and look for possible MWEs. 
+
+First, "fazendo isto por questão de história, de registro" – "por questão de" is a common phrase in Portuguese meaning "for the sake of." This is a fixed expression that can't be replaced by synonyms without changing the meaning. So "por questão de" might be an MWE.
+
+Next, "para que não fiquem impunes" – "impunes" is a single word meaning "unpunished," but "fiquem impunes" is a verb phrase. However, "impunes" is a standard adjective, so maybe not an MWE here.
+
+Then, "para que todos saibam o que aconteceu de verdade" – "de verdade" is "in truth" or "really," but that's a common phrase. However, "aconteceu de verdade" might be a fixed expression, but I'm not sure if it's an MWE. "De verdade" is more of a common adverbial phrase, not an MWE.
+
+Looking for other possible idioms. "Restos mortais" translates to "mortal remains," which is a set phrase in Portuguese, similar to "corpse" but more specific. However, "restos mortais" might be a fixed expression, but I need to check if it's an MWE. In Portuguese, "restos mortais" is a common term, but is it an MWE? It's a noun phrase, but not sure if it's an idiom.
+
+Wait, the user mentioned that MWEs can be congruent with other languages. For example, "ter lugar" in Portuguese is "take place" in English. So maybe "fazendo isto" is not an MWE. Let me think again.
+
+Another possibility is "para que" – which is "so that" in English. But "para que" is a common conjunction, not an MWE. 
+
+Looking at "não fiquem impunes" – "impunes" is a standard adjective, so maybe not. 
+
+"De registro" – "of record" in English. But "de registro" is a prepositional phrase. However, "de registro" might be a fixed expression. In English, "on record" is an MWE, but in Portuguese, "de registro" is similar. However, I'm not sure if it's considered an MWE here. 
+
+Wait, the user's example included "to and fro" as a lexically idiomatic MWE. So maybe "de registro" is similar. But "registro" is a standard noun. 
+
+Another possible MWE is "fazendo isto por questão de história, de registro" – but that's a longer phrase. However, the MWEs are supposed to be sequences of words that can't be replaced. 
+
+Alternatively, "por questão de" is a fixed expression. Let me check that. In Portuguese, "por questão de" is indeed a common phrase meaning "for the sake of." It's a fixed expression, and replacing "questão" with another word would change the meaning. So "por questão de" might be an MWE. 
+
+Then, "de registro" – "of record" in English. But in Portuguese, "de registro" might not be an MWE but just a prepositional phrase. However, if it's a fixed expression, it could be considered. 
+
+Wait, the user also mentioned that "ter lugar" is an MWE in Portuguese because it's congruent with "take place" in English. So if "de registro" is similar to "on record," which is an MWE in English, then maybe "de registro" is an MWE in Portuguese. However, "on record" is a fixed phrase, but "de registro" might be more of a direct translation. 
+
+Alternatively, "fazer isto por questão de" is a longer phrase, but "por questão de" is the key part. 
+
+Another possible MWE is "não fiquem impunes" – but "impunes" is a standard adjective, so I don't think that's an MWE. 
+
+Looking back at the sentence: "afirmou que estamos fazendo isto por questão de história, de registro, para que não fiquem impunes, para que todos saibam o que aconteceu de verdade."
+
+Breaking it down:
+
+- "por questão de" – this is likely an MWE.
+- "de registro" – if considered an MWE, but I'm not certain. 
+- "de verdade" – "in truth," which is a common adverbial phrase, but not sure if it's an MWE.
+
+Wait, the user's example included "break up" as a semantic MWE. In Portuguese, "fazer uma pausa" is "to take a break," but "break up" is different. 
+
+Another thought: "fazer isto" – "do this" is a common phrase, but not an MWE. 
+
+I think the main MWE here is "por questão de." Let me check if that's a standard MWE in Portuguese. Yes, "por questão de" is a fixed expression meaning "for the sake of," and it's used in similar contexts as in English. So that's an MWE. 
+
+Additionally, "de registro" – if it's a fixed phrase, but I'm not sure. In some contexts, "em registro" might be used, but "de registro" is more like "on record." However, "on record" is an MWE in English, so maybe "de registro" is an MWE in Portuguese. 
+
+Alternatively, "para que" is a conjunction, not an MWE. 
+
+So the possible MWEs are "por questão de" and "de registro." Let me check their indices. 
+
+The sentence is split into words as:
+
+Sobre
+as
+buscas
+aos
+a
+os
+restos
+mortais
+,
+afirmou
+que
+estamos
+fazendo
+isto
+por
+questão
+de
+história
+,
+de
+registro
+,
+para
+que
+não
+fiquem
+impunes
+,
+para
+que
+todos
+saibam
+o
+que
+aconteceu
+de
+verdade
+.
+
+So the words are numbered from 1 to 30. Let's list them with indices:
+
+1. Sobre
+2. as
+3. buscas
+4. aos
+5. a
+6. os
+7. restos
+8. mortais
+9. ,
+10. afirmou
+11. que
+12. estamos
+13. fazendo
+14. isto
+15. por
+16. questão
+17. de
+18. história
+19. ,
+20. de
+21. registro
+22. ,
+23. para
+24. que
+25. não
+26. fiquem
+27. impunes
+28. ,
+29. para
+30. que
+31. todos
+32. saibam
+33. o
+34. que
+35. aconteceu
+36. de
+37. verdade
+38. .
+
+So "por questão de" is words 15, 16, 17. Then "de registro" is words 20, 21. 
+
+But wait, "por questão de" is "por" (15), "questão" (16), "de" (17). So indices 15,16,17. 
+
+"de registro" is words 20,21. 
+
+But are these MWEs? 
+
+"por questão de" – yes, it's a fixed expression. 
+
+"de registro" – if it's a fixed expression, but I'm not sure. In Portuguese, "de registro" might be used as "on record," which is an MWE in English. But in Portuguese, "em registro" is more common, like "em registro público" (in public record). However, "de registro" could be a fixed phrase in certain contexts. 
+
+Alternatively, "de registro" might not be an MWE but just a prepositional phrase. 
+
+Given the user's example with "ter lugar" (take place), which is a direct translation, maybe "de registro" is considered an MWE here. 
+
+So the answer would be "por questão de; 15,16,17 | de registro; 20,21". 
+
+But I need to check if there are other MWEs. 
+
+Another possible one is "para que" – but that's a common conjunction, not an MWE. 
+
+"não fiquem impunes" – "impunes" is a standard adjective, so not an MWE. 
+
+"aconteceu de verdade" – "de verdade" is an adverbial phrase, but not sure if it's an MWE. 
+
+So the main MWEs are "por questão de" and "de registro". 
+
+Therefore, the output should be those two.
+</think>
+
+por questão de; 15,16,17 | de registro; 20,21<|im_end|>
+Na Em a ocasião , o Kremlin ordenou que os Estados Unidos reduzisse sua equipe diplomática para 455 pessoas , o que representou um corte de quase metade dos de os funcionários .	<think>
+Okay, let's tackle this query. The user wants me to identify all MWEs in the given sentence. The sentence is in Portuguese, so I need to be careful with the language-specific expressions.
+
+First, I'll go through each part of the sentence. The sentence is split into words by newlines, so I'll list them out:
+
+1. Na
+2. Em
+3. a
+4. ocasião
+5. ,
+6. o
+7. Kremlin
+8. ordenou
+9. que
+10. os
+11. Estados
+12. Unidos
+13. reduzisse
+14. sua
+15. equipe
+16. diplomática
+17. para
+18. 455
+19. pessoas
+20. ,
+21. o
+22. que
+23. representou
+24. um
+25. corte
+26. de
+27. quase
+28. metade
+29. dos
+30. de
+31. os
+32. funcionários
+33. .
+
+Now, checking for MWEs. The user mentioned that MWEs can be congruent with English ones, like 'pur și simplu' for 'pure and simple'. Let me see if any parts here match known MWEs.
+
+Looking at "Estados Unidos" – that's "United States" in English. In Portuguese, "Estados Unidos" is a proper noun, a country name. But the third condition says it shouldn't be a multi-word named entity. So "Estados Unidos" is a proper noun, so it's excluded.
+
+Next, "Kremlin" is a proper noun as well, so that's out. "Reduzisse" is a verb form, not an MWE. "Equipe diplomática" – "diplomatic team" in English. But in Portuguese, "equipe diplomática" is a standard phrase, but is it an MWE? It might be a lexical collocation, but does it meet the criteria? The individual words can be replaced, like "equipe" could be "equipe" or "equipe" is a noun, "diplomática" is an adjective. So maybe not an MWE.
+
+"Para 455 pessoas" – "to 455 people" – not an MWE. "Corte de quase metade" – "cut of almost half" – "corte de metade" might be an MWE, but "quase" modifies it. Not sure. "Quase metade" is "almost half", which is a common phrase but not an MWE since each word can be replaced.
+
+Looking for syntactic idioms. "O que representou" – "which represented" – that's a relative clause structure. Not sure. "Long time no see" is a syntactic idiom, but nothing here like that.
+
+Wait, "corte de quase metade" – maybe "corte de metade" is an MWE? But I don't think so. In Portuguese, "corte de metade" might be a standard expression, but not an idiom. Also, the user said not to include named entities. "Estados Unidos" is a named entity, so excluded.
+
+What about "na ocasião" – "at the time" in English. Is "na ocasião" an MWE? In Portuguese, "na ocasião" is a prepositional phrase, but I don't think it's an MWE. It's a common collocation but not an idiom.
+
+Another possibility: "de os funcionários" – "of the employees". Wait, "de os" – in Portuguese, "de os" is incorrect. The correct would be "dos funcionários" (of the employees). The original sentence has "de os funcionários", which might be a mistake. But even if it's a mistake, it's not an MWE. So that's not valid.
+
+I don't see any MWEs that meet all three conditions. The possible candidates don't seem to fit the criteria of being non-replaceable, idiomatic, and not named entities. So the answer would be None.
+</think>
+
+None<|im_end|>

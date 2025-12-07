@@ -1,0 +1,313 @@
+INFO 12-05 00:48:10 [utils.py:253] non-default args: {'max_model_len': 5000, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'enable_lora': True, 'model': '../Qwen3-32B-INT8'}
+INFO 12-05 00:48:10 [model.py:631] Resolved architecture: Qwen3ForCausalLM
+INFO 12-05 00:48:10 [model.py:1745] Using max model len 5000
+INFO 12-05 00:48:16 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-05 00:48:16 [vllm.py:500] Cudagraph is disabled under eager mode
+WARNING 12-05 00:48:16 [system_utils.py:103] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:26 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='../Qwen3-32B-INT8', speculative_config=None, tokenizer='../Qwen3-32B-INT8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=5000, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=../Qwen3-32B-INT8, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:32 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://0.0.0.0:40351 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:32 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:33 [gpu_model_runner.py:3259] Starting to load model ../Qwen3-32B-INT8...
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:33 [compressed_tensors_w8a8_int8.py:62] Using CutlassScaledMMLinearKernel for CompressedTensorsW8A8Int8
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:46 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:49:46 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:12 [default_loader.py:314] Loading weights took 25.74 seconds
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:12 [punica_selector.py:20] Using PunicaWrapperGPU.
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:12 [gpu_model_runner.py:3338] Model loading took 32.3027 GiB memory and 38.585272 seconds
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:15 [gpu_worker.py:359] Available KV cache memory: 29.09 GiB
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:15 [kv_cache_utils.py:1229] GPU KV cache size: 119,152 tokens
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:15 [kv_cache_utils.py:1234] Maximum concurrency for 5,000 tokens per request: 23.79x
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:15 [core.py:250] init engine (profile, create kv cache, warmup model) took 2.86 seconds
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m INFO 12-05 00:50:16 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-05 00:50:16 [llm.py:352] Supported tasks: ['generate']
+WARNING 12-05 00:50:17 [processor.py:246] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+[1;36m(EngineCore_DP0 pid=3494166)[0;0m WARNING 12-05 00:50:18 [utils.py:250] Using default LoRA kernel configs
+####PRED#### » Če me nima na grbi .	nima na grbi; 4,5,6
+
+list##### ['» Če me nima na grbi .', 'nima na grbi; 4,5,6\n']
+####PRED#### Seveda je vse v božjih rokah .	bočjih rokah; 5,6
+
+list##### ['Seveda je vse v božjih rokah .', 'bočjih rokah; 5,6\n']
+####PRED#### Ostala je brez očeta , brat ji je umrl v najlepših letih , zdaj pa je izgubila še svojo drago mamo .	izgubila š; 17,18
+
+list##### ['Ostala je brez očeta , brat ji je umrl v najlepših letih , zdaj pa je izgubila še svojo drago mamo .', 'izgubila š; 17,18\n']
+####PRED#### Druga je zaradi njega z njim zlezla v posteljo .	zlezla v; 7,8
+
+list##### ['Druga je zaradi njega z njim zlezla v posteljo .', 'zlezla v; 7,8\n']
+####PRED#### Tihotapci so bili morda prvi , ki so črnogorski osamosvojitvi obrnili hrbet , četudi so nove oblasti v Beogradu napovedale vojno vsem oblikam kriminala .	obrnili hrbet; 11,12
+
+list##### ['Tihotapci so bili morda prvi , ki so črnogorski osamosvojitvi obrnili hrbet , četudi so nove oblasti v Beogradu napovedale vojno vsem oblikam kriminala .', 'obrnili hrbet; 11,12\n']
+####PRED#### Danilu Polajžerju , ustanovitelju kluba , so na pomoč priskočili člani njegovega matičnega kluba in tako bo ptujski šahovski klub prevzel tehnično organizacijo , Millenium pa sponzorsko plat .	na pomoč priskočili; 8,9,10 | prevzel organizacijo; 21,23 | sponzorsko plat; 27,28
+
+list##### ['Danilu Polajžerju , ustanovitelju kluba , so na pomoč priskočili člani njegovega matičnega kluba in tako bo ptujski šahovski klub prevzel tehnično organizacijo , Millenium pa sponzorsko plat .', 'na pomoč priskočili; 8,9,10 | prevzel organizacijo; 21,23 | sponzorsko plat; 27,28\n']
+####PRED#### Pri nepravilni prehrani , ki je zli duh večine vsaj srednje bogatih nacij , tudi primarij Tomislav Majić opozarja na življenjsko pomembno razmerje med nasičenimi in nenasičenimi maščobnimi kislinami .	zli duh; 7,8
+
+list##### ['Pri nepravilni prehrani , ki je zli duh večine vsaj srednje bogatih nacij , tudi primarij Tomislav Majić opozarja na življenjsko pomembno razmerje med nasičenimi in nenasičenimi maščobnimi kislinami .', 'zli duh; 7,8\n']
+####PRED#### Južno od Perzeja oko sreča majhno , a vpadljivo zvezdno skupino Plejade .	None
+
+list##### ['Južno od Perzeja oko sreča majhno , a vpadljivo zvezdno skupino Plejade .', 'None\n']
+####PRED#### Antarktični otoki so svet zase , že zato , ker jih naseljujejo tudi ljudje .	svet zase; 4,5
+
+list##### ['Antarktični otoki so svet zase , že zato , ker jih naseljujejo tudi ljudje .', 'svet zase; 4,5\n']
+####PRED#### V celjskem Gradisu so se delavci postavili po robu predsednici uprave Lidiji Žagar	se postavili po robu; 5,7,8,9
+
+list##### ['V celjskem Gradisu so se delavci postavili po robu predsednici uprave Lidiji Žagar', 'se postavili po robu; 5,7,8,9\n']
+####PRED#### Ne uklanjajte naših hrbtov , da bi na njih sekali drva za bolje obložene ražnje .	uklanjajte hrbtov; 2,4
+
+list##### ['Ne uklanjajte naših hrbtov , da bi na njih sekali drva za bolje obložene ražnje .', 'uklanjajte hrbtov; 2,4\n']
+####PRED#### Pa še smolo ima , da ga podpirata desnica in tudi opozicija .	Pa Š; 1,2
+
+list##### ['Pa še smolo ima , da ga podpirata desnica in tudi opozicija .', 'Pa Š; 1,2\n']
+####PRED#### Čeprav trdijo , da je previdnost mati modrosti .	previdnost mati modrosti; 6,7,8
+
+list##### ['Čeprav trdijo , da je previdnost mati modrosti .', 'previdnost mati modrosti; 6,7,8\n']
+####PRED#### Deset pred deveto se je v Londonu pred dobrim tednom dni ustavil čas .	ustavil čas; 12,13
+
+list##### ['Deset pred deveto se je v Londonu pred dobrim tednom dni ustavil čas .', 'ustavil čas; 12,13\n']
+####PRED#### Energijo , ki jo potrebujemo , dobimo samo od toka , proti kateremu plavamo .	proti kateremu; 12,13
+
+list##### ['Energijo , ki jo potrebujemo , dobimo samo od toka , proti kateremu plavamo .', 'proti kateremu; 12,13\n']
+####PRED#### O tem , da so bile v Iskri potrebne spremembe , so čivkali že vrabci na veji , pravi .	vrabci na veji; 14,15,16
+
+list##### ['O tem , da so bile v Iskri potrebne spremembe , so čivkali že vrabci na veji , pravi .', 'vrabci na veji; 14,15,16\n']
+####PRED#### Ta izkušnja je pustila močan pečat na njegovih poznejših delih .	pustila pešat; 4,6
+
+list##### ['Ta izkušnja je pustila močan pečat na njegovih poznejših delih .', 'pustila pešat; 4,6\n']
+####PRED#### Hipokrat je zapisal , da » zajetnost ni le bolezen sama po sebi , temveč tudi glasnica drugih bolezni « .	sama po sebi; 11,12,13 | temveve tudi; 15,16
+
+list##### ['Hipokrat je zapisal , da » zajetnost ni le bolezen sama po sebi , temveč tudi glasnica drugih bolezni « .', 'sama po sebi; 11,12,13 | temveve tudi; 15,16\n']
+####PRED#### Sedeči način življenja igra pomembno vlogo pri debelosti .	Sedeči način življenja; 1,2,3 | igra vlogo; 4,6
+
+list##### ['Sedeči način življenja igra pomembno vlogo pri debelosti .', 'Sedeči način življenja; 1,2,3 | igra vlogo; 4,6\n']
+####PRED#### Gasimov je začel peti pri rosnih letih in nastopil je na več koncertih v različnih mestih v Azerbajdžanu in Rusiji .	pri rosnih letih; 5,6,7 | več koncertih; 12,13 | v različnih mestih; 14,15,16 | v Azerbajdžanu in Rusiji; 17,18,19,20
+
+list##### ['Gasimov je začel peti pri rosnih letih in nastopil je na več koncertih v različnih mestih v Azerbajdžanu in Rusiji .', 'pri rosnih letih; 5,6,7 | več koncertih; 12,13 | v različnih mestih; 14,15,16 | v Azerbajdžanu in Rusiji; 17,18,19,20\n']
+####PRED#### Lee je imel v mislih večje načrte .	imel v mislih; 3,4,5
+
+list##### ['Lee je imel v mislih večje načrte .', 'imel v mislih; 3,4,5\n']
+####PRED#### Do zgodnjih jutranjih ur je bila vsa Grčija v rokah polkovnikov .	v rokah; 9,10
+
+list##### ['Do zgodnjih jutranjih ur je bila vsa Grčija v rokah polkovnikov .', 'v rokah; 9,10\n']
+####PRED#### Zelo rad ima svojega sina .	Zelo rad ima; 1,2,3
+
+list##### ['Zelo rad ima svojega sina .', 'Zelo rad ima; 1,2,3\n']
+####PRED#### Gospodarska globalizacija , ki jo je spodbudil razvoj komunikacije in prometne tehnologije , je vplivala na vsakdanje življenje v mnogih delih sveta .	vsakdanje življenje; 17,18
+
+list##### ['Gospodarska globalizacija , ki jo je spodbudil razvoj komunikacije in prometne tehnologije , je vplivala na vsakdanje življenje v mnogih delih sveta .', 'vsakdanje življenje; 17,18\n']
+####PRED#### V mnogih državah preveliki odmerki drog predstavljajo približno 60 % samomorov med ženskami in 30 % med moškimi .	preveliči odmerki; 4,5
+
+list##### ['V mnogih državah preveliki odmerki drog predstavljajo približno 60 % samomorov med ženskami in 30 % med moškimi .', 'preveliči odmerki; 4,5\n']
+####PRED#### V istem letu doživi osebno tragedijo , ko ji umre sin .	doživi tragedijo; 4,6
+
+list##### ['V istem letu doživi osebno tragedijo , ko ji umre sin .', 'doživi tragedijo; 4,6\n']
+####PRED#### Edini Zemljin naravni satelit je Luna .	naravni satelit; 3,4
+
+list##### ['Edini Zemljin naravni satelit je Luna .', 'naravni satelit; 3,4\n']
+####PRED#### Le dva meseca po zaključku študija je objavil svoj prvi znanstveni članek na temo Einsteinove splošne teorije relativnosti .	na temo; 13,14
+
+list##### ['Le dva meseca po zaključku študija je objavil svoj prvi znanstveni članek na temo Einsteinove splošne teorije relativnosti .', 'na temo; 13,14\n']
+####PRED#### Rurik je ostal na oblasti do svoje smrti leta 879 .	ostal na oblasti; 3,4,5|do svoje smrti; 6,7,8
+
+list##### ['Rurik je ostal na oblasti do svoje smrti leta 879 .', 'ostal na oblasti; 3,4,5|do svoje smrti; 6,7,8\n']
+####PRED#### Vojvoda je nenehno potoval po vojvodini , potrjeval listine in zbiral prihodke .	Vojvoda po vojvodini; 1,5,6
+
+list##### ['Vojvoda je nenehno potoval po vojvodini , potrjeval listine in zbiral prihodke .', 'Vojvoda po vojvodini; 1,5,6\n']
+####PRED#### Do otrok je prijazna , toda zna biti stroga , ko je treba .	ko ko je treba; 11,12,13
+
+list##### ['Do otrok je prijazna , toda zna biti stroga , ko je treba .', 'ko ko je treba; 11,12,13\n']
+####PRED#### Opazil sem tudi zobčato kolo in verigo .	zobžato kolo; 4,5
+
+list##### ['Opazil sem tudi zobčato kolo in verigo .', 'zobžato kolo; 4,5\n']
+####PRED#### Predvidevajo , da okužba z enim od serotipov povzroči vseživljenjsko imuniteto za ta tip , pred ostalimi tremi pa nudi le kratkotrajno zaščito .	povzroči imuniteto; 9,11 | nudi zaščito; 20,23
+
+list##### ['Predvidevajo , da okužba z enim od serotipov povzroči vseživljenjsko imuniteto za ta tip , pred ostalimi tremi pa nudi le kratkotrajno zaščito .', 'povzroči imuniteto; 9,11 | nudi zaščito; 20,23\n']
+####PRED#### Zakaj se pretepajo po gostinskih lokalih , čemu je toliko mamil med mladino , kaj je z varnostjo na cestah vse to so težave , ki pestijo domala slehernega Kranjčana .	se pretepajo; 2,3
+
+list##### ['Zakaj se pretepajo po gostinskih lokalih , čemu je toliko mamil med mladino , kaj je z varnostjo na cestah vse to so težave , ki pestijo domala slehernega Kranjčana .', 'se pretepajo; 2,3\n']
+####PRED#### Njegove raziskave so imele velik vpliv na teoretično fiziko kot tudi na povsem matematična področja , vključno s teorijo števil .	imele vpliv; 4,6|kot tudi; 10,11|vključno s; 17,18
+
+list##### ['Njegove raziskave so imele velik vpliv na teoretično fiziko kot tudi na povsem matematična področja , vključno s teorijo števil .', 'imele vpliv; 4,6|kot tudi; 10,11|vključno s; 17,18\n']
+####PRED#### Predstavniki vlade in protivladnih upornikov v Gvatemali podpišejo sporazum , s katerim končajo 36 let trajajočo državljansko vojno .	državljansko vojno; 17,18
+
+list##### ['Predstavniki vlade in protivladnih upornikov v Gvatemali podpišejo sporazum , s katerim končajo 36 let trajajočo državljansko vojno .', 'državljansko vojno; 17,18\n']
+####PRED#### V skladu s tem je Friderik leta 1853 postal danski princ .	V skladu s; 1,2,3
+
+list##### ['V skladu s tem je Friderik leta 1853 postal danski princ .', 'V skladu s; 1,2,3\n']
+####PRED#### Uničen je bil tudi njegov sarkofag , vendar so ga rekonstruirali in zdaj stoji pred Kairskim muzejem .	None
+
+list##### ['Uničen je bil tudi njegov sarkofag , vendar so ga rekonstruirali in zdaj stoji pred Kairskim muzejem .', 'None\n']
+####PRED#### Njihov materni jezik je litovščina , eden izmed zgolj dveh preživelih baltskih jezikov .	materniјezик; 2,3 | baltskihјezиков; 12,13
+
+list##### ['Njihov materni jezik je litovščina , eden izmed zgolj dveh preživelih baltskih jezikov .', 'materniјezик; 2,3 | baltskihјezиков; 12,13\n']
+####PRED#### Zakopani v pesku čakajo v zasedi , le njihove oči gledajo iz tal .	Zakopani v pesku; 1,2,3 | že kajo v zasedi; 4,5,6,7 | oči gledajo iz tal; 11,12,13,14
+
+list##### ['Zakopani v pesku čakajo v zasedi , le njihove oči gledajo iz tal .', 'Zakopani v pesku; 1,2,3 | že kajo v zasedi; 4,5,6,7 | oči gledajo iz tal; 11,12,13,14\n']
+####PRED#### Mike Stock je besedilo pesmi napisal na podlagi tega , kar je o Minogue izvedel pred njenim prihodom .	na podlagi; 7,8
+
+list##### ['Mike Stock je besedilo pesmi napisal na podlagi tega , kar je o Minogue izvedel pred njenim prihodom .', 'na podlagi; 7,8\n']
+####PRED#### Ponoči je tih kraj .	Ponoči kraj; 1,4
+
+list##### ['Ponoči je tih kraj .', 'Ponoči kraj; 1,4\n']
+####PRED#### Na krščanski praznik božič praznujemo rojstvo Jezusa Kristusa .	kršųanski praznik; 2,3
+
+list##### ['Na krščanski praznik božič praznujemo rojstvo Jezusa Kristusa .', 'kršųanski praznik; 2,3\n']
+####PRED#### Skupaj so se tretje sezone udeležile mladinske ekipe 24 nogometnih klubov iz 24 držav .	se udeležile; 3,6
+
+list##### ['Skupaj so se tretje sezone udeležile mladinske ekipe 24 nogometnih klubov iz 24 držav .', 'se udeležile; 3,6\n']
+####PRED#### Fizikalna konstanta , znana kot Rydbergova konstanta , se imenuje po njem .	znana kot; 4,5|se imenuje po; 9,10,11
+
+list##### ['Fizikalna konstanta , znana kot Rydbergova konstanta , se imenuje po njem .', 'znana kot; 4,5|se imenuje po; 9,10,11\n']
+####PRED#### Leta 1095 je papež Urban II. pozval na križarsko vojno proti muslimanom , ki so zasedli Jeruzalem in Sveto deželo .	pozval na; 7,8
+
+list##### ['Leta 1095 je papež Urban II. pozval na križarsko vojno proti muslimanom , ki so zasedli Jeruzalem in Sveto deželo .', 'pozval na; 7,8\n']
+####PRED#### Pljučni ognojki so običajno na rentgenski sliki prsnega koša vidni , vendar je za potrditev diagnoze pogosto potreben CT prsnega koša .	rentgenski sliki; 6,7 | prsnega koša; 8,9 | CT prsnega koša; 19,20,21
+
+list##### ['Pljučni ognojki so običajno na rentgenski sliki prsnega koša vidni , vendar je za potrditev diagnoze pogosto potreben CT prsnega koša .', 'rentgenski sliki; 6,7 | prsnega koša; 8,9 | CT prsnega koša; 19,20,21\n']
+####PRED#### Prvo izmed obeh vesoljskih plovil , ki je obiskalo planet , je bilo Mariner 10 , ki je v letih 1974 in 1975 kartiral od 40 % do 45 % površja .	vesoljskih plovil; 4,5
+
+list##### ['Prvo izmed obeh vesoljskih plovil , ki je obiskalo planet , je bilo Mariner 10 , ki je v letih 1974 in 1975 kartiral od 40 % do 45 % površja .', 'vesoljskih plovil; 4,5\n']
+####PRED#### Poleg napadalnih tehnik so bile na voljo tudi obrambne .	na voljo; 6,7
+
+list##### ['Poleg napadalnih tehnik so bile na voljo tudi obrambne .', 'na voljo; 6,7\n']
+####PRED#### Geotermalna energija je termalna energija , ki jo proizvaja Zemljina notranja vročina .	Geotermalna energija; 1,2 | termalna energija; 4,5
+
+list##### ['Geotermalna energija je termalna energija , ki jo proizvaja Zemljina notranja vročina .', 'Geotermalna energija; 1,2 | termalna energija; 4,5\n']
+####PRED#### Če ga boš sam pobarval , bo darilo idealno .	Če ga boč sam pobarval; 1,2,3,4,5
+
+list##### ['Če ga boš sam pobarval , bo darilo idealno .', 'Če ga boč sam pobarval; 1,2,3,4,5\n']
+####PRED#### V vesolju je preživela več kot 343 ur .	več kot; 5,6
+
+list##### ['V vesolju je preživela več kot 343 ur .', 'več kot; 5,6\n']
+####PRED#### Vsi zemeljski planeti imajo približno enako zgradbo : središčno kovinsko jedro , večinoma iz železa , ki ga obkroža silikatni plašč .	zemeljski planeti; 2,3 | kovinsko jedro; 10,11 | silikatni plašč; 20,21
+
+list##### ['Vsi zemeljski planeti imajo približno enako zgradbo : središčno kovinsko jedro , večinoma iz železa , ki ga obkroža silikatni plašč .', 'zemeljski planeti; 2,3 | kovinsko jedro; 10,11 | silikatni plašč; 20,21\n']
+####PRED#### Ob koncu prve svetovne vojne je postala del Velike Romunije .	Ob koncu; 1,2
+
+list##### ['Ob koncu prve svetovne vojne je postala del Velike Romunije .', 'Ob koncu; 1,2\n']
+####PRED#### Kot ubežnik je bil trikrat izvoljen v kanadski parlament , vendar svojega sedeža ni nikoli zasedel .	Kot ubežnik; 1,2 | izvoljen v; 6,7 | sedeža zasedel; 13,16
+
+list##### ['Kot ubežnik je bil trikrat izvoljen v kanadski parlament , vendar svojega sedeža ni nikoli zasedel .', 'Kot ubežnik; 1,2 | izvoljen v; 6,7 | sedeža zasedel; 13,16\n']
+####PRED#### Stadio Marcantonio Bentegodi je nogometni stadion v italijanskem mestu Verona .	None
+
+list##### ['Stadio Marcantonio Bentegodi je nogometni stadion v italijanskem mestu Verona .', 'None\n']
+####PRED#### Rimljani so tam zgradili vojaško utrdbo .	vojaško utrdbo; 5,6
+
+list##### ['Rimljani so tam zgradili vojaško utrdbo .', 'vojaško utrdbo; 5,6\n']
+####PRED#### Ima čokato telo in kratke noge .	ima telesno težo; 1,4,5
+
+list##### ['Ima čokato telo in kratke noge .', 'ima telesno težo; 1,4,5\n']
+####PRED#### Še več , Anan naj bi kolaboriral z ZDA in Izraelom ter izražal sovražno naravnanost do Sudana .	Še več; 1,2 | naj bi; 5,6
+
+list##### ['Še več , Anan naj bi kolaboriral z ZDA in Izraelom ter izražal sovražno naravnanost do Sudana .', 'Še več; 1,2 | naj bi; 5,6\n']
+####PRED#### Izraz se je sprva uporabljal v državnih pogodbah in je pomenil umik sovražne vojske in obnovitev predvojnega državnega vodstva .	se uporabljal; 2,5 | umik vojske; 12,14 | obnovitev vodstva; 16,19
+
+list##### ['Izraz se je sprva uporabljal v državnih pogodbah in je pomenil umik sovražne vojske in obnovitev predvojnega državnega vodstva .', 'se uporabljal; 2,5 | umik vojske; 12,14 | obnovitev vodstva; 16,19\n']
+####PRED#### Norveška cerkev je bila leta 1152 urejena v okviru nadškofije Nidaros .	v okviru; 8,9
+
+list##### ['Norveška cerkev je bila leta 1152 urejena v okviru nadškofije Nidaros .', 'v okviru; 8,9\n']
+####PRED#### Frekvenca dihanja se meri s številom vdihov na minuto .	None
+
+list##### ['Frekvenca dihanja se meri s številom vdihov na minuto .', 'None\n']
+####PRED#### Inuit je Raeju pokazal tudi številne predmete , za katere se je izkazalo , da so pripadali Franklinu in njegovim možem .	se izkazalo; 11,13
+
+list##### ['Inuit je Raeju pokazal tudi številne predmete , za katere se je izkazalo , da so pripadali Franklinu in njegovim možem .', 'se izkazalo; 11,13\n']
+####PRED#### Da blejski odbojkarji mislijo resno , ko pravijo , da želijo v dveh , treh letih zaigrati v ligi prvakov , dokazujejo tudi njihovi pogovori z Jasminom Čuturičem , enim najboljših slovenskih odbojkarjev zadnjega desetletja .	zaigrati v; 17,18
+
+list##### ['Da blejski odbojkarji mislijo resno , ko pravijo , da želijo v dveh , treh letih zaigrati v ligi prvakov , dokazujejo tudi njihovi pogovori z Jasminom Čuturičem , enim najboljših slovenskih odbojkarjev zadnjega desetletja .', 'zaigrati v; 17,18\n']
+####PRED#### Ne prenesejo nikakršnih spon in čeprav ne spadajo med najbolj stanovitne ljudi pod soncem , so živahni , zabavni in romantični .	spadajo med; 8,9 | pod soncem; 13,14
+
+list##### ['Ne prenesejo nikakršnih spon in čeprav ne spadajo med najbolj stanovitne ljudi pod soncem , so živahni , zabavni in romantični .', 'spadajo med; 8,9 | pod soncem; 13,14\n']
+####PRED#### Upam , da si to izvedel na urah zgodovine v šoli .	na urah zgodovine v všoli; 7,8,9,10,11
+
+list##### ['Upam , da si to izvedel na urah zgodovine v šoli .', 'na urah zgodovine v všoli; 7,8,9,10,11\n']
+####PRED#### Nekateri morski psi v svojem življenju izgubijo 30.000 zob ali več .	morski psi; 2,3 | ali več; 10,11
+
+list##### ['Nekateri morski psi v svojem življenju izgubijo 30.000 zob ali več .', 'morski psi; 2,3 | ali več; 10,11\n']
+####PRED#### Iz tega razloga in zato , da je besedilo kar se da dosledno , so spremembe zapisane v jeziku , ki je blizu izvirniku .	Iz tege razloga; 1,2,3 | kar se da; 10,11,12
+
+list##### ['Iz tega razloga in zato , da je besedilo kar se da dosledno , so spremembe zapisane v jeziku , ki je blizu izvirniku .', 'Iz tege razloga; 1,2,3 | kar se da; 10,11,12\n']
+####PRED#### Tovrstna intenzivna vojaška uprava je bila odgovor na avstrijsko vojaško območje na drugi strani meje .	vojaška uprava; 3,4 | drugi strani meje; 13,14,15
+
+list##### ['Tovrstna intenzivna vojaška uprava je bila odgovor na avstrijsko vojaško območje na drugi strani meje .', 'vojaška uprava; 3,4 | drugi strani meje; 13,14,15\n']
+####PRED#### Policijske enote za obvladovanje izgredov so v Pragi zatrle miren študentski protest .	Policijske enote; 1,2|obvladovanje izgredov; 4,5|zatrle miren; 9,10
+
+list##### ['Policijske enote za obvladovanje izgredov so v Pragi zatrle miren študentski protest .', 'Policijske enote; 1,2|obvladovanje izgredov; 4,5|zatrle miren; 9,10\n']
+####PRED#### Codex Eyckensis je bil v samostanu uporabljen kot učno sredstvo in za širjenje Kristusovih naukov .	úcno sredstvo; 9,10
+
+list##### ['Codex Eyckensis je bil v samostanu uporabljen kot učno sredstvo in za širjenje Kristusovih naukov .', 'úcno sredstvo; 9,10\n']
+####PRED#### Mnogo pomembnih značilnosti fizikalnih sistemov se lahko matematično prikaže kot matrične enačbe .	se prikaz; 6,9 | matrične enačbe; 11,12
+
+list##### ['Mnogo pomembnih značilnosti fizikalnih sistemov se lahko matematično prikaže kot matrične enačbe .', 'se prikaz; 6,9 | matrične enačbe; 11,12\n']
+####PRED#### Običajni material je iz zob .	iz zob; 4,5
+
+list##### ['Običajni material je iz zob .', 'iz zob; 4,5\n']
+####PRED#### V 15 ‒ 20 % aktivnih primerov se okužba razširi na organe zunaj pljuč , kar vodi do drugih različic tuberkuloze .	se razširi; 8,10
+
+list##### ['V 15 ‒ 20 % aktivnih primerov se okužba razširi na organe zunaj pljuč , kar vodi do drugih različic tuberkuloze .', 'se razširi; 8,10\n']
+####PRED#### Po doktoratu je Payne preučevala zvezde z velikim izsevom , da bi razumela strukturo Rimske ceste .	Po doktoratu; 1,2 | Rimske ceste; 15,16
+
+list##### ['Po doktoratu je Payne preučevala zvezde z velikim izsevom , da bi razumela strukturo Rimske ceste .', 'Po doktoratu; 1,2 | Rimske ceste; 15,16\n']
+####PRED#### Mesto je vzdržalo 18 dni in ko je padlo , je Viljem tam zgradil grad , da bi si zagotovil nadzor .	da bi; 17,18 | si zagotovil; 19,20
+
+list##### ['Mesto je vzdržalo 18 dni in ko je padlo , je Viljem tam zgradil grad , da bi si zagotovil nadzor .', 'da bi; 17,18 | si zagotovil; 19,20\n']
+####PRED#### Mladi nogometaši se zunaj uradne sezone udeležujejo različnih dogodkov .	se udeležujejo; 3,7
+
+list##### ['Mladi nogometaši se zunaj uradne sezone udeležujejo različnih dogodkov .', 'se udeležujejo; 3,7\n']
+####PRED#### Problem je poimenovan po Baslu , rojstnemu mestu Eulerja in družine Bernoulli , ki je neuspešno reševala problem .	poimenovan po; 3,4
+
+list##### ['Problem je poimenovan po Baslu , rojstnemu mestu Eulerja in družine Bernoulli , ki je neuspešno reševala problem .', 'poimenovan po; 3,4\n']
+####PRED#### Ob koncu sezone so bili uvrščeni na 4. mesto .	Ob koncu; 1,2
+
+list##### ['Ob koncu sezone so bili uvrščeni na 4. mesto .', 'Ob koncu; 1,2\n']
+####PRED#### Ohranilo se je 89 dvoglasnih balad , 42 triglasnih balad in še 9 takšnih , ki imajo dvo - in triglasno verzijo .	se se; 2,3 | dvo - in triglasno; 18,19,20,21
+
+list##### ['Ohranilo se je 89 dvoglasnih balad , 42 triglasnih balad in še 9 takšnih , ki imajo dvo - in triglasno verzijo .', 'se se; 2,3 | dvo - in triglasno; 18,19,20,21\n']
+####PRED#### RETScreen se pogosto uporablja za spodbujanje in izvajanje projektov čiste energije .	se uporablja; 2,4
+
+list##### ['RETScreen se pogosto uporablja za spodbujanje in izvajanje projektov čiste energije .', 'se uporablja; 2,4\n']
+####PRED#### Pri stiku z očmi izpiramo oči s tekočo vodo .	Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:
+
+list##### ['Pri stiku z očmi izpiramo oči s tekočo vodo .', "Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:\n"]
+####PRED#### 1 Pri
+
+list##### ['1 Pri\n']
+
+Slurm Job Summary
+*****************
+- General information:
+    date = Fri Dec 5 08:05:56 CET 2025
+    hostname = nesh-gpu01
+- Job information:
+    JobId = 19414401
+    JobName = SL_inf
+    UserId = sunpn1133(820286)
+    Account = sunpn1133
+    QOS = normal
+    NodeList = nesh-gpu01
+    Features = (null)
+    Command = /gxfs_work/cau/sunpn1133/parseme_2_0/job_SL_inference.sh
+    WorkDir = /gxfs_work/cau/sunpn1133/parseme_2_0
+    StdOut = /gxfs_work/cau/sunpn1133/parseme_2_0/test_SL.out
+    StdErr = /gxfs_work/cau/sunpn1133/parseme_2_0/test_SL.err
+- Requested resources:
+    Timelimit = 1-00:00:00 ( 86400s )
+    MinMemoryNode = 80G ( 81920.000M )
+    NumNodes = 1
+    NumCPUs = 2
+    NumTasks = 1
+    CPUs/Task = 2
+- Used resources:
+    RunTime = 07:19:22 ( 26362s )
+    MaxRSS = 2385856K ( 2329.938M )
+====================
+- Important conclusions and remarks:
+    * !!! Please, always check if the number of requested cores and nodes matches the need of your program/code !!!
+    * !!! Less than 40% of requested walltime used !!! Consider adaptation of your batch script.
+    * !!! Less than 10% of requested main memory used !!! Consider adaptation of your batch script.
+
