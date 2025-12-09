@@ -15,7 +15,6 @@ def norm(s: str) -> str:
 
 def split_w_apostrophes(tokens):
     token_list = []
-    collect_start = []
     current_token = ""
     for char in tokens:
         if char == " " and current_token:
@@ -27,145 +26,64 @@ def split_w_apostrophes(tokens):
             current_token = ""
         else:
             current_token += char
-    token_list.append(current_token)
+    if current_token:
+        token_list.append(current_token)
     return token_list
 
-# def get_all_indices(pred, cupt_sentence):
-#     all_indices = []
 
-#     # split up multiple predictions
-#     single_preds = pred.split("|")
-#     if single_preds[0] == "None":
-#         return all_indices
+def levenshtein(a: str, b: str) -> int:
+    """Compute Levenshtein distance between two strings."""
+    if a == b:
+        return 0
+    if len(a) == 0:
+        return len(b)
+    if len(b) == 0:
+        return len(a)
 
-#     # loop over predictions and add them to cupt
-#     for single_pred in single_preds:
-#         if ";" not in single_pred:
-#             return all_indices
+    # DP table
+    prev = list(range(len(b) + 1))
+    curr = [0] * (len(b) + 1)
 
-#         # separate predicted tokens from predicted indices
-#         tokens = single_pred.split(";")[0]
-#         predicted_indices = single_pred.strip().split(";")[1]
-#         predicted_indices = predicted_indices.split(",")
-
-#         # get a list of all predicted tokens
-#         token_list = split_w_apostrophes(tokens)
-
-#         # First pass: collect candidate indices + a preliminary choice
-#         #   per token: (candidate_indices, prelim_index)
-#         per_token_data = []  # list of (candidates_list, prelim_index_or_None)
-
-#         for token_ind, token in enumerate(token_list):
-#             candidates = []
-
-#             # collect all potential indices for this token in cupt
-#             for cupt_tok in cupt_sentence:
-#                 if norm(cupt_tok["form"]).strip() == norm(token).strip():
-#                     if isinstance(cupt_tok["id"], tuple):
-#                         for num in cupt_tok["id"]:
-#                             if isinstance(num, int):
-#                                 candidates.append(num)
-#                     else:
-#                         candidates.append(cupt_tok["id"])
-
-#             prelim = None
-#             if len(candidates) == 1:
-#                 # only one option: use it
-#                 prelim = candidates[0]
-#             elif len(candidates) > 1:
-#                 # more than one candidate: pick closest to predicted index
-#                 min_diff = float("inf")
-#                 best = None
-#                 if len(predicted_indices) <= int(token_ind):
-#                     # handles cases where there are fewer predicted indices
-#                     # than MWE lexemes
-#                     idx_for_pred = -1
-#                 else:
-#                     idx_for_pred = int(token_ind)
-
-#                 predicted_index = int(predicted_indices[idx_for_pred])
-#                 for cand in candidates:
-#                     diff = abs(int(cand) - predicted_index)
-#                     if diff < min_diff:
-#                         min_diff = diff
-#                         best = cand
-#                 prelim = best
-
-#             per_token_data.append((candidates, prelim))
-
-#         # Second pass: refine tokens with multiple candidates using mean of others
-#         # We compute mean of all other prelim indices (that are not None)
-#         # and, for tokens with >1 candidate, choose the candidate closest to that mean.
-#         final_indices = []
-
-#         for i, (candidates, prelim) in enumerate(per_token_data):
-#             if not candidates:
-#                 # No candidates at all; keep whatever prelim is (likely None)
-#                 final_indices.append(prelim)
-#                 continue
-
-#             if len(candidates) == 1:
-#                 # Only one candidate → nothing to refine
-#                 final_indices.append(prelim)
-#                 continue
-
-#             # Multiple candidates: try mean-based refinement
-#             # Collect all other tokens' prelim indices (excluding this one)
-#             other_indices = []
-#             for j, (_, other_prelim) in enumerate(per_token_data):
-#                 if j == i:
-#                     continue
-#                 if other_prelim is not None:
-#                     other_indices.append(int(other_prelim))
-
-#             if len(other_indices) == 0:
-#                 # No information from others → fall back to prelim
-#                 final_indices.append(prelim)
-#                 continue
-
-#             mean_other = sum(other_indices) / len(other_indices)
-
-#             # pick candidate closest to mean_other
-#             best = None
-#             min_diff = float("inf")
-#             for cand in candidates:
-#                 diff = abs(int(cand) - mean_other)
-#                 if diff < min_diff:
-#                     min_diff = diff
-#                     best = cand
-
-#             final_indices.append(best)
-
-#         # add this prediction's indices
-#         all_indices.append(final_indices)
-
-#     return all_indices
+    for i, ca in enumerate(a, start=1):
+        curr[0] = i
+        for j, cb in enumerate(b, start=1):
+            cost = 0 if ca == cb else 1
+            curr[j] = min(
+                prev[j] + 1,      # deletion
+                curr[j - 1] + 1,  # insertion
+                prev[j - 1] + cost  # substitution
+            )
+        prev, curr = curr, prev
+    return prev[len(b)]
 
 
 def get_all_indices(pred, cupt_sentence):
     all_indices = []
-    # split up multiple predictions
     single_preds = pred.split("|")
-    if single_preds[0] == "None":
+    if single_preds[0].strip() == "None":
         return all_indices
-    # loop over predictions and add them to cupt
+
     for single_pred in single_preds:
-        if not ";" in single_pred:
-            return all_indices
-        # separate predicted tokens from predicted indices
+        single_pred = single_pred.strip()
+        if ";" not in single_pred:
+            continue
+
         tokens = single_pred.split(";")[0]
         predicted_indices = single_pred.strip().split(";")[1]
-        predicted_indices = predicted_indices.split(",")
-        
-        # get a list of all predicted tokens and find their correct indices
+        if "-" in predicted_indices:
+            predicted_indices = predicted_indices.replace('-', ',')
+        predicted_indices = [x.strip() for x in predicted_indices.split(",") if x.strip()]
+
         token_list = split_w_apostrophes(tokens)
 
         result_indices = []
         for token_ind, token in enumerate(token_list):
             potential_index = []
-            # check for potential indices of tokens in cupt
+
+            matched = False
             for cupt_tok in cupt_sentence:
                 if norm(cupt_tok["form"]).strip() == norm(token).strip():
+                    matched = True
                     if isinstance(cupt_tok["id"], tuple):
                         for num in cupt_tok["id"]:
                             if isinstance(num, int):
@@ -173,26 +91,56 @@ def get_all_indices(pred, cupt_sentence):
                     else:
                         potential_index.append(cupt_tok["id"])
 
-            # if more than one index is found for a token, 
-            # use the one that is closest to the predicted index
-            if len(potential_index)>1:
+            if not matched:
+                best_dist = float("inf")
+                best_form = None
+                best_indices = []
+
+                for cupt_tok in cupt_sentence:
+                    cupt_form = norm(cupt_tok["form"]).strip()
+                    dist = levenshtein(norm(token).strip(), cupt_form)
+                    if dist < best_dist:
+                        best_dist = dist
+                        best_form = cupt_form
+                        best_indices = []
+                        if isinstance(cupt_tok["id"], tuple):
+                            for num in cupt_tok["id"]:
+                                if isinstance(num, int):
+                                    best_indices.append(num)
+                        else:
+                            best_indices.append(cupt_tok["id"])
+                    elif dist == best_dist:
+                        if isinstance(cupt_tok["id"], tuple):
+                            for num in cupt_tok["id"]:
+                                if isinstance(num, int):
+                                    best_indices.append(num)
+                        else:
+                            best_indices.append(cupt_tok["id"])
+
+                token = best_form
+                potential_index = best_indices
+
+            if len(potential_index) > 1:
                 min_diff = 10000
                 result = ""
-                for index_tokenid, tokenid in enumerate(potential_index):
-                    if len(predicted_indices) <= int(token_ind):  # handles cases where there are 
-                    #less predicted indices than mwe lexemes
-                        token_ind = -1
-                    predicted_index = predicted_indices[int(token_ind)]
-                    diff = abs(int(tokenid)-int(predicted_index))
+                for tokenid in potential_index:
+                    if len(predicted_indices) <= int(token_ind):
+                        idx_for_pred = -1
+                    else:
+                        idx_for_pred = token_ind
+                    predicted_index = predicted_indices[int(idx_for_pred)]
+                    diff = abs(int(tokenid) - int(predicted_index))
                     if diff < min_diff:
                         min_diff = diff
                         result = tokenid
                 result_indices.append(result)
-            # if there is only one index, use that one
+
             elif len(potential_index) == 1:
                 result = potential_index[0]
                 result_indices.append(result)
+
         all_indices.append(result_indices)
+
     return all_indices
 
 
@@ -217,6 +165,11 @@ def map_2_cupt(predictions:str, cupt_file:str):
         print("list#####", sent_and_pred)
         sent = sent_and_pred[0]
         pred = sent_and_pred[1]
+        
+        # digit → letter  (e.g. 5ა → 5|ა)
+        pred = re.sub(r'(\d)\s*([^\W\d_])', r'\1|\2', pred, flags=re.UNICODE)
+        print("#####pred_filtered", pred)
+    
         current_cupt = cupt_sentences[pred_ind]
         all_indices = get_all_indices(pred, current_cupt)
         #print(all_indices)
@@ -233,5 +186,19 @@ def map_2_cupt(predictions:str, cupt_file:str):
 
 
 
+def clean_files():
+    preds = "results/test_EGY.txt"
+    with open(preds, "r") as pr:
+        text = pr.read()
+        # remove all \n before lines where there is no \t. \t separates 
+        # sentences from predictions; if there is no \t, it is a part 
+        # of a prediction that was wrongly assigned a new line:
+        text = re.sub(r'\n(?=[^\t\r\n]*(?:\n|$))', '', text)
+        # Remove thinking that went on too long and 
+        # did not produce an answer within the given token limit:
+        text = re.sub(r"Okay, let's tackle this query[^\n]*", "None", text)
 
-    
+        with open("cleaned_files/EGY_cleaned.txt", "w") as o:
+            o.write(text)
+
+clean_files()

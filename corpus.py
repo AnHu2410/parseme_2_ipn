@@ -11,6 +11,7 @@ from postprocess_predictions import *
 import conllu
 import parseme.cupt as cupt
 from pathlib import Path
+import re
 
 
 class Corpus:
@@ -204,23 +205,35 @@ def search_train_cupt_in_subdirs_for_tags(root_dir, skip_name="tools"):
                     tags.append(mwe.mwe_tag)
     return set(tags)
 
+# convert predictions to cupt-format
 def get_cupt_data_from_predictions(language):
     c = Corpus("dev_data/dev_" + language + ".cupt")
-    predictions_path = "dev_data/dev_p_Romance/dev_" + language + "_32.txt"
-    output_path = "dev_data/dev_p_Romance/dev_" + language + "_32.cupt"
+    predictions_path = "dev_data/dev_p_Romance/dev_" + language + ".txt"
+    output_path = "dev_data/dev_p_Romance/dev_" + language + ".cupt"
     c.write_predictions_2_file(predictions_path, output_path)
 
+# count how many MWEs were correctly identified for each MWE tag
 def get_error_ratios_tag(language):
     c = Corpus("dev_data/dev_" + language + ".cupt")
     predictions_path = "dev_data/dev_preds_thinking/dev_full_" + language + ".cupt"
     c.count_correctly_predicted_tags(predictions_path)
 
-
+# create rule-based thinking for one language
 def write_thinking_2_file(language):
     corpus = Corpus("training_data/nonthinking/train_" + language + ".cupt")
     output = "training_data/thinking/train_" + language + ".txt"
     corpus.write_thinking_2_file(output)
 
+# create rule-based thinking for all languages
+def create_thinking_all_langs():
+    langs = [
+    "EGY", "EL", "FA", "FR", "HE", "JA", "KA",
+    "LV", "NL", "PL", "PT", "RO", "SL", "SR", "SV", "UK",
+    ]
+    for lang in langs:
+        write_thinking_2_file(lang)
+
+# count how many MWE types there are across all languages
 def count_MWE_types_all_langs():
     language_dict = {}
     langs = [
@@ -233,22 +246,4 @@ def count_MWE_types_all_langs():
         types, tokens = c.count_MWE_types()
         language_dict[lang] = types, tokens
     return language_dict
-
-
-def create_thinking_all_langs():
-    langs = [
-    "EGY", "EL", "FA", "FR", "HE", "JA", "KA",
-    "LV", "NL", "PL", "PT", "RO", "SL", "SR", "SV", "UK",
-    ]
-    for lang in langs:
-        write_thinking_2_file(lang)
-
-
-def create_cupt():
-    p = "/gxfs_home/cau/sunpn1133/sharedtask-data/2.0/subtask1/SV/test.blind.cupt"
-    c = Corpus(p)
-    preds= "results/test_SV.txt"
-    outp = "results/test_SV.cupt"
-    c.write_predictions_2_file(preds, outp)
-
 
