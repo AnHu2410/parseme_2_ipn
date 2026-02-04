@@ -1,1 +1,9 @@
 Code repository for the submission of Andrea Horbach’s research group to the PARSEME 2.0 Shared Task on Automatic Identification of Multiword Expressions.
+
+Create and activate virtual environment based on requirements.txt.
+
+Filtering: 
+- Store sharedtask data in this directory (https://gitlab.com/parseme/sharedtask-data/-/tree/master/2.0). 
+- Create directory, where filtered data can be stored: training_data/nonthinking/
+- Run filtering.py
+
