@@ -10,6 +10,7 @@ import pandas as pd
 
 
 def get_tag_dict():
+    # turns txt-dict of MWE category paraphrases into python dict
     with open("tag_list.txt", "r") as t:
         lines = t.readlines()
         tag_dict = {}
@@ -50,24 +51,35 @@ class Sentence:
         self.predicted_correctly = False
 
     def get_thinking_format(self):
+        # dict with MWE category paraphrases:
         tag_dict = get_tag_dict()
+
+        # mimic start of original Qwen3 thinking:
         starting_line = "<think>Okay, let's tackle this query. The user wants me to identify all multiple-word expressions (MWEs) in the given sentence. The sentence is split into words by newlines, so first I need to parse each line as a token. Let me list them out with their indices to keep track. The words are:\n"
+        
+        # get lexemes and their indices (parsing of the sentence and repetition of the indices):
         words_w_indices = ""
         for token in self.cupt:
             form = token["form"]
             ind = token["id"]
-            if not isinstance(ind, int):
+            if not isinstance(ind, int):  # handle contracted forms:
                 ind = [str(element) for element in ind] 
                 ind = "".join(ind) + "(a contracted form consisting of the two following lemmas)"
             line = str(ind) + " " + form + "\n"
             words_w_indices += line
+        
+        # repetition of the MWE definition provided in the prompt:
         repeat_conditions = "Now we apply the MWE criteria. The first condition is that the expression consists of multiple words that are always realized by the same lexemes. The individual lexemes cannot be replaced by synonyms without distorting the meaning of the expression as a whole or violating language conventions. The second condition is that it displays semantic, lexical, or syntactic idiomaticity. Semantic idiomaticity occurs when the meaning of an expression cannot be explicitly derived from its components. Lexical idiomaticity occurs when one or more components of an expression are not used as stand-alone words in standard English. Syntactic idiomaticity occurs when the grammar of an expression cannot be derived directly from that of its components. For example, semantically idiomatic MWEs include 'break up', the lexically idiomatic include 'to and fro', and syntactically idiomatic MWEs include 'long time no see'. The third condition is that it is not a multi-word named entity. Looking at the words, let's check for possible MWEs. " 
+        
+        # discussion of potential MWE expressions (using the MWE category paraphrases):
         definitions = ""
         for mwe in self.mwes:
             mwe_tokens = " " + " ".join(mwe.tokens) + " "
             mwe_defintion = tag_dict[mwe.mwe_tag.strip()] + "\n"
             line = mwe_tokens + mwe_defintion
             definitions += line
+        
+        # declaration of the final answer:
         closing_line = "After considering all possibilities, my final answer is: "
         correct_answer = ""
         mwes = []
@@ -78,11 +90,13 @@ class Sentence:
             pass
         elif len(mwes) == 1:
             correct_answer = correct_answer + mwes[0]
-        else:
+        else:  # if more than one MWE, a pipe is needed to separate them
             for mwe in mwes:
                 correct_answer = correct_answer + mwe + "|"
             correct_answer = correct_answer[:-1]
         closing_tag = "</think>"
+
+        # concatenate all parts to final output string:
         thinking = starting_line + words_w_indices + repeat_conditions + definitions + closing_line + correct_answer + closing_tag
         output = thinking + correct_answer + "*#*#*#*" + "\n\n"
         return output
@@ -94,32 +108,9 @@ class Sentence:
         else:
             print("No predictions available for processing.")
     
-    def get_true_positives(self):
-        preds = [pred.lemmas for pred in self.preds]
-        for mwe in self.mwes:
-            if mwe.lemmas in preds:
-                mwe.predicted_correctly = True
-                self.true_positives += 1
-        if len(self.mwes) == self.true_positives:
-            self.predicted_correctly = True   
-
-    def get_ratio_correctly_identified_tokens(self):
-        identified_tokens = 0
-        all_tokens = 0
-        preds = []
-        for pred_mwe in self.preds:
-            for index in pred_mwe.indices:
-                preds.append(index)
-
-        for mwe in self.mwes:
-            for index in mwe.indices:
-                all_tokens += 1
-                if index in preds:
-                    identified_tokens += 1
-        ratio = identified_tokens/all_tokens
-        return ratio
-    
     def cupt_2_prediction(self):
+        # return string in training data format representing predicted MWEs
+        # example: to and fro; 7,8,9 | break up; 12,13
         sentence = self.sentence_string + "\t"
         mwes = []
         for mwe in self.mwes:
@@ -130,6 +121,7 @@ class Sentence:
         elif len(mwes) == 1:
             sentence += mwes[0]
             return sentence
+        # if more than one MWE, a pipe is needed to separate them:
         else:
             for mwe in mwes:
                 sentence = sentence + mwe + "|"

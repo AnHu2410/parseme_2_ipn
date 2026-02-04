@@ -5,6 +5,12 @@ import re
 from pathlib import Path
 
 
+def read_prompt_from_file(self) -> str:
+        # read prompt from prompt.txt file
+        with open('prompt.txt', 'r', encoding='utf-8') as f:
+            return f.read()
+
+
 def shorten_output(output: str) -> str:
 
 	"""Extract the model's user-facing answer.
