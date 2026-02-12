@@ -1,9 +1,28 @@
-"""Corpus object that can consist of any of the dev or train datasets from Parseme 2.0.
-Object consists of a list of sentence objects. 
-Each sentence object also contains a list of all MWEs 
-occuring in the sentence (as objects).
-It is also possible to count the number of MWE types, tokens, 
-MWEs that occur only once and tags."""
+"""
+Corpus utilities for PARSEME 2.0 (CUPT) datasets.
+
+This module defines a `Corpus` container that loads a single PARSEME 2.0 file
+in CUPT format (CoNLL-U with an additional `PARSEME:MWE` column) and represents
+it as a list of `Sentence` objects.
+
+Each `Sentence` object contains:
+
+self.sentence_string = cupt_obj.metadata.get("text")
+        self.mwes = get_mwe_objects(self.cupt, self.sentence_string)
+        self.preds_cupt = []
+        self.preds = ""
+- the sentence (e.g., `sentence_string`)
+- gold MWEs occurring in the sentence (e.g., `mwes`)
+- optional fields where predictions can be stored
+- and methods to create thinking data for a given sentence.
+
+In addition to reading/writing, the `Corpus` class provides helper methods for:
+- storing model predictions aligned to sentences
+- exporting data to a text-based "prediction" format
+- exporting the "thinking format"
+- basic corpus statistics (MWE token/type counts, hapax MWEs, and tag counts)
+
+"""
 
 
 from sentence import Sentence
@@ -35,7 +54,7 @@ class Corpus:
         return sentence_objects
     
     def store_preds(self, path_predictions):
-        # store preds in sentence objects:
+        # store predictionss in sentence objects:
         with open(path_predictions, 'r', encoding='utf-8') as f:
             lines = f.read()
             preds = conllu.parse(lines)
@@ -73,6 +92,18 @@ class Corpus:
             mwe_str = sentence.cupt_2_prediction() + "\n"
             with open(output_path, "a") as f:
                 f.write(mwe_str)
+    
+    
+    def create_thinking_all_langs(self, directory_nonthinking, output_directory_thinking):
+        # write thinking format for all languages to file for training data:
+        langs = [
+        "EGY", "EL", "FA", "FR", "HE", "JA", "KA",
+        "LV", "NL", "PL", "PT", "RO", "SL", "SR", "SV", "UK",
+        ]
+        for lang in langs:
+            corpus = Corpus(directory_nonthinking + "/" + lang + "/train_" + lang + ".cupt")
+            output = output_directory_thinking + "/" + lang + "/train_" + lang + ".txt"
+            corpus.write_thinking_2_file(directory_nonthinking, output, lang)
 
     # the following methods are used for analysing the corpora:         
 
@@ -112,8 +143,10 @@ class Corpus:
         return self.path
 
 
-#  loop over all training files in order to get complete tag set
+# function for finding all tags in the training data of all languages:
+
 def search_train_cupt_in_subdirs_for_tags(root_dir, skip_name="tools"):
+    # loop over all training files in order to get complete tag set
     tags = []
     root = Path(root_dir) 
     if not root.is_dir(): 
@@ -133,57 +166,8 @@ def search_train_cupt_in_subdirs_for_tags(root_dir, skip_name="tools"):
     return set(tags)
 
 
-def create_thinking_all_langs():
-    langs = [
-    "EGY", "EL", "FA", "FR", "HE", "JA", "KA",
-    "LV", "NL", "PL", "PT", "RO", "SL", "SR", "SV", "UK",
-    ]
-    for lang in langs:
-        write_thinking_2_file(lang)
-
-
-def get_cupt_data_from_predictions(language):
-    c = Corpus("dev_data/dev_" + language + ".cupt")
-    predictions_path = "dev_data/dev_p_Romance/dev_" + language + "_32.txt"
-    output_path = "dev_data/dev_p_Romance/dev_" + language + "_32.cupt"
-    c.write_predictions_2_file(predictions_path, output_path)
-
-
-
-
-def get_error_ratios_tag(language):
-    c = Corpus("dev_data/dev_" + language + ".cupt")
-    predictions_path = "dev_data/dev_preds_thinking/dev_full_" + language + ".cupt"
-    c.count_correctly_predicted_tags(predictions_path)
-
-
-def write_thinking_2_file(language):
-    corpus = Corpus("training_data/nonthinking/train_" + language + ".cupt")
-    output = "training_data/thinking/train_" + language + ".txt"
-    corpus.write_thinking_2_file(output)
-
-def count_MWE_types_all_langs():
-    language_dict = {}
-    langs = [
-    "EGY", "EL", "FA", "FR", "HE", "JA", "KA",
-    "LV", "NL", "PL", "PT", "RO", "SL", "SR", "SV", "UK",
-    ]
-    for lang in langs:
-        path = "/gxfs_home/cau/sunpn1133/sharedtask-data/2.0/subtask1/" + lang + "/train.cupt"
-        c = Corpus(path)
-        types, tokens = c.count_MWE_types()
-        language_dict[lang] = types, tokens
-    return language_dict
-
-
-
-
-
-def create_cupt():
-    p = "/gxfs_home/cau/sunpn1133/sharedtask-data/2.0/subtask1/SL/dev.cupt"
-    #p = "intermediate/dev_SV.cupt"
-    c = Corpus(p)
-    preds= "results_paper/lfe/test_SL_sla2_cleaned.txt"
-    outp = "results_paper/cupts/lfe_SL_sla2.cupt"
-    c.write_predictions_2_file(preds, outp)
-
+# def write_cupt_w_preds_2_file(path, predictions_path, output_path):
+#     c = Corpus(path)
+#     preds= predictions_path
+#     outp = output_path
+#     c.write_predictions_2_file(preds, outp)
